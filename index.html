@@ -16,7 +16,7 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": "CleaningService",
   "name": "Clean Connect Gebäudereinigung UG",
   "description": "Professionelle gewerbliche Gebäudereinigung in Köln und NRW. Spezialisiert auf Hausverwaltungen, Büros und Gewerbeobjekte.",
   "url": "https://cleanconnect.de",
@@ -206,6 +206,16 @@ nav.s{background:rgba(17,17,17,.93);backdrop-filter:blur(20px);-webkit-backdrop-
 .sp{font-size:15px;color:var(--mu2);max-width:500px;line-height:1.7}
 @media(min-width:768px){.sec{padding:96px 40px}}
 
+
+/* ── FAQ ══════════════════════════════════ */
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--br);padding:0}
+.faq-item summary{padding:18px 4px;font-family:'Plus Jakarta Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item summary::after{content:'+';font-size:20px;color:var(--teal);flex-shrink:0;transition:transform .25s;font-weight:300;line-height:1}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item p{padding:0 4px 18px;color:var(--mu2);line-height:1.7;font-size:14px}
+.faq-item summary::-webkit-details-marker{display:none}
+
 /* ══ BENTO — Lucide icon styling ════ */
 .bento{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:32px}
 .bc{background:var(--s1);padding:22px 18px;border:1px solid var(--br);position:relative;overflow:hidden;transition:background .25s,border-color .25s,transform .15s}
@@ -346,6 +356,40 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 .fcta.hide{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
 @media(max-width:767px){.fcta{display:flex;align-items:center;gap:6px}}
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Was kostet Gebäudereinigung in Köln?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Unterhaltsreinigung für Büros in Köln beginnt ab 18–25 €/Std. je nach Umfang. Wir erstellen nach einer kostenlosen Begehung ein maßgeschneidertes Angebot."}
+    },
+    {
+      "@type": "Question",
+      "name": "Wie schnell erhalte ich ein Angebot?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Innerhalb von 24 Stunden nach Ihrer Anfrage. Für größere Objekte vereinbaren wir eine kostenlose Vor-Ort-Begehung."}
+    },
+    {
+      "@type": "Question",
+      "name": "In welchen Städten sind Sie tätig?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Wir reinigen Objekte in Köln und dem gesamten NRW — darunter Düsseldorf, Bonn, Leverkusen, Bergisch Gladbach, Aachen und Wuppertal."}
+    },
+    {
+      "@type": "Question",
+      "name": "Arbeiten Sie auch für Hausverwaltungen und WEGs?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja — Hausverwaltungen und WEGs sind unser Kerngeschäft. Wir übernehmen Treppenhausreinigung, Unterhaltsreinigung und Winterdienst mit zuverlässiger Dokumentation."}
+    },
+    {
+      "@type": "Question",
+      "name": "Sind Ihre Mitarbeiter alle deutschsprachig?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Ja — alle unsere Mitarbeiter sind deutschsprachig. Absprachen vor Ort, Schlüsselübergaben und Rückmeldungen laufen reibungslos ohne Missverständnisse."}
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -385,7 +429,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       </div>
       <div class="hstats fu d3">
         <div class="hstat"><div class="hstat-n" data-count="15" data-suf="+">0</div><div class="hstat-l">Mitarbeiter</div></div>
-        <div class="hstat"><div class="hstat-n" data-count="5" data-suf="+">0</div><div class="hstat-l">Jahre Erfahrung</div></div>
+        <div class="hstat"><div class="hstat-n" data-count="4" data-suf="+">0</div><div class="hstat-l">Jahre Erfahrung</div></div>
         <div class="hstat"><div class="hstat-n" data-count="100" data-suf="%">0</div><div class="hstat-l">Deutschsprachig</div></div>
       </div>
     </div>
@@ -415,7 +459,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div class="bc"><span class="bc-n">03</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="12" x2="22" y2="12"/><line x1="12" y1="2" x2="12" y2="22"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg><h3>Winterdienst</h3><p>Pünktliche Schneeräumung und Streuung für Gehwege, Zufahrten und Parkplätze — dokumentiert und haftungssicher.</p></div>
       <div class="bc"><span class="bc-n">04</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h4v-4h4v-4h4V9h6"/><path d="M3 21v-3"/></svg><h3>Treppenhausreinigung</h3><p>Saubere Gemeinschaftsflächen für Hausverwaltungen und WEGs — termingerecht, dokumentiert, ohne Beschwerden.</p></div>
       <div class="bc"><span class="bc-n">05</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg><h3>Grundreinigung</h3><p>Tiefenreinigung für Böden, Oberflächen und schwer erreichbare Bereiche — einmalig buchbar oder saisonal geplant.</p></div>
-      <div class="bc"><span class="bc-n">06</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"/><path d="M10 10V5a2 2 0 1 1 4 0v5"/><path d="M4 17v-3a8 8 0 0 1 16 0v3"/></svg><h3>Bauendreinigung</h3><p>Sorgfältige Reinigung nach Bau- oder Renovierungsarbeiten — damit Ihr Objekt am Übergabetag glänzt.</p></div>
+      <div class="bc"><span class="bc-n">06</span><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 3 21"/><path d="M10.5 21H3"/><path d="m14 14-2.5 2.5"/><path d="M3 10.5V3h7.5"/><path d="M21 3 3 21"/><path d="m21 11.5-6.5 6.5"/><path d="M21 21h-7.5"/><path d="M21 13.5V21"/></svg><h3>Bauendreinigung</h3><p>Sorgfältige Reinigung nach Bau- oder Renovierungsarbeiten — damit Ihr Objekt am Übergabetag glänzt.</p></div>
     </div>
   </div>
 </section>
@@ -535,12 +579,12 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <!-- Contact blocks -->
         <div class="cbs2" style="margin-top:0">
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.62 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.02 6.02l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="cl2">Mobil (Julian)</div><div class="cv2"><a href="tel:+4915792492755">+49 1579 2492755</a></div></div></div>
-          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="cl2">E-Mail</div><div class="cv2" style="font-size:12px">j.m@reinigungsdienst-cleanconnect.de</div></div></div>
+          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="cl2">E-Mail</div><div class="cv2" style="font-size:12px">info@cleanconnect.de</div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cl2">Region</div><div class="cv2">Köln &amp; ganz NRW</div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cl2">Reaktionszeit</div><div class="cv2">Innerhalb 24 Stunden</div></div></div>
         </div>
       </div>
-      <div class="kform fr2 d1">
+      <form class="kform fr2 d1" id="contactForm">
         <div class="frow">
           <div class="ffield"><label>Name *</label><input type="text" placeholder="Max Mustermann"></div>
           <div class="ffield"><label>Firma</label><input type="text" placeholder="Mustermann GmbH"></div>
@@ -553,9 +597,50 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           <select><option value="">Bitte wählen ...</option><option>Büro / Gewerbe</option><option>Hausverwaltung / Wohnanlage</option><option>Einzelhandel / Showroom</option><option>Gesundheitseinrichtung</option><option>Winterdienst</option><option>Bauendreinigung</option><option>Sonstiges</option></select>
         </div>
         <div class="ffield"><label>Nachricht</label><textarea placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
-        <button class="fsub" id="fsub">Kostenloses Angebot anfordern &#8594;</button>
-        <p class="fnote">&#128274; Ihre Daten werden vertraulich behandelt.</p>
-      </div>
+        <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_KEY">
+        <input type="hidden" name="subject" value="Neue Angebotsanfrage — Clean Connect">
+        <input type="hidden" name="from_name" value="Clean Connect Website">
+        <button class="fsub" id="fsub" type="button" onclick="submitForm()">Kostenloses Angebot anfordern &#8594;</button>
+        <div id="form-success" style="display:none;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#00C5C4;text-align:center">&#10003; Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</div>
+        <div id="form-error" style="display:none;background:rgba(232,65,46,.1);border:1px solid rgba(232,65,46,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#e8412e;text-align:center">Fehler beim Senden. Bitte ruf uns direkt an: <a href="tel:022195490625" style="color:inherit">0221 95490625</a></div>
+        <p class="fnote">&#128274; Ihre Daten werden vertraulich behandelt und nicht weitergegeben.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq" style="background:var(--bg)">
+  <div class="wrap">
+    <div class="snum fu">07 — FAQ</div>
+    <div class="lw"><h2 class="sh">Häufige Fragen</h2></div>
+    <div class="faq-list stg" style="max-width:760px;margin:0 auto">
+
+      <details class="faq-item fu" open>
+        <summary>Was kostet Gebäudereinigung in Köln?</summary>
+        <p>Die Kosten hängen von Objektgröße, Reinigungsart und Frequenz ab. Unterhaltsreinigung für Büros in Köln beginnt typischerweise ab 18–25 €/Std. je nach Umfang. Wir erstellen nach einer kostenlosen Begehung ein maßgeschneidertes Angebot — transparent und ohne versteckte Kosten.</p>
+      </details>
+
+      <details class="faq-item fu">
+        <summary>Wie schnell erhalte ich ein Angebot?</summary>
+        <p>Innerhalb von 24 Stunden nach Ihrer Anfrage. Für größere Objekte vereinbaren wir eine kostenlose Vor-Ort-Begehung und erstellen danach ein detailliertes Leistungsverzeichnis.</p>
+      </details>
+
+      <details class="faq-item fu">
+        <summary>In welchen Städten sind Sie tätig?</summary>
+        <p>Wir reinigen Objekte in Köln und dem gesamten NRW — darunter Düsseldorf, Bonn, Leverkusen, Bergisch Gladbach, Aachen und Wuppertal. Für größere Hausverwaltungen mit Objekten in ganz NRW sind wir der richtige Partner.</p>
+      </details>
+
+      <details class="faq-item fu">
+        <summary>Arbeiten Sie auch für Hausverwaltungen und WEGs?</summary>
+        <p>Ja — Hausverwaltungen und Wohnungseigentümergemeinschaften sind unser Kerngeschäft. Wir übernehmen Treppenhausreinigung, Unterhaltsreinigung und Winterdienst für Mehrfamilienhäuser und Wohnanlagen mit zuverlässiger Dokumentation und festem Ansprechpartner.</p>
+      </details>
+
+      <details class="faq-item fu">
+        <summary>Sind Ihre Mitarbeiter alle deutschsprachig?</summary>
+        <p>Ja — alle unsere Mitarbeiter sind deutschsprachig. Das ist für uns kein Marketingversprechen, sondern ein klarer Standard. Absprachen vor Ort, Schlüsselübergaben und Rückmeldungen laufen reibungslos — ohne Missverständnisse.</p>
+      </details>
+
     </div>
   </div>
 </section>
@@ -571,6 +656,41 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <!-- Lucide icons -->
 
 <script>
+
+
+/* ── Kontaktformular Web3Forms ──────────── */
+async function submitForm() {
+  var btn = document.getElementById('fsub');
+  var ok  = document.getElementById('form-success');
+  var err = document.getElementById('form-error');
+  var form = document.getElementById('contactForm');
+  
+  // Validate required fields
+  var name = form.querySelector('input[type="text"]').value;
+  var phone = form.querySelector('input[type="tel"]').value;
+  if (!name || !phone) { alert('Bitte Name und Telefon ausfüllen.'); return; }
+  
+  btn.textContent = 'Wird gesendet...';
+  btn.disabled = true;
+  ok.style.display = 'none';
+  err.style.display = 'none';
+
+  try {
+    var data = new FormData(form);
+    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
+    var json = await res.json();
+    if (json.success) {
+      ok.style.display = 'block';
+      form.reset();
+    } else {
+      err.style.display = 'block';
+    }
+  } catch(e) {
+    err.style.display = 'block';
+  }
+  btn.textContent = 'Kostenloses Angebot anfordern →';
+  btn.disabled = false;
+}
 
 /* ── Scroll progress ─────────────── */
 var prog=document.getElementById('prog');
