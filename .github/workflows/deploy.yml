@@ -18,7 +18,8 @@ jobs:
           username: ${{ secrets.IONOS_FTP_USER }}
           password: ${{ secrets.IONOS_FTP_PASS }}
           port: 22
-          local_path: './index.html'
+          local_path: './'
           remote_path: ${{ secrets.IONOS_FTP_DIR }}
           sftp_only: true
           delete_remote_files: false
+          args: '--exclude=.github --exclude=README.md'
