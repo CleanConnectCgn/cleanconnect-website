@@ -361,6 +361,11 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     @media(max-width:640px){
       #videos .lw ~ div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}
     }
+  
+    /* Logo strip */
+    .logo-ref{opacity:.35;transition:opacity .3s,color .3s;color:var(--tx);cursor:default}
+    .logo-ref:hover{opacity:.85;color:var(--teal)}
+    
   </style>
 
 <script type="application/ld+json">
@@ -454,6 +459,55 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 </div>
 
 <!-- 01 LEISTUNGEN -->
+
+<!-- LOGO STRIP -->
+<section style="padding:36px 20px;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden;background:rgba(0,0,0,.15);position:relative;z-index:1;">
+  <div style="max-width:1080px;margin:0 auto;">
+    <p style="text-align:center;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);margin-bottom:28px">Vertrauen von führenden Unternehmen in Köln &amp; NRW</p>
+    <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:40px 56px;">
+
+      <!-- Harley-Davidson -->
+      <div class="logo-ref">
+        <svg viewBox="0 0 200 40" width="160" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="'Georgia','Times New Roman',serif" font-size="14" font-weight="700" fill="currentColor" letter-spacing="2" text-transform="uppercase">HARLEY-DAVIDSON</text>
+        </svg>
+      </div>
+
+      <!-- Rettig -->
+      <div class="logo-ref">
+        <svg viewBox="0 0 120 40" width="100" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="'Arial','Helvetica',sans-serif" font-size="22" font-weight="800" fill="currentColor" letter-spacing="3">RETTIG</text>
+        </svg>
+      </div>
+
+      <!-- Kraus Bäckereien -->
+      <div class="logo-ref">
+        <svg viewBox="0 0 200 44" width="160" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="20" font-family="'Georgia','Times New Roman',serif" font-size="15" font-weight="700" fill="currentColor" letter-spacing="1">KRAUS</text>
+          <text x="0" y="38" font-family="'Georgia','Times New Roman',serif" font-size="11" font-weight="400" fill="currentColor" letter-spacing="2" opacity="0.75">BÄCKEREIEN</text>
+        </svg>
+      </div>
+
+      <!-- SAE Institute -->
+      <div class="logo-ref">
+        <svg viewBox="0 0 180 44" width="150" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="22" font-family="'Arial','Helvetica',sans-serif" font-size="20" font-weight="900" fill="currentColor" letter-spacing="4">SAE</text>
+          <text x="0" y="38" font-family="'Arial','Helvetica',sans-serif" font-size="9" font-weight="500" fill="currentColor" letter-spacing="2.5" opacity="0.75">INSTITUTE</text>
+        </svg>
+      </div>
+
+      <!-- SSP Hausverwaltung -->
+      <div class="logo-ref">
+        <svg viewBox="0 0 200 44" width="160" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="22" font-family="'Arial','Helvetica',sans-serif" font-size="18" font-weight="800" fill="currentColor" letter-spacing="3">SSP</text>
+          <text x="0" y="38" font-family="'Arial','Helvetica',sans-serif" font-size="9" font-weight="400" fill="currentColor" letter-spacing="2" opacity="0.75">HAUSVERWALTUNG</text>
+        </svg>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="sec" id="leistungen">
   <div class="wrap">
     <div class="snum fu">01 — Leistungen</div>
@@ -584,7 +638,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <!-- Contact blocks -->
         <div class="cbs2" style="margin-top:0">
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.62 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.02 6.02l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="cl2">Mobil (Julian)</div><div class="cv2"><a href="tel:+4915792492755">+49 1579 2492755</a></div></div></div>
-          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="cl2">E-Mail</div><div class="cv2" style="font-size:12px">info@cleanconnect.de</div></div></div>
+          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="cl2">E-Mail</div><div class="cv2" style="font-size:12px">j.m@reinigungsdienst-cleanconnect.de</div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cl2">Region</div><div class="cv2">Köln &amp; ganz NRW</div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cl2">Reaktionszeit</div><div class="cv2">Innerhalb 24 Stunden</div></div></div>
         </div>
@@ -602,9 +656,10 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           <select><option value="">Bitte wählen ...</option><option>Büro / Gewerbe</option><option>Hausverwaltung / Wohnanlage</option><option>Einzelhandel / Showroom</option><option>Gesundheitseinrichtung</option><option>Winterdienst</option><option>Bauendreinigung</option><option>Sonstiges</option></select>
         </div>
         <div class="ffield"><label>Nachricht</label><textarea placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
-        <input type="hidden" name="access_key" value="DEIN_WEB3FORMS_KEY">
+        <input type="hidden" name="access_key" value="WEB3FORMS_KEY_HIER">
         <input type="hidden" name="subject" value="Neue Angebotsanfrage — Clean Connect">
         <input type="hidden" name="from_name" value="Clean Connect Website">
+        <input type="hidden" name="redirect" value="false">
         <button class="fsub" id="fsub" type="button" onclick="submitForm()">Kostenloses Angebot anfordern &#8594;</button>
         <div id="form-success" style="display:none;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#00C5C4;text-align:center">&#10003; Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</div>
         <div id="form-error" style="display:none;background:rgba(232,65,46,.1);border:1px solid rgba(232,65,46,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#e8412e;text-align:center">Fehler beim Senden. Bitte ruf uns direkt an: <a href="tel:022195490625" style="color:inherit">0221 95490625</a></div>
@@ -749,37 +804,45 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 
 /* ── Kontaktformular Web3Forms ──────────── */
-async function submitForm() {
-  var btn = document.getElementById('fsub');
-  var ok  = document.getElementById('form-success');
-  var err = document.getElementById('form-error');
-  var form = document.getElementById('contactForm');
-  
-  // Validate required fields
-  var name = form.querySelector('input[type="text"]').value;
-  var phone = form.querySelector('input[type="tel"]').value;
-  if (!name || !phone) { alert('Bitte Name und Telefon ausfüllen.'); return; }
-  
-  btn.textContent = 'Wird gesendet...';
+async function submitForm(){
+  const btn = document.getElementById('fsub');
+  const successEl = document.getElementById('form-success');
+  const errorEl = document.getElementById('form-error');
+  const form = document.getElementById('contactForm');
+
+  // Basic validation
+  const name = form.querySelector('input[placeholder="Max Mustermann"]').value.trim();
+  const tel  = form.querySelector('input[type="tel"]').value.trim();
+  if(!name || !tel){
+    errorEl.textContent = 'Bitte Name und Telefon ausfüllen.';
+    errorEl.style.display='block';
+    return;
+  }
+
   btn.disabled = true;
-  ok.style.display = 'none';
-  err.style.display = 'none';
+  btn.textContent = 'Wird gesendet …';
+  errorEl.style.display = 'none';
 
   try {
-    var data = new FormData(form);
-    var res = await fetch('https://api.web3forms.com/submit', {method:'POST', body: data});
-    var json = await res.json();
-    if (json.success) {
-      ok.style.display = 'block';
+    const formData = new FormData(form);
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: formData
+    });
+    const data = await response.json();
+    if(data.success){
+      successEl.style.display = 'block';
       form.reset();
+      btn.textContent = '✓ Gesendet';
     } else {
-      err.style.display = 'block';
+      throw new Error(data.message);
     }
-  } catch(e) {
-    err.style.display = 'block';
+  } catch(e){
+    errorEl.textContent = 'Fehler beim Senden. Bitte ruf uns direkt an: 0221 95490625';
+    errorEl.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Kostenloses Angebot anfordern →';
   }
-  btn.textContent = 'Kostenloses Angebot anfordern →';
-  btn.disabled = false;
 }
 
 /* ── Scroll progress ─────────────── */
