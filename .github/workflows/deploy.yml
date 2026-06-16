@@ -11,15 +11,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Install lftp
+        run: sudo apt-get install -y lftp
+
       - name: Deploy via SFTP to IONOS
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          server: ${{ secrets.IONOS_FTP_HOST }}
-          username: ${{ secrets.IONOS_FTP_USER }}
-          password: ${{ secrets.IONOS_FTP_PASS }}
-          port: 22
-          local_path: './'
-          remote_path: ${{ secrets.IONOS_FTP_DIR }}
-          sftp_only: true
-          delete_remote_files: false
-          args: '-r --exclude=.git --exclude=.github --exclude=README.md --exclude=package.json --exclude=server.js'
+        env:
+          SFTP_HOST: ${{ secrets.IONOS_FTP_HOST }}
+          SFTP_USER: ${{ secrets.IONOS_FTP_USER }}
+          SFTP_PASS: ${{ secrets.IONOS_FTP_PASS }}
+          SFTP_DIR: ${{ secrets.IONOS_FTP_DIR }}
+        run: |
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set net:timeout 60;
+            set net:max-retries 3;
+            open sftp://$SFTP_USER:$SFTP_PASS@$SFTP_HOST;
+            mirror --reverse --delete --exclude-glob .git/ --exclude-glob .github/ --exclude README.md --exclude package.json --exclude server.js ./ $SFTP_DIR
+          "
