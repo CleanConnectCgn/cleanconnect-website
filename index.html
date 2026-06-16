@@ -80,10 +80,10 @@ button{cursor:pointer;font-family:inherit;border:none}
 
 /* ══ ANIMATED BACKGROUND ════════════ */
 .bg-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.04;will-change:transform}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.08;will-change:transform}
 .blob1{width:700px;height:700px;background:var(--teal);top:-200px;right:-200px;animation:blob1move 22s ease-in-out infinite}
 .blob2{width:600px;height:600px;background:#4060ff;bottom:-150px;left:-150px;animation:blob1move 28s ease-in-out infinite reverse;animation-delay:-10s}
-.blob3{width:450px;height:450px;background:var(--teal);top:45%;left:35%;animation:blob1move 19s ease-in-out infinite;animation-delay:-6s;opacity:.025}
+.blob3{width:450px;height:450px;background:var(--teal);top:45%;left:35%;animation:blob1move 19s ease-in-out infinite;animation-delay:-6s;opacity:.05}
 @keyframes blob1move{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.1)}66%{transform:translate(-30px,50px) scale(.92)}}
 /* Scroll-reactive grid */
 .bg-grid{position:fixed;inset:0;pointer-events:none;z-index:0;
@@ -357,7 +357,11 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 .fcta{display:none;position:fixed;bottom:18px;left:50%;transform:translateX(-50%);z-index:150;background:var(--teal);color:#000;font-weight:700;font-size:13px;padding:11px 24px;border-radius:100px;white-space:nowrap;box-shadow:0 4px 20px rgba(0,197,196,.3);transition:opacity .3s,transform .3s}
 .fcta.hide{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
 @media(max-width:767px){.fcta{display:flex;align-items:center;gap:6px}}
-</style>
+
+    @media(max-width:640px){
+      #videos .lw ~ div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}
+    }
+  </style>
 
 <script type="application/ld+json">
 {
@@ -611,63 +615,89 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 </section>
 
 <!-- VIDEO SECTION -->
-<section class="sec" id="videos" style="background:#0a0f14;padding:80px 0">
+<section class="sec" id="videos">
   <div class="wrap">
     <div class="snum">06 — Einblick</div>
     <div class="lw"><h2 class="sh">Clean Connect in Aktion</h2></div>
-    <p class="sp" style="margin-bottom:40px">Authentische Einblicke aus unserem Alltag — bei Harley-Davidson Köln, bei Rettig GmbH und bei einer Hochhaus-Bauendreinigung in Köln-Mülheim.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
-      
-      <div style="border-radius:14px;overflow:hidden;background:#111;border:1px solid #222;position:relative">
-        <video style="width:100%;display:block;max-height:400px;object-fit:cover" 
-               controls muted playsinline preload="metadata"
-               poster="">
-          <source src="video_harley.mp4" type="video/mp4">
-        </video>
-        <div style="padding:14px 16px">
+    <p class="sp" style="margin-bottom:40px">Authentische Einblicke aus unserem Alltag — bei Harley-Davidson Köln, bei Rettig GmbH und bei einem Grundreinigungsprojekt in Köln.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:20px">
+
+      <!-- Video 1: Harley Unterhaltsreinigung -->
+      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
+        <div style="position:relative;overflow:hidden;border-radius:0;">
+          <iframe src="https://www.instagram.com/p/DTe9Pq_iEEz/embed/"
+            width="100%" height="400" frameborder="0" scrolling="no"
+            allowtransparency="true" loading="lazy"
+            style="display:block;border:0;"></iframe>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid rgba(0,197,196,.1);">
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Referenz</div>
+          <div style="font-size:14px;font-weight:600;color:#f0f0f0">Harley-Davidson Köln</div>
+          <div style="font-size:12px;color:#777;margin-top:2px">Unterhaltsreinigung</div>
+        </div>
+      </div>
+
+      <!-- Video 2: Harley Glasreinigung -->
+      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
+        <div style="position:relative;overflow:hidden;">
+          <iframe src="https://www.instagram.com/p/DSJiheFiI90/embed/"
+            width="100%" height="400" frameborder="0" scrolling="no"
+            allowtransparency="true" loading="lazy"
+            style="display:block;border:0;"></iframe>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid rgba(0,197,196,.1);">
           <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Referenz</div>
           <div style="font-size:14px;font-weight:600;color:#f0f0f0">Harley-Davidson Köln</div>
           <div style="font-size:12px;color:#777;margin-top:2px">Glasreinigung</div>
         </div>
       </div>
 
-      <div style="border-radius:14px;overflow:hidden;background:#111;border:1px solid #222">
-        <video style="width:100%;display:block;max-height:400px;object-fit:cover"
-               controls muted playsinline preload="metadata">
-          <source src="video_rettig.mp4" type="video/mp4">
-        </video>
-        <div style="padding:14px 16px">
+      <!-- Video 3: John Doe Grundreinigung -->
+      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
+        <div style="position:relative;overflow:hidden;">
+          <iframe src="https://www.instagram.com/p/DSan3W2AAF9/embed/"
+            width="100%" height="400" frameborder="0" scrolling="no"
+            allowtransparency="true" loading="lazy"
+            style="display:block;border:0;"></iframe>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid rgba(0,197,196,.1);">
+          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Projekt</div>
+          <div style="font-size:14px;font-weight:600;color:#f0f0f0">John Doe Köln</div>
+          <div style="font-size:12px;color:#777;margin-top:2px">Grundreinigung</div>
+        </div>
+      </div>
+
+      <!-- Video 4: Rettig Unterhaltsreinigung -->
+      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
+        <div style="position:relative;overflow:hidden;">
+          <iframe src="https://www.instagram.com/p/DRjrr1JiMR-/embed/"
+            width="100%" height="400" frameborder="0" scrolling="no"
+            allowtransparency="true" loading="lazy"
+            style="display:block;border:0;"></iframe>
+        </div>
+        <div style="padding:14px 16px;border-top:1px solid rgba(0,197,196,.1);">
           <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Referenz</div>
           <div style="font-size:14px;font-weight:600;color:#f0f0f0">Rettig GmbH</div>
-          <div style="font-size:12px;color:#777;margin-top:2px">Gewerbliche Reinigung</div>
-        </div>
-      </div>
-
-      <div style="border-radius:14px;overflow:hidden;background:#111;border:1px solid #222">
-        <video style="width:100%;display:block;max-height:400px;object-fit:cover"
-               controls muted playsinline preload="metadata">
-          <source src="video_hochhaus.mp4" type="video/mp4">
-        </video>
-        <div style="padding:14px 16px">
-          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Projekt</div>
-          <div style="font-size:14px;font-weight:600;color:#f0f0f0">Hochhaus Winerplatz 2</div>
-          <div style="font-size:12px;color:#777;margin-top:2px">Bauendreinigung · Köln-Mülheim</div>
+          <div style="font-size:12px;color:#777;margin-top:2px">Unterhaltsreinigung</div>
         </div>
       </div>
 
     </div>
-    <div style="text-align:center;margin-top:28px">
-      <a href="https://www.instagram.com/cleanconnect_koeln/" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#00C5C4;border:1px solid rgba(0,197,196,.3);border-radius:20px;padding:8px 20px;text-decoration:none;margin-right:10px">
+
+    <!-- Social links -->
+    <div style="text-align:center;margin-top:36px;display:flex;gap:12px;justify-content:center">
+      <a href="https://www.instagram.com/cleanconnect.reinigungsdienst/" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(0,197,196,.1);border:1px solid rgba(0,197,196,.25);color:#00C5C4;text-decoration:none;font-size:13px;font-weight:600;transition:background .2s">
         📸 Instagram
       </a>
-      <a href="https://www.tiktok.com/@cleanconnect_koeln" target="_blank" rel="noopener"
-         style="display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:#00C5C4;border:1px solid rgba(0,197,196,.3);border-radius:20px;padding:8px 20px;text-decoration:none">
-        🎬 TikTok
+      <a href="https://www.tiktok.com/@cleanconnectcgn" target="_blank" rel="noopener"
+         style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(0,197,196,.1);border:1px solid rgba(0,197,196,.25);color:#00C5C4;text-decoration:none;font-size:13px;font-weight:600;transition:background .2s">
+        🎵 TikTok
       </a>
     </div>
-  </div>
-</section>
+
+    </section>
 
 <!-- FAQ -->
 <section class="sec" id="faq" style="background:var(--bg)">
