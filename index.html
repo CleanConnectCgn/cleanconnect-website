@@ -73,17 +73,17 @@
   --red:#e8412e;--tx:#f0f0f0;--mu:#777;--mu2:#999;
 }
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden}
+body{background:linear-gradient(160deg,#0e1117 0%,#111 40%,#0d1420 100%);color:var(--tx);font-family:'Inter',sans-serif;font-size:15px;line-height:1.6;overflow-x:hidden}
 h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.15;letter-spacing:-.025em}
 a{color:inherit;text-decoration:none} img{display:block;max-width:100%}
 button{cursor:pointer;font-family:inherit;border:none}
 
 /* ══ ANIMATED BACKGROUND ════════════ */
 .bg-canvas{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.08;will-change:transform}
-.blob1{width:700px;height:700px;background:var(--teal);top:-200px;right:-200px;animation:blob1move 22s ease-in-out infinite}
-.blob2{width:600px;height:600px;background:#4060ff;bottom:-150px;left:-150px;animation:blob1move 28s ease-in-out infinite reverse;animation-delay:-10s}
-.blob3{width:450px;height:450px;background:var(--teal);top:45%;left:35%;animation:blob1move 19s ease-in-out infinite;animation-delay:-6s;opacity:.05}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.15;will-change:transform}
+.blob1{width:900px;height:900px;background:var(--teal);top:-250px;right:-250px;animation:blob1move 22s ease-in-out infinite}
+.blob2{width:800px;height:800px;background:#3050ef;bottom:-200px;left:-200px;animation:blob1move 28s ease-in-out infinite reverse;animation-delay:-10s}
+.blob3{width:450px;height:450px;background:var(--teal);top:45%;left:35%;animation:blob1move 19s ease-in-out infinite;animation-delay:-6s;opacity:.09}
 @keyframes blob1move{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(50px,-40px) scale(1.1)}66%{transform:translate(-30px,50px) scale(.92)}}
 /* Scroll-reactive grid */
 .bg-grid{position:fixed;inset:0;pointer-events:none;z-index:0;
@@ -431,9 +431,9 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <section class="hero">
   <div class="hero-in">
     <div class="hero-text">
-      <div class="hlabel fu in"><span class="hldot"></span>Reinigungsunternehmen &middot; Köln &amp; NRW &middot; Seit 2024</div>
-      <div class="lw in"><h1 class="word-reveal in">Gebäudereinigung Köln &amp; NRW — <em>verlässlich, persönlich, ohne Kompromisse.</em></h1></div>
-      <p class="fu d1 in">Spezialisiert auf Hausverwaltungen, Büros und Gewerbeobjekte in Köln und ganz NRW. Persönlicher Ansprechpartner, gleichbleibendes Personal, dokumentierte Qualitätskontrolle — seit 2024.</p>
+      <div class="hlabel fu in"><span class="hldot"></span>Reinigungsunternehmen &middot; Köln &amp; Umkreis &middot; Seit 2024</div>
+      <div class="lw in"><h1 class="word-reveal in">Gebäudereinigung Köln &amp; Umkreis — <em>verlässlich, persönlich, ohne Kompromisse.</em></h1></div>
+      <p class="fu d1 in">Spezialisiert auf Hausverwaltungen, Büros und Gewerbeobjekte in Köln, Bergheim und Wuppertal. Persönlicher Ansprechpartner, gleichbleibendes Personal, dokumentierte Qualitätskontrolle — seit 2024.</p>
       <div class="hbtns fu d2 in">
         <a href="#kontakt" class="btn btn-p">Kostenloses Angebot &#8594;</a>
         <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
@@ -463,7 +463,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <!-- LOGO STRIP -->
 <section style="padding:36px 20px;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05);overflow:hidden;background:rgba(0,0,0,.15);position:relative;z-index:1;">
   <div style="max-width:1080px;margin:0 auto;">
-    <p style="text-align:center;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);margin-bottom:28px">Vertrauen von führenden Unternehmen in Köln &amp; NRW</p>
+    <p style="text-align:center;font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--mu);margin-bottom:28px">Vertrauen von führenden Unternehmen in Köln &amp; Umkreis</p>
     <div style="display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:40px 56px;">
 
       <!-- Harley-Davidson -->
@@ -639,7 +639,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="cbs2" style="margin-top:0">
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.62 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.54 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.02 6.02l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div><div><div class="cl2">Mobil (Julian)</div><div class="cv2"><a href="tel:+4915792492755">+49 1579 2492755</a></div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div><div><div class="cl2">E-Mail</div><div class="cv2" style="font-size:12px">j.m@reinigungsdienst-cleanconnect.de</div></div></div>
-          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cl2">Region</div><div class="cv2">Köln &amp; ganz NRW</div></div></div>
+          <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg></div><div><div class="cl2">Region</div><div class="cv2">Köln, Bergheim &amp; Wuppertal</div></div></div>
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cl2">Reaktionszeit</div><div class="cv2">Innerhalb 24 Stunden</div></div></div>
         </div>
       </div>
@@ -682,7 +682,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
         <div style="position:relative;overflow:hidden;border-radius:0;">
           <iframe src="https://www.instagram.com/p/DTe9Pq_iEEz/embed/"
-            width="100%" height="400" frameborder="0" scrolling="no"
+            width="100%" height="480" frameborder="0" scrolling="no"
             allowtransparency="true" loading="lazy"
             style="display:block;border:0;"></iframe>
         </div>
@@ -697,7 +697,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
         <div style="position:relative;overflow:hidden;">
           <iframe src="https://www.instagram.com/p/DSJiheFiI90/embed/"
-            width="100%" height="400" frameborder="0" scrolling="no"
+            width="100%" height="480" frameborder="0" scrolling="no"
             allowtransparency="true" loading="lazy"
             style="display:block;border:0;"></iframe>
         </div>
@@ -712,7 +712,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
         <div style="position:relative;overflow:hidden;">
           <iframe src="https://www.instagram.com/p/DSan3W2AAF9/embed/"
-            width="100%" height="400" frameborder="0" scrolling="no"
+            width="100%" height="480" frameborder="0" scrolling="no"
             allowtransparency="true" loading="lazy"
             style="display:block;border:0;"></iframe>
         </div>
@@ -727,7 +727,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
         <div style="position:relative;overflow:hidden;">
           <iframe src="https://www.instagram.com/p/DRjrr1JiMR-/embed/"
-            width="100%" height="400" frameborder="0" scrolling="no"
+            width="100%" height="480" frameborder="0" scrolling="no"
             allowtransparency="true" loading="lazy"
             style="display:block;border:0;"></iframe>
         </div>
