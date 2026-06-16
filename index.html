@@ -443,8 +443,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 .fcta.hide{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
 @media(max-width:767px){.fcta{display:flex;align-items:center;gap:6px}}
 
-    @media(max-width:640px){
-      #videos .lw ~ div[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}
+    
     }
     
   
@@ -481,6 +480,23 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     /* Photo-to-info fade */
     .card-photo-fade{position:absolute;top:0;right:-1px;width:36px;height:100%;background:linear-gradient(to right,transparent,var(--s1));pointer-events:none;z-index:2}
     .card-photo-fade-bg{position:absolute;top:0;right:-1px;width:36px;height:100%;background:linear-gradient(to right,transparent,var(--bg));pointer-events:none;z-index:2}
+  
+    /* Video cards */
+    .vid-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .vid-card{display:flex;flex-direction:column;background:var(--s1);border:1px solid rgba(0,197,196,.15);border-radius:14px;overflow:hidden;text-decoration:none;position:relative;aspect-ratio:9/14;justify-content:center;align-items:center;transition:border-color .2s,transform .2s}
+    .vid-card:hover{border-color:rgba(0,197,196,.4);transform:translateY(-2px)}
+    .vid-play{display:flex;align-items:center;justify-content:center;width:72px;height:72px;border-radius:50%;background:rgba(0,197,196,.25);backdrop-filter:blur(8px);transition:background .2s}
+    .vid-card:hover .vid-play{background:rgba(0,197,196,.45)}
+    .vid-info{position:absolute;bottom:0;left:0;right:0;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+    .vid-badge{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+    .vid-title{font-size:14px;font-weight:600;color:#f0f0f0}
+    .vid-sub{font-size:11px;color:#888;margin-top:2px}
+    .vid-ig{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.5);font-size:10px}
+    @media(max-width:640px){
+      .vid-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+      .vid-card{min-width:240px;flex-shrink:0;scroll-snap-align:start;aspect-ratio:9/14}
+      .vid-scroll::-webkit-scrollbar{display:none}
+    }
   </style>
 
 <script type="application/ld+json">
@@ -770,48 +786,51 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         </div>
         <div class="ffield"><label>Nachricht</label><textarea placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
         <input type="hidden" name="access_key" value="a1baeef9-3b69-4ddf-b187-aab554abb5ea">
-        <input type="hidden" name="subject" value="Neue Angebotsanfrage — Clean Connect">
-        <input type="hidden" name="replyto" value="service@reinigungsdienst-cleanconnect.de">
-        <input type="hidden" name="from_name" value="Clean Connect Website">
-        <input type="hidden" name="redirect" value="false">
-        <button class="fsub" id="fsub" type="button" onclick="submitForm()">Kostenloses Angebot anfordern &#8594;</button>
-        <div id="form-success" style="display:none;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#00C5C4;text-align:center">&#10003; Vielen Dank! Wir melden uns innerhalb von 24 Stunden.</div>
-        <div id="form-error" style="display:none;background:rgba(232,65,46,.1);border:1px solid rgba(232,65,46,.3);border-radius:10px;padding:14px 16px;margin-top:12px;font-size:13px;color:#e8412e;text-align:center">Fehler beim Senden. Bitte ruf uns direkt an: <a href="tel:022195490625" style="color:inherit">0221 95490625</a></div>
-        <p class="fnote">&#128274; Ihre Daten werden vertraulich behandelt und nicht weitergegeben.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- VIDEO SECTION -->
-<section class="sec" id="videos">
-  <div class="wrap">
-    <div class="snum">06 — Einblick</div>
-    <div class="lw"><h2 class="sh">Clean Connect in Aktion</h2></div>
-    <p class="sp" style="margin-bottom:40px">Authentische Einblicke aus unserem Alltag — bei Harley-Davidson Köln, bei Rettig GmbH und bei einem Grundreinigungsprojekt in Köln.</p>
-
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px">
-
-      <!-- Video 1: Harley Unterhaltsreinigung -->
-      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
-        <div style="position:relative;overflow:hidden;border-radius:0;">
-          <iframe src="https://www.instagram.com/p/DTe9Pq_iEEz/embed/"
-            width="100%" height="480" frameborder="0" scrolling="no"
-            allowtransparency="true" loading="lazy"
-            style="display:block;border:0;"></iframe>
+        <input type="hidden" name="subject" value="Neue A<div class="vid-scroll">
+      
+      <a href="https://www.instagram.com/p/DTe9Pq_iEEz/" target="_blank" rel="noopener" class="vid-card">
+        <div class="vid-play">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="white" opacity=".9"><polygon points="5,3 19,12 5,21"/></svg>
         </div>
-        <div style="padding:14px 16px;border-top:1px solid rgba(0,197,196,.1);">
-          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#00C5C4;margin-bottom:4px">Referenz</div>
-          <div style="font-size:14px;font-weight:600;color:#f0f0f0">Harley-Davidson Köln-Bonn</div>
-          <div style="font-size:12px;color:#777;margin-top:2px">Unterhaltsreinigung</div>
+        <div class="vid-info">
+          <div class="vid-badge">Referenz</div>
+          <div class="vid-title">Harley-Davidson Köln-Bonn</div>
+          <div class="vid-sub">Unterhaltsreinigung</div>
         </div>
-      </div>
-
-      <!-- Video 2: Harley Glasreinigung -->
-      <div style="border-radius:14px;overflow:hidden;background:var(--s1);border:1px solid rgba(0,197,196,.15);">
-        <div style="position:relative;overflow:hidden;">
-          <iframe src="https://www.instagram.com/p/DSJiheFiI90/embed/"
-            width="100%" height="480" frameborder="0" scrolling="no"
+        <div class="vid-ig">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Auf Instagram ansehen</span>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/p/DSJiheFiI90/" target="_blank" rel="noopener" class="vid-card">
+        <div class="vid-play">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="white" opacity=".9"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="vid-info">
+          <div class="vid-badge">Referenz</div>
+          <div class="vid-title">Harley-Davidson Köln-Bonn</div>
+          <div class="vid-sub">Glasreinigung</div>
+        </div>
+        <div class="vid-ig">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Auf Instagram ansehen</span>
+        </div>
+      </a>
+      <a href="https://www.instagram.com/p/DSan3W2AAF9/" target="_blank" rel="noopener" class="vid-card">
+        <div class="vid-play">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="white" opacity=".9"><polygon points="5,3 19,12 5,21"/></svg>
+        </div>
+        <div class="vid-info">
+          <div class="vid-badge">Projekt</div>
+          <div class="vid-title">John Doe Köln</div>
+          <div class="vid-sub">Grundreinigung</div>
+        </div>
+        <div class="vid-ig">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          <span>Auf Instagram ansehen</span>
+        </div>
+      </a>
+    </div>dth="100%" height="480" frameborder="0" scrolling="no"
             allowtransparency="true" loading="lazy"
             style="display:block;border:0;"></iframe>
         </div>
