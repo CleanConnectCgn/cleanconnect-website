@@ -1,0 +1,12 @@
+{
+  "name": "cleanconnect-website",
+  "version": "1.0.0",
+  "description": "Clean Connect Gebäudereinigung Website",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
