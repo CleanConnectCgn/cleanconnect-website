@@ -23,8 +23,11 @@ jobs:
         run: |
           lftp -c "
             set sftp:auto-confirm yes;
-            set net:timeout 60;
-            set net:max-retries 3;
+            set net:timeout 120;
             open sftp://$SFTP_USER:$SFTP_PASS@$SFTP_HOST;
-            mirror --reverse --delete --exclude-glob .git/ --exclude-glob .github/ --exclude README.md --exclude package.json --exclude server.js ./ $SFTP_DIR
+            put -O $SFTP_DIR index.html;
+            put -O $SFTP_DIR impressum.html;
+            put -O $SFTP_DIR datenschutz.html;
+            put -O $SFTP_DIR sitemap.xml;
+            put -O $SFTP_DIR robots.txt;
           "
