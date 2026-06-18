@@ -30,4 +30,5 @@ jobs:
             put -O $SFTP_DIR datenschutz.html;
             put -O $SFTP_DIR sitemap.xml;
             put -O $SFTP_DIR robots.txt;
+            mirror -R --parallel=5 images $SFTP_DIR/images;
           "
