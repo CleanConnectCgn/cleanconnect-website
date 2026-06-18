@@ -25,6 +25,7 @@ jobs:
             set sftp:auto-confirm yes;
             set net:timeout 120;
             open sftp://$SFTP_USER:$SFTP_PASS@$SFTP_HOST;
+            put -O $SFTP_DIR .htaccess;
             put -O $SFTP_DIR index.html;
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
