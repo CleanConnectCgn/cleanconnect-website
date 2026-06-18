@@ -1,1 +1,12 @@
-# HTTPS redirect disabled - SSL not fully propagated yet
+# Force HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Root redirect to /cleanconnect/
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^$ /cleanconnect/ [L,R=301]
+
+# www to non-www
+RewriteCond %{HTTP_HOST} ^www\.cleanconnect\.de [NC]
+RewriteRule ^(.*)$ https://cleanconnect.de/$1 [L,R=301]
