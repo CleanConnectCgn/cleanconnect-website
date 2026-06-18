@@ -25,11 +25,11 @@ jobs:
             set sftp:auto-confirm yes;
             set net:timeout 120;
             open sftp://$SFTP_USER:$SFTP_PASS@$SFTP_HOST;
-            put -O $SFTP_DIR .htaccess;
+            put -O / .htaccess;
+            put -O / robots.txt;
+            put -O / sitemap.xml;
             put -O $SFTP_DIR index.html;
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
-            put -O $SFTP_DIR sitemap.xml;
-            put -O $SFTP_DIR robots.txt;
             mirror -R --parallel=5 images $SFTP_DIR/images;
           "
