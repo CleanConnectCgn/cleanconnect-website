@@ -137,9 +137,7 @@
   <meta name="theme-color" content="#00C5C4">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500&display=swap"></noscript>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -481,7 +479,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 @media(max-width:680px){
   .vid-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:0 20px 8px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
   .vid-scroll::-webkit-scrollbar{display:none}
-  .vid-scroll .vid-card{flex:0 0 58%;scroll-snap-align:center;max-height:300px}
+  .vid-scroll .vid-card{flex:0 0 44%;scroll-snap-align:center;max-height:240px}
 }
     .vid-card{display:flex;flex-direction:column;background:var(--s1);border:none;border-radius:14px;overflow:hidden;text-decoration:none;position:relative;aspect-ratio:9/16;justify-content:center;align-items:center;transition:transform .2s;box-shadow:0 4px 24px rgba(0,0,0,.5)}
     .vid-card:hover{transform:translateY(-2px)}
@@ -494,7 +492,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     .vid-ig{position:absolute;top:12px;right:12px;display:flex;align-items:center;gap:5px;color:rgba(255,255,255,.5);font-size:10px}
     @media(max-width:640px){
       .vid-scroll{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:8px;-webkit-overflow-scrolling:touch}
-      .vid-card{min-width:240px;flex-shrink:0;scroll-snap-align:start;aspect-ratio:9/14}
+      .vid-card{min-width:190px;flex-shrink:0;scroll-snap-align:start;aspect-ratio:9/14}
       .vid-scroll::-webkit-scrollbar{display:none}
     }
 
@@ -560,6 +558,14 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
   .stg.in>*:nth-child(3),.stg.in>*:nth-child(4),
   .stg.in>*:nth-child(5),.stg.in>*:nth-child(6){transition-delay:0s}
 }
+    /* Social-Einblicke: two-column desktop layout */
+    @media(min-width:768px){
+      .social-einblicke{display:grid;grid-template-columns:220px 1fr;grid-template-rows:auto 1fr auto;column-gap:40px;align-items:start}
+      .social-einblicke>:nth-child(1){grid-column:1;grid-row:1}
+      .social-einblicke>:nth-child(2){grid-column:1;grid-row:2}
+      .social-einblicke>.vid-scroll{grid-column:2;grid-row:1/4;max-height:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+      .social-einblicke>:last-child{grid-column:1;grid-row:3;padding-top:16px}
+    }
 </style>
 
 <script type="application/ld+json">
@@ -690,27 +696,27 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="carousel-stage" id="cStage">
 
       <div class="ccard" data-idx="0" onclick="carouselGoTo(0)">
-        <img src="images/img_03.webp" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
+        <img src="images/img_03.webp" width="280" height="340" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
         <div class="ccard-label"><span>Showroom Köln</span><strong>Bodenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_04.webp" alt="Clean Connect Mitarbeiterin bei der Oberflaechenreinigung im Harley-Davidson Showroom" loading="lazy">
+        <img src="images/img_04.webp" width="280" height="340" alt="Clean Connect Mitarbeiterin bei der Oberflaechenreinigung im Harley-Davidson Showroom" loading="lazy">
         <div class="ccard-label"><span>Showroom Köln</span><strong>Oberflächenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_05.webp" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
+        <img src="images/img_05.webp" width="280" height="340" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
         <div class="ccard-label"><span>Wohnanlage Köln</span><strong>Treppenhausreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_06.webp" alt="Clean Connect Team mit Geschaeftsfuehrer im Harley-Davidson Store Koeln" loading="lazy">
+        <img src="images/img_06.webp" width="280" height="340" alt="Clean Connect Team mit Geschaeftsfuehrer im Harley-Davidson Store Koeln" loading="lazy">
         <div class="ccard-label"><span>Harley-Davidson Köln-Bonn</span><strong>Eingespieltes Team</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_07.webp" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
+        <img src="images/img_07.webp" width="280" height="340" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
         <div class="ccard-label"><span>Unterwegs in Köln</span><strong>Immer im Einsatz</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_01.webp" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
+        <img src="images/img_01.webp" width="280" height="340" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
         <div class="ccard-label"><span>Harley-Davidson Store</span><strong>Referenzobjekt Köln-Bonn</strong></div>
       </div>
     </div>
@@ -767,7 +773,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <p class="sp fu d1">Von der regelmäßigen Unterhaltsreinigung bis zur anspruchsvollen Sonderreinigung: Wir decken das gesamte Spektrum gewerblicher Gebäudereinigung ab.</p>
 
     <div class="sonder-grid fu d1">
-      <div class="sonder-img"><img src="images/img_10.webp" alt="Clean Connect Teamleiter für Grund- und Sonderreinigung in Köln" title="Gewerbliche Reinigung Köln" loading="lazy"></div>
+      <div class="sonder-img"><img src="images/img_10.webp" width="540" height="380" alt="Clean Connect Teamleiter für Grund- und Sonderreinigung in Köln" title="Gewerbliche Reinigung Köln" loading="lazy"></div>
       <div class="sonder-text">
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;">
