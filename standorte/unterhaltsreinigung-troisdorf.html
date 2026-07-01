@@ -35,7 +35,7 @@
       "@type": "FAQPage",
       "mainEntity": [
         {"@type": "Question", "name": "Wie oft sollte eine Unterhaltsreinigung in Troisdorf stattfinden?", "acceptedAnswer": {"@type": "Answer", "text": "Das hängt von der Nutzung ab. Büros mit viel Publikumsverkehr reinigen wir meist 2 bis 5 mal pro Woche, klassische Büroflächen oft 1 bis 2 mal wöchentlich. Wir erstellen nach einer kurzen Besichtigung einen Vorschlag, der zu Nutzung und Budget passt."}},
-        {"@type": "Question", "name": "Was kostet Unterhaltsreinigung in Troisdorf?", "acceptedAnswer": {"@type": "Answer", "text": "Der Preis richtet sich nach Fläche, Intervall und Zustand der Räume. Als Richtwert kalkulieren wir meist zwischen 15 und 25 Euro pro Stunde je nach Umfang. Ein konkretes Angebot bekommen Sie nach einer kurzen Vor-Ort-Besichtigung oder Fotos der Fläche."}},
+        {"@type": "Question", "name": "Was kostet Unterhaltsreinigung in Troisdorf?", "acceptedAnswer": {"@type": "Answer", "text": "Wir kalkulieren mit einem Stundensatz von 32 Euro netto. Wie viele Stunden pro Einsatz benötigt werden, hängt von Fläche und Zustand der Räume ab. Ein konkretes Angebot mit fester Zeitschätzung bekommen Sie nach einer kurzen Vor-Ort-Besichtigung oder anhand von Fotos der Fläche."}},
         {"@type": "Question", "name": "Arbeiten Sie mit eigenem Personal oder Subunternehmern?", "acceptedAnswer": {"@type": "Answer", "text": "Wir arbeiten überwiegend mit eigenem, festem Personal. So kennt das Team Ihre Immobilie und es gibt keinen ständigen Wechsel der Reinigungskräfte."}},
         {"@type": "Question", "name": "Reinigen Sie auch außerhalb der Geschäftszeiten?", "acceptedAnswer": {"@type": "Answer", "text": "Ja, die meisten unserer Kunden bevorzugen Reinigung früh morgens, abends oder am Wochenende, damit der laufende Betrieb nicht gestört wird. Wir richten uns nach Ihren Öffnungszeiten."}},
         {"@type": "Question", "name": "Gibt es einen Mindestvertrag oder eine Kündigungsfrist?", "acceptedAnswer": {"@type": "Answer", "text": "Wir bieten flexible Verträge an, meist mit kurzer Kündigungsfrist. Ein starres Laufzeit-Korsett brauchen Sie bei uns nicht, wir wollen durch Leistung überzeugen, nicht durch Vertragsbindung."}}
@@ -89,18 +89,36 @@ details p{margin-top:10px;font-size:14px;color:var(--mu2)}
 .cta-box p{color:var(--mu2);margin-bottom:20px;font-size:14px}
 footer{padding:30px 20px;text-align:center;color:var(--mu);font-size:12.5px;border-top:1px solid var(--br)}
 footer a{color:var(--mu2)}
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--teal);color:#000;padding:10px 16px;border-radius:8px;font-weight:700;z-index:999}
+.skip-link:focus{left:16px;top:16px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.eco-badge{display:inline-flex;align-items:center;gap:8px;background:var(--td);border:1px solid var(--br2);border-radius:100px;padding:7px 14px;font-size:12.5px;color:var(--mu2);margin-bottom:18px}
+.eco-badge svg{width:14px;height:14px;color:var(--teal);flex-shrink:0}
+.map-wrap{border-radius:14px;overflow:hidden;border:1px solid var(--br);margin-top:16px}
+.map-wrap iframe{filter:invert(90%) hue-rotate(180deg) brightness(1.05) contrast(0.9);width:100%;height:260px;border:0;display:block}
+.media-box{border-radius:14px;overflow:hidden;border:1px solid var(--br);background:var(--s1)}
+.media-box video,.media-box img{width:100%;max-height:380px;object-fit:cover;display:block}
+.media-cap{padding:12px 16px;font-size:13px;color:var(--mu2)}
+.portrait-card{display:flex;align-items:center;gap:16px;background:var(--s1);border:1px solid var(--br2);border-radius:14px;padding:16px}
+.portrait-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex-shrink:0}
+.portrait-card h3{font-size:15px;color:#fff;margin-bottom:2px}
+.portrait-card p{font-size:12.5px;color:var(--mu2);margin-bottom:6px}
+.portrait-card a{font-size:13px;color:var(--teal);font-weight:600}
 </style>
 </head>
 <body>
-<nav>
-  <a href="../index.html"><img src="../images/img-001.webp" alt="Clean Connect Logo"></a>
+<a href="#main" class="skip-link">Zum Inhalt springen</a>
+<nav aria-label="Hauptnavigation">
+  <a href="../index.html"><img src="../images/img-001.webp" alt="Clean Connect Logo" width="120" height="38"></a>
   <a class="back" href="../standorte.html">&larr; Alle Leistungen &amp; Standorte</a>
 </nav>
 
+<main id="main">
 <div class="wrap hero">
   <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>Regelmäßige Pflegereinigung</div>
   <h1>Unterhaltsreinigung in <em>Troisdorf</em></h1>
   <p class="lead">Ob Bürokomplex, Praxis oder Ladenlokal: In Troisdorf übernimmt Clean Connect die laufende Unterhaltsreinigung mit festen Reinigungskräften statt wechselndem Personal. Das Ergebnis sind gleichbleibende Qualität und ein Ansprechpartner, der die Immobilie tatsächlich kennt.</p>
+  <div class="eco-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>Reinigungsmittel mit dem Umweltzeichen Blauer Engel</div>
   <div class="cta-row">
     <a href="../index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>
     <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
@@ -133,12 +151,17 @@ footer a{color:var(--mu2)}
 <section>
   <h2>Troisdorf im Einsatzgebiet</h2>
   <div class="local"><p>Südöstlich von Köln Richtung Bonn, gut angebunden über die A59, regelmäßig angefragt für Gewerbeflächen.</p></div>
+  <div class="map-wrap"><iframe src="https://maps.google.com/maps?q=Troisdorf%2C+Deutschland&z=12&output=embed" title="Kartenausschnitt Troisdorf" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
 </section>
+
+
+
+
 
 <section>
   <h2>Häufige Fragen zu unterhaltsreinigung in Troisdorf</h2>
   <details><summary>Wie oft sollte eine Unterhaltsreinigung in Troisdorf stattfinden?</summary><p>Das hängt von der Nutzung ab. Büros mit viel Publikumsverkehr reinigen wir meist 2 bis 5 mal pro Woche, klassische Büroflächen oft 1 bis 2 mal wöchentlich. Wir erstellen nach einer kurzen Besichtigung einen Vorschlag, der zu Nutzung und Budget passt.</p></details>
-  <details><summary>Was kostet Unterhaltsreinigung in Troisdorf?</summary><p>Der Preis richtet sich nach Fläche, Intervall und Zustand der Räume. Als Richtwert kalkulieren wir meist zwischen 15 und 25 Euro pro Stunde je nach Umfang. Ein konkretes Angebot bekommen Sie nach einer kurzen Vor-Ort-Besichtigung oder Fotos der Fläche.</p></details>
+  <details><summary>Was kostet Unterhaltsreinigung in Troisdorf?</summary><p>Wir kalkulieren mit einem Stundensatz von 32 Euro netto. Wie viele Stunden pro Einsatz benötigt werden, hängt von Fläche und Zustand der Räume ab. Ein konkretes Angebot mit fester Zeitschätzung bekommen Sie nach einer kurzen Vor-Ort-Besichtigung oder anhand von Fotos der Fläche.</p></details>
   <details><summary>Arbeiten Sie mit eigenem Personal oder Subunternehmern?</summary><p>Wir arbeiten überwiegend mit eigenem, festem Personal. So kennt das Team Ihre Immobilie und es gibt keinen ständigen Wechsel der Reinigungskräfte.</p></details>
   <details><summary>Reinigen Sie auch außerhalb der Geschäftszeiten?</summary><p>Ja, die meisten unserer Kunden bevorzugen Reinigung früh morgens, abends oder am Wochenende, damit der laufende Betrieb nicht gestört wird. Wir richten uns nach Ihren Öffnungszeiten.</p></details>
   <details><summary>Gibt es einen Mindestvertrag oder eine Kündigungsfrist?</summary><p>Wir bieten flexible Verträge an, meist mit kurzer Kündigungsfrist. Ein starres Laufzeit-Korsett brauchen Sie bei uns nicht, wir wollen durch Leistung überzeugen, nicht durch Vertragsbindung.</p></details>
@@ -163,6 +186,7 @@ footer a{color:var(--mu2)}
   </div>
 </section>
 </div>
+</main>
 
 <footer>
   <a href="../index.html">Clean Connect Gebäudereinigung UG</a> &middot;
