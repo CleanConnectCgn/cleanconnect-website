@@ -11,6 +11,11 @@ RewriteRule ^$ /cleanconnect/ [L,R=301]
 RewriteCond %{HTTP_HOST} ^www\.cleanconnect\.de [NC]
 RewriteRule ^(.*)$ https://cleanconnect.de/$1 [L,R=301]
 
+# Gzip-Kompression fuer schnellere Uebertragung
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
+</IfModule>
+
 # Cache-Control for static assets
 <IfModule mod_expires.c>
   ExpiresActive On
