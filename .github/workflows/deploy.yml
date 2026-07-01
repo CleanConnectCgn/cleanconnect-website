@@ -32,6 +32,15 @@ jobs:
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
             put -O $SFTP_DIR standorte.html;
+            put -O $SFTP_DIR favicon.ico;
+            put -O $SFTP_DIR favicon-16x16.png;
+            put -O $SFTP_DIR favicon-32x32.png;
+            put -O $SFTP_DIR favicon-48x48.png;
+            put -O $SFTP_DIR apple-touch-icon.png;
+            put -O $SFTP_DIR logo.png;
+            put -O $SFTP_DIR video_harley.mp4;
+            put -O $SFTP_DIR video_hochhaus.mp4;
+            put -O $SFTP_DIR video_rettig.mp4;
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
           "
