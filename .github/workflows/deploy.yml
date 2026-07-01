@@ -31,5 +31,7 @@ jobs:
             put -O $SFTP_DIR index.html;
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
+            put -O $SFTP_DIR standorte.html;
             mirror -R --parallel=5 images $SFTP_DIR/images;
+            mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
           "
