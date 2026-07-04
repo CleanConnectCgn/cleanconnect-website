@@ -251,6 +251,9 @@ nav.s{background:rgba(17,17,17,.93);backdrop-filter:blur(20px);-webkit-backdrop-
 .hero-text h1 em{font-style:normal;color:var(--teal)}
 .hero-text p{font-size:clamp(14px,1.5vw,16px);color:var(--mu2);max-width:440px;margin-bottom:24px;line-height:1.75}
 .hbtns{display:flex;gap:10px;flex-wrap:wrap}
+.hchecks{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+.hcheck{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--mu2)}
+.hcheck-ic{display:flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;border-radius:50%;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.4);color:#00c5c4;font-size:12px;font-weight:700}
 .btn{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-weight:600;font-size:14px;padding:12px 20px;border-radius:8px;border:none;transition:transform .2s,opacity .2s,box-shadow .2s}
 .btn:active{transform:scale(.97)}
 .btn-p{background:var(--teal);color:#000}
@@ -642,12 +645,15 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="hero-text">
       <div class="hlabel fu in"><span class="hldot"></span>Reinigungsunternehmen &middot; Köln</div>
       <div class="lw in"><h1 class="word-reveal in">Gebäudereinigung Köln &amp; Umkreis. <em>Verlässlich, persönlich, ohne Kompromisse.</em></h1></div>
-      <p class="fu d1 in">Verlässlich für Hausverwaltungen, Büros und Gewerbeobjekte in Köln und Umgebung. Persönlicher Ansprechpartner, gleichbleibendes Personal, dokumentierte Qualitätskontrolle, seit 2024.</p>
+      <div class="hchecks fu d1 in">
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>Persönlicher Ansprechpartner</div>
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>100% deutschsprachig</div>
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>Unabhängige Qualitätskontrollen</div>
+      </div>
       <div class="hbtns fu d2 in">
         <a href="#kontakt" class="btn btn-p">Kostenloses Angebot &#8594;</a>
-        <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
+        <a href="tel:+4915792492755" class="btn btn-g">&#128222; +49 1579 2492755</a>
       </div>
-      <p class="fu d2 in" style="font-size:13px;color:var(--mu2);margin-top:10px">Oder direkt Julian erreichen: <a href="tel:+4915792492755" style="color:#00c5c4;text-decoration:none">+49 1579 2492755</a></p>
       <div class="hstats fu d3 in">
         <div class="hstat"><div class="hstat-n" data-count="20" data-suf="+">0</div><div class="hstat-l">Feste Mitarbeiter</div></div>
         <div class="hstat"><div class="hstat-n" data-count="24" data-suf="h">0</div><div class="hstat-l">Angebot erhalten</div></div>
