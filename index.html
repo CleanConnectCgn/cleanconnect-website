@@ -251,6 +251,9 @@ nav.s{background:rgba(17,17,17,.93);backdrop-filter:blur(20px);-webkit-backdrop-
 .hero-text h1 em{font-style:normal;color:var(--teal)}
 .hero-text p{font-size:clamp(14px,1.5vw,16px);color:var(--mu2);max-width:440px;margin-bottom:24px;line-height:1.75}
 .hbtns{display:flex;gap:10px;flex-wrap:wrap}
+.hchecks{display:flex;flex-direction:column;gap:10px;margin:18px 0}
+.hcheck{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--mu2)}
+.hcheck-ic{display:flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;border-radius:50%;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.4);color:#00c5c4;font-size:12px;font-weight:700}
 .btn{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-weight:600;font-size:14px;padding:12px 20px;border-radius:8px;border:none;transition:transform .2s,opacity .2s,box-shadow .2s}
 .btn:active{transform:scale(.97)}
 .btn-p{background:var(--teal);color:#000}
@@ -466,8 +469,10 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     button:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
 
     /* Photo-to-info fade */
-    .card-photo-fade{position:absolute;top:0;right:-1px;width:48px;height:100%;background:linear-gradient(to right,transparent,var(--s1));pointer-events:none;z-index:2}
-    .card-photo-fade-bg{position:absolute;top:0;right:-1px;width:48px;height:100%;background:linear-gradient(to right,transparent,var(--bg));pointer-events:none;z-index:2}
+    .card-photo-fade{position:absolute;top:0;right:-1px;width:75px;height:100%;background:linear-gradient(to right,transparent,var(--s1));pointer-events:none;z-index:2}
+    .card-photo-fade::after{content:'';position:absolute;left:-75px;bottom:0;width:calc(100% + 75px);height:35%;background:linear-gradient(to top,var(--s1),transparent);pointer-events:none}
+    .card-photo-fade-bg{position:absolute;top:0;right:-1px;width:75px;height:100%;background:linear-gradient(to right,transparent,var(--bg));pointer-events:none;z-index:2}
+    .card-photo-fade-bg::after{content:'';position:absolute;left:-75px;bottom:0;width:calc(100% + 75px);height:35%;background:linear-gradient(to top,var(--bg),transparent);pointer-events:none}
 
     /* Video cards */
     .vid-scroll{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-height:420px}
@@ -640,10 +645,14 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="hero-text">
       <div class="hlabel fu in"><span class="hldot"></span>Reinigungsunternehmen &middot; Köln</div>
       <div class="lw in"><h1 class="word-reveal in">Gebäudereinigung Köln &amp; Umkreis. <em>Verlässlich, persönlich, ohne Kompromisse.</em></h1></div>
-      <p class="fu d1 in">Verlässlich für Hausverwaltungen, Büros und Gewerbeobjekte in Köln und Umgebung. Persönlicher Ansprechpartner, gleichbleibendes Personal, dokumentierte Qualitätskontrolle, seit 2024.</p>
+      <div class="hchecks fu d1 in">
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>Persönlicher Ansprechpartner</div>
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>100% deutschsprachig</div>
+        <div class="hcheck"><span class="hcheck-ic">&#10003;</span>Unabhängige Qualitätskontrollen</div>
+      </div>
       <div class="hbtns fu d2 in">
         <a href="#kontakt" class="btn btn-p">Kostenloses Angebot &#8594;</a>
-        <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
+        <a href="tel:+4915792492755" class="btn btn-g">&#128222; +49 1579 2492755</a>
       </div>
       <div class="hstats fu d3 in">
         <div class="hstat"><div class="hstat-n" data-count="20" data-suf="+">0</div><div class="hstat-l">Feste Mitarbeiter</div></div>
@@ -831,8 +840,6 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           <div style="width:130px;min-width:130px;flex-shrink:0;position:relative;overflow:hidden;background:#0a1a2a;">
             <img loading="lazy" height="500" width="500" src="images/img-002.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" alt="Julian Mühlhoff">
 <div class="card-photo-fade"></div>
-
-<div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,80,80,.08) 0%,rgba(10,30,60,.05) 60%,rgba(0,0,0,0) 100%);pointer-events:none;mix-blend-mode:multiply;"></div><div style="position:absolute;top:0;right:0;width:30px;height:100%;background:linear-gradient(to right,transparent,rgba(0,197,196,.05));pointer-events:none;"></div>
           </div>
           <div style="flex:1;padding:22px 18px;">
             <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px">Kundenbetreuung</div>
@@ -848,7 +855,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           <div class="cb2"><div class="ci2"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="cl2">Reaktionszeit</div><div class="cv2">Innerhalb 24 Stunden</div></div></div>
         </div>
       </div>
-      <form class="kform fr2 d1" id="contactForm">
+      <form class="kform fr2 d1" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <div class="frow">
           <div class="ffield"><label>Name *</label><input type="text" name="name" placeholder="Max Mustermann"></div>
           <div class="ffield"><label>Firma</label><input type="text" name="firma" placeholder="Mustermann GmbH"></div>
@@ -864,7 +871,9 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="ffield"><label>Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
         <input type="hidden" name="access_key" value="a1baeef9-3b69-4ddf-b187-aab554abb5ea">
         <input type="hidden" name="subject" value="Neue Anfrage über cleanconnect.de">
-        <button type="submit" class="btn btn-p" style="width:100%;margin-top:6px;justify-content:center;font-size:15px;padding:14px">Angebot anfordern &#8594;</button>
+        <button type="submit" id="fsub" class="btn btn-p" style="width:100%;margin-top:6px;justify-content:center;font-size:15px;padding:14px">Angebot anfordern &#8594;</button>
+        <p id="form-success" style="display:none;font-size:13px;color:#00c5c4;text-align:center;margin-top:10px">✓ Vielen Dank, Ihre Anfrage ist bei uns eingegangen. Wir melden uns innerhalb von 24 Stunden.</p>
+        <p id="form-error" style="display:none;font-size:13px;color:#ff6b6b;text-align:center;margin-top:10px"></p>
         <p style="font-size:11px;color:var(--mu);text-align:center;margin-top:4px">Mit dem Absenden stimmen Sie unserer Datenschutzerklärung zu. Ihre Daten werden vertraulich behandelt.</p>
       </form>
       </div>
@@ -888,11 +897,9 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
         <div class="fynn-card fu d2" style="margin-top:28px;display:flex;align-items:stretch;background:var(--bg);border:1px solid rgba(0,197,196,.12);border-radius:16px;overflow:hidden;position:relative;">
 
-          <div style="width:110px;min-width:110px;flex-shrink:0;position:relative;overflow:hidden;background:#0a1a2a;">
-            <img loading="lazy" height="651" width="667" src="images/img-003.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" alt="Fynn Laubkermeier">
+          <div style="width:130px;min-width:130px;flex-shrink:0;position:relative;overflow:hidden;background:#0a1a2a;">
+            <img loading="lazy" height="500" width="500" src="images/img-003.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" alt="Fynn Laubkermeier">
 <div class="card-photo-fade-bg"></div>
-
-<div style="position:absolute;inset:0;background:linear-gradient(160deg,rgba(0,160,160,.55) 0%,rgba(15,60,100,.35) 55%,rgba(0,0,0,0) 100%);pointer-events:none;mix-blend-mode:multiply;"></div><div style="position:absolute;top:0;right:0;width:30px;height:100%;background:linear-gradient(to right,transparent,rgba(0,197,196,.08));pointer-events:none;"></div>
           </div>
           <div style="flex:1;padding:20px 16px;">
             <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:6px">Geschäftsführer</div>
@@ -1053,24 +1060,26 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <script>
 
 /* ── Kontaktformular Web3Forms ──────────── */
-async function submitForm(){
+document.getElementById('contactForm').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const form = e.target;
   const btn = document.getElementById('fsub');
   const successEl = document.getElementById('form-success');
   const errorEl = document.getElementById('form-error');
-  const form = document.getElementById('contactForm');
 
-  // Basic validation
-  const name = form.querySelector('input[placeholder="Max Mustermann"]').value.trim();
-  const tel  = form.querySelector('input[type="tel"]').value.trim();
+  const name = form.querySelector('input[name="name"]').value.trim();
+  const tel  = form.querySelector('input[name="telefon"]').value.trim();
   if(!name || !tel){
     errorEl.textContent = 'Bitte Name und Telefon ausfüllen.';
-    errorEl.style.display='block';
+    errorEl.style.display = 'block';
+    successEl.style.display = 'none';
     return;
   }
 
   btn.disabled = true;
   btn.textContent = 'Wird gesendet …';
   errorEl.style.display = 'none';
+  successEl.style.display = 'none';
 
   try {
     const formData = new FormData(form);
@@ -1082,17 +1091,18 @@ async function submitForm(){
     if(data.success){
       successEl.style.display = 'block';
       form.reset();
-      btn.textContent = '✓ Gesendet';
+      btn.textContent = 'Angebot anfordern &#8594;'.replace('&#8594;','→');
     } else {
-      throw new Error(data.message);
+      throw new Error(data.message || 'Unbekannter Fehler');
     }
-  } catch(e){
+  } catch(err){
     errorEl.textContent = 'Fehler beim Senden. Bitte ruf uns direkt an: 0221 95490625';
     errorEl.style.display = 'block';
+    btn.textContent = 'Angebot anfordern &#8594;'.replace('&#8594;','→');
+  } finally {
     btn.disabled = false;
-    btn.textContent = 'Kostenloses Angebot anfordern →';
   }
-}
+});
 
 /* ── Scroll progress ─────────────── */
 var prog=document.getElementById('prog');
