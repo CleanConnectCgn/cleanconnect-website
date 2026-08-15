@@ -34,6 +34,8 @@ jobs:
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
             put -O $SFTP_DIR standorte.html;
+            put -O $SFTP_DIR broschuere.html;
+            put -O $SFTP_DIR CleanConnect_Broschuere.pdf;
             put -O $SFTP_DIR favicon.ico;
             put -O $SFTP_DIR favicon-16x16.png;
             put -O $SFTP_DIR favicon-32x32.png;
