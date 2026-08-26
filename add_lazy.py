@@ -9,7 +9,7 @@ HTML_FILE = "index.html"
 # Known dimensions for images missing width/height
 DIMS = {
     "images/img-001.webp": (500, 500),
-    "images/img-002.webp": (500, 500),
+    "images/img-002.jpg": (500, 500),
     "images/img-003.webp": (667, 651),
     "images/img-004.webp": (500, 500),
     "images/img_08.webp":  (800, 449),
