@@ -33,6 +33,7 @@ jobs:
             put -O $SFTP_DIR index.html;
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
+            put -O $SFTP_DIR agb.html;
             put -O $SFTP_DIR standorte.html;
             put -O $SFTP_DIR broschuere.html;
             put -O $SFTP_DIR CleanConnect_Broschuere.pdf;
