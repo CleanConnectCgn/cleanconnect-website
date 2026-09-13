@@ -7,8 +7,7 @@
 <meta name="description" content="Allgemeine Geschäftsbedingungen der Clean Connect Gebäudereinigung UG (haftungsbeschränkt), Köln.">
 <meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://cleanconnect.de/agb.html">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="fonts.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#111;--s1:#1a1a1a;--br:#2a2a2a;--teal:#00C5C4;--tx:#f0f0f0;--mu:#777;--mu2:#999}
@@ -20,7 +19,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:0 28px
 .nb a:hover{color:var(--teal)}
 main{max-width:720px;margin:0 auto;padding:60px 24px 100px}
 h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:32px;font-weight:800;margin-bottom:8px;overflow-wrap:break-word;hyphens:auto}
-.sub{font-size:13px;color:var(--mu);margin-bottom:48px}
+.sub{font-size:13px;color:var(--mu);margin-bottom:40px}
 h2{font-family:'Plus Jakarta Sans',sans-serif;font-size:16px;font-weight:700;color:var(--teal);margin:36px 0 10px;letter-spacing:.02em}
 p,li{color:var(--mu2);line-height:1.75;margin-bottom:8px}
 ul{margin:8px 0 8px 20px}
@@ -29,11 +28,14 @@ a:hover{text-decoration:underline}
 strong{color:var(--tx);font-weight:600}
 .divider{height:1px;background:var(--br);margin:40px 0}
 .box{background:var(--s1);border:1px solid var(--br);border-radius:8px;padding:20px 22px;margin-top:12px}
-.box p{margin-bottom:0}
+.box p:last-child{margin-bottom:0}
+.toc{background:var(--s1);border:1px solid var(--br);border-radius:8px;padding:18px 22px;margin-bottom:36px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{font-size:14px;margin-bottom:3px}
 footer{text-align:center;padding:32px;font-size:12px;color:var(--mu);border-top:1px solid var(--br)}
 footer a{color:var(--mu);margin:0 10px}
 footer a:hover{color:var(--teal)}
-@media(max-width:520px){main{padding:44px 20px 80px}h1{font-size:25px}.sub{margin-bottom:36px}}
+@media(max-width:520px){main{padding:44px 20px 80px}h1{font-size:25px}}
 </style>
 </head>
 <body>
@@ -45,89 +47,137 @@ footer a:hover{color:var(--teal)}
   <h1>Allgemeine Geschäftsbedingungen</h1>
   <p class="sub">Clean Connect Gebäudereinigung UG (haftungsbeschränkt) · Stand: 14.09.2026</p>
 
-  <h2>§ 1 Geltungsbereich</h2>
-  <p>(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) gelten für alle Reinigungs- und Dienstleistungsverträge zwischen der Clean Connect Gebäudereinigung UG (haftungsbeschränkt), Berliner Straße 957, 51069 Köln (nachfolgend „Auftragnehmer“ oder „wir“), und ihren Auftraggebern (nachfolgend „Kunde“), soweit nicht ausdrücklich etwas anderes vereinbart wird.</p>
-  <p>(2) Diese AGB gelten sowohl gegenüber Verbrauchern im Sinne des § 13 BGB als auch gegenüber Unternehmern im Sinne des § 14 BGB. Abweichende Regelungen für Verbraucher bzw. Unternehmer sind in den jeweiligen Bestimmungen gesondert gekennzeichnet.</p>
+  <div class="toc">
+    <ol>
+      <li><a href="#p1">Geltungsbereich</a></li>
+      <li><a href="#p2">Vertragsschluss und Vorrang individueller Vereinbarungen</a></li>
+      <li><a href="#p3">Leistungsumfang und Leistungsarten</a></li>
+      <li><a href="#p4">Nebenleistungen und besondere Leistungen</a></li>
+      <li><a href="#p5">Vertragslaufzeit und Kündigung</a></li>
+      <li><a href="#p6">Widerrufsrecht für Verbraucher</a></li>
+      <li><a href="#p7">Preise und Zahlungsbedingungen</a></li>
+      <li><a href="#p8">Mitwirkungspflichten des Kunden</a></li>
+      <li><a href="#p9">Schlüssel und Zugangsmittel</a></li>
+      <li><a href="#p10">Ausführung, Prüfungs- und Hinweispflichten</a></li>
+      <li><a href="#p11">Mängel und Nacherfüllung</a></li>
+      <li><a href="#p12">Haftung</a></li>
+      <li><a href="#p13">Terminabsagen und Ausfälle</a></li>
+      <li><a href="#p14">Abwerbeverbot</a></li>
+      <li><a href="#p15">Datenschutz und Vertraulichkeit</a></li>
+      <li><a href="#p16">Schlussbestimmungen</a></li>
+    </ol>
+  </div>
+
+  <h2 id="p1">§ 1 Geltungsbereich</h2>
+  <p>(1) Diese Allgemeinen Geschäftsbedingungen (nachfolgend „AGB“) gelten für alle Reinigungs- und Dienstleistungsverträge zwischen der Clean Connect Gebäudereinigung UG (haftungsbeschränkt), Berliner Straße 957, 51069 Köln (nachfolgend „Auftragnehmer“ oder „wir“), und ihren Auftraggebern (nachfolgend „Kunde“).</p>
+  <p>(2) Diese AGB gelten sowohl gegenüber Verbrauchern im Sinne des § 13 BGB als auch gegenüber Unternehmern im Sinne des § 14 BGB. Bestimmungen, die nur für eine der beiden Gruppen gelten, sind ausdrücklich gekennzeichnet.</p>
   <p>(3) Entgegenstehende oder von diesen AGB abweichende Bedingungen des Kunden erkennen wir nicht an, es sei denn, wir hätten ihrer Geltung ausdrücklich in Textform zugestimmt.</p>
-  <p>(4) Diese AGB gelten auch für alle künftigen gleichartigen Geschäfte mit demselben Kunden, ohne dass wir hierauf erneut hinweisen müssten.</p>
+  <p>(4) Diese AGB gelten auch für künftige gleichartige Geschäfte mit demselben Kunden, ohne dass wir hierauf erneut hinweisen müssten.</p>
 
-  <h2>§ 2 Vertragsschluss</h2>
-  <p>(1) Die Darstellung unserer Leistungen auf der Website cleanconnect.de stellt kein rechtlich bindendes Angebot dar, sondern eine unverbindliche Aufforderung an den Kunden, seinerseits eine Anfrage zu stellen.</p>
-  <p>(2) Der Kunde kann über unsere Kontaktformulare, per E-Mail, telefonisch oder persönlich eine Anfrage stellen. Auf dieser Grundlage erstellen wir ein individuelles Angebot in Textform.</p>
-  <p>(3) Der Vertrag kommt zustande, wenn der Kunde unser Angebot annimmt – schriftlich, in Textform (z.&nbsp;B. per E-Mail), mündlich oder durch schlüssiges Verhalten (z.&nbsp;B. Gewährung des Zutritts zum vereinbarten Termin). Wir bestätigen den Auftrag in der Regel gesondert in Textform.</p>
-  <p>(4) Nebenabreden, Änderungen und Ergänzungen des Vertrags bedürfen der Textform (E-Mail genügt).</p>
-
-  <h2>§ 3 Leistungsumfang</h2>
-  <p>(1) Art, Umfang, Häufigkeit und Ausführungszeiten der Reinigungsleistungen ergeben sich aus dem jeweiligen Angebot, dem zugehörigen Leistungsverzeichnis bzw. der Auftragsbestätigung.</p>
-  <p>(2) Wir unterscheiden insbesondere:</p>
+  <h2 id="p2">§ 2 Vertragsschluss und Vorrang individueller Vereinbarungen</h2>
+  <p>(1) Die Darstellung unserer Leistungen auf dieser Website stellt kein rechtlich bindendes Angebot dar, sondern eine unverbindliche Aufforderung an den Kunden, seinerseits eine Anfrage zu stellen.</p>
+  <p>(2) Der Kunde kann über unser Kontaktformular, per E-Mail, telefonisch oder persönlich anfragen. Auf dieser Grundlage erstellen wir ein auf das jeweilige Objekt zugeschnittenes, unverbindliches Angebot.</p>
+  <p>(3) Der Vertrag kommt je nach Auftragsart auf einem der folgenden Wege zustande:</p>
   <ul>
-    <li><strong>Einmalige Reinigungsleistungen</strong> (z.&nbsp;B. Grundreinigung, Umzugs- und Bauschlussreinigung, Glas- und Fensterreinigung, Sonderreinigung), die mit vollständiger Ausführung erbracht sind;</li>
-    <li><strong>Wiederkehrende Reinigungsleistungen</strong> (Dauerauftrag, z.&nbsp;B. Unterhaltsreinigung von Büro-, Gewerbe-, Praxis- und Objektflächen sowie Treppenhausreinigung) auf Grundlage eines vereinbarten Reinigungsplans mit festgelegter Frequenz;</li>
-    <li><strong>Saisonale Leistungen</strong> (insbesondere Winterdienst), deren Leistungszeitraum, Einsatzauslöser und Reaktionszeiten sich aus dem jeweiligen Angebot ergeben.</li>
+    <li>durch Abschluss eines gesonderten, von beiden Seiten <strong>unterzeichneten Reinigungs- oder Dienstleistungsvertrags</strong>; oder</li>
+    <li>durch <strong>Annahme unseres Angebots in Textform</strong>, insbesondere durch schriftliche Bestätigung per E-Mail; oder</li>
+    <li>durch schlüssiges Verhalten, etwa indem der Kunde die Leistung zum vereinbarten Termin entgegennimmt.</li>
   </ul>
-  <p>(3) Änderungen des Leistungsumfangs (z.&nbsp;B. zusätzliche Flächen, geänderte Intervalle) bedürfen einer gesonderten Vereinbarung und können eine Anpassung der Vergütung nach sich ziehen.</p>
-  <p>(4) Nicht Vertragsgegenstand sind Leistungen, die nicht ausdrücklich im Angebot bzw. der Auftragsbestätigung aufgeführt sind, insbesondere Reparatur- und Instandsetzungsarbeiten, Schädlingsbekämpfung sowie die Entsorgung von Sperr- und Sondermüll.</p>
-  <p>(5) Wir sind berechtigt, zur Leistungserbringung geeignete Subunternehmer einzusetzen. Unsere Verantwortlichkeit für die vertragsgemäße Leistungserbringung bleibt hiervon unberührt.</p>
+  <p>(4) <strong>Sämtliche wesentlichen Vertragsinhalte werden in jedem Einzelfall individuell besprochen, verhandelt und vereinbart.</strong> Das betrifft insbesondere den Leistungsumfang, die zu bearbeitenden Flächen, Reinigungsintervalle und Ausführungszeiten, die Vergütung, die Vertragslaufzeit sowie Kündigungsfristen. Maßgeblich ist stets die im unterzeichneten Vertrag, im Angebot, im Leistungsverzeichnis oder in der Auftragsbestätigung getroffene Regelung.</p>
+  <p>(5) <strong>Individuelle Vertragsabreden gehen diesen AGB vor (§ 305b BGB).</strong> Die nachfolgenden Bestimmungen gelten nur ergänzend, soweit im Einzelfall nichts Abweichendes vereinbart wurde.</p>
+  <p>(6) Nachträgliche Nebenabreden, Änderungen und Ergänzungen des Vertrags bedürfen der Textform (E-Mail genügt).</p>
 
-  <h2>§ 4 Vertragslaufzeit und Kündigung</h2>
-  <p>(1) Bei einmaligen Reinigungsleistungen endet der Vertrag mit vollständiger Ausführung der vereinbarten Leistung.</p>
-  <p>(2) Wiederkehrende Reinigungsleistungen ohne vereinbarte Mindestlaufzeit laufen auf unbestimmte Zeit. Der Vertrag kann von beiden Seiten mit einer Frist von einem Monat zum Monatsende in Textform gekündigt werden.</p>
-  <p>(3) Wird eine Mindestlaufzeit vereinbart, beträgt diese gegenüber Verbrauchern höchstens zwei Jahre. Nach Ablauf der Mindestlaufzeit verlängert sich der Vertrag auf unbestimmte Zeit, sofern er nicht mit einer Frist von einem Monat vor Ablauf der Mindestlaufzeit in Textform gekündigt wird. Das auf unbestimmte Zeit verlängerte Vertragsverhältnis kann jederzeit mit einer Frist von einem Monat in Textform gekündigt werden.</p>
-  <p>(4) Gegenüber Unternehmern können im Angebot bzw. in der Auftragsbestätigung abweichende Laufzeiten, Verlängerungs- und Kündigungsregelungen individuell vereinbart werden; diese gehen den Absätzen 2 und 3 vor. Dies gilt insbesondere für saisonale Leistungen (z.&nbsp;B. Winterdienst), bei denen Laufzeit und Kündigungsfristen an die jeweilige Saison gekoppelt sind.</p>
-  <p>(5) Das Recht beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund (§ 314 BGB) bleibt unberührt. Ein wichtiger Grund liegt für uns insbesondere vor bei nachhaltigem Zahlungsverzug des Kunden trotz Mahnung, bei erheblichen Verstößen gegen Mitwirkungspflichten nach § 6 oder bei Gefährdung der Sicherheit oder Gesundheit unserer Mitarbeiter.</p>
-  <p>(6) Jede Kündigung bedarf mindestens der Textform.</p>
-  <p>(7) <strong>Widerrufsrecht für Verbraucher:</strong> Schließt ein Verbraucher den Vertrag im Fernabsatz (ausschließlich unter Verwendung von Fernkommunikationsmitteln, z.&nbsp;B. Telefon oder E-Mail) oder außerhalb unserer Geschäftsräume, steht ihm ein gesetzliches Widerrufsrecht nach §§ 312g, 355 BGB zu. Einzelheiten ergeben sich aus der gesondert erteilten Widerrufsbelehrung nebst Muster-Widerrufsformular, die dem Verbraucher spätestens bei Vertragsschluss in Textform zur Verfügung gestellt wird. Soll die Leistung vor Ablauf der Widerrufsfrist beginnen, bedarf dies des ausdrücklichen Verlangens des Verbrauchers; in diesem Fall schuldet der Verbraucher bei wirksamem Widerruf Wertersatz für die bis dahin erbrachten Leistungen (§ 357 Abs. 8 BGB).</p>
+  <h2 id="p3">§ 3 Leistungsumfang und Leistungsarten</h2>
+  <p>(1) Art, Umfang, Häufigkeit und Ausführungszeiten der Leistungen ergeben sich aus dem Vertrag, dem Angebot bzw. dem zugehörigen Leistungs- oder Tätigkeitsverzeichnis.</p>
+  <p>(2) Soweit im Vertrag Leistungsarten ohne nähere Beschreibung benannt sind, gelten die Begriffsbestimmungen der Richtlinien für Vergabe und Abrechnung im Gebäudereiniger-Handwerk. Danach bedeutet insbesondere:</p>
+  <ul>
+    <li><strong>Unterhaltsreinigung:</strong> staubfrei, schlierenfrei und wasserfleckenfrei reinigen; Beseitigen von Flecken, soweit dies nach dem Stand der Technik durchführbar ist; Pflegen, Behandeln und Schützen der Flächen.</li>
+    <li><strong>Grundreinigung:</strong> Beseitigen von Pflegemittelfilmen und Verkrustungen; Beseitigen von Flecken, soweit nach dem Stand der Technik durchführbar; staubfrei, schlierenfrei und wasserfleckenfrei reinigen; Behandeln mit einem auf die Oberfläche abgestimmten Wischpflegemittel. Die Einpflege mit einem dauerhaften Schutzpflegefilm ist nicht enthalten und bedarf einer gesonderten Beauftragung.</li>
+    <li><strong>Bauschlussreinigung:</strong> staubfrei, schlierenfrei und wasserfleckenfrei reinigen; Beseitigen von Flecken, Schutzfolien, Markierungen und Etiketten, soweit nach dem Stand der Technik durchführbar; Behandeln mit einem auf die Oberfläche abgestimmten Pflegemittel.</li>
+    <li><strong>Glasreinigung:</strong> Reinigung der Verglasungen sowie – als ergänzender Auftrag – Reinigung und Pflege der Einfassungen, Rahmen, Bekleidungen, Zargen und Falze.</li>
+  </ul>
+  <p>(3) <strong>Saisonale Leistungen</strong> (insbesondere Winterdienst) richten sich nach dem jeweiligen Angebot; dort sind Leistungszeitraum, Einsatzauslöser, Bereitschaftszeiten und Reaktionszeiten geregelt.</p>
+  <p>(4) Nicht Vertragsgegenstand sind Leistungen, die nicht ausdrücklich vereinbart sind, insbesondere Reparatur- und Instandsetzungsarbeiten, Schädlingsbekämpfung sowie die Entsorgung von Sperr- und Sondermüll.</p>
+  <p>(5) Wir sind berechtigt, zur Leistungserbringung geeignete und fachkundige Subunternehmer einzusetzen. Unsere Verantwortlichkeit für die vertragsgemäße Leistungserbringung bleibt hiervon unberührt.</p>
 
-  <h2>§ 5 Preise und Zahlungsbedingungen</h2>
-  <p>(1) Es gelten die im jeweiligen Angebot bzw. in der Auftragsbestätigung genannten Preise. Preisangaben gegenüber Verbrauchern verstehen sich einschließlich der gesetzlichen Umsatzsteuer, Preisangaben gegenüber Unternehmern zuzüglich der jeweils geltenden gesetzlichen Umsatzsteuer.</p>
-  <p>(2) Bei einmaligen Leistungen ist die Vergütung nach Ausführung der Leistung fällig. Bei wiederkehrenden und saisonalen Leistungen erfolgt die Abrechnung in dem im Angebot vereinbarten Rhythmus, in der Regel monatlich.</p>
-  <p>(3) Rechnungen sind, sofern nicht abweichend vereinbart, innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig.</p>
+  <h2 id="p4">§ 4 Nebenleistungen und besondere Leistungen</h2>
+  <p>(1) Ohne gesonderte Vergütung erbringen wir die üblichen Nebenleistungen, insbesondere das Reinigen der uns überlassenen Abstellräume, das Abschließen der Türen nach Beendigung der Arbeiten sowie das Umstellen kleiner Einrichtungsgegenstände (z.&nbsp;B. Stühle, kleine Tische, Papierkörbe), soweit dies zur Durchführung der Reinigung erforderlich ist.</p>
+  <p>(2) Gesondert zu vereinbaren und zu vergüten sind besondere Leistungen, insbesondere das Umstellen größerer oder gefüllter Einrichtungsgegenstände (z.&nbsp;B. Schränke, gefüllte Regale, Schreibtische), das Aus- und Einräumen von Räumen für Grundreinigungen, das Beseitigen von Verstopfungen, Zementschleiern oder außergewöhnlichen Verschmutzungen sowie das Auf- und Abbauen von Gerüsten und Arbeitsbühnen über 2&nbsp;m Höhe.</p>
+  <p>(3) Verschmutzungen, die bei der Erbringung unserer Hauptleistung entstehen, beseitigen wir kostenfrei.</p>
+
+  <h2 id="p5">§ 5 Vertragslaufzeit und Kündigung</h2>
+  <p>(1) Vertragslaufzeit und Kündigungsfristen werden – wie in § 2 Abs. 4 beschrieben – individuell vereinbart. Die nachfolgenden Absätze gelten, soweit im Einzelfall nichts anderes geregelt ist.</p>
+  <p>(2) Bei einmaligen Reinigungsleistungen endet der Vertrag mit vollständiger Ausführung der vereinbarten Leistung.</p>
+  <p>(3) Wiederkehrende Reinigungsleistungen ohne vereinbarte Mindestlaufzeit laufen auf unbestimmte Zeit und können von beiden Seiten mit einer Frist von einem Monat zum Monatsende in Textform gekündigt werden.</p>
+  <p>(4) <strong>Gegenüber Verbrauchern</strong> gilt: Eine vereinbarte Mindestlaufzeit beträgt höchstens zwei Jahre. Nach Ablauf der Mindestlaufzeit verlängert sich der Vertrag auf unbestimmte Zeit, sofern er nicht mit einer Frist von einem Monat vor Ablauf der Mindestlaufzeit in Textform gekündigt wird. Das verlängerte Vertragsverhältnis kann jederzeit mit einer Frist von einem Monat in Textform gekündigt werden.</p>
+  <p>(5) <strong>Gegenüber Unternehmern</strong> können abweichende Laufzeiten, Verlängerungs- und Kündigungsregelungen vereinbart werden; diese gehen den Absätzen 3 und 4 vor. Das gilt insbesondere für saisonale Leistungen wie den Winterdienst, bei denen Laufzeit und Kündigungsfristen an die jeweilige Saison gekoppelt sind.</p>
+  <p>(6) Das Recht beider Parteien zur außerordentlichen Kündigung aus wichtigem Grund (§ 314 BGB) bleibt unberührt. Ein wichtiger Grund liegt für uns insbesondere vor bei nachhaltigem Zahlungsverzug trotz Mahnung, bei erheblichen Verstößen gegen Mitwirkungspflichten nach § 8 oder bei Gefährdung der Sicherheit oder Gesundheit unserer Mitarbeiter.</p>
+  <p>(7) Jede Kündigung bedarf mindestens der Textform.</p>
+
+  <h2 id="p6">§ 6 Widerrufsrecht für Verbraucher</h2>
+  <p>(1) Verbrauchern steht ein gesetzliches Widerrufsrecht zu, wenn der Vertrag außerhalb unserer Geschäftsräume (z.&nbsp;B. beim Kunden vor Ort) oder im Fernabsatz – also ausschließlich unter Verwendung von Fernkommunikationsmitteln wie Telefon oder E-Mail – geschlossen wurde (§§ 312g, 355 BGB).</p>
+  <p>(2) Die Einzelheiten einschließlich des Muster-Widerrufsformulars ergeben sich aus unserer <a href="widerruf.html">Widerrufsbelehrung</a>. Die Belehrung wird dem Verbraucher zusätzlich spätestens bei Vertragsschluss in Textform übermittelt.</p>
+  <p>(3) Soll die Leistung bereits vor Ablauf der Widerrufsfrist beginnen, bedarf dies des ausdrücklichen Verlangens des Verbrauchers. Widerruft der Verbraucher anschließend wirksam, schuldet er Wertersatz für die bis dahin erbrachten Leistungen (§ 357 Abs. 8 BGB).</p>
+  <p>(4) Das Widerrufsrecht erlischt bei einem Vertrag über Dienstleistungen, wenn wir die Leistung vollständig erbracht haben und mit der Ausführung erst begonnen haben, nachdem der Verbraucher dazu seine ausdrückliche Zustimmung gegeben und gleichzeitig seine Kenntnis davon bestätigt hat, dass er sein Widerrufsrecht bei vollständiger Vertragserfüllung verliert (§ 356 Abs. 4 BGB).</p>
+
+  <h2 id="p7">§ 7 Preise und Zahlungsbedingungen</h2>
+  <p>(1) Es gelten die individuell vereinbarten Preise aus dem Vertrag, dem Angebot oder der Auftragsbestätigung. Preisangaben gegenüber Verbrauchern verstehen sich einschließlich, Preisangaben gegenüber Unternehmern zuzüglich der gesetzlichen Umsatzsteuer.</p>
+  <p>(2) Bei einmaligen Leistungen ist die Vergütung nach Ausführung fällig. Bei wiederkehrenden und saisonalen Leistungen rechnen wir in dem vereinbarten Rhythmus ab, in der Regel monatlich.</p>
+  <p>(3) Rechnungen sind, soweit nicht anders vereinbart, innerhalb von 14 Tagen ab Rechnungsdatum ohne Abzug zur Zahlung fällig.</p>
   <p>(4) Bei Zahlungsverzug schulden Verbraucher Verzugszinsen in Höhe von fünf Prozentpunkten, Unternehmer in Höhe von neun Prozentpunkten über dem Basiszinssatz (§ 288 BGB). Die Geltendmachung eines weitergehenden Verzugsschadens bleibt vorbehalten.</p>
-  <p>(5) Ein Zurückbehaltungsrecht steht dem Kunden nur wegen Gegenansprüchen aus demselben Vertragsverhältnis zu. Die Aufrechnung ist nur mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen zulässig.</p>
-  <p>(6) Bei Dauerverträgen sind wir berechtigt, die vereinbarten Preise bei einer Änderung unserer Kosten – insbesondere Lohn-, Material-, Energie- oder Transportkosten sowie gesetzlicher Abgaben – angemessen anzupassen. Gegenüber Verbrauchern ist eine Preisanpassung frühestens vier Monate nach Vertragsschluss zulässig. Preisanpassungen kündigen wir mindestens sechs Wochen vor ihrem Wirksamwerden in Textform an. Erhöht sich der Preis um mehr als 5&nbsp;%, steht dem Kunden ein Sonderkündigungsrecht zum Zeitpunkt des Wirksamwerdens der Erhöhung zu; hierauf weisen wir in der Ankündigung gesondert hin.</p>
+  <p>(5) <strong>Anpassung bei Tariflohnerhöhungen:</strong> Die Preise für wiederkehrende Leistungen kalkulieren wir auf Grundlage der zum Zeitpunkt des Vertragsschlusses geltenden Tariflöhne und Lohnnebenkosten des Gebäudereiniger-Handwerks. Erhöhen sich diese durch einen neuen Tarifabschluss oder durch gesetzliche Änderungen (z.&nbsp;B. Mindestlohn, Sozialabgaben), sind wir berechtigt, die vereinbarten Preise in dem Verhältnis anzupassen, in dem sich der Lohnkostenanteil erhöht. Sinken die Kosten, sind wir zu einer entsprechenden Senkung verpflichtet.</p>
+  <p>(6) Anpassungen nach Absatz 5 kündigen wir mindestens sechs Wochen vor ihrem Wirksamwerden in Textform an und weisen die Berechnungsgrundlage aus. <strong>Gegenüber Verbrauchern</strong> ist eine Preisanpassung frühestens vier Monate nach Vertragsschluss zulässig; erhöht sich der Preis um mehr als 5&nbsp;%, steht dem Verbraucher ein Sonderkündigungsrecht zum Zeitpunkt des Wirksamwerdens zu, auf das wir in der Ankündigung gesondert hinweisen.</p>
+  <p>(7) Ein Zurückbehaltungsrecht steht dem Kunden nur wegen Gegenansprüchen aus demselben Vertragsverhältnis zu. Die Aufrechnung ist nur mit unbestrittenen oder rechtskräftig festgestellten Gegenforderungen zulässig.</p>
+  <p>(8) <strong>Gegenüber Unternehmern</strong> sind wir berechtigt, die Leistung nach erfolgloser Mahnung und angemessener Fristsetzung bis zum Ausgleich fälliger Forderungen zurückzuhalten. Wir kündigen dies vorher in Textform an.</p>
 
-  <h2>§ 6 Mitwirkungspflichten des Kunden</h2>
-  <p>(1) Der Kunde stellt sicher, dass die zu reinigenden Flächen und Räumlichkeiten zum vereinbarten Termin zugänglich sind, insbesondere durch rechtzeitige Bereitstellung von Schlüsseln, Zugangscodes oder persönlichen Einlass.</p>
-  <p>(2) Der Kunde stellt, soweit nicht abweichend vereinbart, Strom- und Wasseranschlüsse sowie einen Abstellplatz für Reinigungsgeräte unentgeltlich zur Verfügung.</p>
-  <p>(3) Der Kunde weist uns vor Beginn der Arbeiten auf besondere Gefahrenquellen, empfindliche Oberflächen und Materialien, technische Besonderheiten sowie auf Gegenstände von besonderem Wert hin. Unterbleibt ein solcher Hinweis, haften wir nicht für Schäden, die hierauf zurückzuführen sind.</p>
-  <p>(4) Wertsachen, Bargeld, Schmuck und vertrauliche Unterlagen sind vom Kunden so zu verwahren, dass sie während der Arbeiten nicht frei zugänglich sind.</p>
-  <p>(5) Bei Winterdienstleistungen stellt der Kunde sicher, dass die zu räumenden Flächen frei von Hindernissen (z.&nbsp;B. abgestellte Fahrzeuge oder Gegenstände) sind, soweit dies in seinem Einflussbereich liegt. Können Flächen aus diesem Grund nicht oder nur teilweise bearbeitet werden, entfällt insoweit unsere Haftung für den betroffenen Einsatz.</p>
+  <h2 id="p8">§ 8 Mitwirkungspflichten des Kunden</h2>
+  <p>(1) Der Kunde stellt sicher, dass die zu bearbeitenden Flächen und Räume zum vereinbarten Termin zugänglich sind, insbesondere durch rechtzeitige Bereitstellung von Schlüsseln, Zugangscodes oder persönlichen Einlass.</p>
+  <p>(2) Der Kunde stellt, soweit nicht abweichend vereinbart, Strom- und Wasseranschlüsse sowie einen abschließbaren Abstellplatz für Reinigungsgeräte und -mittel unentgeltlich zur Verfügung.</p>
+  <p>(3) Der Kunde weist uns vor Beginn der Arbeiten auf besondere Gefahrenquellen, empfindliche Oberflächen und Materialien, herstellerseitige Pflegevorgaben, technische Besonderheiten sowie auf Gegenstände von besonderem Wert hin. Unterbleibt ein solcher Hinweis, haften wir nicht für Schäden, die hierauf zurückzuführen sind.</p>
+  <p>(4) Wertsachen, Bargeld, Schmuck und vertrauliche Unterlagen sind so zu verwahren, dass sie während der Arbeiten nicht frei zugänglich sind.</p>
+  <p>(5) Bei Winterdienstleistungen stellt der Kunde sicher, dass die zu räumenden Flächen frei von Hindernissen (z.&nbsp;B. abgestellte Fahrzeuge oder Gegenstände) sind, soweit dies in seinem Einflussbereich liegt. Können Flächen deshalb nicht oder nur teilweise bearbeitet werden, entfällt insoweit unsere Haftung für den betroffenen Einsatz.</p>
 
-  <h2>§ 7 Schlüssel und Zugangsmittel</h2>
+  <h2 id="p9">§ 9 Schlüssel und Zugangsmittel</h2>
   <p>(1) Übergibt der Kunde uns Schlüssel, Transponder, Zugangskarten oder Codes, verwahren wir diese sorgfältig und gesichert. Die Aufbewahrung erfolgt getrennt von Adressangaben, sodass Dritte keinen Rückschluss auf das Objekt ziehen können.</p>
-  <p>(2) Zugangsmittel werden ausschließlich zur Erbringung der vereinbarten Leistungen verwendet und nicht unbefugt an Dritte weitergegeben. Die Übergabe erfolgt auf Wunsch gegen Quittung bzw. Schlüsselübergabeprotokoll.</p>
+  <p>(2) Die Übergabe wird auf Wunsch in einem Schlüsselübergabeprotokoll dokumentiert. Zugangsmittel werden ausschließlich zur Erbringung der vereinbarten Leistungen verwendet und nicht unbefugt an Dritte weitergegeben.</p>
   <p>(3) Der Kunde kann die Herausgabe überlassener Zugangsmittel jederzeit verlangen. Nach Beendigung des Vertragsverhältnisses geben wir sie unverzüglich zurück.</p>
-  <p>(4) Für den Verlust überlassener Zugangsmittel haften wir nach Maßgabe des § 8. Umfasst sind dabei auch die Kosten eines notwendigen Austauschs der Schließanlage, soweit dieser aus Sicherheitsgründen erforderlich ist. Der Kunde informiert uns über den Umstand, dass ein Schlüssel Teil einer Schließanlage ist, sowie über deren voraussichtliche Austauschkosten, sofern diese erheblich über den üblichen Kosten liegen.</p>
+  <p>(4) Für den Verlust überlassener Zugangsmittel haften wir nach Maßgabe des § 12; umfasst sind auch die Kosten eines aus Sicherheitsgründen erforderlichen Austauschs der Schließanlage. Der Kunde teilt uns bei Übergabe mit, ob ein Schlüssel Teil einer Schließanlage ist und mit welchen Austauschkosten zu rechnen ist, sofern diese erheblich über den üblichen Kosten liegen.</p>
 
-  <h2>§ 8 Haftung</h2>
+  <h2 id="p10">§ 10 Ausführung, Prüfungs- und Hinweispflichten</h2>
+  <p>(1) Wir prüfen vor Angebotsabgabe die örtlichen Verhältnisse, soweit uns dies möglich ist. Der Kunde stellt sicher, dass die Leistungsbeschreibung mit dem zu reinigenden Objekt übereinstimmt.</p>
+  <p>(2) Bestehen aus unserer Sicht Bedenken gegen die vorgesehene Art der Ausführung – etwa weil die zu bearbeitenden Flächen hierfür ungeeignet sind oder ungeeignete Temperatur- und Luftverhältnisse vorliegen –, teilen wir dem Kunden dies unverzüglich in Textform mit.</p>
+  <p>(3) Werden Schäden an den zu bearbeitenden Flächen erst nach der Reinigung sichtbar (z.&nbsp;B. Vorschäden unter Verschmutzungen), benachrichtigen wir den Kunden unverzüglich.</p>
+  <p>(4) Reinigungs-, Pflege- und Behandlungsmittel sowie Geräte wählen wir nach dem jeweiligen Verwendungszweck und unter Beachtung der geltenden Umweltschutz- und Sicherheitsvorschriften aus. Herstellervorgaben zur Verarbeitung werden eingehalten.</p>
+
+  <h2 id="p11">§ 11 Mängel und Nacherfüllung</h2>
+  <p>(1) Der Kunde zeigt Mängel der erbrachten Leistung möglichst unverzüglich an, bei offensichtlichen Mängeln innerhalb von drei Werktagen nach Leistungserbringung, in Textform (z.&nbsp;B. per E-Mail). So können wir zeitnah nacherfüllen.</p>
+  <p>(2) Bei berechtigter Beanstandung sind wir zur Nacherfüllung berechtigt und verpflichtet. Schlägt die Nacherfüllung fehl, ist sie unmöglich oder verweigern wir sie, stehen dem Kunden die gesetzlichen Rechte (Minderung, Rücktritt, Schadensersatz) zu.</p>
+  <p>(3) <strong>Ist der Kunde Verbraucher</strong>, bleiben seine gesetzlichen Gewährleistungsrechte von einer verspäteten Anzeige unberührt; Absatz 1 begründet insoweit keine Ausschlussfrist.</p>
+  <p>(4) <strong>Ist der Kunde Unternehmer</strong>, gilt ergänzend § 377 HGB, soweit anwendbar.</p>
+
+  <h2 id="p12">§ 12 Haftung</h2>
   <p>(1) Wir haften unbeschränkt für Schäden aus der Verletzung des Lebens, des Körpers oder der Gesundheit, die auf einer vorsätzlichen oder fahrlässigen Pflichtverletzung von uns, unseren gesetzlichen Vertretern oder Erfüllungsgehilfen beruhen.</p>
-  <p>(2) Wir haften ferner unbeschränkt für sonstige Schäden, die auf einer vorsätzlichen oder grob fahrlässigen Pflichtverletzung oder auf Arglist von uns, unseren gesetzlichen Vertretern oder Erfüllungsgehilfen beruhen, sowie für Schäden, die von einer zwingenden gesetzlichen Haftung (z.&nbsp;B. nach dem Produkthaftungsgesetz) umfasst sind.</p>
+  <p>(2) Wir haften ferner unbeschränkt für sonstige Schäden aus vorsätzlicher oder grob fahrlässiger Pflichtverletzung sowie aus Arglist und für Schäden, die einer zwingenden gesetzlichen Haftung unterliegen (z.&nbsp;B. nach dem Produkthaftungsgesetz).</p>
   <p>(3) Bei einfach fahrlässiger Verletzung einer wesentlichen Vertragspflicht – also einer Pflicht, deren Erfüllung die ordnungsgemäße Durchführung des Vertrags überhaupt erst ermöglicht und auf deren Einhaltung der Kunde regelmäßig vertrauen darf – ist unsere Haftung auf den bei Vertragsschluss vorhersehbaren, vertragstypischen Schaden begrenzt.</p>
   <p>(4) Im Übrigen ist die Haftung für einfache Fahrlässigkeit ausgeschlossen.</p>
   <p>(5) Die vorstehenden Haftungsbeschränkungen gelten auch zugunsten unserer Mitarbeiter, gesetzlichen Vertreter und Erfüllungsgehilfen.</p>
   <p>(6) Für die vertragsgegenständlichen Tätigkeiten besteht eine Betriebshaftpflichtversicherung, die Personen- und Sachschäden im Rahmen unserer Leistungen abdeckt.</p>
-  <p>(7) Schäden, die im Zusammenhang mit der Leistungserbringung entstanden sind (z.&nbsp;B. Beschädigung von Einrichtungsgegenständen oder Oberflächen), sind uns unverzüglich nach Feststellung in Textform anzuzeigen, damit wir den Schaden prüfen und unserem Versicherer melden können. Die gesetzlichen Rechte des Kunden bleiben hiervon unberührt.</p>
-  <p>(8) Bei Winterdienstleistungen geht die Verkehrssicherungspflicht für die vertraglich vereinbarten Flächen im Umfang der übernommenen Leistungen und der vereinbarten Einsatzzeiten auf uns über. Eine Haftung für Flächen, die nicht Gegenstand des Vertrags sind, für Zeiträume außerhalb der vereinbarten Einsatzzeiten sowie für nicht gemeldete Gefahrenstellen besteht nicht.</p>
-  <p>(9) Bei außergewöhnlichen Witterungsereignissen (z.&nbsp;B. extreme Schneemengen, flächendeckender Eisregen) sowie in sonstigen Fällen höherer Gewalt, die eine fristgerechte Leistungserbringung objektiv unmöglich machen, ruht die Leistungspflicht für die Dauer der Beeinträchtigung. Wir informieren den Kunden hierüber unverzüglich.</p>
+  <p>(7) Schäden, die im Zusammenhang mit unserer Leistung entstanden sind, sind uns unverzüglich nach Feststellung in Textform anzuzeigen, damit wir sie prüfen und unserem Versicherer melden können. Die gesetzlichen Rechte des Kunden bleiben unberührt.</p>
+  <p>(8) <strong>Winterdienst:</strong> Die Verkehrssicherungspflicht für die vertraglich vereinbarten Flächen geht im Umfang der übernommenen Leistungen und der vereinbarten Einsatzzeiten auf uns über. Eine Haftung für Flächen außerhalb des Vertragsgegenstands, für Zeiträume außerhalb der vereinbarten Einsatzzeiten sowie für nicht gemeldete Gefahrenstellen besteht nicht.</p>
+  <p>(9) Bei außergewöhnlichen Witterungsereignissen (z.&nbsp;B. extreme Schneemengen, flächendeckender Eisregen) und in sonstigen Fällen höherer Gewalt, die eine fristgerechte Leistungserbringung objektiv unmöglich machen, ruht die Leistungspflicht für die Dauer der Beeinträchtigung. Wir informieren den Kunden unverzüglich.</p>
 
-  <h2>§ 9 Mängel und Nacherfüllung</h2>
-  <p>(1) Der Kunde zeigt Mängel der erbrachten Leistung möglichst unverzüglich, bei offensichtlichen Mängeln innerhalb von drei Werktagen nach Leistungserbringung, in Textform an, damit eine zeitnahe Nacherfüllung möglich ist.</p>
-  <p>(2) Bei berechtigter Beanstandung sind wir zur Nacherfüllung berechtigt und verpflichtet. Schlägt die Nacherfüllung fehl, ist sie unmöglich oder verweigern wir sie, stehen dem Kunden die gesetzlichen Rechte (Minderung, Rücktritt, Schadensersatz) zu.</p>
-  <p>(3) Ist der Kunde Verbraucher, bleiben seine gesetzlichen Gewährleistungsrechte von einer verspäteten Anzeige unberührt; Absatz 1 begründet insoweit keine Ausschlussfrist.</p>
-  <p>(4) Ist der Kunde Unternehmer, gilt ergänzend § 377 HGB, soweit anwendbar.</p>
-
-  <h2>§ 10 Terminabsagen und Ausfälle</h2>
+  <h2 id="p13">§ 13 Terminabsagen und Ausfälle</h2>
   <p>(1) Können wir einen vereinbarten Termin aus Gründen, die wir nicht zu vertreten haben (z.&nbsp;B. höhere Gewalt, kurzfristiger krankheitsbedingter Personalausfall), nicht einhalten, informieren wir den Kunden unverzüglich und bieten einen Ersatztermin an.</p>
-  <p>(2) Sagt der Kunde einen vereinbarten Termin später als 24 Stunden vor dem vereinbarten Beginn ab oder wird uns der vereinbarte Zugang nicht gewährt, sind wir berechtigt, 50&nbsp;% der für den betreffenden Termin vereinbarten Vergütung als Ausfallentschädigung zu berechnen. Dem Kunden bleibt ausdrücklich der Nachweis vorbehalten, dass ein Schaden überhaupt nicht entstanden oder wesentlich niedriger ist als die Pauschale. Uns bleibt der Nachweis eines höheren Schadens vorbehalten.</p>
+  <p>(2) Sagt der Kunde einen vereinbarten Termin später als 24 Stunden vor dem vereinbarten Beginn ab oder wird uns der Zugang nicht gewährt, können wir 50&nbsp;% der für diesen Termin vereinbarten Vergütung als Ausfallentschädigung berechnen. <strong>Dem Kunden bleibt ausdrücklich der Nachweis vorbehalten, dass ein Schaden überhaupt nicht entstanden oder wesentlich niedriger ist als die Pauschale.</strong> Uns bleibt der Nachweis eines höheren Schadens vorbehalten.</p>
 
-  <h2>§ 11 Abwerbeverbot</h2>
-  <p>Der Kunde verpflichtet sich, während der Vertragslaufzeit und für einen Zeitraum von sechs Monaten nach deren Ende keine bei uns beschäftigten Mitarbeiter, die mit der Leistungserbringung für ihn befasst waren, gezielt abzuwerben. Diese Regelung gilt nur gegenüber Unternehmern.</p>
+  <h2 id="p14">§ 14 Abwerbeverbot</h2>
+  <p>Der Kunde verpflichtet sich, während der Vertragslaufzeit und für sechs Monate nach deren Ende keine bei uns beschäftigten Mitarbeiter, die mit der Leistungserbringung für ihn befasst waren, gezielt abzuwerben. Diese Regelung gilt ausschließlich gegenüber Unternehmern.</p>
 
-  <h2>§ 12 Datenschutz und Vertraulichkeit</h2>
-  <p>(1) Die Verarbeitung personenbezogener Daten erfolgt nach den Vorgaben der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes (BDSG). Einzelheiten enthält unsere <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
-  <p>(2) Beide Parteien behandeln alle im Rahmen der Vertragsdurchführung erlangten vertraulichen Informationen der jeweils anderen Partei vertraulich und verwenden sie ausschließlich zur Vertragsdurchführung. Unsere Mitarbeiter sind entsprechend zur Verschwiegenheit verpflichtet.</p>
+  <h2 id="p15">§ 15 Datenschutz und Vertraulichkeit</h2>
+  <p>(1) Personenbezogene Daten verarbeiten wir nach den Vorgaben der Datenschutz-Grundverordnung (DSGVO) und des Bundesdatenschutzgesetzes. Einzelheiten enthält unsere <a href="datenschutz.html">Datenschutzerklärung</a>.</p>
+  <p>(2) Beide Parteien behandeln vertrauliche Informationen der jeweils anderen Partei vertraulich und verwenden sie ausschließlich zur Vertragsdurchführung. Unsere Mitarbeiter sind zur Verschwiegenheit verpflichtet.</p>
 
-  <h2>§ 13 Schlussbestimmungen</h2>
+  <h2 id="p16">§ 16 Schlussbestimmungen</h2>
   <p>(1) Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Gegenüber Verbrauchern gilt diese Rechtswahl nur, soweit dadurch der Schutz zwingender Verbraucherschutzvorschriften des Staates, in dem der Verbraucher seinen gewöhnlichen Aufenthalt hat, nicht entzogen wird.</p>
   <p>(2) Ist der Kunde Kaufmann, juristische Person des öffentlichen Rechts oder öffentlich-rechtliches Sondervermögen, ist ausschließlicher Gerichtsstand für alle Streitigkeiten aus dem Vertragsverhältnis Köln. Wir sind darüber hinaus berechtigt, am allgemeinen Gerichtsstand des Kunden zu klagen.</p>
   <p>(3) Sollten einzelne Bestimmungen dieser AGB ganz oder teilweise unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen unberührt. An die Stelle der unwirksamen Bestimmung treten die gesetzlichen Vorschriften.</p>
@@ -150,7 +200,8 @@ footer a:hover{color:var(--teal)}
   <a href="index.html">Startseite</a>
   <a href="impressum.html">Impressum</a>
   <a href="datenschutz.html">Datenschutz</a>
-  <a href="agb.html">AGB</a><br>
+  <a href="agb.html">AGB</a>
+  <a href="widerruf.html">Widerruf</a><br>
   <span style="margin-top:8px;display:inline-block">© 2026 Clean Connect Gebäudereinigung UG (haftungsbeschränkt)</span>
 </footer>
 </body>

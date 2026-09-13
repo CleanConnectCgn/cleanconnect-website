@@ -34,6 +34,9 @@ jobs:
             put -O $SFTP_DIR impressum.html;
             put -O $SFTP_DIR datenschutz.html;
             put -O $SFTP_DIR agb.html;
+            put -O $SFTP_DIR widerruf.html;
+            put -O $SFTP_DIR fonts.css;
+            put -O $SFTP_DIR maps-consent.js;
             put -O $SFTP_DIR standorte.html;
             put -O $SFTP_DIR broschuere.html;
             put -O $SFTP_DIR CleanConnect_Broschuere.pdf;
@@ -47,6 +50,7 @@ jobs:
             put -O $SFTP_DIR video_harley.mp4;
             put -O $SFTP_DIR video_hochhaus.mp4;
             put -O $SFTP_DIR video_rettig.mp4;
+            mirror -R --parallel=5 fonts $SFTP_DIR/fonts;
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
           "
