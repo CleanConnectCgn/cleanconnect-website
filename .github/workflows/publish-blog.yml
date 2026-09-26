@@ -1,0 +1,35 @@
+name: Publish due blog drafts
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Publish due drafts, update blog index and sitemap
+        run: python3 scripts/publish_blog.py
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet && git diff --cached --quiet; then
+            echo "Keine Aenderungen."
+          else
+            git add content/blog-drafts blog sitemap.xml
+            git commit -m "chore: veroeffentliche faellige Blog-Artikel"
+            git push
+          fi

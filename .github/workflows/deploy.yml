@@ -38,6 +38,8 @@ jobs:
             put -O $SFTP_DIR fonts.css;
             put -O $SFTP_DIR maps-consent.js;
             put -O $SFTP_DIR standorte.html;
+            put -O $SFTP_DIR preise.html;
+            put -O $SFTP_DIR bueroreinigung-koeln.html;
             put -O $SFTP_DIR broschuere.html;
             put -O $SFTP_DIR CleanConnect_Broschuere.pdf;
             put -O $SFTP_DIR favicon.ico;
@@ -53,4 +55,5 @@ jobs:
             mirror -R --parallel=5 fonts $SFTP_DIR/fonts;
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
+            mirror -R --parallel=5 blog $SFTP_DIR/blog;
           "
