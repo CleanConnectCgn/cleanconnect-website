@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Fensterreinigung im Büro: Wie oft sind die Fenster fällig? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-03-23
+title: Fensterreinigung im Büro: Wie oft sind die Fenster fällig?
+target_keyword: fensterreinigung büro wie oft
+description: Wie oft sollten Bürofenster gereinigt werden? Welche Faktoren den Rhythmus bestimmen und warum das Frühjahr ein guter Zeitpunkt ist.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Fensterreinigung im Büro: Wie oft sind die Fenster fällig? | Clean Connect Blog</title>
+<meta name="description" content="Wie oft sollten Bürofenster gereinigt werden? Welche Faktoren den Rhythmus bestimmen und warum das Frühjahr ein guter Zeitpunkt ist.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Fensterreinigung im Büro: Wie oft sind die Fenster fällig? | Clean Connect Blog">
+<meta property="og:description" content="Wie oft sollten Bürofenster gereinigt werden? Welche Faktoren den Rhythmus bestimmen und warum das Frühjahr ein guter Zeitpunkt ist.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Fensterreinigung im Büro: Wie oft sind die Fenster fällig?",
+  "description": "Wie oft sollten Bürofenster gereinigt werden? Welche Faktoren den Rhythmus bestimmen und warum das Frühjahr ein guter Zeitpunkt ist.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,55 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Glasreinigung</div>
+  <h1>Fensterreinigung im Büro: Wie oft sind die Fenster fällig?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Wenn die Frühlingssonne durch die Scheiben scheint, sieht man plötzlich jeden Schleier. Spätestens dann stellt sich die Frage: Wie oft sollten Bürofenster eigentlich gereinigt werden?</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Eine Faustregel gibt es nicht</h2>
+  <p>Wie oft Fenster gereinigt werden sollten, hängt stark vom Standort und von der Nutzung ab. Viele Büros lassen ihre Fenster einige Male im Jahr reinigen, Geschäfte mit Schaufenstern deutlich häufiger. Entscheidend sind die Bedingungen vor Ort.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Diese Faktoren beschleunigen die Verschmutzung</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Verkehr:</strong> An viel befahrenen Straßen setzt sich schnell ein grauer Film ab.</li>
+    <li><strong>Baustellen:</strong> Staub in der Nachbarschaft landet auf den Scheiben.</li>
+    <li><strong>Bäume:</strong> Pollen, Blütenstaub und Harz im Frühjahr.</li>
+    <li><strong>Etage:</strong> Untere Stockwerke verschmutzen oft schneller als höhere.</li>
+    <li><strong>Kundenverkehr:</strong> Glastüren und Scheiben im Eingang brauchen häufiger Aufmerksamkeit.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Innen und außen unterscheiden</h2>
+  <p>Die Innenseite verschmutzt meist langsamer als die Außenseite. Eine Sichtreinigung innen, also das Entfernen von Fingerabdrücken und Flecken, kann Teil der regelmäßigen Unterhaltsreinigung sein. Die gründliche Reinigung innen und außen inklusive Rahmen erfolgt in größeren Abständen.</p>
+
+  <h2>Warum das Frühjahr ideal ist</h2>
+  <p>Nach dem Winter sind Fenster besonders verschmutzt: Regen, Streusalz-Spritzer und die Heizperiode hinterlassen Spuren. Eine Reinigung im Frühjahr sorgt für klaren Durchblick in der hellen Jahreszeit. Sie lässt sich gut mit einem <a href="fruehjahrsputz-buero.html">Frühjahrsputz im Büro</a> verbinden.</p>
+
+  <h2>Sicherheit geht vor</h2>
+  <p>Fenster in oberen Etagen oder schwer erreichbare Glasflächen sollten nicht von Mitarbeitern gereinigt werden. Hier sind Profis mit der richtigen Ausrüstung gefragt.</p>
+
+  <h2>Kosten</h2>
+  <p>Bei Clean Connect berechnen wir die Glasreinigung mit 45 € netto pro Stunde. Wie viel Zeit Ihre Fenster brauchen, klären wir vorab anhand von Fotos oder einer kurzen Begehung. Mehr auf unserer Seite zur <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Werden bei der Fensterreinigung auch die Rahmen gereinigt?</h3>
+  <p>Bei einer gründlichen Glasreinigung gehören Rahmen und Fensterbänke dazu. Klären Sie bei der Beauftragung, ob Rahmen, Falze und Fensterbänke innen und außen enthalten sind, damit es keine Missverständnisse gibt.</p>
+  <h3>Muss für die Fensterreinigung jemand anwesend sein?</h3>
+  <p>Für die Innenseite muss der Zugang zu den Räumen geregelt sein, zum Beispiel per Schlüssel. Für die Außenseite ist das je nach Gebäude nicht immer nötig. Wir stimmen das vorab mit Ihnen ab.</p>
+  <h3>Was ist mit Fenstern, die sich nicht öffnen lassen?</h3>
+  <p>Fest verglaste Flächen oder schwer erreichbare Fenster werden von außen mit geeigneter Ausrüstung gereinigt. Wie das bei Ihrem Gebäude am besten funktioniert, klären wir bei einer Besichtigung oder anhand von Fotos.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Klarer Durchblick für Ihr Büro</h2>
+    <p>Schicken Sie uns ein paar Fotos Ihrer Fenster, und Sie erhalten innerhalb von 24 Stunden ein Angebot.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

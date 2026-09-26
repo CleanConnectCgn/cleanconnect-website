@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-11-17
+title: Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten
+target_keyword: praxisreinigung
+description: Praxisreinigung: Worauf Arzt- und Therapiepraxen bei der Auswahl einer Reinigungsfirma achten sollten, vom Hygieneplan bis zur Diskretion.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten | Clean Connect Blog</title>
+<meta name="description" content="Praxisreinigung: Worauf Arzt- und Therapiepraxen bei der Auswahl einer Reinigungsfirma achten sollten, vom Hygieneplan bis zur Diskretion.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten | Clean Connect Blog">
+<meta property="og:description" content="Praxisreinigung: Worauf Arzt- und Therapiepraxen bei der Auswahl einer Reinigungsfirma achten sollten, vom Hygieneplan bis zur Diskretion.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten",
+  "description": "Praxisreinigung: Worauf Arzt- und Therapiepraxen bei der Auswahl einer Reinigungsfirma achten sollten, vom Hygieneplan bis zur Diskretion.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,62 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Unterhaltsreinigung</div>
+  <h1>Praxisreinigung: Worauf Arztpraxen bei der Reinigungsfirma achten sollten</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">In einer Praxis ist Sauberkeit keine Frage des Eindrucks, sondern Teil der Patientenversorgung. Entsprechend hoch sind die Anforderungen an die Reinigungsfirma.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Der Hygieneplan ist die Grundlage</h2>
+  <p>Jede Praxis hat eigene Anforderungen, abhängig von Fachrichtung und Behandlungen. Maßgeblich ist der <strong>Hygieneplan der Praxis</strong>. Er legt fest, welche Bereiche wie gereinigt werden. Eine gute Reinigungsfirma fragt danach und richtet ihre Arbeit daran aus, statt ein Standardprogramm abzuspulen.</p>
+  <p>Wichtig: Die Aufbereitung von Medizinprodukten und die Desinfektion von Behandlungsflächen zwischen Patienten sind in der Regel Aufgabe des Praxisteams. Klären Sie genau, was die Reinigungsfirma übernimmt und was nicht.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Typische Bereiche einer Praxisreinigung</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Wartezimmer und Empfang</li>
+    <li>Flure und Treppen</li>
+    <li>Patienten- und Personaltoiletten</li>
+    <li>Böden in Behandlungsräumen, nach Vorgabe der Praxis</li>
+    <li>Sozialraum und Küche des Teams</li>
+    <li>Kontaktflächen wie Türgriffe, Lichtschalter und Handläufe</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Worauf Sie bei der Auswahl achten sollten</h2>
+  <ul>
+    <li><strong>Festes Personal:</strong> Wer regelmäßig in Ihrer Praxis arbeitet, kennt die Abläufe und die sensiblen Bereiche.</li>
+    <li><strong>Diskretion:</strong> Reinigungskräfte bewegen sich in Räumen mit Patientenakten und vertraulichen Informationen.</li>
+    <li><strong>Zeitfenster:</strong> Gereinigt wird außerhalb der Sprechzeiten, damit der Praxisbetrieb nicht gestört wird.</li>
+    <li><strong>Verständigung:</strong> Absprachen zu Hygieneanforderungen müssen ohne Missverständnisse funktionieren.</li>
+    <li><strong>Dokumentation:</strong> Nachvollziehbare Nachweise, wann was gereinigt wurde.</li>
+    <li><strong>Vertretung:</strong> Die Reinigung muss auch bei Krankheit oder Urlaub zuverlässig stattfinden.</li>
+  </ul>
+
+  <h2>Wie oft gereinigt werden sollte</h2>
+  <p>Praxen mit täglichem Patientenverkehr brauchen in der Regel eine häufige, oft tägliche Reinigung der stark genutzten Bereiche. Den genauen Rhythmus legen Sie gemeinsam mit der Reinigungsfirma auf Basis Ihres Hygieneplans fest.</p>
+
+  <h2>Clean Connect für Praxen in Köln</h2>
+  <p>Wir übernehmen die <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung</a> für Praxen in Köln und Umgebung, mit festem, deutschsprachigem Team, außerhalb Ihrer Sprechzeiten und nach Ihren Vorgaben. Die Unterhaltsreinigung kostet 32 € netto pro Stunde. Lernen Sie uns vorab bei einer <a href="../index.html#erstreinigung">Erstreinigung</a> kennen.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Welche Aufgaben bleiben beim Praxisteam?</h3>
+  <p>Die Desinfektion von Behandlungsflächen zwischen Patienten und die Aufbereitung von Medizinprodukten liegen in der Regel beim Praxisteam. Die Reinigungsfirma übernimmt die Unterhaltsreinigung der Räume nach den Vorgaben der Praxis. Wie die Aufgaben genau verteilt sind, legen Sie gemeinsam fest.</p>
+  <h3>Wie wird mit Praxismüll umgegangen?</h3>
+  <p>Für bestimmte Abfälle aus Praxen gelten besondere Vorgaben. Welche Abfälle die Reinigungsfirma entsorgt und welche das Praxisteam über gesonderte Wege entsorgt, sollte klar geregelt sein. Normale Büro- und Hausabfälle leert die Reinigung, besondere Abfälle nicht ohne ausdrückliche Absprache.</p>
+  <h3>Kann auch am Wochenende gereinigt werden?</h3>
+  <p>Ja. Viele Praxen lassen die regelmäßige Reinigung abends nach der Sprechstunde durchführen und größere Arbeiten wie eine Grundreinigung am Wochenende. So wird der Praxisbetrieb nicht gestört, und die Räume sind zu Beginn der Sprechzeit bereit.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Praxisreinigung nach Ihrem Hygieneplan</h2>
+    <p>Wir stimmen uns mit Ihnen ab und reinigen einmal zur Probe, außerhalb der Sprechzeiten und ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

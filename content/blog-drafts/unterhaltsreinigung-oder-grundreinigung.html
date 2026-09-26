@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-12-01
+title: Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann?
+target_keyword: unterschied unterhaltsreinigung grundreinigung
+description: Unterhaltsreinigung oder Grundreinigung? Die Unterschiede in Umfang, Häufigkeit und Kosten und wann Sie welche Reinigung brauchen.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann? | Clean Connect Blog</title>
+<meta name="description" content="Unterhaltsreinigung oder Grundreinigung? Die Unterschiede in Umfang, Häufigkeit und Kosten und wann Sie welche Reinigung brauchen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann? | Clean Connect Blog">
+<meta property="og:description" content="Unterhaltsreinigung oder Grundreinigung? Die Unterschiede in Umfang, Häufigkeit und Kosten und wann Sie welche Reinigung brauchen.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann?",
+  "description": "Unterhaltsreinigung oder Grundreinigung? Die Unterschiede in Umfang, Häufigkeit und Kosten und wann Sie welche Reinigung brauchen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,62 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Unterhaltsreinigung</div>
+  <h1>Unterhaltsreinigung oder Grundreinigung: Was brauche ich wann?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Zwei Begriffe, die oft verwechselt werden. Dabei erfüllen Unterhaltsreinigung und Grundreinigung ganz unterschiedliche Aufgaben und ergänzen sich im besten Fall.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Der Unterschied auf einen Blick</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Unterhaltsreinigung:</strong> regelmäßig, täglich bis wöchentlich, hält den laufenden Standard.</li>
+    <li><strong>Grundreinigung:</strong> selten, meist einmal jährlich oder zu Anlässen, beseitigt tiefsitzenden Schmutz.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Unterhaltsreinigung: der laufende Standard</h2>
+  <p>Die Unterhaltsreinigung ist die regelmäßige Pflegereinigung: Böden wischen und saugen, Sanitäranlagen reinigen, Mülleimer leeren, Oberflächen abwischen. Sie sorgt dafür, dass Ihre Räume jeden Tag gepflegt aussehen.</p>
+
+  <h2>Grundreinigung: die Tiefenreinigung</h2>
+  <p>Bei der Grundreinigung werden Böden maschinell gereinigt, schwer erreichbare Bereiche gesäubert und Ablagerungen entfernt, die sich trotz regelmäßiger Pflege gebildet haben. Sie geht deutlich tiefer als die Unterhaltsreinigung und braucht entsprechend mehr Zeit.</p>
+
+  <h2>Wann Sie welche Reinigung brauchen</h2>
+  <p><strong>Unterhaltsreinigung</strong>, wenn Sie:</p>
+  <ul>
+    <li>Ihre Räume dauerhaft sauber halten wollen</li>
+    <li>täglich Mitarbeiter, Patienten oder Kunden empfangen</li>
+  </ul>
+  <p><strong>Grundreinigung</strong>, wenn:</p>
+  <ul>
+    <li>Böden trotz Pflege stumpf oder fleckig wirken</li>
+    <li>ein Umzug, eine Übergabe oder eine Renovierung ansteht</li>
+    <li>Sie jährlich eine gründliche Auffrischung wünschen</li>
+  </ul>
+
+  <h2>Beide ergänzen sich</h2>
+  <p>Eine gute Unterhaltsreinigung verlängert die Abstände zwischen zwei Grundreinigungen. Und eine Grundreinigung schafft eine saubere Basis, auf der die regelmäßige Reinigung aufbauen kann. Viele Kunden kombinieren deshalb beides: laufende Unterhaltsreinigung plus eine Grundreinigung pro Jahr.</p>
+
+  <h2>Die Kosten im Vergleich</h2>
+  <p>Bei Clean Connect kostet die Unterhaltsreinigung 32 € netto pro Stunde und die Grundreinigung 38 € netto pro Stunde. Der höhere Satz der Grundreinigung ergibt sich aus dem größeren Aufwand pro Stunde. Mehr dazu auf unserer <a href="../preise.html">Preisseite</a> und in unserem Beitrag <a href="grundreinigung-wann-faellig.html">Grundreinigung: Wann sie fällig ist</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Ersetzt eine sehr gründliche Unterhaltsreinigung die Grundreinigung?</h3>
+  <p>Nicht vollständig. Auch eine sehr gute Unterhaltsreinigung erreicht nicht alle Stellen und entfernt keine tief sitzenden Ablagerungen in Böden, Fugen oder Teppichen. Sie kann aber dafür sorgen, dass eine Grundreinigung seltener nötig wird.</p>
+  <h3>Kann ich beide Reinigungen beim selben Anbieter buchen?</h3>
+  <p>Ja, und das hat Vorteile: Das Team kennt Ihr Objekt bereits, und die Grundreinigung lässt sich gut in den laufenden Plan integrieren. Bei Clean Connect bieten wir beides aus einer Hand an.</p>
+  <h3>Wie oft ist eine Grundreinigung nötig?</h3>
+  <p>Meist einmal jährlich oder zu besonderen Anlässen wie Umzügen, Renovierungen oder bei sichtbarem Verschleiß. Stark frequentierte Flächen können auch häufiger eine Grundreinigung brauchen. Den passenden Abstand besprechen wir gern mit Ihnen.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../standorte/grundreinigung-koeln.html">Grundreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Unterhalts- und Grundreinigung aus einer Hand</h2>
+    <p>Wir beraten Sie, welche Kombination zu Ihrem Objekt passt. Rückmeldung innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

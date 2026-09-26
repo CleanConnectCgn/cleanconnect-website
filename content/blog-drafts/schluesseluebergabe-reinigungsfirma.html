@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-12-18
+title: Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln
+target_keyword: schlüsselübergabe reinigungsfirma
+description: Schlüssel an die Reinigungsfirma übergeben: Wie Sie Zugang, Alarmanlage und Verantwortung sicher und nachvollziehbar regeln.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln | Clean Connect Blog</title>
+<meta name="description" content="Schlüssel an die Reinigungsfirma übergeben: Wie Sie Zugang, Alarmanlage und Verantwortung sicher und nachvollziehbar regeln.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln | Clean Connect Blog">
+<meta property="og:description" content="Schlüssel an die Reinigungsfirma übergeben: Wie Sie Zugang, Alarmanlage und Verantwortung sicher und nachvollziehbar regeln.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln",
+  "description": "Schlüssel an die Reinigungsfirma übergeben: Wie Sie Zugang, Alarmanlage und Verantwortung sicher und nachvollziehbar regeln.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,60 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Ratgeber</div>
+  <h1>Schlüsselübergabe an die Reinigungsfirma: Zugang sicher regeln</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Damit die Reinigung außerhalb der Geschäftszeiten stattfinden kann, braucht die Reinigungsfirma Zugang zu Ihren Räumen. Mit ein paar klaren Regeln wird daraus eine sichere, nachvollziehbare Lösung.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Warum die Schlüsselübergabe üblich ist</h2>
+  <p>Die meisten Büros werden gereinigt, wenn niemand da ist. Das ist effizient und stört den Betrieb nicht. Voraussetzung ist, dass die Reinigungsfirma selbstständig ins Gebäude kommt, per Schlüssel, Transponder oder Zugangscode.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Die Übergabe dokumentieren</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Welche Schlüssel oder Transponder wurden übergeben?</li>
+    <li>Für welche Türen gelten sie?</li>
+    <li>Wann wurden sie übergeben, und wer hat sie erhalten?</li>
+  </ul>
+  <p>Ein kurzes Übergabeprotokoll mit Unterschrift beider Seiten schafft Klarheit, auch für den Fall, dass die Zusammenarbeit endet und die Schlüssel zurückgegeben werden.</p>
+
+  <h2>Zugang nur so weit wie nötig</h2>
+  <p>Die Reinigungsfirma braucht Zugang zu den Räumen, die sie reinigen soll, nicht zwingend zu allen. Räume mit sensiblen Unterlagen oder Technik können ausgenommen oder nur zu bestimmten Zeiten zugänglich sein. Legen Sie das im Leistungsverzeichnis fest.</p>
+
+  <h2>Alarmanlage und Codes</h2>
+  <p>Gibt es eine Alarmanlage, sollte die Reinigungsfirma einen eigenen Code erhalten. So lässt sich nachvollziehen, wann sie im Gebäude war, und der Code kann bei Bedarf gezielt gelöscht werden.</p>
+
+  <h2>Worauf Sie beim Anbieter achten sollten</h2>
+  <ul>
+    <li><strong>Festes Personal:</strong> Wenn immer dasselbe Team kommt, wissen Sie, wer Zugang hat.</li>
+    <li><strong>Verschwiegenheit:</strong> Mitarbeiter sollten zu Diskretion verpflichtet sein.</li>
+    <li><strong>Versicherung:</strong> Eine Betriebshaftpflicht deckt Schäden ab, die bei der Arbeit entstehen können.</li>
+    <li><strong>Klare Regeln:</strong> Wie wird mit Schlüsseln umgegangen, wo werden sie aufbewahrt?</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>So handhaben wir es bei Clean Connect</h2>
+  <p>Viele unserer Kunden übergeben uns einen Schlüssel oder Zugangscode, danach reinigen wir eigenständig, auch wenn niemand vor Ort ist. Ihr Objekt wird von einem festen Team gereinigt, alle Mitarbeiter sind zu Zuverlässigkeit und Diskretion verpflichtet und haftpflichtversichert.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Was passiert, wenn ein Schlüssel verloren geht?</h3>
+  <p>Das sollte vorab geregelt sein. Eine seriöse Reinigungsfirma meldet einen Verlust sofort. Ob und in welchem Umfang die Betriebshaftpflicht für Folgekosten wie einen Schlosstausch aufkommt, hängt von der jeweiligen Versicherung ab. Fragen Sie danach, bevor Sie Schlüssel übergeben.</p>
+  <h3>Sind Transponder sicherer als Schlüssel?</h3>
+  <p>Transponder und Zugangscodes haben einen Vorteil: Sie lassen sich bei Verlust oder am Ende der Zusammenarbeit gezielt sperren, ohne dass Schlösser getauscht werden müssen. Außerdem ist oft nachvollziehbar, wann sie genutzt wurden.</p>
+  <h3>Wer darf die Schlüssel beim Anbieter nutzen?</h3>
+  <p>Idealerweise nur das Team, das Ihr Objekt reinigt, und der zuständige Ansprechpartner. Fragen Sie, wie der Anbieter seine Schlüssel aufbewahrt und wer Zugriff darauf hat. Ein festes Team sorgt dafür, dass der Kreis überschaubar bleibt.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Reinigung, ohne dass Sie da sein müssen</h2>
+    <p>Nach einer kurzen Schlüsselübergabe reinigen wir eigenständig. Testen Sie uns mit einer Erstreinigung ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

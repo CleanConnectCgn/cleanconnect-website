@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Checkliste Büroreinigung: täglich, wöchentlich, monatlich drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-06
+title: Checkliste Büroreinigung: täglich, wöchentlich, monatlich
+target_keyword: checkliste büroreinigung
+description: Checkliste für die Büroreinigung: Welche Aufgaben täglich, wöchentlich und monatlich anfallen, übersichtlich nach Bereichen sortiert.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Checkliste Büroreinigung: täglich, wöchentlich, monatlich | Clean Connect Blog</title>
+<meta name="description" content="Checkliste für die Büroreinigung: Welche Aufgaben täglich, wöchentlich und monatlich anfallen, übersichtlich nach Bereichen sortiert.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Checkliste Büroreinigung: täglich, wöchentlich, monatlich | Clean Connect Blog">
+<meta property="og:description" content="Checkliste für die Büroreinigung: Welche Aufgaben täglich, wöchentlich und monatlich anfallen, übersichtlich nach Bereichen sortiert.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Checkliste Büroreinigung: täglich, wöchentlich, monatlich",
+  "description": "Checkliste für die Büroreinigung: Welche Aufgaben täglich, wöchentlich und monatlich anfallen, übersichtlich nach Bereichen sortiert.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,75 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Büroreinigung</div>
+  <h1>Checkliste Büroreinigung: täglich, wöchentlich, monatlich</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Was muss im Büro eigentlich wie oft gereinigt werden? Diese Checkliste ordnet die typischen Aufgaben nach Häufigkeit. Sie eignet sich als Grundlage für ein Gespräch mit Ihrer Reinigungsfirma oder zum Überprüfen Ihres bestehenden Plans.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Vorab: Die Liste ist ein Ausgangspunkt</h2>
+  <p>Jedes Büro ist anders. Ein kleines Büro ohne Kundenverkehr braucht weniger als eine Agentur mit Empfang und täglichen Meetings. Nutzen Sie die Checkliste deshalb als Orientierung und passen Sie die Häufigkeiten an Ihre Nutzung an.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Bei jedem Reinigungstermin</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Mülleimer leeren und neue Beutel einsetzen</li>
+    <li>Sanitärräume reinigen: Toiletten, Waschbecken, Armaturen, Spiegel</li>
+    <li>Verbrauchsmaterial kontrollieren: Seife, Papierhandtücher, Toilettenpapier</li>
+    <li>Teeküche: Spüle, Arbeitsflächen und Tische abwischen</li>
+    <li>Böden in stark genutzten Bereichen wischen oder saugen</li>
+    <li>Kontaktflächen reinigen: Türgriffe, Lichtschalter, Handläufe</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Wöchentlich</h2>
+  <ul>
+    <li>Alle Böden saugen und wischen, auch in wenig genutzten Räumen</li>
+    <li>Freie Schreibtischflächen abwischen</li>
+    <li>Besprechungsräume: Tische, Stühle und Oberflächen</li>
+    <li>Glastüren und Trennwände von Fingerabdrücken befreien</li>
+    <li>Außenflächen von Küchengeräten reinigen</li>
+  </ul>
+
+  <h2>Monatlich</h2>
+  <ul>
+    <li>Heizkörper, Fensterbänke und Türrahmen abstauben</li>
+    <li>Sockelleisten und schwer erreichbare Ecken reinigen</li>
+    <li>Innenseiten von Kühlschrank und Mikrowelle (nach Absprache mit dem Team)</li>
+    <li>Stuhlgestelle und Tischbeine abwischen</li>
+  </ul>
+
+  <h2>Mehrmals im Jahr oder nach Bedarf</h2>
+  <ul>
+    <li><a href="../standorte/glasreinigung-koeln.html">Fensterreinigung</a> innen und außen</li>
+    <li><a href="../standorte/grundreinigung-koeln.html">Grundreinigung</a> der Böden, bei Teppichen eine Tiefenreinigung</li>
+    <li>Lampen und Lüftungsgitter reinigen</li>
+  </ul>
+
+  <h2>Was nicht auf die Liste gehört</h2>
+  <p>Klären Sie vorab, was die Reinigung nicht übernimmt. Typisch sind persönliche Gegenstände auf Schreibtischen, lose Unterlagen oder Geschirr, das nicht in die Spülmaschine gehört. Klare Regeln vermeiden Missverständnisse auf beiden Seiten.</p>
+
+  <h2>Aus der Checkliste wird ein Leistungsverzeichnis</h2>
+  <p>Schriftlich festgehalten wird aus dieser Liste ein Leistungsverzeichnis. Darin steht für jeden Bereich, was wie oft gemacht wird. Bei Clean Connect erstellen wir es gemeinsam mit Ihnen nach einer Begehung oder einer <a href="../index.html#erstreinigung">Erstreinigung</a>. So wissen beide Seiten genau, was vereinbart ist.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wer stellt Seife, Papierhandtücher und Müllbeutel?</h3>
+  <p>Das ist Vereinbarungssache. Manche Kunden beschaffen das Verbrauchsmaterial selbst, andere lassen es von der Reinigungsfirma mitliefern. Wichtig ist, dass es klar geregelt ist und jemand den Bestand im Blick hat. Die Kontrolle, ob Spender aufgefüllt sind, gehört in jedem Fall zum Reinigungstermin.</p>
+  <h3>Gehört das Abwischen von Schreibtischen immer dazu?</h3>
+  <p>Freie Schreibtischflächen werden in der Regel abgewischt. Liegen Unterlagen, Geräte oder persönliche Gegenstände darauf, werden sie meist nicht verschoben, um nichts durcheinanderzubringen. Viele Büros führen deshalb eine Clean-Desk-Regel ein: Wer den Tisch am Abend frei räumt, bekommt ihn gereinigt.</p>
+  <h3>Kann ich die Checkliste direkt als Vertragsgrundlage nutzen?</h3>
+  <p>Die Checkliste ist ein guter Ausgangspunkt, sollte aber an Ihr Büro angepasst werden: Welche Räume gibt es, wie stark werden sie genutzt, und welche Sonderwünsche haben Sie? Aus dieser angepassten Liste entsteht das Leistungsverzeichnis, das dann Teil des Vertrags wird.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Ihre Checkliste, von uns umgesetzt</h2>
+    <p>Wir übertragen die Liste auf Ihr Büro und reinigen einmal zur Probe, zum regulären Stundensatz und ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-02-09
+title: Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile
+target_keyword: treppenhausreinigung mieter oder firma
+description: Treppenhaus selbst putzen lassen oder eine Reinigungsfirma beauftragen? Vor- und Nachteile für Vermieter, Hausverwaltungen und Mieter.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile | Clean Connect Blog</title>
+<meta name="description" content="Treppenhaus selbst putzen lassen oder eine Reinigungsfirma beauftragen? Vor- und Nachteile für Vermieter, Hausverwaltungen und Mieter.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile | Clean Connect Blog">
+<meta property="og:description" content="Treppenhaus selbst putzen lassen oder eine Reinigungsfirma beauftragen? Vor- und Nachteile für Vermieter, Hausverwaltungen und Mieter.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile",
+  "description": "Treppenhaus selbst putzen lassen oder eine Reinigungsfirma beauftragen? Vor- und Nachteile für Vermieter, Hausverwaltungen und Mieter.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,65 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Hausverwaltung</div>
+  <h1>Mieter putzen selbst oder Reinigungsfirma? Vor- und Nachteile</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Der klassische Putzplan im Treppenhaus funktioniert in manchen Häusern jahrelang, in anderen führt er zu ständigem Streit. Für Vermieter stellt sich die Frage, ob eine Reinigungsfirma die bessere Lösung ist.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Modell 1: Die Mieter reinigen selbst</h2>
+  <p>Beim Putzplan (umgangssprachlich oft „Kehrwoche“ genannt) übernehmen die Mieter die Reinigung im Wechsel. Voraussetzung ist in der Regel, dass das im Mietvertrag oder in der Hausordnung geregelt ist.</p>
+  <p><strong>Vorteile:</strong></p>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>keine zusätzlichen Kosten für die Mieter</li>
+    <li>funktioniert gut in kleinen Häusern mit engagierten Bewohnern</li>
+  </ul>
+  <p><strong>Nachteile:</strong></p>
+  <ul>
+    <li><strong>Ungleiche Qualität:</strong> Jeder hat eine andere Vorstellung von „sauber“.</li>
+    <li><strong>Streit:</strong> Wer seinen Dienst vergisst, sorgt für Ärger bei den Nachbarn.</li>
+    <li><strong>Ältere oder berufstätige Mieter:</strong> Nicht jeder kann oder will die Aufgabe übernehmen.</li>
+    <li><strong>Aufwand für die Verwaltung:</strong> Beschwerden landen bei der Hausverwaltung.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Modell 2: Eine Reinigungsfirma übernimmt</h2>
+  <p><strong>Vorteile:</strong></p>
+  <ul>
+    <li><strong>Gleichbleibende Qualität:</strong> Professionell, regelmäßig, nach festem Leistungsumfang.</li>
+    <li><strong>Hausfrieden:</strong> Kein Streit mehr über den Putzplan.</li>
+    <li><strong>Weniger Aufwand:</strong> Die Verwaltung hat einen Ansprechpartner statt vieler Bewohner.</li>
+    <li><strong>Dokumentation:</strong> Nachweisbar, wann gereinigt wurde.</li>
+  </ul>
+  <p><strong>Nachteile:</strong></p>
+  <ul>
+    <li>Kosten, die in der Regel über die Nebenkosten auf die Mieter umgelegt werden, sofern der Mietvertrag das vorsieht</li>
+  </ul>
+
+  <h2>Der Wechsel vom Putzplan zur Reinigungsfirma</h2>
+  <p>Ob und wie ein bestehender Putzplan durch eine Reinigungsfirma ersetzt werden kann, hängt von Mietverträgen und Hausordnung ab. Klären Sie das vorab mit Ihrer Hausverwaltung oder rechtlich beraten. Grundlagen zur Umlage lesen Sie in unserem Beitrag <a href="treppenhausreinigung-nebenkosten.html">Treppenhausreinigung in den Nebenkosten</a>.</p>
+
+  <h2>Die Kosten realistisch einschätzen</h2>
+  <p>Bei Clean Connect kostet die Treppenhausreinigung meist zwischen 120 und 300 Euro netto im Monat pro Treppenhaus. Auf viele Parteien verteilt, ist das für den einzelnen Mieter oft überschaubar. Mehr auf unserer Seite zur <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Was kostet die Reinigungsfirma pro Mietpartei?</h3>
+  <p>Das hängt von der Pauschale und der Zahl der Parteien ab. Bei einer monatlichen Pauschale zwischen 120 und 300 Euro netto pro Treppenhaus verteilt sich der Betrag auf alle Parteien des Hauses. Je mehr Parteien, desto geringer der Anteil für den Einzelnen.</p>
+  <h3>Kann ein Teil der Mieter weiter selbst putzen?</h3>
+  <p>Gemischte Modelle sind in der Praxis schwer umzusetzen und führen oft zu neuen Konflikten. Meist ist eine einheitliche Lösung für das ganze Haus sinnvoller. Wie das rechtlich zu gestalten ist, klären Sie mit Ihrer Verwaltung.</p>
+  <h3>Wer kontrolliert die Arbeit der Reinigungsfirma?</h3>
+  <p>In der Regel die Hausverwaltung. Unterstützt wird sie durch die Dokumentation des Dienstleisters und durch Rückmeldungen der Bewohner. Ein fester Ansprechpartner beim Dienstleister sorgt dafür, dass Beschwerden schnell geklärt werden.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../standorte/winterdienst-koeln.html">Winterdienst in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Schluss mit dem Putzplan-Streit</h2>
+    <p>Wir übernehmen die Treppenhausreinigung zur festen Monatspauschale. Angebot innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Büroumzug: Reinigung vor dem Einzug und nach dem Auszug drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-04-13
+title: Büroumzug: Reinigung vor dem Einzug und nach dem Auszug
+target_keyword: reinigung büroumzug
+description: Reinigung beim Büroumzug: Was vor dem Einzug in neue Räume und nach dem Auszug aus alten Räumen zu tun ist und wie Sie das gut planen.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Büroumzug: Reinigung vor dem Einzug und nach dem Auszug | Clean Connect Blog</title>
+<meta name="description" content="Reinigung beim Büroumzug: Was vor dem Einzug in neue Räume und nach dem Auszug aus alten Räumen zu tun ist und wie Sie das gut planen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Büroumzug: Reinigung vor dem Einzug und nach dem Auszug | Clean Connect Blog">
+<meta property="og:description" content="Reinigung beim Büroumzug: Was vor dem Einzug in neue Räume und nach dem Auszug aus alten Räumen zu tun ist und wie Sie das gut planen.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Büroumzug: Reinigung vor dem Einzug und nach dem Auszug",
+  "description": "Reinigung beim Büroumzug: Was vor dem Einzug in neue Räume und nach dem Auszug aus alten Räumen zu tun ist und wie Sie das gut planen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,59 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Büroreinigung</div>
+  <h1>Büroumzug: Reinigung vor dem Einzug und nach dem Auszug</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Ein Büroumzug bringt genug Organisation mit sich. Die Reinigung wird dabei oft vergessen, bis kurz vor der Übergabe. Dabei fällt sie gleich zweimal an: in den neuen und in den alten Räumen.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Vor dem Einzug: die neuen Räume</h2>
+  <p>Auch Räume, die sauber übergeben wurden, sind selten bezugsfertig. Oft stehen sie länger leer, es wurde renoviert oder Handwerker waren im Einsatz. Eine gründliche Reinigung vor dem Einzug sorgt dafür, dass Sie in saubere Räume starten.</p>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Staub von Renovierungen und Leerstand entfernen</li>
+    <li>Sanitärräume und Küche gründlich reinigen</li>
+    <li>Fenster reinigen, solange die Räume noch leer sind</li>
+    <li>Böden reinigen, bevor die Möbel kommen</li>
+  </ul>
+  <p>Wurde in den neuen Räumen umgebaut, ist eine <a href="bauendreinigung-nach-renovierung.html">Bauendreinigung</a> sinnvoll.</p>
+
+  <h2>Nach dem Auszug: die alten Räume</h2>
+  <p>In vielen Gewerbemietverträgen ist geregelt, in welchem Zustand die Räume zurückgegeben werden müssen. Prüfen Sie Ihren Vertrag rechtzeitig. Eine gründliche Endreinigung vermeidet Diskussionen bei der Übergabe.</p>
+  <ul>
+    <li>Böden gründlich reinigen, dort wo Möbel standen</li>
+    <li>Sanitärräume und Küche von Kalk und Ablagerungen befreien</li>
+    <li>Fenster, Fensterbänke und Heizkörper</li>
+    <li>Einbauschränke innen</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Leere Räume sind ideal</h2>
+  <p>Der beste Moment für eine gründliche Reinigung ist, wenn die Räume leer sind. Ohne Möbel kommt man an alle Flächen heran. Planen Sie die Reinigung deshalb direkt nach dem Auszug und vor dem Einzug ein, nicht mitten im Umzug.</p>
+
+  <h2>Frühzeitig planen</h2>
+  <p>Umzüge finden oft zum Monatsende statt, entsprechend gefragt sind Reinigungstermine. Stimmen Sie den Termin frühzeitig mit Ihrer Reinigungsfirma ab und planen Sie etwas Puffer ein.</p>
+
+  <h2>Und danach: die laufende Reinigung</h2>
+  <p>Der Umzug ist ein guter Anlass, die laufende Reinigung neu aufzusetzen. Neue Räume bedeuten oft neue Anforderungen. Bei Clean Connect übernehmen wir die Grundreinigung beim Umzug (38 € netto pro Stunde) und auf Wunsch anschließend die regelmäßige <a href="../bueroreinigung-koeln.html">Büroreinigung</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wann sollte die Endreinigung der alten Räume stattfinden?</h3>
+  <p>Direkt nach dem Auszug, wenn alle Möbel und Kisten weg sind, und rechtzeitig vor dem Übergabetermin. Planen Sie etwas Puffer ein, falls nach der Reinigung noch Kleinigkeiten nachgebessert werden müssen.</p>
+  <h3>Was verlangt der Vermieter bei der Übergabe?</h3>
+  <p>Das steht im Mietvertrag. Häufig ist eine „besenreine“ oder gereinigte Rückgabe vereinbart. Was genau gefordert ist, sollten Sie frühzeitig prüfen, damit die Reinigung darauf abgestimmt werden kann.</p>
+  <h3>Kann die Reinigung am Umzugstag stattfinden?</h3>
+  <p>Besser nicht. Solange noch Möbel bewegt werden, entsteht immer wieder neuer Schmutz. Ideal ist ein Termin nach dem Auszug beziehungsweise vor dem Einzug, wenn die Räume leer sind.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/grundreinigung-koeln.html">Grundreinigung in Köln</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Sauber umziehen in Köln</h2>
+    <p>Nennen Sie uns Ihren Umzugstermin, und wir planen die Reinigung für alte und neue Räume. Rückmeldung innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

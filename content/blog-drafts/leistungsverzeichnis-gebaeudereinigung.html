@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Leistungsverzeichnis Gebäudereinigung: Was gehört hinein? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-12-04
+title: Leistungsverzeichnis Gebäudereinigung: Was gehört hinein?
+target_keyword: leistungsverzeichnis gebäudereinigung
+description: Was gehört in ein Leistungsverzeichnis für die Gebäudereinigung? Aufbau, Inhalte und typische Fehler, damit später keine Diskussionen entstehen.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Leistungsverzeichnis Gebäudereinigung: Was gehört hinein? | Clean Connect Blog</title>
+<meta name="description" content="Was gehört in ein Leistungsverzeichnis für die Gebäudereinigung? Aufbau, Inhalte und typische Fehler, damit später keine Diskussionen entstehen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Leistungsverzeichnis Gebäudereinigung: Was gehört hinein? | Clean Connect Blog">
+<meta property="og:description" content="Was gehört in ein Leistungsverzeichnis für die Gebäudereinigung? Aufbau, Inhalte und typische Fehler, damit später keine Diskussionen entstehen.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Leistungsverzeichnis Gebäudereinigung: Was gehört hinein?",
+  "description": "Was gehört in ein Leistungsverzeichnis für die Gebäudereinigung? Aufbau, Inhalte und typische Fehler, damit später keine Diskussionen entstehen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,61 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Ratgeber</div>
+  <h1>Leistungsverzeichnis Gebäudereinigung: Was gehört hinein?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Die meisten Streitigkeiten mit Reinigungsfirmen entstehen nicht wegen schlechter Arbeit, sondern weil nie klar festgelegt wurde, was eigentlich gereinigt werden soll. Ein Leistungsverzeichnis schafft diese Klarheit.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Was ist ein Leistungsverzeichnis?</h2>
+  <p>Ein Leistungsverzeichnis beschreibt schriftlich, <strong>welche Flächen und Aufgaben wie oft gereinigt werden</strong>. Es ist die Grundlage für das Angebot, den Vertrag und die spätere Kontrolle der Arbeit.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Diese Inhalte gehören hinein</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Objekt und Flächen:</strong> Adresse, Etagen, Räume, idealerweise mit Grundriss.</li>
+    <li><strong>Raumarten:</strong> Büros, Besprechungsräume, Sanitär, Küche, Flure, Treppen.</li>
+    <li><strong>Aufgaben pro Raumart:</strong> zum Beispiel Böden wischen, Mülleimer leeren, Armaturen reinigen.</li>
+    <li><strong>Häufigkeit pro Aufgabe:</strong> täglich, wöchentlich, monatlich, nach Bedarf.</li>
+    <li><strong>Zeitfenster:</strong> Wann darf gereinigt werden?</li>
+    <li><strong>Zugang:</strong> Schlüssel, Codes, Alarmanlage, Ansprechpartner vor Ort.</li>
+    <li><strong>Material:</strong> Wer stellt Reinigungsmittel und Verbrauchsmaterial wie Seife und Papier?</li>
+    <li><strong>Ausschlüsse:</strong> Was ausdrücklich nicht gereinigt wird.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Typische Fehler</h2>
+  <ul>
+    <li><strong>Zu allgemein:</strong> „Büro reinigen“ lässt offen, ob Schreibtische, Fensterbänke oder Heizkörper dazugehören.</li>
+    <li><strong>Keine Häufigkeiten:</strong> Ohne Angabe, wie oft etwas gemacht wird, ist Streit vorprogrammiert.</li>
+    <li><strong>Sonderleistungen vergessen:</strong> Fenster- oder Grundreinigung sollten separat geregelt sein.</li>
+    <li><strong>Nie angepasst:</strong> Ändert sich die Nutzung, muss auch das Verzeichnis angepasst werden.</li>
+  </ul>
+
+  <h2>Eine Vorlage zum Starten</h2>
+  <p>Als Ausgangspunkt eignet sich unsere <a href="checkliste-bueroreinigung.html">Checkliste Büroreinigung</a>. Sie ordnet die typischen Aufgaben nach täglich, wöchentlich und monatlich und lässt sich leicht auf Ihr Objekt übertragen.</p>
+
+  <h2>Gemeinsam erstellen statt vorgeben</h2>
+  <p>Ein gutes Leistungsverzeichnis entsteht im Gespräch. Bei Clean Connect erstellen wir es gemeinsam mit Ihnen, nach einer Begehung oder einer <a href="../index.html#erstreinigung">Erstreinigung</a>. So basiert es auf Ihrem tatsächlichen Objekt und nicht auf einer Schätzung.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wer erstellt das Leistungsverzeichnis?</h3>
+  <p>Idealerweise entsteht es gemeinsam: Sie kennen Ihre Nutzung und Wünsche, die Reinigungsfirma weiß, welche Aufgaben wie viel Zeit brauchen. Bei größeren Ausschreibungen erstellen Auftraggeber das Verzeichnis oft selbst, damit alle Anbieter auf derselben Grundlage kalkulieren.</p>
+  <h3>Wie detailliert muss es sein?</h3>
+  <p>So detailliert, dass beide Seiten ohne Diskussion wissen, was vereinbart ist. Für ein kleines Büro reicht oft eine Seite mit Raumarten, Aufgaben und Häufigkeiten. Größere Objekte brauchen mehr Detail, etwa eine Aufstellung nach Etagen und Räumen.</p>
+  <h3>Was passiert, wenn sich die Nutzung ändert?</h3>
+  <p>Dann sollte auch das Leistungsverzeichnis angepasst werden, zum Beispiel wenn neue Räume dazukommen oder sich die Belegung ändert. So bleiben Leistung und Preis nachvollziehbar, und es entstehen keine Missverständnisse darüber, was aktuell gilt.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Ihr Leistungsverzeichnis, gemeinsam erstellt</h2>
+    <p>Nach einer Begehung oder Erstreinigung halten wir fest, was wie oft gereinigt wird. Rückmeldung innerhalb von 24 Stunden.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

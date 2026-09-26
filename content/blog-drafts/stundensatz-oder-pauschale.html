@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-01-12
+title: Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt?
+target_keyword: reinigung stundensatz pauschale
+description: Reinigung nach Stundensatz oder als Pauschale abrechnen? Die Vor- und Nachteile beider Modelle und wann welches sinnvoll ist.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt? | Clean Connect Blog</title>
+<meta name="description" content="Reinigung nach Stundensatz oder als Pauschale abrechnen? Die Vor- und Nachteile beider Modelle und wann welches sinnvoll ist.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt? | Clean Connect Blog">
+<meta property="og:description" content="Reinigung nach Stundensatz oder als Pauschale abrechnen? Die Vor- und Nachteile beider Modelle und wann welches sinnvoll ist.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt?",
+  "description": "Reinigung nach Stundensatz oder als Pauschale abrechnen? Die Vor- und Nachteile beider Modelle und wann welches sinnvoll ist.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,66 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Ratgeber</div>
+  <h1>Stundensatz oder Pauschale: Welche Abrechnung passt zu Ihrem Objekt?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Reinigungsfirmen rechnen unterschiedlich ab: nach Stunden, als monatliche Pauschale oder nach Fläche. Welches Modell für Sie günstiger und transparenter ist, hängt vom Objekt ab.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Abrechnung nach Stunden</h2>
+  <p>Beim Stundensatz zahlen Sie für die tatsächlich eingeplante Arbeitszeit. In der Praxis wird meist ein fester Stundenumfang pro Einsatz vereinbart, der sich aus Fläche und Leistungsumfang ergibt.</p>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Vorteil:</strong> Transparent. Sie sehen, wie viel Zeit für Ihr Objekt eingeplant ist, und Angebote lassen sich über den Stundensatz vergleichen.</li>
+    <li><strong>Nachteil:</strong> Ohne festen Stundenumfang kann die monatliche Rechnung schwanken.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Monatliche Pauschale</h2>
+  <p>Bei einer Pauschale zahlen Sie jeden Monat denselben Betrag für eine festgelegte Leistung.</p>
+  <ul>
+    <li><strong>Vorteil:</strong> Maximal planbar, ideal für Budgets und Nebenkostenabrechnungen.</li>
+    <li><strong>Nachteil:</strong> Sie sehen nicht direkt, wie viel Zeit hinter dem Preis steckt.</li>
+  </ul>
+
+  <h2>Abrechnung nach Fläche</h2>
+  <p>Manche Anbieter kalkulieren nach Quadratmetern. Das klingt objektiv, berücksichtigt aber nicht, wie stark eine Fläche genutzt wird. Ein Lagerraum und ein Empfangsbereich gleicher Größe brauchen sehr unterschiedlich viel Zeit.</p>
+
+  <h2>Welches Modell passt wozu?</h2>
+  <ul>
+    <li><strong>Büros, Praxen, Gewerbe:</strong> Stundensatz mit festem Stundenumfang ist transparent und fair.</li>
+    <li><strong>Treppenhäuser:</strong> Eine Pauschale pro Treppenhaus passt gut zur Nebenkostenabrechnung.</li>
+    <li><strong>Einmalige Einsätze:</strong> Grund- oder Glasreinigung werden meist nach Stunden abgerechnet.</li>
+  </ul>
+
+  <h2>So rechnen wir bei Clean Connect ab</h2>
+  <p>Wir kombinieren beide Modelle, je nachdem, was zum Objekt passt:</p>
+  <ul>
+    <li>Unterhaltsreinigung: 32 € netto pro Stunde, mit festem Stundenumfang pro Einsatz</li>
+    <li>Grundreinigung: 38 € netto pro Stunde</li>
+    <li>Glasreinigung: 45 € netto pro Stunde</li>
+    <li>Treppenhausreinigung: monatliche Pauschale von meist 120 bis 300 € netto pro Treppenhaus</li>
+  </ul>
+  <p>Alle Details und ein Rechenbeispiel finden Sie auf unserer <a href="../preise.html">Preisseite</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Schwankt die Rechnung bei Abrechnung nach Stunden?</h3>
+  <p>Nicht, wenn ein fester Stundenumfang pro Einsatz vereinbart ist. Dann zahlen Sie jeden Monat für dieselbe Zahl an Einsätzen und Stunden. Schwankungen entstehen nur durch Zusatzaufträge, die Sie gesondert beauftragen.</p>
+  <h3>Warum ist die Grundreinigung teurer pro Stunde?</h3>
+  <p>Bei der Grundreinigung kommen andere Verfahren, Maschinen und Mittel zum Einsatz als bei der laufenden Reinigung. Deshalb gelten eigene Stundensätze: Bei Clean Connect 38 € netto für die Grundreinigung und 45 € netto für die Glasreinigung, gegenüber 32 € netto für die Unterhaltsreinigung.</p>
+  <h3>Was ist besser für die Nebenkostenabrechnung?</h3>
+  <p>Für Treppenhäuser in Mietshäusern ist eine monatliche Pauschale pro Objekt meist am praktischsten. Sie lässt sich einfach und nachvollziehbar in die Nebenkostenabrechnung übernehmen.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Transparente Preise für Ihr Objekt</h2>
+    <p>Wir sehen uns Ihr Objekt an oder reinigen es einmal zur Probe. Danach wissen Sie genau, womit Sie rechnen können.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

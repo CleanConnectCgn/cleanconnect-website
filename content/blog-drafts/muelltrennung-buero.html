@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Mülltrennung im Büro: So klappt es mit Team und Reinigung drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-06-22
+title: Mülltrennung im Büro: So klappt es mit Team und Reinigung
+target_keyword: mülltrennung büro
+description: Mülltrennung im Büro: Wie Sie Behälter sinnvoll aufstellen, das Team einbinden und die Reinigung richtig einplanen.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Mülltrennung im Büro: So klappt es mit Team und Reinigung | Clean Connect Blog</title>
+<meta name="description" content="Mülltrennung im Büro: Wie Sie Behälter sinnvoll aufstellen, das Team einbinden und die Reinigung richtig einplanen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Mülltrennung im Büro: So klappt es mit Team und Reinigung | Clean Connect Blog">
+<meta property="og:description" content="Mülltrennung im Büro: Wie Sie Behälter sinnvoll aufstellen, das Team einbinden und die Reinigung richtig einplanen.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Mülltrennung im Büro: So klappt es mit Team und Reinigung",
+  "description": "Mülltrennung im Büro: Wie Sie Behälter sinnvoll aufstellen, das Team einbinden und die Reinigung richtig einplanen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,67 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Büroreinigung</div>
+  <h1>Mülltrennung im Büro: So klappt es mit Team und Reinigung</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Im Büro fallen jeden Tag Papier, Verpackungen und Essensreste an. Damit die Trennung funktioniert, müssen Team, Behälter und Reinigung zusammenpassen.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was im Büro typischerweise anfällt</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Papier und Pappe</li>
+    <li>Verpackungen aus Kunststoff und Metall</li>
+    <li>Bioabfall aus der Küche, etwa Kaffeesatz und Essensreste</li>
+    <li>Restmüll</li>
+    <li>gelegentlich Glas, Batterien, Tonerkartuschen und Elektroschrott</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Pflichten für Unternehmen</h2>
+  <p>Für gewerbliche Abfälle gilt die Gewerbeabfallverordnung. Sie sieht grundsätzlich die getrennte Sammlung bestimmter Abfallarten vor. Welche Pflichten genau für Ihr Unternehmen gelten und welche Behälter nötig sind, klären Sie am besten mit Ihrem Entsorger. In Köln sind das je nach Vertrag die AWB Köln oder ein privater Entsorger.</p>
+
+  <h2>Behälter richtig aufstellen</h2>
+  <ul>
+    <li><strong>Sammelstationen statt Einzeleimer:</strong> Zentrale Stationen mit mehreren Fächern funktionieren besser als ein Eimer unter jedem Tisch.</li>
+    <li><strong>Klare Beschriftung:</strong> Symbole und kurze Texte zeigen, was wohin gehört.</li>
+    <li><strong>Bioabfall in die Küche:</strong> Dort, wo er anfällt.</li>
+    <li><strong>Papier am Drucker:</strong> Ein Papierbehälter neben dem Drucker wird automatisch genutzt.</li>
+  </ul>
+
+  <h2>Das Team einbinden</h2>
+  <p>Mülltrennung funktioniert nur, wenn alle mitmachen. Eine kurze Info bei der Einführung und ein gut sichtbarer Aushang helfen. Wer weiß, warum getrennt wird, trennt eher richtig.</p>
+
+  <h2>Die Rolle der Reinigung</h2>
+  <p>Die Reinigungsfirma leert die Behälter und bringt die Abfälle zu den richtigen Sammelbehältern im Haus. Dafür muss klar sein:</p>
+  <ul>
+    <li>wo die großen Sammelbehälter stehen</li>
+    <li>welche Fraktionen getrennt werden</li>
+    <li>ob Sonderabfälle wie Toner oder Batterien separat behandelt werden</li>
+  </ul>
+  <p>Falsch befüllte Behälter kann die Reinigung nicht nachsortieren. Deshalb ist die Trennung am Arbeitsplatz entscheidend.</p>
+
+  <h2>Im Leistungsverzeichnis festhalten</h2>
+  <p>Wie der Müll geleert und entsorgt wird, gehört ins Leistungsverzeichnis Ihrer <a href="../bueroreinigung-koeln.html">Büroreinigung</a>. Einen Überblick über weitere Aufgaben gibt unsere <a href="checkliste-bueroreinigung.html">Checkliste Büroreinigung</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wer ist für die Mülltrennung verantwortlich, Team oder Reinigung?</h3>
+  <p>Die Trennung erfolgt dort, wo der Abfall entsteht, also am Arbeitsplatz und in der Küche. Die Reinigung leert die Behälter und bringt die Abfälle zu den richtigen Sammelbehältern. Falsch befüllte Behälter kann sie nicht nachsortieren.</p>
+  <h3>Wie viele Behälter braucht ein Büro?</h3>
+  <p>Das hängt davon ab, welche Abfallarten anfallen und was Ihr Entsorger vorgibt. Bewährt haben sich zentrale Sammelstationen mit Fächern für Papier, Verpackungen, Restmüll und in der Küche zusätzlich für Bioabfall.</p>
+  <h3>Was passiert mit Tonerkartuschen und Batterien?</h3>
+  <p>Solche Abfälle gehören nicht in den normalen Müll. Viele Hersteller und Händler nehmen sie zurück, für Batterien gibt es Sammelboxen. Legen Sie fest, wo sie im Büro gesammelt werden und wer sie zur Rückgabe bringt.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Ordnung im Büro, auch beim Müll</h2>
+    <p>Wir stimmen die Müllentsorgung mit Ihnen ab und reinigen einmal zur Probe, ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

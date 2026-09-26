@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-11-24
+title: Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen
+target_keyword: reinigungsdienst hausverwaltung
+description: Worauf Hausverwaltungen bei einem Reinigungsdienst für mehrere Objekte achten sollten: Ansprechpartner, Dokumentation, Staffelpreise.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen | Clean Connect Blog</title>
+<meta name="description" content="Worauf Hausverwaltungen bei einem Reinigungsdienst für mehrere Objekte achten sollten: Ansprechpartner, Dokumentation, Staffelpreise.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen | Clean Connect Blog">
+<meta property="og:description" content="Worauf Hausverwaltungen bei einem Reinigungsdienst für mehrere Objekte achten sollten: Ansprechpartner, Dokumentation, Staffelpreise.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen",
+  "description": "Worauf Hausverwaltungen bei einem Reinigungsdienst für mehrere Objekte achten sollten: Ansprechpartner, Dokumentation, Staffelpreise.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,52 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Hausverwaltung</div>
+  <h1>Hausverwaltung: Einen Reinigungsdienst für mehrere Objekte wählen</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Wer zehn, zwanzig oder mehr Häuser verwaltet, braucht einen Reinigungsdienst, der mitdenkt. Denn jede Beschwerde über ein schmutziges Treppenhaus landet am Ende bei der Hausverwaltung.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Die besonderen Anforderungen von Hausverwaltungen</h2>
+  <p>Hausverwaltungen stehen zwischen Eigentümern, Mietern und Dienstleistern. Sie müssen Leistungen nachweisen, Kosten rechtfertigen und Beschwerden klären. Ein Reinigungsdienst sollte ihnen diese Arbeit erleichtern, nicht zusätzliche verursachen.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
-  <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
-  </ul>
+  <h2>Ein Ansprechpartner für alle Objekte</h2>
+  <p>Verschiedene Dienstleister für verschiedene Häuser bedeuten verschiedene Ansprechpartner, Verträge und Abrechnungen. Ein Anbieter für alle Objekte vereinfacht die Verwaltung erheblich. Wichtig ist, dass Sie eine feste Person erreichen, die Ihre Objekte kennt.</p>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Dokumentation ist Pflicht</h2>
+  <p>Wenn ein Mieter behauptet, das Treppenhaus sei seit Wochen nicht gereinigt worden, brauchen Sie Nachweise. Achten Sie darauf, dass Ihr Reinigungsdienst jeden Einsatz dokumentiert: wann, wo, was. So können Sie Beschwerden schnell und sachlich beantworten.</p>
+
+  <h2>Mängel melden, bevor Mieter es tun</h2>
+  <p>Ein guter Reinigungsdienst sieht mehr als Schmutz: defekte Beleuchtung, beschädigte Briefkästen, abgestellter Sperrmüll. Fragen Sie, ob solche Auffälligkeiten an Sie gemeldet werden. Das spart Wege und zeigt Eigentümern, dass sich jemand kümmert.</p>
+
+  <h2>Leistungen aus einer Hand</h2>
+  <p>Neben der <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung</a> fallen in Wohnanlagen weitere Aufgaben an: Winterdienst, Reinigung von Kellern und Müllplätzen, Glasreinigung, Grundreinigung nach Auszügen. Ein Anbieter, der das alles abdeckt, reduziert Ihren Koordinationsaufwand.</p>
+
+  <h2>Staffelpreise bei mehreren Objekten</h2>
+  <p>Wer mehrere Objekte bündelt, sollte über Staffelpreise sprechen. Bei Clean Connect läuft die Treppenhausreinigung als monatliche Pauschale von meist 120 bis 300 Euro netto pro Treppenhaus. Bei mehreren Objekten bieten wir Staffelpreise an.</p>
+
+  <h2>Hausverwaltungen sind unser Kerngeschäft</h2>
+  <p>Clean Connect betreut Hausverwaltungen und WEGs in Köln und Umgebung mit Treppenhausreinigung, Unterhaltsreinigung und Winterdienst, mit festem Ansprechpartner und zuverlässiger Dokumentation.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Kann ein Reinigungsdienst kurzfristig einspringen?</h3>
+  <p>Bei akuten Anlässen wie einem Wasserschaden, einer Wohnungsübergabe oder starker Verschmutzung nach Bauarbeiten ist ein Anbieter hilfreich, der kurzfristig reagieren kann. Klären Sie im Vorfeld, wie schnell der Dienstleister in solchen Fällen verfügbar ist und wie Sonderaufträge abgerechnet werden.</p>
+  <h3>Wie werden Kosten auf mehrere Objekte verteilt?</h3>
+  <p>Sinnvoll ist eine Abrechnung pro Objekt. So können die Kosten korrekt in die jeweilige Nebenkostenabrechnung übernommen werden. Achten Sie darauf, dass Ihr Dienstleister die Rechnungen entsprechend aufschlüsselt.</p>
+  <h3>Wie viele Objekte muss man bündeln, damit es Staffelpreise gibt?</h3>
+  <p>Das ist anbieterabhängig. Bei Clean Connect sprechen wir bei mehreren Objekten individuell über Staffelpreise. Schicken Sie uns einfach Ihre Objektliste, und wir machen Ihnen ein Angebot.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>
+    <a href="../standorte/winterdienst-koeln.html">Winterdienst in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Alle Objekte, ein Ansprechpartner</h2>
+    <p>Schicken Sie uns Ihre Objektliste. Wir melden uns innerhalb von 24 Stunden mit einem Angebot inklusive Staffelpreisen.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>
