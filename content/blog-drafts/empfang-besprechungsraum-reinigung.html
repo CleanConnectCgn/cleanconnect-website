@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Empfang und Besprechungsräume: Der erste Eindruck zählt drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-05-11
+title: Empfang und Besprechungsräume: Der erste Eindruck zählt
+target_keyword: reinigung empfangsbereich
+description: Empfang und Besprechungsräume sauber halten: Welche Details Besucher bemerken und wie Sie diese Bereiche im Reinigungsplan richtig gewichten.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Empfang und Besprechungsräume: Der erste Eindruck zählt | Clean Connect Blog</title>
+<meta name="description" content="Empfang und Besprechungsräume sauber halten: Welche Details Besucher bemerken und wie Sie diese Bereiche im Reinigungsplan richtig gewichten.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Empfang und Besprechungsräume: Der erste Eindruck zählt | Clean Connect Blog">
+<meta property="og:description" content="Empfang und Besprechungsräume sauber halten: Welche Details Besucher bemerken und wie Sie diese Bereiche im Reinigungsplan richtig gewichten.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Empfang und Besprechungsräume: Der erste Eindruck zählt",
+  "description": "Empfang und Besprechungsräume sauber halten: Welche Details Besucher bemerken und wie Sie diese Bereiche im Reinigungsplan richtig gewichten.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,67 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Büroreinigung</div>
+  <h1>Empfang und Besprechungsräume: Der erste Eindruck zählt</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Besucher sehen von Ihrem Büro meist nur zwei Bereiche: den Empfang und den Besprechungsraum. Genau hier entsteht der erste Eindruck, und der sollte stimmen.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
-
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was Besucher wahrnehmen</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Fingerabdrücke an der Eingangstür und an Glastrennwänden</li>
+    <li>Staub auf dem Empfangstresen</li>
+    <li>Kaffeeränder auf dem Besprechungstisch</li>
+    <li>volle Papierkörbe</li>
+    <li>der Zustand der Gästetoilette</li>
+  </ul>
+  <p>Jedes dieser Details für sich ist klein. Zusammen prägen sie das Bild, das Kunden, Bewerber und Geschäftspartner von Ihrem Unternehmen mitnehmen.</p>
+
+  <h2>Der Empfang</h2>
+  <ul>
+    <li>Eingangstür und Glasflächen bei jedem Termin von Fingerabdrücken befreien</li>
+    <li>Tresen und Wartebereich abwischen</li>
+    <li>Boden am Eingang besonders gründlich reinigen, vor allem bei Regen</li>
+    <li>Schmutzfangmatten absaugen</li>
+    <li>Garderobe ordentlich halten</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Besprechungsräume</h2>
+  <p>Besprechungsräume werden unregelmäßig und oft intensiv genutzt: mal steht der Raum tagelang leer, mal jagt ein Meeting das nächste. Wichtig ist, dass er vor wichtigen Terminen einwandfrei ist:</p>
+  <ul>
+    <li>Tische abwischen, auch Kaffeeflecken und Wasserränder</li>
+    <li>Stühle zurechtrücken</li>
+    <li>Whiteboards nach Absprache reinigen</li>
+    <li>Geschirr abräumen</li>
+    <li>Papierkörbe leeren</li>
+  </ul>
+
+  <h2>Im Reinigungsplan richtig gewichten</h2>
+  <p>Empfang und Besprechungsräume verdienen im Reinigungsplan eine höhere Priorität als interne Flächen. Sprechen Sie mit Ihrer Reinigungsfirma darüber, dass diese Bereiche bei jedem Termin gründlich gereinigt werden. Wie Sie das gesamte Büro sinnvoll aufteilen, zeigt unsere <a href="checkliste-bueroreinigung.html">Checkliste Büroreinigung</a>.</p>
+
+  <h2>Das Team einbinden</h2>
+  <p>Die Reinigung findet meist abends statt. Nach einem Nachmittagsmeeting hilft es, wenn das Team selbst Geschirr abräumt und den Raum ordentlich hinterlässt. So ist er auch für einen Termin am nächsten Morgen bereit.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Kann der Besprechungsraum vor wichtigen Terminen extra gereinigt werden?</h3>
+  <p>Ja, nach Absprache. Liegt ein wichtiger Kundentermin an, kann der Raum am Vorabend oder früh morgens gezielt gereinigt werden. Sagen Sie Ihrem Ansprechpartner einfach rechtzeitig Bescheid.</p>
+  <h3>Wer räumt das Geschirr nach Meetings ab?</h3>
+  <p>Das sollte im Team geregelt sein. Die Reinigung kann Geschirr abräumen und in die Spülmaschine stellen, wenn das vereinbart ist. Bleibt es bis zum nächsten Morgen stehen, macht das beim Frühtermin keinen guten Eindruck.</p>
+  <h3>Wie oft sollten Glastrennwände gereinigt werden?</h3>
+  <p>Fingerabdrücke an Glastüren und Trennwänden im Eingangsbereich sollten bei jedem Termin entfernt werden. Die gründliche Reinigung großer Glasflächen erfolgt in größeren Abständen im Rahmen der Glasreinigung.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Ein erster Eindruck, der überzeugt</h2>
+    <p>Testen Sie uns mit einer Erstreinigung, zum regulären Stundensatz und ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

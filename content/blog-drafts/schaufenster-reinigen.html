@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-11-13
+title: Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft
+target_keyword: schaufenster reinigen
+description: Schaufenster streifenfrei reinigen: Warum saubere Scheiben im Weihnachtsgeschäft zählen, wie oft sie gereinigt werden sollten und was es kostet.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft | Clean Connect Blog</title>
+<meta name="description" content="Schaufenster streifenfrei reinigen: Warum saubere Scheiben im Weihnachtsgeschäft zählen, wie oft sie gereinigt werden sollten und was es kostet.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft | Clean Connect Blog">
+<meta property="og:description" content="Schaufenster streifenfrei reinigen: Warum saubere Scheiben im Weihnachtsgeschäft zählen, wie oft sie gereinigt werden sollten und was es kostet.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft",
+  "description": "Schaufenster streifenfrei reinigen: Warum saubere Scheiben im Weihnachtsgeschäft zählen, wie oft sie gereinigt werden sollten und was es kostet.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,54 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Glasreinigung</div>
+  <h1>Schaufenster reinigen: Streifenfrei ins Weihnachtsgeschäft</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Das Schaufenster ist die Visitenkarte jedes Geschäfts. Gerade in der Vorweihnachtszeit, wenn Kunden durch die Straßen bummeln, fallen verschmierte Scheiben sofort auf.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Warum saubere Schaufenster zählen</h2>
+  <p>Kunden entscheiden in Sekunden, ob sie ein Geschäft betreten. Streifen, Fingerabdrücke und Regenspuren lassen selbst die schönste Dekoration schäbig wirken. Klare Scheiben dagegen lenken den Blick auf das, worauf es ankommt: Ihre Ware.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was Schaufenster besonders beansprucht</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Witterung:</strong> Regen, Staub und im Winter Streusalz-Spritzer von der Straße</li>
+    <li><strong>Fingerabdrücke:</strong> Kinder und neugierige Passanten tippen gern an die Scheibe</li>
+    <li><strong>Verkehr:</strong> An belebten Straßen setzt sich Feinstaub schnell ab</li>
+    <li><strong>Innenseite:</strong> Dekorationswechsel und Beleuchtung machen Schlieren sichtbar</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Wie oft Schaufenster gereinigt werden sollten</h2>
+  <p>Eine feste Regel gibt es nicht. Viele Geschäfte in belebten Lagen lassen ihre Schaufenster wöchentlich oder alle zwei Wochen von außen reinigen, die Innenseite seltener. Vor wichtigen Verkaufsphasen wie dem Weihnachtsgeschäft lohnt sich ein zusätzlicher Termin.</p>
+
+  <h2>Warum Profis streifenfrei arbeiten</h2>
+  <p>Große Glasflächen streifenfrei zu bekommen, ist schwieriger, als es aussieht. Professionelle Glasreiniger arbeiten mit geeignetem Werkzeug und der richtigen Technik, damit auch bei tief stehender Wintersonne keine Schlieren zu sehen sind. Rahmen, Dichtungen und Fensterbänke werden dabei gleich mitgereinigt.</p>
+
+  <h2>Glasreinigung als Teil der Unterhaltsreinigung</h2>
+  <p>Wer ohnehin eine regelmäßige Ladenreinigung beauftragt, kann die Glasreinigung einfach dazubuchen: ein Ansprechpartner, eine Abrechnung. Die Glastür am Eingang sollte dabei bei jedem Termin von Fingerabdrücken befreit werden.</p>
+
+  <h2>Was die Glasreinigung kostet</h2>
+  <p>Bei Clean Connect berechnen wir die Glasreinigung mit 45 € netto pro Stunde. Wie viel Zeit Ihre Schaufenster brauchen, klären wir vorab anhand von Fotos oder bei einer kurzen Begehung. Weitere Informationen finden Sie auf unserer Seite zur <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Kann man Schaufenster auch bei Frost reinigen?</h3>
+  <p>Bei starkem Frost wird es schwierig, weil Wasser auf der Scheibe gefrieren kann. Professionelle Glasreiniger planen die Außenreinigung deshalb nach Wetterlage. Vor dem Weihnachtsgeschäft lohnt es sich, einen Termin frühzeitig festzulegen, solange die Temperaturen noch mitspielen.</p>
+  <h3>Werden Werbefolien und Beschriftungen beschädigt?</h3>
+  <p>Bei sachgemäßer Reinigung nicht. Folierte Flächen brauchen aber eine vorsichtige Behandlung, damit sich keine Kanten lösen. Weisen Sie Ihre Reinigungsfirma auf Beschriftungen und Folien hin, damit sie entsprechend arbeitet.</p>
+  <h3>Muss der Laden für die Reinigung geschlossen sein?</h3>
+  <p>Für die Außenseite nicht. Sie lässt sich auch während der Öffnungszeiten reinigen, idealerweise zu ruhigen Zeiten. Die Innenseite ist hinter Dekorationen oft schwer zugänglich und wird deshalb am besten vor Öffnung, nach Ladenschluss oder bei einem Dekowechsel gereinigt.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Klare Schaufenster fürs Weihnachtsgeschäft</h2>
+    <p>Schicken Sie uns ein Foto Ihrer Schaufenster, und Sie erhalten innerhalb von 24 Stunden ein Angebot.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Was ist Unterhaltsreinigung? Leistungen einfach erklärt drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-20
+title: Was ist Unterhaltsreinigung? Leistungen einfach erklärt
+target_keyword: was ist unterhaltsreinigung
+description: Unterhaltsreinigung einfach erklärt: Was dazugehört, wie sie sich von der Grundreinigung unterscheidet und für wen sie sich lohnt.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Was ist Unterhaltsreinigung? Leistungen einfach erklärt | Clean Connect Blog</title>
+<meta name="description" content="Unterhaltsreinigung einfach erklärt: Was dazugehört, wie sie sich von der Grundreinigung unterscheidet und für wen sie sich lohnt.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Was ist Unterhaltsreinigung? Leistungen einfach erklärt | Clean Connect Blog">
+<meta property="og:description" content="Unterhaltsreinigung einfach erklärt: Was dazugehört, wie sie sich von der Grundreinigung unterscheidet und für wen sie sich lohnt.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Was ist Unterhaltsreinigung? Leistungen einfach erklärt",
+  "description": "Unterhaltsreinigung einfach erklärt: Was dazugehört, wie sie sich von der Grundreinigung unterscheidet und für wen sie sich lohnt.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,61 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Unterhaltsreinigung</div>
+  <h1>Was ist Unterhaltsreinigung? Leistungen einfach erklärt</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Der Begriff taucht in fast jedem Angebot einer Reinigungsfirma auf, wird aber selten erklärt. Unterhaltsreinigung ist die Basis jeder gepflegten Immobilie. Hier erfahren Sie, was dahintersteckt.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Die kurze Definition</h2>
+  <p>Unterhaltsreinigung ist die <strong>regelmäßige, wiederkehrende Reinigung</strong> eines Gebäudes. Sie hält den laufenden Sauberkeitszustand aufrecht, im Gegensatz zu einmaligen Einsätzen wie einer Grund- oder Bauendreinigung.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was typischerweise dazugehört</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>Böden saugen und wischen</li>
+    <li>Sanitärbereiche und Küchen reinigen</li>
+    <li>Mülleimer leeren</li>
+    <li>Oberflächen und Kontaktflächen abwischen</li>
+    <li>Fenster im Innenbereich als Sichtreinigung</li>
+    <li>Gemeinschaftsflächen und Flure</li>
+  </ul>
+  <p>Welche Leistungen genau enthalten sind und wie oft sie erbracht werden, steht im Leistungsverzeichnis, das Sie mit der Reinigungsfirma vereinbaren.</p>
+
+  <h2>Unterhaltsreinigung oder Grundreinigung?</h2>
+  <p>Die Unterhaltsreinigung sorgt für den täglichen oder wöchentlichen Standard. Die <a href="../standorte/grundreinigung-koeln.html">Grundreinigung</a> ist dagegen eine intensive Tiefenreinigung: Böden werden maschinell gereinigt, schwer erreichbare Bereiche gesäubert und Ablagerungen entfernt. Sie findet seltener statt, meist einmal jährlich oder zu besonderen Anlässen.</p>
+  <p>Beide ergänzen sich: Eine gute Unterhaltsreinigung verlängert die Abstände, in denen eine Grundreinigung nötig wird.</p>
+
+  <h2>Für wen sich Unterhaltsreinigung lohnt</h2>
+  <ul>
+    <li><strong>Büros und Agenturen:</strong> für einen gepflegten Arbeitsplatz und einen guten Eindruck bei Besuchern</li>
+    <li><strong>Praxen:</strong> wo Sauberkeit besonders wichtig ist</li>
+    <li><strong>Läden und Showrooms:</strong> wo Kunden jeden Fleck sehen</li>
+    <li><strong>Gewerbeflächen:</strong> die täglich intensiv genutzt werden</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Wie oft und was es kostet</h2>
+  <p>Die Frequenz reicht von täglich bis einmal pro Woche, je nach Nutzung. Bei Clean Connect kostet die Unterhaltsreinigung 32 € netto pro Stunde. Wie viele Stunden Ihr Objekt braucht, legen wir nach einer kostenlosen Begehung oder einer <a href="../index.html#erstreinigung">Erstreinigung</a> fest. Alle Details stehen auf unserer <a href="../preise.html">Preisseite</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Ist Unterhaltsreinigung dasselbe wie Büroreinigung?</h3>
+  <p>Büroreinigung ist eine Form der Unterhaltsreinigung, nämlich die regelmäßige Reinigung von Büroflächen. Unterhaltsreinigung ist der Oberbegriff und umfasst auch Praxen, Läden, Showrooms und andere Gewerbeflächen. Die Leistungen ähneln sich, der Schwerpunkt hängt vom Objekt ab.</p>
+  <h3>Sind Reinigungsmittel im Preis enthalten?</h3>
+  <p>Das ist je nach Anbieter unterschiedlich und sollte im Angebot klar stehen. Fragen Sie nach, ob Reinigungsmittel und Geräte im Stundensatz enthalten sind und wer das Verbrauchsmaterial wie Seife und Papier stellt. So vermeiden Sie Überraschungen auf der Rechnung.</p>
+  <h3>Wie schnell kann eine Unterhaltsreinigung starten?</h3>
+  <p>Nach der Anfrage melden wir uns innerhalb von 24 Stunden. Danach folgen eine Begehung oder eine Erstreinigung und das Angebot. Wie schnell die regelmäßige Reinigung anschließend beginnen kann, hängt vom Umfang und Ihren Wunschterminen ab. Sprechen Sie uns einfach auf Ihren gewünschten Starttermin an.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../bueroreinigung-koeln.html">Büroreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Unterhaltsreinigung für Ihr Objekt</h2>
+    <p>Lernen Sie uns bei einer Erstreinigung kennen, zum regulären Stundensatz und ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

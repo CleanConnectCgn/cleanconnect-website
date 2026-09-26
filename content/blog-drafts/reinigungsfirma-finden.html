@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Reinigungsfirma finden: 10 Fragen vor dem Vertrag drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-02
+title: Reinigungsfirma finden: 10 Fragen vor dem Vertrag
+target_keyword: reinigungsfirma finden
+description: Eine gute Reinigungsfirma finden: Mit diesen 10 Fragen erkennen Sie vor Vertragsabschluss, ob ein Anbieter zuverlässig arbeitet.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Reinigungsfirma finden: 10 Fragen vor dem Vertrag | Clean Connect Blog</title>
+<meta name="description" content="Eine gute Reinigungsfirma finden: Mit diesen 10 Fragen erkennen Sie vor Vertragsabschluss, ob ein Anbieter zuverlässig arbeitet.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Reinigungsfirma finden: 10 Fragen vor dem Vertrag | Clean Connect Blog">
+<meta property="og:description" content="Eine gute Reinigungsfirma finden: Mit diesen 10 Fragen erkennen Sie vor Vertragsabschluss, ob ein Anbieter zuverlässig arbeitet.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Reinigungsfirma finden: 10 Fragen vor dem Vertrag",
+  "description": "Eine gute Reinigungsfirma finden: Mit diesen 10 Fragen erkennen Sie vor Vertragsabschluss, ob ein Anbieter zuverlässig arbeitet.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,65 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Ratgeber</div>
+  <h1>Reinigungsfirma finden: 10 Fragen vor dem Vertrag</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Auf dem Papier versprechen fast alle Reinigungsfirmen dasselbe: Zuverlässigkeit, Qualität, faire Preise. Ob das stimmt, zeigt sich meist erst nach Wochen. Mit den richtigen Fragen im Erstgespräch erkennen Sie vorher, wer hält, was er verspricht.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>1. Wer ist mein fester Ansprechpartner?</h2>
+  <p>Fragen Sie konkret nach einem Namen und einer direkten Telefonnummer. Wer bei Problemen erst eine Hotline anrufen und auf einen Rückruf warten muss, verliert Zeit und Nerven.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
-  <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
-  </ul>
+  <h2>2. Reinigt immer dasselbe Personal?</h2>
+  <p>Ständig wechselnde Reinigungskräfte kennen weder Ihr Objekt noch Ihre Wünsche. Fragen Sie, ob ein festes Team eingesetzt wird und wie Vertretungen bei Krankheit oder Urlaub organisiert sind.</p>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>3. Sind die Mitarbeiter fest angestellt?</h2>
+  <p>Fest angestellte, sozialversicherungspflichtig beschäftigte Mitarbeiter sprechen für Verlässlichkeit. Fragen Sie auch, ob Subunternehmer eingesetzt werden. Dann wissen Sie, wer tatsächlich in Ihren Räumen arbeitet.</p>
+
+  <h2>4. Wie funktioniert die Qualitätskontrolle?</h2>
+  <p>Gute Anbieter kontrollieren ihre Arbeit selbst, nicht erst, wenn Sie sich beschweren. Fragen Sie, ob es Kontrollgänge gibt und wie Mängel dokumentiert und gemeldet werden.</p>
+
+  <h2>5. Wie läuft die Kommunikation vor Ort?</h2>
+  <p>Absprachen zu Schlüsseln, Sonderwünschen oder kurzfristigen Änderungen funktionieren nur, wenn Sie sich mit dem Personal verständigen können. Fragen Sie, in welcher Sprache Absprachen laufen.</p>
+
+  <h2>6. Wie wird der Preis berechnet?</h2>
+  <p>Lassen Sie sich erklären, wie das Angebot zustande kommt: nach Stunden, als Pauschale oder nach Fläche. Wichtig ist, dass Sie nachvollziehen können, wofür Sie zahlen. Wie das bei uns aussieht, sehen Sie auf unserer <a href="../preise.html">Preisseite</a>.</p>
+
+  <h2>7. Gibt es ein Leistungsverzeichnis?</h2>
+  <p>Ein schriftliches Leistungsverzeichnis legt fest, was wie oft gereinigt wird. Ohne diese Grundlage entstehen später Diskussionen darüber, was eigentlich vereinbart war.</p>
+
+  <h2>8. Wie lange binde ich mich?</h2>
+  <p>Achten Sie auf Laufzeit und Kündigungsfrist. Ein Anbieter, der von seiner Arbeit überzeugt ist, braucht keine langen Vertragsbindungen.</p>
+
+  <h2>9. Ist das Unternehmen versichert?</h2>
+  <p>Bei der Arbeit kann etwas zu Bruch gehen. Fragen Sie nach einer Betriebshaftpflichtversicherung, damit Sie im Schadensfall abgesichert sind.</p>
+
+  <h2>10. Kann ich den Service vorher testen?</h2>
+  <p>Die aussagekräftigste Antwort auf alle Fragen liefert ein echter Einsatz. Fragen Sie, ob eine Probereinigung möglich ist. Bei Clean Connect heißt das <a href="../index.html#erstreinigung">Erstreinigung</a>: einmalig zum Stundensatz der Unterhaltsreinigung von 32 € netto, Anfahrt inklusive und ohne Vertragsbindung.</p>
+
+  <h2>Die Antworten richtig einordnen</h2>
+  <p>Kein Anbieter wird jede Frage perfekt beantworten. Achten Sie aber darauf, wie konkret die Antworten ausfallen. Wer ausweicht oder nur allgemein von „hoher Qualität“ spricht, hat oft keinen klaren Prozess dahinter.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wie viele Angebote sollte ich einholen?</h3>
+  <p>Zwei bis drei Angebote reichen meist aus, um ein Gefühl für Preise und Leistungen zu bekommen. Wichtiger als die Anzahl ist, dass alle Anbieter dieselbe Grundlage erhalten: denselben Leistungsumfang, dieselben Flächen und denselben Rhythmus. Nur dann lassen sich die Angebote sinnvoll vergleichen.</p>
+  <h3>Woran erkenne ich unseriöse Anbieter?</h3>
+  <p>Vorsicht ist geboten bei Angeboten ohne Besichtigung und ohne nachvollziehbare Kalkulation, bei sehr niedrigen Preisen ohne Erklärung, bei ausweichenden Antworten zu Personal und Versicherung und bei langen Mindestlaufzeiten. Auch wenn kein fester Ansprechpartner genannt werden kann, ist das ein Warnsignal.</p>
+  <h3>Sind Referenzen aussagekräftig?</h3>
+  <p>Referenzen zeigen, dass ein Anbieter vergleichbare Objekte betreut. Aussagekräftiger ist es aber, die Arbeit selbst zu sehen. Fragen Sie deshalb nach einer Probereinigung in Ihrem eigenen Objekt. Dort zeigt sich, ob Qualität, Pünktlichkeit und Absprachen im Alltag funktionieren.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="reinigungsfirma-wechseln.html">Ratgeber: Reinigungsfirma wechseln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Stellen Sie uns diese Fragen</h2>
+    <p>Im Erstgespräch beantworten wir alle zehn Fragen konkret. Wir melden uns innerhalb von 24 Stunden.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>

@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Winterdienst in Köln: Wer muss räumen und streuen? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-09
+title: Winterdienst in Köln: Wer muss räumen und streuen?
+target_keyword: winterdienst köln pflicht
+description: Wer ist in Köln für Schneeräumen und Streuen zuständig? Ein Überblick über Pflichten von Eigentümern, Mietern und Gewerbetreibenden.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Winterdienst in Köln: Wer muss räumen und streuen? | Clean Connect Blog</title>
+<meta name="description" content="Wer ist in Köln für Schneeräumen und Streuen zuständig? Ein Überblick über Pflichten von Eigentümern, Mietern und Gewerbetreibenden.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Winterdienst in Köln: Wer muss räumen und streuen? | Clean Connect Blog">
+<meta property="og:description" content="Wer ist in Köln für Schneeräumen und Streuen zuständig? Ein Überblick über Pflichten von Eigentümern, Mietern und Gewerbetreibenden.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Winterdienst in Köln: Wer muss räumen und streuen?",
+  "description": "Wer ist in Köln für Schneeräumen und Streuen zuständig? Ein Überblick über Pflichten von Eigentümern, Mietern und Gewerbetreibenden.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,57 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Winterdienst</div>
+  <h1>Winterdienst in Köln: Wer muss räumen und streuen?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Der erste Frost kommt oft überraschend, und dann stellt sich die Frage: Wer muss vor dem Haus eigentlich räumen und streuen? Die Antwort hängt von der Stadt, vom Mietvertrag und von der Art des Objekts ab.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Grundsatz: Die Stadt überträgt die Pflicht</h2>
+  <p>Für öffentliche Gehwege ist zunächst die Gemeinde verantwortlich. Viele Städte, darunter Köln, übertragen die Räum- und Streupflicht für die Gehwege vor den Grundstücken aber per Satzung auf die Anlieger, also in der Regel auf die Eigentümer.</p>
+  <p>Welche Flächen genau betroffen sind, zu welchen Uhrzeiten geräumt sein muss und welche Streumittel erlaubt sind, regelt in Köln die Straßenreinigungssatzung der Stadt. <strong>Maßgeblich ist immer die aktuelle Fassung</strong>, die Sie bei der Stadt Köln einsehen können. Wir geben hier bewusst keine Uhrzeiten oder Detailregeln wieder, weil sich Satzungen ändern können.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Eigentümer können die Pflicht weitergeben</h2>
+  <p>Eigentümer müssen nicht selbst zur Schaufel greifen. Sie können die Aufgabe weitergeben:</p>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>An Mieter:</strong> wenn der Mietvertrag das ausdrücklich regelt.</li>
+    <li><strong>An einen Dienstleister:</strong> zum Beispiel an einen Winterdienst, der Räumen und Streuen übernimmt.</li>
+    <li><strong>An die Hausverwaltung:</strong> die ihrerseits einen Dienstleister beauftragt.</li>
+  </ul>
+  <p>Wichtig: Wer die Aufgabe weitergibt, sollte trotzdem im Blick behalten, ob sie tatsächlich erledigt wird. Die genaue rechtliche Verantwortung im Einzelfall klären Sie am besten mit Ihrer Hausverwaltung oder einem Rechtsberater.</p>
+
+  <h2>Gewerbeobjekte: Mehr als nur der Gehweg</h2>
+  <p>Bei Büros, Praxen und Geschäften geht es oft nicht nur um den öffentlichen Gehweg. Auch eigene Zugänge, Parkplätze und Eingangsbereiche sollten für Mitarbeiter und Kunden sicher begehbar sein. Gerade morgens, bevor der Betrieb beginnt, muss der Weg frei sein.</p>
+
+  <h2>Warum sich ein Winterdienst lohnt</h2>
+  <ul>
+    <li><strong>Planbarkeit:</strong> Sie müssen bei Schneefall nicht selbst früh aufstehen oder jemanden organisieren.</li>
+    <li><strong>Zuverlässigkeit:</strong> Geräumt wird auch am Wochenende und in der Urlaubszeit.</li>
+    <li><strong>Mehrere Objekte:</strong> Hausverwaltungen haben einen Ansprechpartner für alle Häuser.</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Rechtzeitig vor dem Winter planen</h2>
+  <p>Der beste Zeitpunkt, einen Winterdienst zu beauftragen, ist der Herbst. Wenn der erste Schnee fällt, sind viele Anbieter bereits ausgelastet. Clean Connect übernimmt Streudienst und Schneeräumung in Köln und Umgebung. Worauf Sie bei der Beauftragung achten sollten, zeigt unsere <strong>Winterdienst-Checkliste</strong>, die in zwei Wochen hier erscheint.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wo finde ich die genauen Regeln für Köln?</h3>
+  <p>Maßgeblich ist die Straßenreinigungssatzung der Stadt Köln in ihrer aktuellen Fassung. Sie ist auf der Website der Stadt Köln veröffentlicht. Dort stehen die betroffenen Flächen, die Zeiten und die Vorgaben zu Streumitteln. Bei Fragen zu Ihrem konkreten Grundstück hilft die Stadtverwaltung weiter.</p>
+  <h3>Müssen auch Mieter Schnee räumen?</h3>
+  <p>Mieter sind nur dann zum Winterdienst verpflichtet, wenn das im Mietvertrag wirksam vereinbart ist. Ohne eine solche Regelung bleibt die Aufgabe beim Eigentümer beziehungsweise bei der Hausverwaltung. Im Zweifel lohnt ein Blick in den Mietvertrag oder eine Rückfrage bei der Verwaltung.</p>
+  <h3>Was passiert, wenn nicht geräumt wird?</h3>
+  <p>Wird trotz Pflicht nicht geräumt oder gestreut und stürzt jemand, können Haftungsfragen entstehen. Wie diese im Einzelfall zu bewerten sind, ist eine rechtliche Frage, die wir hier nicht beantworten können. Umso wichtiger ist es, klar zu regeln, wer zuständig ist, und die Einsätze zu dokumentieren.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/winterdienst-koeln.html">Winterdienst in Köln</a>
+    <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Winterdienst für Ihr Objekt in Köln</h2>
+    <p>Wir übernehmen Streudienst und Schneeräumung, damit Sie im Winter nichts organisieren müssen. Angebot innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

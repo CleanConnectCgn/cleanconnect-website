@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-23
+title: Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe
+target_keyword: winterdienst beauftragen
+description: Winterdienst beauftragen: Diese Punkte sollten Hausverwaltungen und Gewerbetreibende vor dem ersten Schnee mit dem Dienstleister klären.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe | Clean Connect Blog</title>
+<meta name="description" content="Winterdienst beauftragen: Diese Punkte sollten Hausverwaltungen und Gewerbetreibende vor dem ersten Schnee mit dem Dienstleister klären.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe | Clean Connect Blog">
+<meta property="og:description" content="Winterdienst beauftragen: Diese Punkte sollten Hausverwaltungen und Gewerbetreibende vor dem ersten Schnee mit dem Dienstleister klären.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe",
+  "description": "Winterdienst beauftragen: Diese Punkte sollten Hausverwaltungen und Gewerbetreibende vor dem ersten Schnee mit dem Dienstleister klären.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,58 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Winterdienst</div>
+  <h1>Winterdienst beauftragen: Checkliste für Hausverwaltung und Gewerbe</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Wer einen Winterdienst erst beim ersten Schnee sucht, ist meist zu spät dran. Mit dieser Checkliste klären Sie im Herbst alle wichtigen Punkte, damit im Ernstfall nichts schiefgeht.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>1. Flächen genau festlegen</h2>
+  <p>Welche Flächen sollen geräumt und gestreut werden? Öffentlicher Gehweg, eigene Zugänge, Parkplätze, Zufahrten, Treppen im Außenbereich? Am besten halten Sie das mit einer Skizze oder Fotos fest.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
-  <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
-  </ul>
+  <h2>2. Zeiten klären</h2>
+  <p>Bis wann muss morgens geräumt sein? Gilt das auch am Wochenende und an Feiertagen? Orientieren Sie sich an der Straßenreinigungssatzung Ihrer Stadt und an den Öffnungszeiten Ihres Objekts. Für Köln gilt die Satzung der Stadt Köln in ihrer aktuellen Fassung.</p>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>3. Streumittel abstimmen</h2>
+  <p>Welche Streumittel sind erlaubt und gewünscht? Viele Städte schränken den Einsatz von Streusalz auf Gehwegen ein. Klären Sie, was verwendet wird und wer es bereitstellt.</p>
+
+  <h2>4. Häufigkeit bei Dauerschnee</h2>
+  <p>Wie oft wird bei anhaltendem Schneefall oder Glätte nachgeräumt? Einmal morgens reicht bei starkem Schneefall oft nicht aus.</p>
+
+  <h2>5. Dokumentation</h2>
+  <p>Lassen Sie sich die Einsätze dokumentieren: wann geräumt und gestreut wurde. Das ist für Hausverwaltungen wichtig, um gegenüber Eigentümern und Mietern nachweisen zu können, dass der Winterdienst erledigt wurde.</p>
+
+  <h2>6. Abrechnung</h2>
+  <p>Wird pauschal für die Saison abgerechnet oder pro Einsatz? Eine Pauschale ist planbar, eine Abrechnung pro Einsatz kann in milden Wintern günstiger sein. Klären Sie das vorab.</p>
+
+  <h2>7. Erreichbarkeit</h2>
+  <p>Wen erreichen Sie, wenn an einem Morgen doch nicht geräumt ist? Ein fester Ansprechpartner mit direkter Nummer ist im Winter Gold wert.</p>
+
+  <h2>8. Mehrere Objekte bündeln</h2>
+  <p>Hausverwaltungen mit mehreren Häusern profitieren davon, alle Objekte bei einem Anbieter zu bündeln: ein Vertrag, ein Ansprechpartner, eine Abrechnung.</p>
+
+  <h2>Rechtzeitig starten</h2>
+  <p>Wer seine Pflichten noch einmal nachlesen möchte, findet sie in unserem Beitrag <a href="winterdienst-koeln-pflicht.html">Winterdienst in Köln: Wer muss räumen und streuen?</a> Clean Connect übernimmt Streudienst und Schneeräumung für Hausverwaltungen und Gewerbe in Köln und Umgebung.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wann sollte ich den Winterdienst beauftragen?</h3>
+  <p>Am besten im Herbst, bevor der erste Frost kommt. Dann haben Anbieter noch Kapazitäten, und alle Details lassen sich in Ruhe klären. Wer erst beim ersten Schneefall sucht, findet oft keinen freien Dienstleister mehr oder muss Kompromisse eingehen.</p>
+  <h3>Pauschale oder Abrechnung pro Einsatz: Was ist günstiger?</h3>
+  <p>Das lässt sich vorab nicht sicher sagen, weil niemand weiß, wie der Winter wird. Eine Saisonpauschale bietet Planungssicherheit, auch in schneereichen Wintern. Eine Abrechnung pro Einsatz kann in milden Wintern günstiger sein, ist aber schwerer zu budgetieren. Hausverwaltungen bevorzugen oft die Pauschale.</p>
+  <h3>Wie weise ich nach, dass geräumt wurde?</h3>
+  <p>Am zuverlässigsten ist eine Dokumentation durch den Dienstleister: Datum, Uhrzeit und Art des Einsatzes. Fragen Sie bei der Beauftragung, wie der Anbieter seine Einsätze festhält und ob Sie die Nachweise auf Anfrage oder regelmäßig erhalten.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/winterdienst-koeln.html">Winterdienst in Köln</a>
+    <a href="../standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung in Köln</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Winterdienst jetzt für die Saison sichern</h2>
+    <p>Sprechen Sie uns vor dem ersten Schnee an. Wir klären alle Punkte der Checkliste und melden uns innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

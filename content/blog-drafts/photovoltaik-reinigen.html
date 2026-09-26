@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Photovoltaikanlage reinigen: Wann lohnt sich das? drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-04-20
+title: Photovoltaikanlage reinigen: Wann lohnt sich das?
+target_keyword: photovoltaik reinigen
+description: Photovoltaikanlage reinigen: Wann eine Reinigung sinnvoll ist, welche Verschmutzungen typisch sind und warum Sie nicht selbst aufs Dach sollten.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Photovoltaikanlage reinigen: Wann lohnt sich das? | Clean Connect Blog</title>
+<meta name="description" content="Photovoltaikanlage reinigen: Wann eine Reinigung sinnvoll ist, welche Verschmutzungen typisch sind und warum Sie nicht selbst aufs Dach sollten.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Photovoltaikanlage reinigen: Wann lohnt sich das? | Clean Connect Blog">
+<meta property="og:description" content="Photovoltaikanlage reinigen: Wann eine Reinigung sinnvoll ist, welche Verschmutzungen typisch sind und warum Sie nicht selbst aufs Dach sollten.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Photovoltaikanlage reinigen: Wann lohnt sich das?",
+  "description": "Photovoltaikanlage reinigen: Wann eine Reinigung sinnvoll ist, welche Verschmutzungen typisch sind und warum Sie nicht selbst aufs Dach sollten.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,61 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Sonderreinigung</div>
+  <h1>Photovoltaikanlage reinigen: Wann lohnt sich das?</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Eine Photovoltaikanlage soll möglichst viel Strom erzeugen. Verschmutzte Module können dabei hinderlich sein. Doch nicht jede Anlage muss regelmäßig gereinigt werden.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Reinigt der Regen nicht von selbst?</h2>
+  <p>Bei geneigten Modulen spült Regen einen Teil des Schmutzes ab. Für viele Anlagen reicht das über lange Zeit aus. Hartnäckige Verschmutzungen löst Regen aber nicht, und bei flach geneigten Modulen bleibt Schmutz eher liegen.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Typische Verschmutzungen</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Vogelkot:</strong> haftet fest und wird vom Regen kaum gelöst</li>
+    <li><strong>Laub und Blütenstaub:</strong> besonders bei Bäumen in der Nähe</li>
+    <li><strong>Staub:</strong> in der Nähe von Landwirtschaft, Baustellen oder viel befahrenen Straßen</li>
+    <li><strong>Moos und Flechten:</strong> vor allem an den Rändern der Module</li>
+    <li><strong>Ablagerungen am Rahmen:</strong> dort sammelt sich Schmutz, der beim Abfließen liegen bleibt</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Wann eine Reinigung sinnvoll ist</h2>
+  <ul>
+    <li>wenn sichtbare Verschmutzungen auf den Modulen liegen</li>
+    <li>wenn der Ertrag im Vergleich zu früheren Jahren bei ähnlichem Wetter auffällig sinkt</li>
+    <li>bei flach geneigten Anlagen, auf denen Schmutz liegen bleibt</li>
+    <li>bei Standorten mit starker Staubbelastung</li>
+  </ul>
+  <p>Ob sich eine Reinigung für Ihre Anlage lohnt, hängt vom Einzelfall ab. Ein Blick auf die Module und auf Ihre Ertragsdaten gibt einen guten Hinweis.</p>
+
+  <h2>Herstellervorgaben beachten</h2>
+  <p>Module sind empfindlich. Aggressive Reinigungsmittel, harte Bürsten oder Hochdruckreiniger können die Oberfläche beschädigen. Beachten Sie die Reinigungshinweise des Herstellers, auch mit Blick auf Garantie und Gewährleistung.</p>
+
+  <h2>Nicht selbst aufs Dach</h2>
+  <p>Die Reinigung auf dem Dach ist mit Absturzgefahr verbunden. Ohne passende Sicherung und Erfahrung sollten Sie das nicht selbst übernehmen. Profis arbeiten mit geeigneter Ausrüstung und schonenden Verfahren.</p>
+
+  <h2>PV-Reinigung mit Clean Connect</h2>
+  <p>Clean Connect reinigt Photovoltaikanlagen in Köln und Umgebung. Da der Aufwand stark von Größe, Neigung und Zugänglichkeit abhängt, kalkulieren wir individuell nach Fotos oder einer Besichtigung. Mehr zu unseren <a href="../index.html#leistungen">Leistungen</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wie oft sollte eine PV-Anlage gereinigt werden?</h3>
+  <p>Eine feste Regel gibt es nicht. Viele Anlagen brauchen selten oder nie eine Reinigung, andere an staubigen Standorten oder mit flacher Neigung häufiger. Entscheidend sind sichtbare Verschmutzungen und der Ertragsverlauf im Vergleich zu früheren Jahren.</p>
+  <h3>Kann ich die Module mit dem Gartenschlauch abspritzen?</h3>
+  <p>Aus Sicherheitsgründen raten wir davon ab, selbst aufs Dach zu steigen. Außerdem können falsche Mittel, harte Bürsten oder Hochdruck die Module beschädigen. Beachten Sie in jedem Fall die Hinweise des Herstellers.</p>
+  <h3>Wann ist der beste Zeitpunkt für die Reinigung?</h3>
+  <p>Häufig bietet sich das Frühjahr an, nach Blütenstaub und Winterschmutz und vor den ertragsstarken Sommermonaten. Gereinigt wird idealerweise nicht in praller Mittagssonne, um starke Temperaturunterschiede auf den Modulen zu vermeiden.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../index.html">Clean Connect Gebäudereinigung</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Photovoltaikanlage reinigen lassen</h2>
+    <p>Schicken Sie uns Fotos Ihrer Anlage, und wir melden uns innerhalb von 24 Stunden mit einer Einschätzung.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

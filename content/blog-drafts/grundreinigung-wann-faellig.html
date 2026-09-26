@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Grundreinigung: Wann sie fällig ist und was dazugehört drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-10-30
+title: Grundreinigung: Wann sie fällig ist und was dazugehört
+target_keyword: grundreinigung gewerbe
+description: Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Grundreinigung: Wann sie fällig ist und was dazugehört | Clean Connect Blog</title>
+<meta name="description" content="Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Grundreinigung: Wann sie fällig ist und was dazugehört | Clean Connect Blog">
+<meta property="og:description" content="Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Grundreinigung: Wann sie fällig ist und was dazugehört",
+  "description": "Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,58 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Grundreinigung</div>
+  <h1>Grundreinigung: Wann sie fällig ist und was dazugehört</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Irgendwann reicht die regelmäßige Reinigung nicht mehr aus: Böden wirken stumpf, in Ecken sammeln sich Ablagerungen, Teppiche sehen trotz Staubsauger müde aus. Dann ist es Zeit für eine Grundreinigung.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Was ist eine Grundreinigung?</h2>
+  <p>Die Grundreinigung ist eine <strong>intensive Tiefenreinigung</strong>, die über die regelmäßige Unterhaltsreinigung hinausgeht. Böden werden maschinell gereinigt, schwer erreichbare Bereiche gesäubert und hartnäckige Ablagerungen entfernt. Sie findet deutlich seltener statt, meist einmal im Jahr oder zu besonderen Anlässen.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Typische Anlässe</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li><strong>Jährlich:</strong> als feste Auffrischung, oft im Frühjahr oder in der Sommerpause</li>
+    <li><strong>Vor und nach Umzügen:</strong> beim Einzug in neue Räume oder bei der Übergabe alter Räume</li>
+    <li><strong>Nach Renovierungen:</strong> wenn Staub und Rückstände über die normale Reinigung hinausgehen</li>
+    <li><strong>Bei sichtbarem Verschleiß:</strong> wenn Böden trotz regelmäßiger Pflege stumpf oder fleckig wirken</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was dazugehören kann</h2>
+  <ul>
+    <li>maschinelle Bodenreinigung je nach Belag</li>
+    <li>Tiefenreinigung von Teppichböden</li>
+    <li>Entfernung von Kalk und Ablagerungen in Sanitärräumen</li>
+    <li>Reinigung von Heizkörpern, Sockelleisten und Türrahmen</li>
+    <li>Reinigung schwer erreichbarer Flächen und Ecken</li>
+  </ul>
+  <p>Der genaue Umfang hängt vom Objekt und seinem Zustand ab und wird vorab festgelegt.</p>
+
+  <h2>Grundreinigung und Unterhaltsreinigung ergänzen sich</h2>
+  <p>Eine gute <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung</a> verlängert die Abstände zwischen zwei Grundreinigungen. Umgekehrt schafft eine Grundreinigung eine saubere Ausgangslage, auf der die regelmäßige Reinigung aufbauen kann.</p>
+
+  <h2>Was eine Grundreinigung kostet</h2>
+  <p>Bei Clean Connect berechnen wir die Grundreinigung mit 38 € netto pro Stunde. Wie viele Stunden nötig sind, klären wir vorab bei einer Begehung oder anhand von Fotos. So wissen Sie vorher, womit Sie rechnen können. Alle Preise finden Sie auf unserer <a href="../preise.html">Preisseite</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wie lange dauert eine Grundreinigung?</h3>
+  <p>Das hängt von Fläche, Bodenbelag und Verschmutzungsgrad ab. Eine Grundreinigung dauert pro Quadratmeter deutlich länger als die regelmäßige Reinigung. Den Zeitbedarf schätzen wir nach einer Begehung oder anhand von Fotos vorab ein, damit Sie wissen, womit Sie rechnen können.</p>
+  <h3>Kann während der Grundreinigung gearbeitet werden?</h3>
+  <p>Meist nur eingeschränkt. Maschinen sind laut, und frisch gereinigte Böden brauchen Zeit zum Trocknen. Deshalb findet die Grundreinigung idealerweise am Wochenende, abends oder in ruhigen Zeiten wie der Sommerpause statt. Größere Flächen lassen sich auch abschnittsweise reinigen.</p>
+  <h3>Muss vorher aufgeräumt werden?</h3>
+  <p>Ja, das beschleunigt die Arbeit deutlich. Böden sollten frei von Kisten, Kabeln und losen Gegenständen sein, Fensterbänke und Schreibtische freigeräumt. Schwere Möbel können nach Absprache verschoben werden. Je besser die Vorbereitung, desto mehr Zeit fließt in die eigentliche Reinigung.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/grundreinigung-koeln.html">Grundreinigung in Köln</a>
+    <a href="../preise.html">Preise für Gebäudereinigung in Köln</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Grundreinigung in Köln planen</h2>
+    <p>Schicken Sie uns ein paar Fotos oder vereinbaren Sie eine Begehung. Sie erhalten innerhalb von 24 Stunden eine Rückmeldung.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

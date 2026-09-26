@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Bauendreinigung: Was nach Umbau und Renovierung zu tun ist drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2027-02-23
+title: Bauendreinigung: Was nach Umbau und Renovierung zu tun ist
+target_keyword: bauendreinigung
+description: Bauendreinigung nach Umbau oder Renovierung: Was dazugehört, wann sie stattfinden sollte und warum sie mehr ist als eine gründliche Reinigung.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Bauendreinigung: Was nach Umbau und Renovierung zu tun ist | Clean Connect Blog</title>
+<meta name="description" content="Bauendreinigung nach Umbau oder Renovierung: Was dazugehört, wann sie stattfinden sollte und warum sie mehr ist als eine gründliche Reinigung.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Bauendreinigung: Was nach Umbau und Renovierung zu tun ist | Clean Connect Blog">
+<meta property="og:description" content="Bauendreinigung nach Umbau oder Renovierung: Was dazugehört, wann sie stattfinden sollte und warum sie mehr ist als eine gründliche Reinigung.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Bauendreinigung: Was nach Umbau und Renovierung zu tun ist",
+  "description": "Bauendreinigung nach Umbau oder Renovierung: Was dazugehört, wann sie stattfinden sollte und warum sie mehr ist als eine gründliche Reinigung.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,38 +110,61 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Sonderreinigung</div>
+  <h1>Bauendreinigung: Was nach Umbau und Renovierung zu tun ist</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">Die Handwerker sind fertig, der Umbau ist abgeschlossen. Doch überall liegt Baustaub, an Fenstern kleben Farbspritzer und Etiketten. Bevor die Räume genutzt werden können, steht die Bauendreinigung an.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Was ist eine Bauendreinigung?</h2>
+  <p>Die Bauendreinigung ist die abschließende Reinigung nach Bau-, Umbau- oder Renovierungsarbeiten. Sie entfernt die typischen Rückstände, die eine normale Reinigung nicht erfasst, und macht die Räume bezugsfertig.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Typische Rückstände nach Bauarbeiten</h2>
   <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
+    <li>feiner Baustaub auf allen Flächen, auch in Schränken und auf Türrahmen</li>
+    <li>Farb-, Mörtel- und Silikonreste</li>
+    <li>Aufkleber und Schutzfolien an Fenstern, Türen und Sanitärobjekten</li>
+    <li>verschmutzte Böden durch Schuhe und Werkzeug</li>
+    <li>Staub in Heizkörpern, Lüftungsgittern und Steckdosenabdeckungen</li>
   </ul>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Was eine Bauendreinigung umfasst</h2>
+  <ul>
+    <li>Entstauben aller Flächen, von der Decke bis zum Boden</li>
+    <li>Reinigung von Fenstern inklusive Rahmen und Falzen</li>
+    <li>Entfernen von Etiketten und Rückständen</li>
+    <li>Reinigung von Sanitärobjekten und Küchenzeilen</li>
+    <li>gründliche Bodenreinigung, je nach Belag</li>
+  </ul>
+
+  <h2>Der richtige Zeitpunkt</h2>
+  <p>Die Bauendreinigung sollte erst stattfinden, wenn alle Gewerke fertig sind. Kommt nach der Reinigung noch ein Handwerker für Restarbeiten, ist die Arbeit teilweise umsonst. Planen Sie die Reinigung deshalb als letzten Schritt vor dem Einzug oder der Übergabe.</p>
+
+  <h2>Warum Profis sinnvoll sind</h2>
+  <p>Baustaub ist sehr fein und setzt sich immer wieder ab. Wer ihn mit normalen Mitteln entfernt, verteilt ihn oft nur. Farbspritzer auf Glas oder empfindlichen Oberflächen erfordern die richtige Technik, damit nichts zerkratzt wird. Eine professionelle Bauendreinigung spart Zeit und schützt neue Oberflächen.</p>
+
+  <h2>Bauendreinigung in Köln</h2>
+  <p>Clean Connect übernimmt die <a href="../standorte/bauendreinigung-koeln.html">Bauendreinigung</a> in Köln und Umgebung. Da der Aufwand stark vom Zustand nach dem Umbau abhängt, kalkulieren wir sie individuell nach einer Begehung oder anhand von Fotos.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wer bezahlt die Bauendreinigung, Bauherr oder Handwerker?</h3>
+  <p>Das hängt von den Verträgen mit den Handwerksbetrieben ab. Manche Gewerke räumen und reinigen grob nach, die eigentliche Bauendreinigung beauftragt aber meist der Bauherr oder Mieter separat. Klären Sie das am besten schon bei der Auftragsvergabe an die Handwerker.</p>
+  <h3>Wie lange dauert eine Bauendreinigung?</h3>
+  <p>Das hängt stark vom Umfang der Arbeiten und vom Zustand der Räume ab. Nach einer umfassenden Sanierung dauert sie deutlich länger als nach einem Anstrich. Wir schätzen den Aufwand nach einer Begehung oder anhand von Fotos ein.</p>
+  <h3>Reicht eine Bauendreinigung vor dem Einzug?</h3>
+  <p>In der Regel ja. Setzt sich nach dem Einzug noch Staub aus Lüftungen oder Ritzen ab, hilft eine gründliche Unterhaltsreinigung in den ersten Wochen. Danach kann der normale Reinigungsrhythmus beginnen.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/bauendreinigung-koeln.html">Bauendreinigung in Köln</a>
+    <a href="../standorte/grundreinigung-koeln.html">Grundreinigung in Köln</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
+    <h2>Bezugsfertig nach dem Umbau</h2>
+    <p>Schicken Sie uns Fotos der Räume oder vereinbaren Sie eine Begehung. Rückmeldung innerhalb von 24 Stunden.</p>
     <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
   </div>
 </article>

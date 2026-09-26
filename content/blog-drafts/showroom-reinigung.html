@@ -6,7 +6,7 @@
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
      Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
      datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
+     Solange noch Platzhalter wie Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
      sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
@@ -15,10 +15,10 @@
 -->
 <!--
 FRONTMATTER
-publish_date: YYYY-MM-DD
-title: [Artikel-Titel]
-target_keyword: [Ziel-Keyword]
-description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
+publish_date: 2026-12-11
+title: Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke
+target_keyword: showroom reinigung
+description: Showroom-Reinigung: Warum Ausstellungsflächen besondere Sorgfalt brauchen und worauf es bei Böden, Glas und Exponaten ankommt.
 image: ../og-image.jpg
 -->
 <!DOCTYPE html>
@@ -26,14 +26,14 @@ image: ../og-image.jpg
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>[Artikel-Titel] | Clean Connect Blog</title>
-<meta name="description" content="[Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]">
+<title>Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke | Clean Connect Blog</title>
+<meta name="description" content="Showroom-Reinigung: Warum Ausstellungsflächen besondere Sorgfalt brauchen und worauf es bei Böden, Glas und Exponaten ankommt.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
-<meta property="og:title" content="[Artikel-Titel] | Clean Connect Blog">
-<meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
+<meta property="og:title" content="Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke | Clean Connect Blog">
+<meta property="og:description" content="Showroom-Reinigung: Warum Ausstellungsflächen besondere Sorgfalt brauchen und worauf es bei Böden, Glas und Exponaten ankommt.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
@@ -47,8 +47,8 @@ image: ../og-image.jpg
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "[Artikel-Titel]",
-  "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
+  "headline": "Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke",
+  "description": "Showroom-Reinigung: Warum Ausstellungsflächen besondere Sorgfalt brauchen und worauf es bei Böden, Glas und Exponaten ankommt.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
@@ -110,39 +110,53 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
-  <h1>[Artikel-Titel]</h1>
+  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Unterhaltsreinigung</div>
+  <h1>Showroom-Reinigung: Glanz für Böden, Glas und Ausstellungsstücke</h1>
   <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
-  <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
+  <p class="lead">In einem Showroom verkauft die Umgebung mit. Glänzende Böden, klare Glasflächen und staubfreie Exponate sind hier keine Nebensache, sondern Teil der Präsentation.</p>
 </div>
 
 <article class="wrap">
-  <h2>[Zwischenüberschrift 1]</h2>
-  <p>[Platzhaltertext Absatz 1]</p>
-  <p>[Platzhaltertext Absatz 2]</p>
+  <h2>Warum Showrooms besondere Anforderungen haben</h2>
+  <p>Anders als im Büro schauen Kunden im Showroom genau hin. Sie betrachten Produkte aus der Nähe, oft unter heller Beleuchtung, die jeden Fingerabdruck und jedes Staubkorn sichtbar macht. Gleichzeitig herrscht Publikumsverkehr, der Schmutz hereinträgt.</p>
 
-  <h2>[Zwischenüberschrift 2]</h2>
-  <p>[Platzhaltertext]</p>
-  <ul>
-    <li>[Stichpunkt 1]</li>
-    <li>[Stichpunkt 2]</li>
-    <li>[Stichpunkt 3]</li>
-  </ul>
+  <h2>Böden: große Flächen, hoher Anspruch</h2>
+  <p>Showroom-Böden sind oft großflächig, hell oder hochglänzend. Sie brauchen eine regelmäßige, gründliche Pflege, damit Laufspuren und Schlieren nicht sichtbar werden. Je nach Belag gehört auch eine periodische maschinelle <a href="../standorte/grundreinigung-koeln.html">Grundreinigung</a> dazu.</p>
 
-  <h2>[Zwischenüberschrift 3]</h2>
-  <p>[Platzhaltertext]</p>
+  <h2>Glas: Schaufenster, Vitrinen, Türen</h2>
+  <p>Große Fensterfronten, Glastüren und Vitrinen prägen viele Showrooms. Fingerabdrücke an Eingangstüren und Vitrinen sollten bei jedem Termin entfernt werden, die großen Glasflächen regelmäßig durch eine professionelle <a href="../standorte/glasreinigung-koeln.html">Glasreinigung</a>.</p>
+
+  <h2>Exponate: mit Vorsicht und Absprache</h2>
+  <p>Ausstellungsstücke sind oft wertvoll und empfindlich. Hier gilt: Nur reinigen, was abgesprochen ist, und nur mit geeigneten Mitteln. Klären Sie mit Ihrer Reinigungsfirma genau, welche Exponate sie wie behandeln darf und was Ihr Team selbst übernimmt.</p>
+
+  <h2>Das richtige Zeitfenster</h2>
+  <p>Gereinigt wird am besten vor Öffnung oder nach Ladenschluss, damit Kunden nicht gestört werden und der Showroom zur Öffnung glänzt.</p>
+
+  <h2>Aus der Praxis: Harley-Davidson Köln-Bonn</h2>
+  <p>Clean Connect betreut seit der Gründung den Showroom von Harley-Davidson Köln-Bonn. Dort übernehmen wir die Unterhaltsreinigung von Böden und Oberflächen, die Glasreinigung sowie Grundreinigungen inklusive Glas, mit einem eingespielten Team, das die Fläche kennt.</p>
+
+  <h2>Kosten</h2>
+  <p>Die regelmäßige Unterhaltsreinigung kostet bei uns 32 € netto pro Stunde, die Glasreinigung 45 € und die Grundreinigung 38 € netto pro Stunde. Details auf unserer <a href="../preise.html">Preisseite</a>.</p>
+
+  <h2>Häufige Fragen</h2>
+  <h3>Wie oft sollte ein Showroom gereinigt werden?</h3>
+  <p>Bei täglichem Kundenverkehr brauchen Böden und Glasflächen im Eingangsbereich meist eine sehr häufige Reinigung. Weniger frequentierte Bereiche können seltener gereinigt werden. Den passenden Rhythmus legen wir gemeinsam nach Nutzung und Öffnungszeiten fest.</p>
+  <h3>Wer reinigt die Exponate?</h3>
+  <p>Das hängt von den Ausstellungsstücken ab. Einfache Oberflächen können nach Absprache von der Reinigung mitgereinigt werden. Wertvolle oder empfindliche Exponate übernimmt oft das eigene Team, weil es die Produkte und ihre Pflegeanforderungen am besten kennt.</p>
+  <h3>Kann vor Ladenöffnung gereinigt werden?</h3>
+  <p>Ja, das ist bei Showrooms sogar üblich. So ist die Fläche zur Öffnung frisch, und Kunden werden nicht gestört. Voraussetzung ist ein geregelter Zugang, zum Beispiel per Schlüssel oder Zugangscode.</p>
 
   <h2>Weiterführende Links</h2>
   <div class="internal-links">
-    <a href="../standorte.html">[Interner Link zu Leistungen &amp; Standorten]</a>
-    <a href="../preise.html">[Interner Link zu Preise]</a>
-    <a href="../index.html#kontakt">[Interner Link zu Kontakt]</a>
+    <a href="../standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung in Köln</a>
+    <a href="../standorte/glasreinigung-koeln.html">Glasreinigung in Köln</a>
+    <a href="../standorte/grundreinigung-koeln.html">Grundreinigung in Köln</a>
   </div>
 
   <div class="cta-box">
-    <h2>[CTA-Überschrift]</h2>
-    <p>[CTA-Text]</p>
-    <a href="../index.html#kontakt" class="btn">Kostenloses Angebot &rarr;</a>
+    <h2>Ihr Showroom in bestem Licht</h2>
+    <p>Lernen Sie uns bei einer Erstreinigung kennen, zum regulären Stundensatz der Unterhaltsreinigung und ohne Vertragsbindung.</p>
+    <a href="../index.html?anliegen=erstreinigung#kontakt" class="btn">Erstreinigung anfragen &rarr;</a>
   </div>
 </article>
 </main>
