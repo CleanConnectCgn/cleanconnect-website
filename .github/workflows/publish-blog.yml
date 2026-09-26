@@ -1,0 +1,52 @@
+name: Publish due blog drafts
+
+on:
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+      sha: ${{ steps.commit.outputs.sha }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Publish due drafts, update blog index and sitemap
+        run: python3 scripts/publish_blog.py
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add content/blog-drafts blog sitemap.xml
+          if git diff --cached --quiet; then
+            echo "Keine Aenderungen."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git commit -m "chore: veroeffentliche faellige Blog-Artikel"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+  # Ein Push mit GITHUB_TOKEN startet deploy.yml nicht von selbst,
+  # deshalb wird der Deploy hier direkt aufgerufen.
+  deploy:
+    needs: publish
+    if: needs.publish.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy.yml
+    with:
+      ref: ${{ needs.publish.outputs.sha }}
+    secrets: inherit

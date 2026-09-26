@@ -3,13 +3,28 @@ name: Deploy to IONOS
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: {}
+  # Wird von publish-blog.yml aufgerufen, weil Pushes mit GITHUB_TOKEN
+  # keinen push-Trigger ausloesen und neue Artikel sonst nie live gingen.
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit, der deployt werden soll (leer = ausloesender Commit)
+        type: string
+        required: false
+        default: ''
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-ionos
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Install lftp
         run: sudo apt-get install -y lftp
@@ -38,6 +53,8 @@ jobs:
             put -O $SFTP_DIR fonts.css;
             put -O $SFTP_DIR maps-consent.js;
             put -O $SFTP_DIR standorte.html;
+            put -O $SFTP_DIR preise.html;
+            put -O $SFTP_DIR bueroreinigung-koeln.html;
             put -O $SFTP_DIR broschuere.html;
             put -O $SFTP_DIR CleanConnect_Broschuere.pdf;
             put -O $SFTP_DIR favicon.ico;
@@ -53,4 +70,5 @@ jobs:
             mirror -R --parallel=5 fonts $SFTP_DIR/fonts;
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
+            mirror -R --parallel=5 blog $SFTP_DIR/blog;
           "
