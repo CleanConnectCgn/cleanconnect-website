@@ -3,13 +3,28 @@ name: Deploy to IONOS
 on:
   push:
     branches: [ main ]
+  workflow_dispatch: {}
+  # Wird von publish-blog.yml aufgerufen, weil Pushes mit GITHUB_TOKEN
+  # keinen push-Trigger ausloesen und neue Artikel sonst nie live gingen.
+  workflow_call:
+    inputs:
+      ref:
+        description: Commit, der deployt werden soll (leer = ausloesender Commit)
+        type: string
+        required: false
+        default: ''
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: deploy-ionos
+      cancel-in-progress: false
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref }}
 
       - name: Install lftp
         run: sudo apt-get install -y lftp

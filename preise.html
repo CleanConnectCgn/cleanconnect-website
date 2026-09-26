@@ -3,17 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Preise | Clean Connect Gebäudereinigung</title>
-<meta name="description" content="[Meta-Beschreibung: Preise und Konditionen für Gebäudereinigung von Clean Connect in Köln und NRW]">
+<title>Preise Gebäudereinigung Köln | Clean Connect</title>
+<meta name="description" content="Was kostet eine Reinigungsfirma in Köln? Unterhaltsreinigung 32 € netto pro Stunde, Treppenhaus 120 bis 300 € im Monat. Erstreinigung ohne Vertragsbindung.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://cleanconnect.de/preise.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://cleanconnect.de/preise.html">
-<meta property="og:title" content="Preise | Clean Connect Gebäudereinigung">
-<meta property="og:description" content="[Meta-Beschreibung für OG-Tags]">
+<meta property="og:title" content="Preise Gebäudereinigung Köln | Clean Connect">
+<meta property="og:description" content="Unterhaltsreinigung 32 € netto pro Stunde, Treppenhausreinigung 120 bis 300 € im Monat. Transparente Preise einer Kölner Reinigungsfirma.">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
 <meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
+<meta name="geo.region" content="DE-NW">
+<meta name="geo.placename" content="Köln">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -21,11 +23,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {"@type": "Question", "name": "[FAQ-Frage 1 Platzhalter]", "acceptedAnswer": {"@type": "Answer", "text": "[FAQ-Antwort 1 Platzhalter]"}},
-    {"@type": "Question", "name": "[FAQ-Frage 2 Platzhalter]", "acceptedAnswer": {"@type": "Answer", "text": "[FAQ-Antwort 2 Platzhalter]"}},
-    {"@type": "Question", "name": "[FAQ-Frage 3 Platzhalter]", "acceptedAnswer": {"@type": "Answer", "text": "[FAQ-Antwort 3 Platzhalter]"}}
+  "@graph": [
+    {
+      "@type": "OfferCatalog",
+      "name": "Preise Gebäudereinigung Clean Connect",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Service", "name": "Unterhaltsreinigung und Büroreinigung", "areaServed": {"@type": "City", "name": "Köln"}, "provider": {"@id": "https://cleanconnect.de/#business"}},
+          "priceSpecification": {"@type": "UnitPriceSpecification", "price": 32, "priceCurrency": "EUR", "unitCode": "HUR", "unitText": "Stunde", "valueAddedTaxIncluded": false}
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {"@type": "Service", "name": "Treppenhausreinigung", "areaServed": {"@type": "City", "name": "Köln"}, "provider": {"@id": "https://cleanconnect.de/#business"}},
+          "priceSpecification": {"@type": "UnitPriceSpecification", "minPrice": 120, "maxPrice": 300, "priceCurrency": "EUR", "unitCode": "MON", "unitText": "Monat", "valueAddedTaxIncluded": false}
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Was kostet eine Reinigungsfirma pro Stunde in Köln?", "acceptedAnswer": {"@type": "Answer", "text": "Bei Clean Connect kostet die Unterhaltsreinigung und Büroreinigung 32 Euro netto pro Stunde. Wie viele Stunden Ihr Objekt braucht, hängt von Fläche, Zustand und Reinigungsturnus ab. Das legen wir nach einer kostenlosen Begehung oder einer Erstreinigung verbindlich fest."}},
+        {"@type": "Question", "name": "Was kostet Treppenhausreinigung in Köln?", "acceptedAnswer": {"@type": "Answer", "text": "Für Treppenhäuser gilt eine feste Monatspauschale von 120 bis 300 Euro netto. Wo Ihr Objekt in dieser Spanne liegt, entscheiden vor allem Größe und Reinigungsrhythmus. Für Hausverwaltungen mit mehreren Häusern gibt es Staffelpreise."}},
+        {"@type": "Question", "name": "Was kostet die Erstreinigung?", "acceptedAnswer": {"@type": "Answer", "text": "Die Erstreinigung wird zum regulären Stundensatz von 32 Euro netto abgerechnet, die Anfahrt ist inklusive. Es entsteht keine Vertragsbindung."}},
+        {"@type": "Question", "name": "Sind die Preise netto oder brutto?", "acceptedAnswer": {"@type": "Answer", "text": "Alle genannten Preise sind Nettopreise zuzüglich der gesetzlichen Mehrwertsteuer."}},
+        {"@type": "Question", "name": "Gibt es eine Mindestlaufzeit?", "acceptedAnswer": {"@type": "Answer", "text": "Nein, ein starres Laufzeit-Korsett gibt es bei uns nicht. Wir bieten flexible Verträge mit kurzer Kündigungsfrist und wollen durch Leistung überzeugen, nicht durch Vertragsbindung."}}
+      ]
+    }
   ]
 }
 </script>
@@ -33,43 +57,90 @@
 <link rel="stylesheet" href="fonts.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#111;--s1:#1a1a1a;--s2:#222;--br:#2a2a2a;--br2:#383838;--teal:#00C5C4;--tg:rgba(0,197,196,.16);--td:rgba(0,197,196,.08);--tx:#f0f0f0;--mu:#777;--mu2:#999;}
 html{scroll-behavior:smooth}
-body{background:#111;color:#f0f0f0;font-family:'Inter',sans-serif;font-size:15px;line-height:1.65}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',sans-serif;font-size:15px;line-height:1.65}
 h1,h2,h3{font-family:'Plus Jakarta Sans',sans-serif;line-height:1.2;letter-spacing:-.02em}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:880px;margin:0 auto;padding:0 20px}
-nav{position:sticky;top:0;z-index:50;background:rgba(17,17,17,.95);backdrop-filter:blur(14px);border-bottom:1px solid #2a2a2a;padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
+nav{position:sticky;top:0;z-index:50;background:rgba(17,17,17,.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--br);padding:14px 20px;display:flex;align-items:center;justify-content:space-between}
 nav img{height:38px;width:auto}
-nav a.back{font-size:13px;color:#999;font-weight:500}
+nav a.back{font-size:13px;color:var(--mu2);font-weight:500}
 .hero{padding:56px 0 32px}
-.kicker{display:inline-flex;align-items:center;gap:7px;border:1px solid #383838;color:#999;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:18px}
+.kicker{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--br2);color:var(--mu2);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:18px}
+.kdot{width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block}
 h1{font-size:clamp(26px,4.2vw,42px);font-weight:800;color:#fff;margin-bottom:18px;max-width:680px}
-h1 em{font-style:normal;color:#00C5C4}
-.lead{font-size:16px;color:#999;max-width:640px;margin-bottom:26px}
+h1 em{font-style:normal;color:var(--teal)}
+.lead{font-size:16px;color:var(--mu2);max-width:640px;margin-bottom:26px}
 .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:8px}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-weight:700;font-size:14px}
-.btn-p{background:#00C5C4;color:#000}
-.btn-g{background:#222;color:#f0f0f0;border:1px solid #383838}
-section{padding:36px 0;border-top:1px solid #2a2a2a}
+.btn-p{background:var(--teal);color:#000}
+.btn-g{background:var(--s2);color:var(--tx);border:1px solid var(--br2)}
+section{padding:36px 0;border-top:1px solid var(--br)}
 h2{font-size:clamp(20px,3vw,26px);font-weight:800;color:#fff;margin-bottom:20px}
-.price-table{width:100%;border-collapse:collapse;background:#1a1a1a;border:1px solid #2a2a2a;border-radius:14px;overflow:hidden}
-.price-table th,.price-table td{padding:14px 16px;text-align:left;font-size:14px;border-bottom:1px solid #2a2a2a}
-.price-table th{color:#999;font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;background:#222}
+h3{color:#fff}
+.sec-intro{color:var(--mu2);font-size:15px;max-width:640px;margin:-4px 0 22px}
+/* Preiskarten */
+.price-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:8px}
+@media(max-width:640px){.price-cards{grid-template-columns:1fr}}
+.pcard{background:var(--s1);border:1px solid var(--br);border-radius:16px;padding:24px 22px;display:flex;flex-direction:column}
+.pcard-l{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);margin-bottom:10px}
+.pcard-p{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(30px,5vw,40px);font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1.05}
+.pcard-p small{font-size:14px;font-weight:600;color:var(--mu2);letter-spacing:0;margin-left:4px}
+.pcard p{font-size:13.5px;color:var(--mu2);margin-top:12px}
+.pcard a{margin-top:auto;padding-top:14px;font-size:13px;font-weight:600;color:var(--teal)}
+/* Fließtext */
+.prose p{font-size:15px;color:#ccc;line-height:1.8;margin-bottom:14px;max-width:680px}
+.prose p strong{color:#fff;font-weight:600}
+.prose a{color:var(--teal);border-bottom:1px solid var(--tg)}
+.calc{background:var(--s1);border:1px solid var(--br);border-left:2px solid var(--teal);border-radius:0 12px 12px 0;padding:16px 18px;margin:6px 0 18px;max-width:680px}
+.calc-l{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--mu2);margin-bottom:4px}
+.calc p{margin:0;font-size:14.5px;color:#ccc}
+ul.inc{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px 20px}
+@media(max-width:640px){ul.inc{grid-template-columns:1fr}}
+ul.inc li{font-size:14px;color:var(--mu2);padding-left:22px;position:relative}
+ul.inc li strong{color:var(--tx);font-weight:600}
+ul.inc li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:50%;background:var(--teal)}
+/* Tabelle */
+.table-wrap{overflow-x:auto;border-radius:14px;border:1px solid var(--br)}
+.price-table{width:100%;min-width:520px;border-collapse:collapse;background:var(--s1)}
+.price-table th,.price-table td{padding:14px 16px;text-align:left;font-size:14px;border-bottom:1px solid var(--br);vertical-align:top}
+.price-table th{color:var(--mu2);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700;background:var(--s2)}
 .price-table td{color:#ccc}
+.price-table td:first-child{color:#fff;font-weight:600}
+.price-table td.num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;color:#fff;white-space:nowrap}
+.price-table td small{display:block;color:var(--mu);font-size:12.5px;font-weight:400;margin-top:2px}
 .price-table tr:last-child td{border-bottom:none}
-.price-note{color:#777;font-size:12.5px;margin-top:12px}
-details{background:#1a1a1a;border:1px solid #2a2a2a;border-radius:12px;padding:16px 18px;margin-bottom:10px}
+.price-note{color:var(--mu);font-size:12.5px;margin-top:12px}
+/* Erstreinigung */
+.offer{display:grid;gap:24px;background:linear-gradient(135deg,rgba(0,197,196,.09),rgba(0,197,196,.02) 60%),var(--s1);border:1px solid rgba(0,197,196,.28);border-radius:18px;padding:28px 22px;position:relative;overflow:hidden}
+.offer::before{content:"";position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--teal),transparent)}
+.offer-label{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(0,197,196,.35);color:var(--teal);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:14px}
+.offer h2{margin-bottom:12px}
+.offer-main p{font-size:14.5px;color:var(--mu2);line-height:1.75;margin-bottom:10px}
+.offer-main p.offer-sub{font-size:13px;color:var(--mu);margin-bottom:20px}
+.offer-facts{list-style:none;display:grid;gap:10px;align-content:center}
+.offer-facts li{background:var(--bg);border:1px solid var(--br);border-radius:12px;padding:14px 16px;display:flex;flex-direction:column;gap:2px}
+.offer-facts strong{font-family:'Plus Jakarta Sans',sans-serif;font-size:18px;font-weight:800;color:#fff;letter-spacing:-.02em}
+.offer-facts strong small{font-size:12px;font-weight:600;color:var(--mu2);letter-spacing:0}
+.offer-facts span{font-size:12.5px;color:var(--mu2)}
+@media(min-width:760px){.offer{grid-template-columns:1.45fr 1fr;gap:36px;padding:36px 34px}}
+details{background:var(--s1);border:1px solid var(--br);border-radius:12px;padding:16px 18px;margin-bottom:10px}
 summary{cursor:pointer;font-weight:700;font-size:14.5px;color:#fff;list-style:none}
 summary::-webkit-details-marker{display:none}
-details p{margin-top:10px;font-size:14px;color:#999}
-.cta-box{background:#1a1a1a;border:1px solid #383838;border-radius:16px;padding:28px;text-align:center}
+details p{margin-top:10px;font-size:14px;color:var(--mu2)}
+.related{display:flex;flex-wrap:wrap;gap:8px}
+.related a{font-size:13px;color:var(--mu2);border:1px solid var(--br2);padding:7px 14px;border-radius:100px}
+.related a:hover{color:#fff;border-color:var(--teal)}
+.cta-box{background:var(--s1);border:1px solid var(--br2);border-radius:16px;padding:28px;text-align:center}
 .cta-box h2{margin-bottom:10px}
-.cta-box p{color:#999;margin-bottom:20px;font-size:14px}
-footer{padding:30px 20px;text-align:center;color:#777;font-size:12.5px;border-top:1px solid #2a2a2a}
-footer a{color:#999}
-.skip-link{position:absolute;left:-999px;top:auto;background:#00C5C4;color:#000;padding:10px 16px;border-radius:8px;font-weight:700;z-index:999}
+.cta-box p{color:var(--mu2);margin:0 auto 20px;font-size:14px;max-width:520px}
+.cta-box .cta-row{justify-content:center}
+footer{padding:30px 20px;text-align:center;color:var(--mu);font-size:12.5px;border-top:1px solid var(--br)}
+footer a{color:var(--mu2)}
+.skip-link{position:absolute;left:-999px;top:auto;background:var(--teal);color:#000;padding:10px 16px;border-radius:8px;font-weight:700;z-index:999}
 .skip-link:focus{left:16px;top:16px}
-a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00C5C4;outline-offset:2px}
+a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
 </style>
 </head>
 <body>
@@ -81,44 +152,118 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 
 <main id="main">
 <div class="wrap hero">
-  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Preise &amp; Konditionen</div>
-  <h1>Preise für <em>Gebäudereinigung</em></h1>
-  <p class="lead">[Einleitungstext Platzhalter: kurzer Überblick über die Preisgestaltung, Transparenz-Versprechen und wie Kund:innen zu einem konkreten Angebot kommen]</p>
-  <div class="cta-row">
-    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>
-    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
+  <div class="kicker"><span class="kdot"></span>Preise &amp; Konditionen</div>
+  <h1>Preise für <em>Gebäudereinigung</em> in Köln</h1>
+  <p class="lead">Keine Lockangebote, keine versteckten Zuschläge. Hier sehen Sie, was eine Reinigung bei Clean Connect kostet und wie aus unserem Stundensatz ein festes Angebot für Ihr Objekt wird.</p>
+
+  <div class="price-cards">
+    <div class="pcard">
+      <div class="pcard-l">Unterhalts- &amp; Büroreinigung</div>
+      <div class="pcard-p">32 &euro;<small>netto / Stunde</small></div>
+      <p>Regelmäßige Reinigung von Büros, Praxen und Gewerbeflächen. Der Stundenumfang wird für Ihr Objekt fest vereinbart.</p>
+      <a href="bueroreinigung-koeln.html">Mehr zur Büroreinigung &rarr;</a>
+    </div>
+    <div class="pcard">
+      <div class="pcard-l">Treppenhausreinigung</div>
+      <div class="pcard-p">120&ndash;300 &euro;<small>netto / Monat</small></div>
+      <p>Monatliche Pauschale pro Treppenhaus, abhängig von Stockwerken, Parteien und Turnus.</p>
+      <a href="standorte/treppenhausreinigung-koeln.html">Mehr zur Treppenhausreinigung &rarr;</a>
+    </div>
   </div>
 </div>
 
 <div class="wrap">
+<section id="erstreinigung">
+  <div class="offer">
+    <div class="offer-main">
+      <div class="offer-label"><span class="kdot"></span>Unverbindlich testen</div>
+      <h2>Preis prüfen, bevor Sie sich binden: die Erstreinigung</h2>
+      <p>Die beste Grundlage für ein Angebot ist ein echter Einsatz. Bei der Erstreinigung reinigen wir Ihr Objekt einmalig zum regulären Stundensatz und sehen dabei genau, wie viel Zeit es braucht. Daraus wird ein passgenaues Angebot statt einer groben Schätzung.</p>
+      <p class="offer-sub">Die Erstreinigung kann vor oder nach der Angebotserstellung stattfinden, ganz wie es für Sie besser passt.</p>
+      <a href="index.html?anliegen=erstreinigung#kontakt" class="btn btn-p">Erstreinigung anfragen &rarr;</a>
+    </div>
+    <ul class="offer-facts">
+      <li><strong>32 &euro; <small>netto / Std.</small></strong><span>Regulärer Stundensatz, kein Aufpreis</span></li>
+      <li><strong>Anfahrt inklusive</strong><span>Keine zusätzlichen Fahrtkosten</span></li>
+      <li><strong>Keine Vertragsbindung</strong><span>Einmalig und unverbindlich</span></li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Was kostet eine Reinigungsfirma pro Stunde in Köln?</h2>
+  <div class="prose">
+    <p>Ob Sie nach einer Reinigungsfirma, einem Reinigungsdienst oder einer Putzfirma suchen, am Ende zählen zwei Fragen: Was kostet eine Stunde, und wie viele Stunden braucht Ihr Objekt? Bei Clean Connect kostet die Unterhaltsreinigung <strong>32 Euro netto pro Stunde</strong>. Das gilt für die regelmäßige Reinigung von Büros, Praxen, Showrooms und anderen Gewerbeflächen in Köln und Umgebung. Der Stundensatz ist für alle Kunden gleich, egal ob Sie ein kleines Büro oder mehrere Etagen reinigen lassen.</p>
+    <p>Was sich von Objekt zu Objekt unterscheidet, ist der Zeitaufwand. Wie viele Stunden ein Einsatz braucht, hängt von der Fläche, der Nutzung, den Bodenbelägen und dem gewünschten Turnus ab. Deshalb nennen wir Ihnen keinen Pauschalpreis ins Blaue, sondern legen den Stundenumfang nach einer kostenlosen Begehung oder einer Erstreinigung fest. So wissen Sie vorher genau, was Sie jeden Monat zahlen.</p>
+    <div class="calc">
+      <div class="calc-l">Rechenbeispiel</div>
+      <p>Braucht Ihr Büro zwei Stunden pro Reinigung, kostet ein Einsatz 2 &times; 32 &euro; = 64 &euro; netto.</p>
+    </div>
+    <p>Treppenhäuser rechnen wir anders ab: als <strong>monatliche Pauschale zwischen 120 und 300 Euro netto</strong> pro Treppenhaus. Für Hausverwaltungen und WEGs ist das planbarer als eine Abrechnung nach Stunden. Betreuen wir mehrere Objekte für Sie, sprechen wir über Staffelpreise.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Wovon der Aufwand abhängt</h2>
+  <p class="sec-intro">Der Stundensatz bleibt gleich. Diese Punkte bestimmen, wie viele Stunden Ihr Objekt pro Einsatz braucht:</p>
+  <ul class="inc">
+    <li><strong>Fläche und Raumaufteilung:</strong> Großraumbüro oder viele Einzelräume</li>
+    <li><strong>Nutzung:</strong> Mitarbeiterzahl und Publikumsverkehr</li>
+    <li><strong>Turnus:</strong> täglich, mehrmals pro Woche oder wöchentlich</li>
+    <li><strong>Sanitär und Küchen:</strong> Anzahl und Ausstattung</li>
+    <li><strong>Bodenbeläge:</strong> Teppich, Fliesen, Parkett oder Vinyl</li>
+    <li><strong>Zeitfenster:</strong> während oder außerhalb der Geschäftszeiten</li>
+  </ul>
+</section>
+
 <section>
   <h2>Preisübersicht</h2>
-  <table class="price-table">
-    <thead>
-      <tr><th>Leistung</th><th>Preis</th><th>Einheit</th></tr>
-    </thead>
-    <tbody>
-      <tr><td>[Leistung 1 Platzhalter]</td><td>[Preis Platzhalter]</td><td>[Einheit Platzhalter]</td></tr>
-      <tr><td>[Leistung 2 Platzhalter]</td><td>[Preis Platzhalter]</td><td>[Einheit Platzhalter]</td></tr>
-      <tr><td>[Leistung 3 Platzhalter]</td><td>[Preis Platzhalter]</td><td>[Einheit Platzhalter]</td></tr>
-      <tr><td>[Leistung 4 Platzhalter]</td><td>[Preis Platzhalter]</td><td>[Einheit Platzhalter]</td></tr>
-    </tbody>
-  </table>
-  <p class="price-note">[Hinweistext Platzhalter: z. B. netto/brutto, Mindestauftragswert, individuelle Angebote nach Besichtigung]</p>
+  <div class="table-wrap">
+    <table class="price-table">
+      <thead>
+        <tr><th>Leistung</th><th>Preis</th><th>Abrechnung</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Unterhaltsreinigung</td><td class="num">32 &euro; netto</td><td>pro Stunde<small>fester Stundenumfang pro Einsatz</small></td></tr>
+        <tr><td>Büroreinigung</td><td class="num">32 &euro; netto</td><td>pro Stunde<small>als Unterhaltsreinigung abgerechnet</small></td></tr>
+        <tr><td>Erstreinigung</td><td class="num">32 &euro; netto</td><td>pro Stunde<small>Anfahrt inklusive, keine Vertragsbindung</small></td></tr>
+        <tr><td>Treppenhausreinigung</td><td class="num">120&ndash;300 &euro; netto</td><td>pro Monat und Treppenhaus<small>Staffelpreise bei mehreren Objekten</small></td></tr>
+        <tr><td>Grund-, Glas- und Bauendreinigung, Winterdienst</td><td class="num">nach Aufwand</td><td>individuelles Angebot<small>nach Begehung oder anhand von Fotos</small></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="price-note">Alle Preise verstehen sich netto zuzüglich der gesetzlichen Mehrwertsteuer.</p>
 </section>
 
 <section>
   <h2>Häufige Fragen zu Preisen</h2>
-  <details><summary>[FAQ-Frage 1 Platzhalter]</summary><p>[FAQ-Antwort 1 Platzhalter]</p></details>
-  <details><summary>[FAQ-Frage 2 Platzhalter]</summary><p>[FAQ-Antwort 2 Platzhalter]</p></details>
-  <details><summary>[FAQ-Frage 3 Platzhalter]</summary><p>[FAQ-Antwort 3 Platzhalter]</p></details>
+  <details><summary>Was kostet eine Reinigungsfirma pro Stunde in Köln?</summary><p>Bei Clean Connect kostet die Unterhaltsreinigung und Büroreinigung 32 Euro netto pro Stunde. Wie viele Stunden Ihr Objekt braucht, hängt von Fläche, Zustand und Reinigungsturnus ab. Das legen wir nach einer kostenlosen Begehung oder einer Erstreinigung verbindlich fest.</p></details>
+  <details><summary>Was kostet Treppenhausreinigung in Köln?</summary><p>Für Treppenhäuser gilt eine feste Monatspauschale von 120 bis 300 Euro netto. Wo Ihr Objekt in dieser Spanne liegt, entscheiden vor allem Größe und Reinigungsrhythmus. Für Hausverwaltungen mit mehreren Häusern gibt es Staffelpreise.</p></details>
+  <details><summary>Was kostet die Erstreinigung?</summary><p>Die Erstreinigung wird zum regulären Stundensatz von 32 Euro netto abgerechnet, die Anfahrt ist inklusive. Es entsteht keine Vertragsbindung.</p></details>
+  <details><summary>Sind die Preise netto oder brutto?</summary><p>Alle genannten Preise sind Nettopreise zuzüglich der gesetzlichen Mehrwertsteuer.</p></details>
+  <details><summary>Gibt es eine Mindestlaufzeit?</summary><p>Nein, ein starres Laufzeit-Korsett gibt es bei uns nicht. Wir bieten flexible Verträge mit kurzer Kündigungsfrist und wollen durch Leistung überzeugen, nicht durch Vertragsbindung.</p></details>
+</section>
+
+<section>
+  <h2>Leistungen in Köln</h2>
+  <div class="related">
+    <a href="bueroreinigung-koeln.html">Büroreinigung</a>
+    <a href="standorte/unterhaltsreinigung-koeln.html">Unterhaltsreinigung</a>
+    <a href="standorte/treppenhausreinigung-koeln.html">Treppenhausreinigung</a>
+    <a href="standorte/glasreinigung-koeln.html">Glasreinigung</a>
+    <a href="standorte/grundreinigung-koeln.html">Grundreinigung</a>
+    <a href="standorte/winterdienst-koeln.html">Winterdienst</a>
+  </div>
 </section>
 
 <section>
   <div class="cta-box">
-    <h2>Individuelles Angebot anfordern</h2>
-    <p>[CTA-Text Platzhalter]</p>
-    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>
+    <h2>Ihr Preis, passend zu Ihrem Objekt</h2>
+    <p>Schildern Sie uns kurz Ihr Objekt. Sie erhalten innerhalb von 24 Stunden eine Rückmeldung und auf Wunsch einen Termin für Begehung oder Erstreinigung.</p>
+    <div class="cta-row">
+      <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>
+      <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>
+    </div>
   </div>
 </section>
 </div>

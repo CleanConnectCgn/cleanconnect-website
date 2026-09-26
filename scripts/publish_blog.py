@@ -22,6 +22,14 @@ SITEMAP_PATH = ROOT / "sitemap.xml"
 SITE_URL = "https://cleanconnect.de"
 
 FRONTMATTER_RE = re.compile(r"<!--\s*FRONTMATTER\s*(.*?)-->", re.DOTALL)
+COMMENT_RE = re.compile(r"<!--(?!\s*FRONTMATTER).*?-->\s*", re.DOTALL)
+# Reste aus _TEMPLATE.html, die nie oeffentlich werden duerfen.
+PLACEHOLDER_RE = re.compile(
+    r"\[(Artikel-Titel|Ziel-Keyword|Kurzbeschreibung|Kategorie|Einleitung|"
+    r"Zwischenüberschrift|Platzhalter|Stichpunkt|Interner Link|CTA-)"
+)
+MONTHS_DE = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli",
+             "August", "September", "Oktober", "November", "Dezember"]
 
 
 def parse_frontmatter(html_text):
@@ -66,6 +74,33 @@ def due_drafts(today):
     return due
 
 
+def finalize_article(text, slug, publish_date):
+    """Bereitet einen Entwurf fuer die Veroeffentlichung vor.
+
+    Entfernt interne Hinweis-Kommentare (FRONTMATTER bleibt, es wird fuer die
+    Blog-Uebersicht gebraucht), setzt den Slug ein und uebernimmt publish_date
+    in JSON-LD und sichtbares Datum, damit beides nie auseinanderlaeuft.
+    """
+    head, sep, rest = text.partition("<!DOCTYPE")
+    text = COMMENT_RE.sub("", head) + sep + rest
+    text = text.replace("[artikel-slug]", slug)
+    iso = publish_date.isoformat()
+    text = re.sub(r'("datePublished"\s*:\s*)"[^"]*"', rf'\g<1>"{iso}"', text)
+
+    def fix_modified(match):
+        current = parse_date(match.group(2))
+        value = current if current and current >= publish_date else publish_date
+        return f'{match.group(1)}"{value.isoformat()}"'
+
+    text = re.sub(r'("dateModified"\s*:\s*)"([^"]*)"', fix_modified, text)
+    text = text.replace('datetime="YYYY-MM-DD"', f'datetime="{iso}"')
+    text = text.replace(
+        "[Veröffentlichungsdatum]",
+        f"{publish_date.day}. {MONTHS_DE[publish_date.month - 1]} {publish_date.year}",
+    )
+    return text
+
+
 def publish(due, today):
     published = []
     for path, fields, text in due:
@@ -73,6 +108,11 @@ def publish(due, today):
         if dest.exists():
             print(f"[warn] {dest} existiert bereits, ueberspringe {path.name}")
             continue
+        leftover = PLACEHOLDER_RE.search(text)
+        if leftover:
+            print(f"[skip] {path.name}: enthaelt noch Platzhalter ({leftover.group(0)}...)")
+            continue
+        text = finalize_article(text, path.stem, parse_date(fields["publish_date"]))
         dest.write_text(text, encoding="utf-8")
         path.unlink()
         published.append((dest, fields))
@@ -97,16 +137,19 @@ def render_card(path, fields):
     title = fields.get("title", path.stem)
     description = fields.get("description", "")
     date = fields.get("publish_date", "")
+    parsed = parse_date(date)
+    label = f"{parsed.day}. {MONTHS_DE[parsed.month - 1]} {parsed.year}" if parsed else date
     href = path.name
     return (
         '<a class="blog-card" href="{href}">'
-        '<span class="blog-date">{date}</span>'
+        '<time class="blog-date" datetime="{date}">{label}</time>'
         "<h2>{title}</h2>"
         "<p>{description}</p>"
         "</a>"
     ).format(
         href=escape(href),
         date=escape(date),
+        label=escape(label),
         title=escape(title),
         description=escape(description),
     )
@@ -147,8 +190,8 @@ def update_blog_index(articles):
     return True
 
 
-def update_sitemap(published, today):
-    if not SITEMAP_PATH.exists() or not published:
+def update_sitemap(published, index_changed, today):
+    if not SITEMAP_PATH.exists() or not (published or index_changed):
         return False
 
     text = SITEMAP_PATH.read_text(encoding="utf-8")
@@ -170,6 +213,16 @@ def update_sitemap(published, today):
         changed = True
 
     upsert(f"{SITE_URL}/blog/index.html", "weekly", "0.6")
+    if index_changed:
+        # Blog-Uebersicht hat neue Eintraege: lastmod mitziehen.
+        loc = re.escape(f"{SITE_URL}/blog/index.html")
+        new_text = re.sub(
+            rf"(<loc>{loc}</loc>\s*<lastmod>)[^<]*(</lastmod>)",
+            rf"\g<1>{today.isoformat()}\g<2>",
+            text,
+        )
+        if new_text != text:
+            text, changed = new_text, True
     for dest, _fields in published:
         upsert(f"{SITE_URL}/blog/{dest.name}", "monthly", "0.6")
 
@@ -184,7 +237,7 @@ def main():
     published = publish(due, today) if due else []
 
     index_changed = update_blog_index(collect_public_articles())
-    sitemap_changed = update_sitemap(published, today)
+    sitemap_changed = update_sitemap(published, index_changed, today)
 
     if not published and not index_changed and not sitemap_changed:
         print("Keine faelligen Artikel, keine Aenderungen.")

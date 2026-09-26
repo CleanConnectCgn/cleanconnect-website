@@ -4,9 +4,13 @@
   1. Diese Datei in content/blog-drafts/ kopieren, Dateiname = URL-Slug (z. B. buerofrueling-2027.html).
   2. Das FRONTMATTER unten ausfüllen, vor allem publish_date (Format YYYY-MM-DD).
   3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
+     Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
+     datePublished/dateModified und das sichtbare Datum (aus publish_date).
+     Solange noch Platzhalter wie [Artikel-Titel] drinstehen, wird nicht veröffentlicht.
   4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
      (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
-     sobald publish_date erreicht ist, und aktualisiert Blog-Übersicht + sitemap.xml.
+     sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
+  Dieser Hinweis-Kommentar wird beim Veröffentlichen automatisch entfernt.
   Dateien, deren Name mit "_" beginnt, werden vom Workflow ignoriert (wie diese hier).
 -->
 <!--
@@ -15,7 +19,7 @@ publish_date: YYYY-MM-DD
 title: [Artikel-Titel]
 target_keyword: [Ziel-Keyword]
 description: [Kurzbeschreibung für Meta-Description und OG-Tags, max. ca. 155 Zeichen]
-image: ../images/img-001.webp
+image: ../og-image.jpg
 -->
 <!DOCTYPE html>
 <html lang="de-DE">
@@ -32,7 +36,9 @@ image: ../images/img-001.webp
 <meta property="og:description" content="[Kurzbeschreibung für Meta-Description und OG-Tags]">
 <meta property="og:locale" content="de_DE">
 <meta property="og:site_name" content="Clean Connect Gebäudereinigung">
-<meta property="og:image" content="https://cleanconnect.de/images/img-001.webp">
+<meta property="og:image" content="https://cleanconnect.de/og-image.jpg">
+<meta property="og:image:width" content="1400">
+<meta property="og:image:height" content="787">
 <link rel="icon" type="image/x-icon" href="../favicon.ico">
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -43,7 +49,7 @@ image: ../images/img-001.webp
   "@type": "BlogPosting",
   "headline": "[Artikel-Titel]",
   "description": "[Kurzbeschreibung für Meta-Description und OG-Tags]",
-  "image": "https://cleanconnect.de/images/img-001.webp",
+  "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
   "author": {"@type": "Organization", "name": "Clean Connect"},
@@ -102,7 +108,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 <div class="wrap hero">
   <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>[Kategorie/Ziel-Keyword]</div>
   <h1>[Artikel-Titel]</h1>
-  <div class="meta"><span>[Veröffentlichungsdatum]</span><span>&middot;</span><span>Clean Connect</span></div>
+  <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
   <p class="lead">[Einleitung / Teaser-Absatz, 2-3 Sätze, die das Thema und den Nutzen für die Leser:innen zusammenfassen]</p>
 </div>
 
