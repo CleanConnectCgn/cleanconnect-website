@@ -1,19 +1,4 @@
 <!--
-  ARTIKEL-VORLAGE — nicht bearbeiten, sondern kopieren.
-  So legst du einen neuen Artikel an:
-  1. Diese Datei in content/blog-drafts/ kopieren, Dateiname = URL-Slug (z. B. buerofrueling-2027.html).
-  2. Das FRONTMATTER unten ausfüllen, vor allem publish_date (Format YYYY-MM-DD).
-  3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
-     Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
-     datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie Büroreinigung: Wie oft ist sinnvoll? drinstehen, wird nicht veröffentlicht.
-  4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
-     (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
-     sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
-  Dieser Hinweis-Kommentar wird beim Veröffentlichen automatisch entfernt.
-  Dateien, deren Name mit "_" beginnt, werden vom Workflow ignoriert (wie diese hier).
--->
-<!--
 FRONTMATTER
 publish_date: 2026-09-29
 title: Büroreinigung: Wie oft ist sinnvoll?
@@ -29,9 +14,9 @@ image: ../og-image.jpg
 <title>Büroreinigung: Wie oft ist sinnvoll? | Clean Connect Blog</title>
 <meta name="description" content="Wie oft sollte ein Büro gereinigt werden? Welche Faktoren den Rhythmus bestimmen und wie Sie Sauberkeit und Budget in Einklang bringen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
+<link rel="canonical" href="https://cleanconnect.de/blog/buero-reinigen-wie-oft.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
+<meta property="og:url" content="https://cleanconnect.de/blog/buero-reinigen-wie-oft.html">
 <meta property="og:title" content="Büroreinigung: Wie oft ist sinnvoll? | Clean Connect Blog">
 <meta property="og:description" content="Wie oft sollte ein Büro gereinigt werden? Welche Faktoren den Rhythmus bestimmen und wie Sie Sauberkeit und Budget in Einklang bringen.">
 <meta property="og:locale" content="de_DE">
@@ -50,15 +35,15 @@ image: ../og-image.jpg
   "headline": "Büroreinigung: Wie oft ist sinnvoll?",
   "description": "Wie oft sollte ein Büro gereinigt werden? Welche Faktoren den Rhythmus bestimmen und wie Sie Sauberkeit und Budget in Einklang bringen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
+  "datePublished": "2026-09-29",
+  "dateModified": "2026-09-29",
   "author": {"@type": "Organization", "name": "Clean Connect"},
   "publisher": {
     "@type": "Organization",
     "name": "Clean Connect Gebäudereinigung UG",
     "logo": {"@type": "ImageObject", "url": "https://cleanconnect.de/logo.png"}
   },
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/[artikel-slug].html"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/buero-reinigen-wie-oft.html"}
 }
 </script>
 
@@ -112,7 +97,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 <div class="wrap hero">
   <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Büroreinigung</div>
   <h1>Büroreinigung: Wie oft ist sinnvoll?</h1>
-  <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
+  <div class="meta"><span><time datetime="2026-09-29">29. September 2026</time></span><span>&middot;</span><span>Clean Connect</span></div>
   <p class="lead">Einmal pro Woche, jeden Tag oder irgendwo dazwischen? Die richtige Reinigungsfrequenz entscheidet darüber, ob Ihr Büro dauerhaft gepflegt wirkt und ob Sie für Leistungen zahlen, die Sie gar nicht brauchen.</p>
 </div>
 
