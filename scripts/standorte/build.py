@@ -107,7 +107,7 @@ def lokale_faq(lk, ort, li_index):
                     f"{o['winter_satzung']} Mit dem Winterdienstvertrag übernehmen wir die Räum- und Streupflicht für die vereinbarte Fläche und dokumentieren jeden Einsatz."))
     elif lk == "entruempelung":
         faq.append((f"Wohin kommen die Sachen aus einer Entrümpelung {o['in']}?",
-                    f"Wir trennen nach Holz, Metall, Elektrogeräten, Papier und Restmüll und bringen alles zu zugelassenen Annahmestellen. Für den normalen Sperrmüll aus Haushalten ist {o['in']} {o['entsorger']} zuständig; reicht Ihnen dessen Abholung, sagen wir Ihnen das ehrlich."))
+                    f"Wir trennen nach Holz, Metall, Elektrogeräten, Papier und Restmüll und bringen alles zu zugelassenen Annahmestellen. {o['sperrmuell']} Reicht Ihnen diese Abholung, sagen wir Ihnen das ehrlich."))
     elif ort == "koeln":
         faq.append(("Wie schnell können Sie in Köln anfangen?",
                     "Da wir selbst in Köln-Dellbrück sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."))
@@ -232,7 +232,7 @@ def seite(lk, ort, basis_css):
         ],
     }
 
-    eco = "" if lk in ("winterdienst", "entruempelung") else (
+    eco = "" if lk in ("winterdienst", "entruempelung", "photovoltaikreinigung") else (
         '<div class="eco-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">'
         '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>'
         '<path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>Reinigungsmittel mit dem Umweltzeichen Blauer Engel</div>')

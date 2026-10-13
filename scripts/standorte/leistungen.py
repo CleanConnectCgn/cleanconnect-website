@@ -221,7 +221,7 @@ LEISTUNGEN = {
         "themen": ["lage", "gewerbe", "bau"],
         "bezug": {
             "lage": "Für Solaranlagen heißt das: Der Schmutzfilm baut sich schneller auf, und eine Reinigung lohnt sich früher als in sauberer Umgebung.",
-            "gewerbe": "Auf großen Hallendächern lohnt sich die Reinigung besonders, weil jeder Prozent Ertrag bei vielen Modulen zählt.",
+            "gewerbe": "Auf großen Hallendächern lohnt sich die Reinigung besonders, weil jedes Prozent Ertrag bei vielen Modulen zählt.",
             "bau": "Liegt eine Baustelle in der Nähe, setzt sich Staub auf den Modulen ab; danach ist eine Reinigung sinnvoll.",
             "wohnen": "Auf Wohnhäusern reinigen wir vom Dach oder mit Teleskoptechnik vom Boden aus, je nach Neigung.",
         },
