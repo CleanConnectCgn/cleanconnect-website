@@ -1,0 +1,233 @@
+# Ortsdaten fuer die Standortseiten (13.10.2026).
+#
+# Regel: nur Fakten, die oeffentlich nachpruefbar sind (Kreis, Stadtteile,
+# Lage, bekannte Wirtschaftsstandorte). Keine erfundenen Kunden, keine
+# erfundenen Referenzen, keine Uhrzeiten aus Satzungen, die nicht geprueft
+# sind (geprueft: Koeln, Stadt Koeln "Winterdienst ist eine gemeinsame Sache").
+#
+# facetten: kurze, ortsspezifische Aussagen je Thema. Die Leistungsseiten
+# ziehen sich die passenden Themen; so steht auf jeder Seite anderer Text.
+#   buero      Buero- und Gewerbelagen
+#   wohnen     Wohnungsbestand, Treppenhaeuser, Hausverwaltungen
+#   gewerbe    Industrie, Hallen, Produktion
+#   bau        Bautaetigkeit, Sanierung, Neubau
+#   lage       Lage, Gelaende, Verkehr, Wetter
+#   handel     Einzelhandel, Schaufenster, Publikumsverkehr
+#   besonders  was den Ort von den anderen unterscheidet
+
+BUERO = (50.973, 7.075)  # Berliner Strasse 957, Koeln-Dellbrueck
+
+ORTE = {
+    "koeln": {
+        "name": "Köln",
+        "in": "in Köln",
+        "kreis": "kreisfreie Stadt",
+        "geo": (50.9413, 6.9583),
+        "stadtteile": ["Innenstadt", "Deutz", "Ehrenfeld", "Nippes", "Lindenthal", "Rodenkirchen", "Porz", "Kalk", "Mülheim", "Dellbrück", "Chorweiler", "Braunsfeld"],
+        "anfahrt": "Unser Büro liegt in Köln-Dellbrück im Stadtbezirk Mülheim. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.",
+        "entsorger": "die Abfallwirtschaftsbetriebe Köln (AWB)",
+        "winter_satzung": "Laut Stadt Köln müssen Gehwege in 1,5 Metern Breite nach Schneefall geräumt werden, werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr; fällt nach 20 Uhr Schnee, reicht in der Regel der Einsatz am nächsten Morgen. Welche Straßen die Anlieger übernehmen, steht im Straßenreinigungsverzeichnis der Kölner Satzung.",
+        "facetten": {
+            "buero": "Köln hat viele dichte Bürolagen: Bürohäuser in der Innenstadt und am Mediapark, Neubauten in Deutz rund um die Messe und Gewerbehöfe in Braunsfeld und Ossendorf. Dort zählt vor allem, dass die Reinigung abends erledigt ist, bevor am Morgen wieder Kunden und Mitarbeitende kommen.",
+            "wohnen": "Ein großer Teil der Kölner Mehrfamilienhäuser sind Altbauten aus der Gründerzeit und der Nachkriegszeit, etwa in Ehrenfeld, Nippes oder der Südstadt. Hohe Treppenhäuser mit Holzstufen, Terrazzo oder Linoleum brauchen jeweils eine andere Pflege.",
+            "gewerbe": "In Porz, Ossendorf und im Kölner Norden sitzen Logistik, Handwerk und Produktion mit Hallen, Werkstätten und Sozialräumen, die anders verschmutzen als ein Büro.",
+            "bau": "In Köln wird ständig gebaut und saniert, von Dachgeschossausbauten im Veedel bis zu Quartieren wie dem Deutzer Hafen. Nach jeder Baustelle bleibt Feinstaub, der sich ohne gründliche Endreinigung wochenlang verteilt.",
+            "lage": "Durch Köln fließt der Rhein, und der Verkehr auf den Ringen und Hauptachsen ist dicht. Fenster und Fassaden an großen Straßen setzen schneller einen grauen Film aus Abrieb und Feinstaub an.",
+            "handel": "Auf Schildergasse, Hohe Straße, Ehrenstraße und in den Veedel-Einkaufsstraßen entscheidet ein sauberes Schaufenster mit über den ersten Eindruck.",
+            "besonders": "Köln ist unser Heimatstandort: Wir sitzen selbst in Dellbrück und kennen die Wege durch die Stadtbezirke links und rechts des Rheins.",
+        },
+    },
+    "leverkusen": {
+        "name": "Leverkusen",
+        "in": "in Leverkusen",
+        "kreis": "kreisfreie Stadt",
+        "geo": (51.0303, 6.9843),
+        "stadtteile": ["Wiesdorf", "Opladen", "Schlebusch", "Manfort", "Rheindorf", "Hitdorf", "Küppersteg", "Bürrig", "Quettingen", "Lützenkirchen", "Steinbüchel", "Bergisch Neukirchen"],
+        "anfahrt": "Leverkusen grenzt im Norden an Köln. Von Dellbrück aus erreichen wir Schlebusch und Steinbüchel über die Landstraße, Wiesdorf und Opladen über die A3 und A1.",
+        "entsorger": "die AVEA, die in Leverkusen Sperrmüll und Wertstoffe übernimmt",
+        "winter_satzung": "Wer in Leverkusen Gehwege räumen und streuen muss und bis wann, regelt die Straßenreinigungssatzung der Stadt Leverkusen. Wir richten den Einsatzplan nach dieser Satzung aus.",
+        "facetten": {
+            "buero": "Neben dem Chempark prägen Verwaltungs- und Bürogebäude in Wiesdorf und Opladen die Stadt, dazu viele Dienstleister, die für die Industrie arbeiten.",
+            "wohnen": "In Schlebusch, Lützenkirchen und Steinbüchel stehen viele Mehrfamilienhäuser aus den 60er- und 70er-Jahren, die oft von Hausverwaltungen betreut werden.",
+            "gewerbe": "Mit dem Chempark ist Leverkusen einer der großen Chemiestandorte in NRW. Rund um die Industrie gibt es Werkstätten, Labore und Lagerflächen mit eigenen Anforderungen an Sauberkeit.",
+            "bau": "Rund um die Opladener Neue Bahnstadt sind in den letzten Jahren neue Wohn- und Gewerbebauten entstanden; Neubauten brauchen vor dem Einzug eine gründliche Endreinigung.",
+            "lage": "Leverkusen liegt zwischen Rhein und Bergischem Land, mit den Autobahnkreuzen von A1, A3 und A59 im Stadtgebiet. Der Verkehr hinterlässt an Fenstern und Fassaden schnell Spuren.",
+            "handel": "In der Wiesdorfer Fußgängerzone und in der Opladener Innenstadt treffen viele Kunden auf Ladenlokale, deren Glasfronten jeden Tag im Blick sind.",
+            "besonders": "Leverkusen ist durch Bayer und die BayArena bekannt; als direkter Nachbar von Köln gehört es für uns zum täglichen Einsatzgebiet.",
+        },
+    },
+    "bergisch-gladbach": {
+        "name": "Bergisch Gladbach",
+        "in": "in Bergisch Gladbach",
+        "kreis": "Kreisstadt des Rheinisch-Bergischen Kreises",
+        "geo": (50.9918, 7.1366),
+        "stadtteile": ["Stadtmitte", "Bensberg", "Refrath", "Paffrath", "Schildgen", "Hand", "Herkenrath", "Moitzfeld", "Frankenforst", "Gronau", "Heidkamp", "Hebborn"],
+        "anfahrt": "Bergisch Gladbach beginnt praktisch an unserer Haustür: Dellbrück grenzt an Refrath. Die Stadtmitte, Bensberg und Paffrath sind von unserem Büro nur wenige Minuten entfernt.",
+        "entsorger": "die Abfallentsorgung der Stadt Bergisch Gladbach",
+        "winter_satzung": "In Bergisch Gladbach legt die Straßenreinigungs- und Gebührensatzung fest, welche Gehwege die Grundstückseigentümer im Winter räumen und streuen müssen. Nach dieser Satzung planen wir den Einsatz.",
+        "facetten": {
+            "buero": "In Bergisch Gladbach sitzen viele kleinere Büros, Kanzleien und Praxen in der Stadtmitte und in Bensberg, oft in umgebauten Wohnhäusern mit mehreren Etagen.",
+            "wohnen": "Refrath, Frankenforst und Moitzfeld sind ruhige Wohnlagen mit vielen Eigentümergemeinschaften, bei denen Treppenhaus, Keller und Außenanlagen regelmäßig gepflegt werden müssen.",
+            "gewerbe": "Die Papierherstellung hat Bergisch Gladbach geprägt; heute sind es eher Handwerk, Handel und Dienstleistung in den Gewerbegebieten am Stadtrand.",
+            "bau": "Auf dem früheren Zanders-Gelände in der Stadtmitte entsteht in den nächsten Jahren ein neues Stadtquartier, und in vielen Stadtteilen werden ältere Häuser saniert.",
+            "lage": "Die Stadt liegt am Übergang zum Bergischen Land, mit Hanglagen in Bensberg, Herkenrath und Moitzfeld. Steigungen und schattige Gehwege machen den Winter hier anspruchsvoller als in der Rheinebene.",
+            "handel": "Die Fußgängerzone in der Stadtmitte und das Zentrum von Bensberg leben von inhabergeführten Geschäften, bei denen das Schaufenster die Visitenkarte ist.",
+            "besonders": "Bergisch Gladbach ist für uns der nächste Ort überhaupt: Zwischen unserem Büro und Refrath liegt nur die Stadtgrenze.",
+        },
+    },
+    "wuppertal": {
+        "name": "Wuppertal",
+        "in": "in Wuppertal",
+        "kreis": "kreisfreie Stadt im Bergischen Land",
+        "geo": (51.2562, 7.1508),
+        "stadtteile": ["Elberfeld", "Barmen", "Vohwinkel", "Oberbarmen", "Ronsdorf", "Cronenberg", "Langerfeld", "Heckinghausen", "Uellendahl", "Katernberg", "Beyenburg", "Sonnborn"],
+        "anfahrt": "Wuppertal erreichen wir aus Köln über die A1. Für regelmäßige Einsätze bündeln wir die Termine, damit die Anfahrt den Preis nicht treibt.",
+        "entsorger": "die AWG Abfallwirtschaftsgesellschaft Wuppertal",
+        "winter_satzung": "In Wuppertal sind die Grundstückseigentümer nach der Straßenreinigungssatzung für den Winterdienst auf den Gehwegen zuständig, je nach Reinigungsklasse der Straße; die Fahrbahnen übernimmt die Stadt. Wir richten uns nach der Klasse Ihrer Straße.",
+        "facetten": {
+            "buero": "Die Bürolagen konzentrieren sich in Elberfeld und Barmen, oft in historischen Geschäftshäusern entlang der Talachse, in denen Büros über mehrere Etagen verteilt sind.",
+            "wohnen": "Wuppertal hat einen der größten Bestände an Gründerzeithäusern in Deutschland, etwa im Ölberg-Viertel und im Briller Viertel. Hohe, verwinkelte Treppenhäuser mit alten Holzstufen sind hier eher die Regel als die Ausnahme.",
+            "gewerbe": "Textil- und Metallindustrie haben die Stadt groß gemacht; heute sitzen Produktion, Pharma und Handwerk in Gewerbegebieten in Vohwinkel, Langerfeld und Ronsdorf.",
+            "bau": "Viele der alten Häuser werden Stück für Stück saniert, vom Dachausbau bis zur kompletten Kernsanierung. Nach solchen Arbeiten liegt Staub bis in die letzte Treppenstufe.",
+            "lage": "Wuppertal liegt im engen Tal der Wupper mit steilen Hängen auf beiden Seiten. Viele Straßen haben starkes Gefälle, und im Winter wird es an den Hängen schneller glatt als im Tal.",
+            "handel": "Die Einkaufsstraßen in Elberfeld und Barmen ziehen täglich viele Menschen an; gepflegte Schaufenster fallen dort auf.",
+            "besonders": "Wahrzeichen ist die Schwebebahn, die über der Wupper durch die Stadt fährt. Wuppertal liegt etwas weiter von Köln entfernt, deshalb planen wir hier vor allem regelmäßige Einsätze.",
+        },
+    },
+    "troisdorf": {
+        "name": "Troisdorf",
+        "in": "in Troisdorf",
+        "kreis": "größte Stadt im Rhein-Sieg-Kreis",
+        "geo": (50.8162, 7.1557),
+        "stadtteile": ["Troisdorf-Mitte", "Sieglar", "Spich", "Oberlar", "Friedrich-Wilhelms-Hütte", "Altenrath", "Bergheim", "Müllekoven", "Eschmar", "Kriegsdorf", "West"],
+        "anfahrt": "Troisdorf liegt südöstlich von Köln an der A59. Über die rechtsrheinische Seite sind wir von Dellbrück aus ohne Umweg über die Brücken dort.",
+        "entsorger": "die RSAG, die im Rhein-Sieg-Kreis Sperrmüll und Wertstoffe abholt",
+        "winter_satzung": "In Troisdorf regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen und streuen. Wir planen den Einsatz entsprechend.",
+        "facetten": {
+            "buero": "In Troisdorf-Mitte und in den Gewerbegebieten rund um Spich haben sich viele Dienstleister angesiedelt, auch wegen der Nähe zum Flughafen Köln/Bonn.",
+            "wohnen": "In Sieglar, Oberlar und Spich gibt es viele Mehrfamilienhäuser und Wohnanlagen, die von Hausverwaltungen betreut werden.",
+            "gewerbe": "Troisdorf ist traditionell ein Industriestandort, vor allem für Kunststoff und Chemie. Produktionshallen und Werkstätten verschmutzen anders als Büroflächen.",
+            "bau": "Durch die gute Verkehrslage wird in Troisdorf viel gebaut, von neuen Wohngebieten bis zu Hallen und Bürogebäuden in den Gewerbegebieten.",
+            "lage": "Troisdorf liegt zwischen Sieg und Agger, direkt neben der Wahner Heide und dem Flughafen Köln/Bonn. Durch den Verkehr rund um Flughafen und A59 setzen Fenster und Fassaden schneller einen grauen Film an.",
+            "handel": "In der Kölner Straße, der Fußgängerzone in Troisdorf-Mitte, sind gepflegte Eingänge und Glasflächen für viele Läden wichtig.",
+            "besonders": "Troisdorf kennen viele durch Burg Wissem mit dem Bilderbuchmuseum und durch die Wahner Heide vor der Haustür.",
+        },
+    },
+    "wesseling": {
+        "name": "Wesseling",
+        "in": "in Wesseling",
+        "kreis": "Stadt im Rhein-Erft-Kreis",
+        "geo": (50.8268, 6.9759),
+        "stadtteile": ["Wesseling-Mitte", "Berzdorf", "Keldenich", "Urfeld"],
+        "anfahrt": "Wesseling liegt südlich von Köln direkt am Rhein, über die A555 schnell erreichbar.",
+        "entsorger": "den örtlichen Entsorger der Stadt Wesseling",
+        "winter_satzung": "Welche Gehwege in Wesseling im Winter von den Anliegern geräumt werden müssen, regelt die Straßenreinigungssatzung der Stadt. Daran richten wir den Einsatz aus.",
+        "facetten": {
+            "buero": "In Wesseling arbeiten viele Menschen in Verwaltung, Technik und Dienstleistung rund um die großen Chemie- und Energieunternehmen; dazu kommen Praxen und kleinere Büros im Zentrum.",
+            "wohnen": "In Keldenich, Berzdorf und Wesseling-Mitte prägen Mehrfamilienhäuser und Wohnanlagen das Bild, viele davon aus den 60er- und 70er-Jahren.",
+            "gewerbe": "Wesseling ist einer der großen Chemie- und Raffineriestandorte am Rhein. Werkstätten, Sozialräume und Verwaltungsgebäude in diesem Umfeld haben hohe Anforderungen an Ordnung und Sauberkeit.",
+            "bau": "Neue Wohngebiete und die Sanierung älterer Mehrfamilienhäuser sorgen in Wesseling für regelmäßige Bauendreinigungen.",
+            "lage": "Wesseling liegt flach am Rhein zwischen Köln und Bonn. Nebel und Feuchtigkeit vom Fluss lassen sich auf Glasflächen und Gehwegen deutlich sehen.",
+            "handel": "Im Zentrum von Wesseling gibt es viele Geschäfte, bei denen die Glasfront das Aushängeschild ist.",
+            "besonders": "Wesseling ist klein genug, dass wir mehrere Objekte an einem Tag gut verbinden können.",
+        },
+    },
+    "bruehl": {
+        "name": "Brühl",
+        "in": "in Brühl",
+        "kreis": "Stadt im Rhein-Erft-Kreis",
+        "geo": (50.8290, 6.9045),
+        "stadtteile": ["Brühl-Mitte", "Badorf", "Pingsdorf", "Vochem", "Kierberg", "Heide", "Schwadorf", "Brühl-Ost", "Brühl-West"],
+        "anfahrt": "Brühl liegt südwestlich von Köln an der A553. Aus Köln sind wir über die A4 und A553 oder über die Bonner Straße schnell dort.",
+        "entsorger": "den Abfallentsorger der Stadt Brühl",
+        "winter_satzung": "In Brühl regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen müssen. Nach ihr planen wir den Winterdienst.",
+        "facetten": {
+            "buero": "In Brühl gibt es neben dem Rathausumfeld viele Kanzleien, Praxen und Verwaltungsstandorte, darunter Bildungseinrichtungen des Bundes.",
+            "wohnen": "Pingsdorf, Badorf und Vochem sind gewachsene Wohnviertel mit vielen Mehrfamilienhäusern und kleineren Eigentümergemeinschaften.",
+            "gewerbe": "Im Gewerbegebiet Brühl-Ost sitzen Handwerksbetriebe, Händler und Logistik mit Hallen und Lagerflächen.",
+            "bau": "In Brühl werden ältere Häuser im Zentrum laufend saniert; dazu kommen neue Wohnbauten am Stadtrand.",
+            "lage": "Brühl liegt am Rand der Ville. Viele Grundstücke grenzen an Grünflächen und Parks, deren Laub im Herbst auf Wegen und Fensterbänken landet.",
+            "handel": "Die Uhlstraße und die Fußgängerzone rund um den Markt ziehen viele Besucher an, auch Touristen auf dem Weg zum Schloss.",
+            "besonders": "Brühl ist bekannt für die Schlösser Augustusburg und Falkenlust, die zum UNESCO-Welterbe gehören, und für das Phantasialand.",
+        },
+    },
+    "huerth": {
+        "name": "Hürth",
+        "in": "in Hürth",
+        "kreis": "Stadt im Rhein-Erft-Kreis",
+        "geo": (50.8781, 6.8763),
+        "stadtteile": ["Hermülheim", "Efferen", "Fischenich", "Gleuel", "Kendenich", "Knapsack", "Alstädten-Burbach", "Alt-Hürth", "Kalscheuren", "Stotzheim", "Berrenrath", "Sielsdorf"],
+        "anfahrt": "Hürth grenzt im Südwesten an Köln. Über den Kölner Ring und die A1 sind wir von Dellbrück aus gut dort; Efferen und Kalscheuren liegen direkt an der Stadtgrenze.",
+        "entsorger": "den Abfallentsorger der Stadt Hürth",
+        "winter_satzung": "In Hürth legt die Straßenreinigungssatzung der Stadt fest, wann und wo Anlieger räumen und streuen müssen. Daran orientiert sich unser Einsatzplan.",
+        "facetten": {
+            "buero": "In Hürth gibt es viele Büro- und Medienstandorte: In Kalscheuren werden Fernsehsendungen produziert, und rund um den Hürth Park sitzen Dienstleister und Verwaltungen.",
+            "wohnen": "Hermülheim, Efferen und Fischenich sind beliebte Wohnorte am Kölner Stadtrand mit vielen Mehrfamilienhäusern und Wohnanlagen.",
+            "gewerbe": "Mit dem Chemiepark Knapsack ist Hürth ein Industriestandort; dazu kommen Gewerbegebiete mit Hallen, Werkstätten und Lagern.",
+            "bau": "Durch die Nähe zu Köln entstehen in Hürth laufend neue Wohnungen und Gewerbeflächen.",
+            "lage": "Hürth liegt am Hang der Ville. Höher gelegene Stadtteile wie Gleuel oder Berrenrath bekommen im Winter oft früher Schnee als die Kölner Innenstadt.",
+            "handel": "Der Hürth Park ist eines der großen Einkaufszentren der Region; dazu kommen kleinere Läden in Hermülheim und Efferen.",
+            "besonders": "Hürth ist eine der Medienstädte der Region: Hier entstehen viele bekannte Fernsehproduktionen.",
+        },
+    },
+    "frechen": {
+        "name": "Frechen",
+        "in": "in Frechen",
+        "kreis": "Stadt im Rhein-Erft-Kreis",
+        "geo": (50.9128, 6.8106),
+        "stadtteile": ["Frechen-Mitte", "Königsdorf", "Bachem", "Buschbell", "Habbelrath", "Grefrath", "Hücheln", "Benzelrath"],
+        "anfahrt": "Frechen grenzt im Westen an Köln-Lindenthal. Über die A4 ist es von Köln aus schnell erreichbar.",
+        "entsorger": "den Abfallentsorger der Stadt Frechen",
+        "winter_satzung": "Für Frechen regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen müssen. Wir planen den Einsatz danach.",
+        "facetten": {
+            "buero": "Frechen hat sich vom Industrie- zum Dienstleistungsstandort entwickelt; in den Gewerbegebieten am Kölner Rand haben viele Firmen ihre Büros und Verwaltungen.",
+            "wohnen": "In Königsdorf, Bachem und Frechen-Mitte wohnen viele Pendler, die in Köln arbeiten. Wohnanlagen und Mehrfamilienhäuser werden hier oft von Verwaltungen betreut.",
+            "gewerbe": "Die Keramik- und Steinzeugherstellung hat Frechen bekannt gemacht; heute sitzen in den Gewerbegebieten Handel, Logistik und Handwerk.",
+            "bau": "Rund um Frechen werden neue Wohngebiete erschlossen und ältere Gewerbeflächen umgenutzt. Vor dem Einzug steht jeweils die Bauendreinigung.",
+            "lage": "Frechen liegt am Rand des Rheinischen Braunkohlereviers. Staub aus der Umgebung setzt sich an Fenstern und Fassaden fest.",
+            "handel": "Die Hauptstraße in Frechen-Mitte ist die Einkaufsmeile der Stadt mit vielen inhabergeführten Läden.",
+            "besonders": "Frechen ist für seine Keramiktradition bekannt; bis heute gibt es dort das Keramion als Museum.",
+        },
+    },
+    "pulheim": {
+        "name": "Pulheim",
+        "in": "in Pulheim",
+        "kreis": "Stadt im Rhein-Erft-Kreis",
+        "geo": (50.9998, 6.8077),
+        "stadtteile": ["Pulheim-Mitte", "Brauweiler", "Stommeln", "Sinnersdorf", "Dansweiler", "Geyen", "Sinthern", "Manstedten", "Ingendorf"],
+        "anfahrt": "Pulheim liegt nordwestlich von Köln an der A57 und der A1. Für Einsätze in Brauweiler oder Stommeln planen wir die Route über den Kölner Norden.",
+        "entsorger": "den Abfallentsorger der Stadt Pulheim",
+        "winter_satzung": "Welche Gehwege in Pulheim die Anlieger im Winter räumen und streuen müssen, regelt die Straßenreinigungssatzung der Stadt. Danach richten wir unseren Einsatz.",
+        "facetten": {
+            "buero": "Pulheim ist eher ruhig gelegen; Büros, Praxen und Kanzleien verteilen sich über die Ortsteile, Gewerbe sitzt vor allem am Rand von Pulheim-Mitte und Brauweiler.",
+            "wohnen": "Viele Familien wohnen in Pulheim, Brauweiler und Sinnersdorf in Reihen- und Mehrfamilienhäusern, oft in Eigentümergemeinschaften.",
+            "gewerbe": "In den Gewerbegebieten von Pulheim und Brauweiler sitzen Handwerksbetriebe, Händler und Lagerflächen.",
+            "bau": "In Pulheim entstehen immer wieder neue Wohngebiete am Ortsrand, dazu kommen Umbauten älterer Häuser in den Ortskernen.",
+            "lage": "Pulheim liegt flach in der Kölner Bucht zwischen Feldern. Wind treibt Staub und im Herbst Blätter auf Wege und Fensterbänke.",
+            "handel": "In der Venloer Straße in Pulheim-Mitte und im Ortskern von Brauweiler gibt es viele kleine Geschäfte.",
+            "besonders": "Bekannt ist Pulheim für die Abtei Brauweiler, eine der großen historischen Klosteranlagen im Rheinland.",
+        },
+    },
+    "bergheim": {
+        "name": "Bergheim",
+        "in": "in Bergheim",
+        "kreis": "Kreisstadt des Rhein-Erft-Kreises",
+        "geo": (50.9555, 6.6386),
+        "stadtteile": ["Bergheim-Mitte", "Quadrath-Ichendorf", "Kenten", "Zieverich", "Niederaußem", "Oberaußem", "Glessen", "Fliesteden", "Paffendorf", "Thorr", "Ahe", "Glesch"],
+        "anfahrt": "Bergheim liegt westlich von Köln an der Erft, über die A61 und die A4 gut zu erreichen. Für regelmäßige Einsätze legen wir feste Tage fest.",
+        "entsorger": "den Abfallentsorger der Kreisstadt Bergheim",
+        "winter_satzung": "In Bergheim regelt die Straßenreinigungssatzung der Kreisstadt, welche Gehwege Anlieger im Winter räumen und streuen müssen. Daran richten wir den Einsatz aus.",
+        "facetten": {
+            "buero": "Als Kreisstadt hat Bergheim viele Verwaltungsstandorte, dazu Praxen, Kanzleien und Büros im Zentrum und in Quadrath-Ichendorf.",
+            "wohnen": "In Kenten, Quadrath-Ichendorf und Zieverich gibt es viele Mehrfamilienhäuser und Wohnanlagen; dazu kommen Siedlungen, die früher für die Beschäftigten im Revier gebaut wurden.",
+            "gewerbe": "Das Rheinische Braunkohlerevier mit dem Kraftwerk Niederaußem hat Bergheim geprägt. Im Strukturwandel entstehen neue Gewerbeflächen für Handwerk, Logistik und Energie.",
+            "bau": "Der Strukturwandel bringt neue Gewerbe- und Wohnprojekte nach Bergheim; wo gebaut wird, folgt eine gründliche Bauendreinigung.",
+            "lage": "Bergheim liegt an der Erft mitten im Rheinischen Revier. Staub aus dem Revier lässt sich auf Fenstern, Fassaden und Solarmodulen deutlich sehen.",
+            "handel": "Die Hauptstraße in Bergheim-Mitte und die Einkaufsstraßen in Quadrath-Ichendorf leben von gepflegten Ladenlokalen.",
+            "besonders": "Bergheim ist die Kreisstadt des Rhein-Erft-Kreises und liegt mitten im Strukturwandel vom Braunkohlerevier zu neuen Branchen.",
+        },
+    },
+}
+
+# Reihenfolge fuer Navigation und Uebersicht
+ORT_REIHENFOLGE = ["koeln", "leverkusen", "bergisch-gladbach", "frechen", "huerth", "pulheim", "bruehl", "wesseling", "bergheim", "troisdorf", "wuppertal"]
