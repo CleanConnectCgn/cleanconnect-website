@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Ihr Angebot für Neukunden | Clean Connect Köln</title>
+<meta name="description" content="Angebot für Neukunden von Clean Connect, Ihrer Reinigungsfirma in Köln.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="stylesheet" href="fonts.css">
+
+<script>
+/* =====================================================================
+   OFFENE ENTSCHEIDUNGEN: hier anpassen, sonst nichts.
+   Alle Werte in eckigen Klammern sind noch nicht festgelegt.
+   ===================================================================== */
+var ANGEBOT = {
+  GUELTIG_BIS: '[DATUM]',               // z. B. '31.12.2026'
+  ERSTREINIGUNG_STUNDEN: '[X]',         // z. B. '3'
+  GLAS_RABATT_PROZENT: 50,
+  STANDARD_VARIANTE: 'glas'             // gilt, wenn ?v= fehlt oder unbekannt ist
+};
+
+/* Versandweg wie auf der Startseite (Web3Forms, gleicher Zugangsschlüssel) */
+var FORMULAR = {
+  ENDPUNKT: 'https://api.web3forms.com/submit',
+  ACCESS_KEY: 'a1baeef9-3b69-4ddf-b187-aab554abb5ea',
+  BETREFF: {
+    glas: 'Anfrage Angebot Glasreinigung (Werbebrief)',
+    erstreinigung: 'Anfrage kostenlose Erstreinigung (Werbebrief)'
+  }
+};
+</script>
+
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0D0D0D;--s1:#161616;--s2:#1f1f1f;
+  --br:#262626;--br2:#363636;
+  --teal:#00C5C4;--tg:rgba(0,197,196,.16);--td:rgba(0,197,196,.08);
+  --tx:#f2f2f2;--mu:#a3a3a3;--mu2:#c4c4c4;--err:#ff7a6b;
+  --gut:16px;--max:1120px;
+  --head:'Plus Jakarta Sans','Inter',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--tx);font-family:'Inter',system-ui,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--teal);outline-offset:3px;border-radius:4px}
+.skip-link{position:absolute;top:-100px;left:12px;background:var(--teal);color:#000;padding:8px 16px;border-radius:0 0 8px 8px;font-weight:700;font-size:14px;z-index:999;transition:top .2s}
+.skip-link:focus{top:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--gut)}
+h1,h2,h3{font-family:var(--head);font-weight:800;line-height:1.12;letter-spacing:-.02em}
+
+/* Header wie Startseite */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:60px;padding:0 var(--gut);display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid transparent;transition:background .35s,border-color .35s}
+nav.s{background:rgba(13,13,13,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-color:var(--br)}
+.nls{display:flex;align-items:center;gap:22px}
+.nls a{font-size:13px;font-weight:500;color:rgba(255,255,255,.85);transition:color .2s}
+.nls a:hover{color:#fff}
+.nc{background:var(--teal);color:#000!important;font-weight:700;font-size:13px;padding:8px 16px;border-radius:7px}
+.ham{display:none;flex-direction:column;gap:5px;padding:8px}
+.ham span{display:block;width:21px;height:2px;background:var(--tx);border-radius:2px;transition:transform .3s,opacity .3s}
+.ham[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.ham[aria-expanded="true"] span:nth-child(2){opacity:0}
+.ham[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mm{display:none;position:fixed;inset:0;background:rgba(13,13,13,.98);z-index:199;flex-direction:column;align-items:center;justify-content:center;gap:26px}
+.mm.o{display:flex}
+.mm a{font-family:var(--head);font-size:22px;font-weight:700;color:var(--mu2)}
+.mm .mc{background:var(--teal);color:#000;padding:12px 30px;border-radius:8px;font-size:16px}
+@media(max-width:767px){.nls{display:none}.ham{display:flex}}
+@media(min-width:768px){:root{--gut:40px}}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;padding:14px 22px;border-radius:9px;transition:transform .2s,box-shadow .2s,background .2s}
+.btn-p{background:var(--teal);color:#000}
+.btn-p:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(0,197,196,.3)}
+.btn-g{background:var(--s1);color:var(--tx);border:1px solid var(--br2)}
+.btn-g:hover{background:var(--s2)}
+
+/* Abschnitte */
+.sec{padding:72px 0;position:relative}
+.sec+.sec{border-top:1px solid var(--br)}
+.snum{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.sh{font-size:clamp(28px,6vw,46px);margin-bottom:14px;max-width:18ch}
+.sp{color:var(--mu);max-width:56ch;margin-bottom:36px}
+@media(min-width:900px){.sec{padding:110px 0}}
+
+/* Hero */
+.hero{padding:104px 0 64px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;right:-260px;top:-220px;background:radial-gradient(closest-side,rgba(0,197,196,.22),transparent);pointer-events:none}
+.hero-grid{display:grid;gap:40px;position:relative}
+.hlabel{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--br2);color:var(--mu2);font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 13px;border-radius:100px;margin-bottom:22px}
+.hldot{width:7px;height:7px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.hero h1{font-size:clamp(38px,10vw,76px);margin-bottom:20px}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero .lead{font-size:clamp(16px,2.2vw,19px);color:var(--mu2);max-width:46ch;margin-bottom:28px}
+.hbtns{display:flex;flex-wrap:wrap;gap:12px}
+.hbtns .btn{flex:1 1 220px}
+.hnote{margin-top:18px;font-size:13px;color:var(--mu)}
+.hbadge{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--br2);background:var(--s1);aspect-ratio:4/5;max-height:560px}
+.hbadge img{width:100%;height:100%;object-fit:cover;opacity:.82}
+.hbadge::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(13,13,13,.92))}
+.hbig{position:absolute;left:20px;right:20px;bottom:20px;z-index:2}
+.hbig strong{display:block;font-family:var(--head);font-weight:800;font-size:clamp(56px,14vw,96px);line-height:1;color:var(--teal);letter-spacing:-.03em}
+.hbig>span{display:block;font-size:14px;color:var(--mu2);margin-top:6px}
+@media(min-width:900px){.hero{padding:150px 0 100px}.hero-grid{grid-template-columns:1.25fr .75fr;align-items:center;gap:64px}}
+
+/* Timeline */
+.tlw{position:relative}
+.tl{position:relative;list-style:none;display:grid;gap:28px;padding-left:46px}
+.tlw::before,.tl-fill{content:"";position:absolute;left:15px;top:8px;width:2px;border-radius:2px}
+.tlw::before{bottom:8px;background:var(--br2)}
+.tl-fill{z-index:0}.tl{z-index:1}
+.tl-fill{height:0;background:var(--teal);box-shadow:0 0 10px rgba(0,197,196,.5)}
+.tstep{position:relative}
+.tdot{position:absolute;left:-46px;top:0;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-weight:800;font-size:14px;background:var(--bg);border:2px solid var(--br2);color:var(--mu);transition:background .45s,border-color .45s,color .45s,box-shadow .45s}
+.tstep h3{font-size:clamp(20px,4vw,26px);margin-bottom:6px;color:var(--mu2);transition:color .45s}
+.tstep p{color:var(--mu);max-width:52ch}
+.tstep.on .tdot{background:var(--teal);border-color:var(--teal);color:#000;box-shadow:0 0 0 6px var(--td)}
+.tstep.on h3{color:var(--tx)}
+@media(min-width:900px){.tl{gap:40px;padding-left:64px}.tdot{left:-64px;width:40px;height:40px}.tlw::before,.tl-fill{left:19px}}
+
+/* Leistungen */
+.cards{display:grid;gap:12px}
+.card{background:var(--s1);border:1px solid var(--br);border-radius:14px;transition:border-color .25s,background .25s}
+.card:hover{border-color:var(--br2)}
+.card.open{border-color:rgba(0,197,196,.45);background:linear-gradient(160deg,var(--td),transparent 70%),var(--s1)}
+.card h3{font-size:19px}
+.card-btn{width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 20px;text-align:left;border-radius:14px}
+.plus{flex-shrink:0;width:30px;height:30px;border-radius:50%;border:1px solid var(--br2);position:relative;transition:transform .3s,background .3s,border-color .3s}
+.plus::before,.plus::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--tx);transform:translate(-50%,-50%)}
+.plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .3s}
+.open .plus{background:var(--teal);border-color:var(--teal);transform:rotate(180deg)}
+.open .plus::before{background:#000}
+.open .plus::after{opacity:0}
+.panel{display:grid;grid-template-rows:1fr;transition:grid-template-rows .35s ease}
+.panel>div{overflow:hidden;transition:visibility .35s}
+.js .panel{grid-template-rows:0fr}
+.js .panel>div{visibility:hidden}
+.js .open .panel{grid-template-rows:1fr}
+.js .open .panel>div{visibility:visible;transition:none}
+.panel p{padding:0 20px;color:var(--mu2);font-size:15px}
+.panel a{display:inline-block;margin:12px 20px 22px;color:var(--teal);font-weight:600;font-size:14px}
+.panel a:hover{text-decoration:underline}
+@media(min-width:680px){.cards{grid-template-columns:1fr 1fr;align-items:start}}
+@media(min-width:1000px){.cards{grid-template-columns:repeat(3,1fr)}}
+
+/* Vertrauen */
+.trust{display:grid;gap:40px}
+.tgrid{display:grid;gap:2px;background:var(--br);border:1px solid var(--br);border-radius:16px;overflow:hidden}
+.titem{background:var(--bg);padding:26px 22px}
+.tic{width:40px;height:40px;border-radius:10px;background:var(--td);border:1px solid rgba(0,197,196,.3);color:var(--teal);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.tic svg{width:20px;height:20px}
+.titem h3{font-size:19px;margin-bottom:6px}
+.titem p{color:var(--mu);font-size:15px}
+.tphoto{border-radius:16px;overflow:hidden;border:1px solid var(--br2);position:relative}
+.tphoto img{width:100%;height:100%;object-fit:cover}
+.tphoto figcaption{position:absolute;left:12px;bottom:12px;background:rgba(13,13,13,.86);border:1px solid var(--br2);border-radius:100px;padding:6px 12px;font-size:12px;color:var(--mu2)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:28px}
+.kpi{border-top:2px solid var(--teal);padding-top:12px}
+.kpi strong{display:block;font-family:var(--head);font-weight:800;font-size:clamp(26px,6vw,40px);line-height:1.05}
+.kpi span{display:block;font-size:12px;color:var(--mu);margin-top:4px}
+@media(min-width:680px){.tgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:900px){.trust{grid-template-columns:1.3fr .7fr;align-items:stretch}}
+
+/* Formular */
+.kgrid{display:grid;gap:32px}
+.person{display:flex;gap:16px;align-items:center;background:var(--s1);border:1px solid var(--br);border-radius:14px;padding:14px}
+.person img{width:72px;height:72px;border-radius:12px;object-fit:cover;object-position:top}
+.person b{display:block;font-family:var(--head);font-size:17px}
+.person small{display:block;color:var(--mu);font-size:13px}
+.clist{list-style:none;display:grid;gap:10px;margin-top:18px}
+.clist li{font-size:15px;color:var(--mu2)}
+.clist a{color:var(--tx);font-weight:600}
+.clist a:hover{color:var(--teal)}
+.offerbox{margin-top:18px;border:1px dashed rgba(0,197,196,.5);border-radius:12px;padding:14px 16px;font-size:14px;color:var(--mu2)}
+.offerbox b{color:var(--teal)}
+form{background:var(--s1);border:1px solid var(--br);border-radius:16px;padding:22px 18px;display:grid;gap:16px}
+.frow{display:grid;gap:16px}
+.ff label{display:block;font-size:13px;font-weight:600;color:var(--mu2);margin-bottom:6px}
+.ff input,.ff select,.ff textarea{width:100%;font:inherit;font-size:16px;color:var(--tx);background:var(--bg);border:1px solid var(--br2);border-radius:9px;padding:12px 14px;transition:border-color .2s,box-shadow .2s}
+.ff textarea{min-height:120px;resize:vertical}
+.ff input,.ff select,.ff textarea{scroll-margin-top:110px}
+section[id]{scroll-margin-top:56px}
+.ff select{appearance:none;-webkit-appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--mu2) 50%),linear-gradient(135deg,var(--mu2) 50%,transparent 50%);background-position:calc(100% - 20px) 52%,calc(100% - 14px) 52%;background-size:6px 6px;background-repeat:no-repeat;padding-right:40px}
+.ff input:focus,.ff select:focus,.ff textarea:focus{outline:none;border-color:var(--teal);box-shadow:0 0 0 3px var(--tg)}
+.ff [aria-invalid="true"]{border-color:var(--err)}
+.ferr{display:block;font-size:13px;color:var(--err);margin-top:6px;min-height:0}
+.ferr:empty{display:none}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.fmsg{border-radius:10px;padding:14px 16px;font-size:15px}
+.fmsg.ok{background:var(--td);border:1px solid rgba(0,197,196,.45);color:var(--tx)}
+.fmsg.bad{background:rgba(255,122,107,.08);border:1px solid rgba(255,122,107,.45);color:var(--tx)}
+.fmsg[hidden]{display:none}
+.fnote{font-size:12px;color:var(--mu)}
+.fnote a{text-decoration:underline}
+button[type=submit]{width:100%}
+button[disabled]{opacity:.6;cursor:wait}
+@media(min-width:680px){.frow{grid-template-columns:1fr 1fr}form{padding:30px 28px}}
+@media(min-width:900px){.kgrid{grid-template-columns:.8fr 1.2fr;gap:56px;align-items:start}}
+
+/* FAQ */
+.faq{max-width:780px;border-top:1px solid var(--br)}
+.fq{border-bottom:1px solid var(--br)}
+.fq h3{font-size:clamp(17px,3.6vw,21px)}
+.fq-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:22px 0;text-align:left}
+.fq-btn:hover h3{color:var(--teal)}
+.fq.open .plus{background:var(--teal);border-color:var(--teal);transform:rotate(180deg)}
+.fq.open .plus::before{background:#000}
+.fq.open .plus::after{opacity:0}
+.fq .panel p{padding:0 0 22px;max-width:62ch}
+.fq .panel p a{display:inline;margin:0;font-size:inherit}
+
+/* Footer wie Startseite */
+footer{background:var(--bg);border-top:1px solid var(--br);padding:28px var(--gut);display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center}
+.fcon{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font-size:14px}
+.fcon a{color:var(--mu2)}
+.fcon a:hover{color:var(--teal)}
+.flinks{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.flinks a{font-size:13px;color:var(--mu)}
+.flinks a:hover{color:var(--tx)}
+.fcopy{font-size:12px;color:var(--mu)}
+@media(min-width:900px){footer{flex-direction:row;flex-wrap:wrap;justify-content:space-between;text-align:left}}
+
+/* Einblenden beim Scrollen */
+.js .rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.d1{transition-delay:.08s}.js .rv.d2{transition-delay:.16s}.js .rv.d3{transition-delay:.24s}
+
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<script>document.body.classList.add('js');</script>
+<a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+<nav id="nav" aria-label="Hauptnavigation">
+  <a href="index.html" aria-label="Clean Connect Startseite"><img src="images/img-001.webp" width="500" height="500" style="height:44px;width:auto" alt="Clean Connect Logo"></a>
+  <div class="nls">
+    <a href="#ablauf">Ablauf</a>
+    <a href="#leistungen">Leistungen</a>
+    <a href="#faq">Fragen</a>
+    <a href="preise.html">Preise</a>
+    <a class="nc js-cta" href="#anfrage">Angebot anfordern</a>
+  </div>
+  <button class="ham" id="ham" type="button" aria-label="Menü öffnen" aria-expanded="false" aria-controls="mm"><span></span><span></span><span></span></button>
+</nav>
+<div class="mm" id="mm">
+  <a href="#ablauf">Ablauf</a>
+  <a href="#leistungen">Leistungen</a>
+  <a href="#faq">Fragen</a>
+  <a href="preise.html">Preise</a>
+  <a href="#anfrage" class="mc js-cta">Angebot anfordern</a>
+</div>
+
+<main id="main">
+
+<!-- 1 Hero -->
+<section class="hero" aria-labelledby="h1">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hlabel rv"><span class="hldot"></span>Nur für Neukunden &middot; Köln</div>
+      <h1 id="h1" class="rv d1" data-v-glas="&lt;em&gt;50&amp;nbsp;% Rabatt&lt;/em&gt; auf Ihre erste Glasreinigung." data-v-erstreinigung="Ihre Erstreinigung ist &lt;em&gt;kostenlos.&lt;/em&gt;"><em>50&nbsp;% Rabatt</em> auf Ihre erste Glasreinigung.</h1>
+      <p class="lead rv d2" id="hero-lead">Fenster, Schaufenster und Glasfronten, innen und außen. Sie zahlen für die erste Glasreinigung nur die Hälfte.</p>
+      <div class="hbtns rv d3">
+        <a href="#anfrage" class="btn btn-p" id="hero-cta">Angebot anfordern &rarr;</a>
+        <a href="tel:+4915792492755" class="btn btn-g">Anrufen: +49 1579 2492755</a>
+      </div>
+      <p class="hnote rv d3">Gültig bis <span data-ph="GUELTIG_BIS">[DATUM]</span>. Nur für Neukunden.</p>
+    </div>
+    <div class="hbadge rv d2">
+      <img src="images/img_07.webp" width="620" height="964" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" fetchpriority="high">
+      <div class="hbig" id="hero-big"><strong><span class="count" data-to="50">50</span>&nbsp;%</strong><span>Rabatt auf die erste Glasreinigung</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 Ablauf -->
+<section class="sec" id="ablauf" aria-labelledby="h-ablauf">
+  <div class="wrap">
+    <div class="snum rv">01 / Ablauf</div>
+    <h2 class="sh rv d1" id="h-ablauf">In 4 Schritten zur Zusammenarbeit</h2>
+    <p class="sp rv d2">Vom ersten Kontakt bis zum Start. Klar, verbindlich und ohne Kleingedrucktes.</p>
+    <div class="tlw"><span class="tl-fill" id="tl-fill" aria-hidden="true"></span>
+    <ol class="tl" id="tl">
+      <li class="tstep"><span class="tdot" aria-hidden="true">1</span><h3>Anfrage</h3><p>Kurzes Formular ausfüllen oder direkt anrufen. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p></li>
+      <li class="tstep"><span class="tdot" aria-hidden="true">2</span><h3>Besichtigung oder Erstreinigung</h3><p id="step2">Wir besichtigen Ihr Objekt kostenlos und klären alle Fragen. Oder Sie lernen uns direkt bei einer Erstreinigung kennen, ganz wie es Ihnen lieber ist.</p></li>
+      <li class="tstep"><span class="tdot" aria-hidden="true">3</span><h3>Passgenaues Angebot</h3><p>Sie erhalten ein Angebot, das auf Ihrem Objekt basiert statt auf einer groben Schätzung. Transparent und ohne Überraschungen.</p></li>
+      <li class="tstep"><span class="tdot" aria-hidden="true">4</span><h3>Start mit festem Ansprechpartner</h3><p>Ihr festes Team legt los. Sie erreichen immer dieselbe Person, die Ihr Objekt kennt.</p></li>
+    </ol></div>
+  </div>
+</section>
+
+<!-- 3 Leistungen -->
+<section class="sec" id="leistungen" aria-labelledby="h-leist">
+  <div class="wrap">
+    <div class="snum rv">02 / Leistungen</div>
+    <h2 class="sh rv d1" id="h-leist">Was wir für Sie reinigen</h2>
+    <p class="sp rv d2">Tippen Sie auf eine Leistung, um mehr zu erfahren.</p>
+    <div class="cards">
+      <div class="card rv">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-unt" id="b-unt"><span>Unterhaltsreinigung</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-unt" role="region" aria-labelledby="b-unt"><div><p>Regelmäßige Reinigung von Büros, Praxen und Gewerbeflächen zu festen Zeiten. 32&nbsp;€ netto pro Stunde, der Umfang wird für Ihr Objekt fest vereinbart.</p><a href="standorte/unterhaltsreinigung-koeln.html">Mehr zur Unterhaltsreinigung &rarr;</a></div></div>
+      </div>
+      <div class="card rv d1">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-gla" id="b-gla"><span>Glasreinigung</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-gla" role="region" aria-labelledby="b-gla"><div><p>Fenster, Schaufenster und Glasfronten, innen und außen. 45&nbsp;€ netto pro Stunde, einmalig oder im festen Turnus.</p><a href="standorte/glasreinigung-koeln.html">Mehr zur Glasreinigung &rarr;</a></div></div>
+      </div>
+      <div class="card rv d2">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-gru" id="b-gru"><span>Grundreinigung</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-gru" role="region" aria-labelledby="b-gru"><div><p>Böden, Sanitär und Küchen gründlich gereinigt, maschinell und von Hand. 38&nbsp;€ netto pro Stunde, Angebot nach Besichtigung.</p><a href="standorte/grundreinigung-koeln.html">Mehr zur Grundreinigung &rarr;</a></div></div>
+      </div>
+      <div class="card rv">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-tre" id="b-tre"><span>Treppenhausreinigung</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-tre" role="region" aria-labelledby="b-tre"><div><p>Wöchentlich oder 14-täglich für Hausverwaltungen und Eigentümergemeinschaften. Sie zahlen eine feste monatliche Pauschale.</p><a href="standorte/treppenhausreinigung-koeln.html">Mehr zur Treppenhausreinigung &rarr;</a></div></div>
+      </div>
+      <div class="card rv d1">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-win" id="b-win"><span>Winterdienst</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-win" role="region" aria-labelledby="b-win"><div><p>Wir räumen und streuen Gehwege und Zugänge nach Satzung. Dabei übernehmen wir die Verkehrssicherungspflicht und weisen jeden Einsatz nach.</p><a href="standorte/winterdienst-koeln.html">Mehr zum Winterdienst &rarr;</a></div></div>
+      </div>
+      <div class="card rv d2">
+        <h3><button class="card-btn" type="button" aria-expanded="false" aria-controls="p-ent" id="b-ent"><span>Entrümpelung</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="p-ent" role="region" aria-labelledby="b-ent"><div><p>Wir räumen Keller, Wohnungen, Büros und Lagerflächen. Alles wird fachgerecht entsorgt und besenrein übergeben.</p><a href="standorte/entruempelung-koeln.html">Mehr zur Entrümpelung &rarr;</a></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 Vertrauen -->
+<section class="sec" id="vertrauen" aria-labelledby="h-vert">
+  <div class="wrap">
+    <div class="snum rv">03 / Vertrauen</div>
+    <h2 class="sh rv d1" id="h-vert">Keine anonyme Putzfirma</h2>
+    <p class="sp rv d2">Clean Connect ist ein inhabergeführter Reinigungsdienst aus Köln-Rath. Darauf können Sie sich verlassen.</p>
+    <div class="trust">
+      <div>
+        <div class="tgrid rv">
+          <div class="titem"><div class="tic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>Persönlicher Ansprechpartner</h3><p>Kein Callcenter, keine Weiterleitung. Sie erreichen immer dieselbe Person, die Ihr Objekt kennt.</p></div>
+          <div class="titem"><div class="tic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2 20a7 7 0 0 1 14 0M15 14.5a5 5 0 0 1 7 5.5"/></svg></div><h3>Eigenes, festes Team</h3><p>Ihr Objekt reinigt ein festes, deutschsprachiges Team. Fällt jemand aus, übernimmt eine Vertretung aus demselben Team.</p></div>
+          <div class="titem"><div class="tic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg></div><h3>Keine Subunternehmer</h3><p>Wir arbeiten nicht mit Subunternehmern oder Selbstständigen. Alle Mitarbeiter sind sozialversicherungspflichtig beschäftigt und haftpflichtversichert.</p></div>
+          <div class="titem"><div class="tic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>Antwort in 24 Stunden</h3><p>Nach Ihrer Anfrage melden wir uns innerhalb von 24 Stunden bei Ihnen.</p></div>
+        </div>
+        <div class="kpis rv d1">
+          <div class="kpi"><strong><span class="count" data-to="24">24</span>&nbsp;h</strong><span>bis zur Antwort</span></div>
+          <div class="kpi"><strong><span class="count" data-to="20">20</span>+</strong><span>feste Mitarbeiter</span></div>
+          <div class="kpi"><strong><span class="count" data-to="100">100</span>&nbsp;%</strong><span>deutschsprachig</span></div>
+        </div>
+      </div>
+      <figure class="tphoto rv d2">
+        <img src="images/img_06.webp" width="560" height="680" loading="lazy" alt="Clean Connect Team mit Geschäftsführer im Harley-Davidson Store Köln">
+        <figcaption>Unser Team im Einsatz</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- 5 Formular -->
+<section class="sec" id="anfrage" aria-labelledby="h-anf">
+  <div class="wrap">
+    <div class="snum rv">04 / Anfrage</div>
+    <h2 class="sh rv d1" id="h-anf">Jetzt Angebot sichern</h2>
+    <p class="sp rv d2">Schildern Sie uns kurz Ihr Objekt. Wir melden uns innerhalb von 24 Stunden.</p>
+    <div class="kgrid">
+      <div class="rv">
+        <div class="person">
+          <img src="images/img-002.jpg" width="491" height="500" loading="lazy" alt="Julian Mühlhoff">
+          <div><b>Julian Mühlhoff</b><small>Ihr Ansprechpartner für Angebote und alles rund um Ihr Objekt</small></div>
+        </div>
+        <ul class="clist">
+          <li>Telefon: <a href="tel:+4915792492755">+49 1579 2492755</a></li>
+          <li>E-Mail: <a href="mailto:jm@cleanconnect.de">jm@cleanconnect.de</a></li>
+        </ul>
+        <div class="offerbox" id="offerbox"><b>Ihr Angebot:</b> 50&nbsp;% Rabatt auf die erste Glasreinigung. Nur für Neukunden, gültig bis <span data-ph="GUELTIG_BIS">[DATUM]</span>.</div>
+      </div>
+
+      <form id="form" class="rv d1" novalidate>
+        <div class="frow">
+          <div class="ff"><label for="f-name">Name *</label><input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name"><span class="ferr" id="e-name" aria-live="polite"></span></div>
+          <div class="ff"><label for="f-firma">Firma</label><input id="f-firma" name="firma" type="text" autocomplete="organization"></div>
+        </div>
+        <div class="frow">
+          <div class="ff"><label for="f-tel">Telefon *</label><input id="f-tel" name="telefon" type="tel" autocomplete="tel" inputmode="tel" required aria-describedby="e-tel"><span class="ferr" id="e-tel" aria-live="polite"></span></div>
+          <div class="ff"><label for="f-mail">E-Mail</label><input id="f-mail" name="email" type="email" autocomplete="email" aria-describedby="e-mail"><span class="ferr" id="e-mail" aria-live="polite"></span></div>
+        </div>
+        <div class="ff"><label for="f-obj">Objektart</label>
+          <select id="f-obj" name="objektart">
+            <option value="">Bitte wählen ...</option><option>Büro / Gewerbe</option><option>Hausverwaltung / Wohnanlage</option><option>Einzelhandel / Showroom</option><option>Gesundheitseinrichtung</option><option>Grundreinigung</option><option>Winterdienst</option><option>Bauendreinigung</option><option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="ff"><label for="f-msg">Nachricht</label><textarea id="f-msg" name="nachricht" placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
+        <input type="hidden" name="variante" id="f-var" value="glas">
+        <input type="hidden" name="subject" id="f-subj" value="">
+        <input type="hidden" name="from_name" value="cleanconnect.de/angebot">
+        <div class="hp" aria-hidden="true"><label for="f-bot">Nicht ausfüllen</label><input type="checkbox" name="botcheck" id="f-bot" tabindex="-1"></div>
+        <button type="submit" class="btn btn-p" id="f-btn">Angebot anfordern &rarr;</button>
+        <div class="fmsg" id="f-msg-box" role="status" aria-live="polite" tabindex="-1" hidden></div>
+        <p class="fnote">* Pflichtfeld. Mit dem Absenden stimmen Sie unserer <a href="datenschutz.html">Datenschutzerklärung</a> zu.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- 6 FAQ -->
+<section class="sec" id="faq" aria-labelledby="h-faq">
+  <div class="wrap">
+    <div class="snum rv">05 / Fragen</div>
+    <h2 class="sh rv d1" id="h-faq">Häufige Fragen</h2>
+    <div class="faq rv d2">
+      <div class="fq">
+        <h3><button class="fq-btn" type="button" aria-expanded="false" aria-controls="q1" id="qb1"><span>Was kostet eine Stunde?</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="q1" role="region" aria-labelledby="qb1"><div><p>Unterhaltsreinigung berechnen wir mit 32&nbsp;€ netto pro Stunde. Glasreinigung kostet 45&nbsp;€ netto pro Stunde. Nach einer kostenlosen Begehung oder einer Erstreinigung erhalten Sie ein individuelles Angebot ohne versteckte Kosten. <a href="preise.html" style="color:var(--teal)">Alle Preise im Überblick &rarr;</a></p></div></div>
+      </div>
+      <div class="fq">
+        <h3><button class="fq-btn" type="button" aria-expanded="false" aria-controls="q2" id="qb2"><span>Wie schnell antworten Sie?</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="q2" role="region" aria-labelledby="qb2"><div><p>Innerhalb von 24 Stunden nach Ihrer Anfrage. Für größere Objekte vereinbaren wir eine kostenlose Begehung vor Ort.</p></div></div>
+      </div>
+      <div class="fq">
+        <h3><button class="fq-btn" type="button" aria-expanded="false" aria-controls="q3" id="qb3"><span>Gilt das Angebot auch für Bestandskunden?</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="q3" role="region" aria-labelledby="qb3"><div><p>Nein. Das Angebot gilt nur für Neukunden. Es ist gültig bis <span data-ph="GUELTIG_BIS">[DATUM]</span>.</p></div></div>
+      </div>
+      <div class="fq">
+        <h3><button class="fq-btn" type="button" aria-expanded="false" aria-controls="q4" id="qb4"><span>Was ist im Angebot enthalten?</span><span class="plus" aria-hidden="true"></span></button></h3>
+        <div class="panel" id="q4" role="region" aria-labelledby="qb4"><div><p id="faq-inhalt">Sie erhalten 50&nbsp;% Rabatt auf Ihre erste Glasreinigung. Grundlage ist unser Stundensatz von 45&nbsp;€ netto. Das Angebot gilt nur für Neukunden und bis zum <span data-ph="GUELTIG_BIS">[DATUM]</span>.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="flo"><img src="images/img-004.webp" width="500" height="500" loading="lazy" style="height:40px;width:auto;opacity:.85" alt="Clean Connect Logo"></div>
+  <div class="fcon"><a href="tel:+4915792492755">+49 1579 2492755</a><a href="mailto:jm@cleanconnect.de">jm@cleanconnect.de</a></div>
+  <div class="flinks"><a href="index.html">Startseite</a><a href="preise.html">Preise</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>
+  <div class="fcopy">&copy; 2026 Clean Connect Gebäudereinigung UG</div>
+</footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function(s){return document.querySelector(s);};
+  var $$ = function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+
+  /* ── Variante aus ?v= ───────────────── */
+  var v = ANGEBOT.STANDARD_VARIANTE;
+  try{ v = (new URLSearchParams(location.search).get('v') || v).toLowerCase(); }catch(e){}
+  if(v !== 'glas' && v !== 'erstreinigung') v = ANGEBOT.STANDARD_VARIANTE;
+
+  var T = {
+    glas: {
+      lead: 'Fenster, Schaufenster und Glasfronten, innen und außen. Sie zahlen für die erste Glasreinigung nur die Hälfte.',
+      cta: 'Angebot anfordern',
+      big: '<strong><span class="count" data-to="' + ANGEBOT.GLAS_RABATT_PROZENT + '">' + ANGEBOT.GLAS_RABATT_PROZENT + '</span>&nbsp;%</strong><span>Rabatt auf die erste Glasreinigung</span>',
+      box: '<b>Ihr Angebot:</b> ' + ANGEBOT.GLAS_RABATT_PROZENT + '&nbsp;% Rabatt auf die erste Glasreinigung. Nur für Neukunden, gültig bis {GUELTIG_BIS}.',
+      inhalt: 'Sie erhalten ' + ANGEBOT.GLAS_RABATT_PROZENT + '&nbsp;% Rabatt auf Ihre erste Glasreinigung. Grundlage ist unser Stundensatz von 45&nbsp;€ netto. Das Angebot gilt nur für Neukunden und bis zum {GUELTIG_BIS}.',
+      msg: ''
+    },
+    erstreinigung: {
+      lead: 'Wenn Sie einen Dienstleistungsvertrag mit uns abschließen, reinigen wir Ihr Objekt bis zu {ERSTREINIGUNG_STUNDEN} Stunden kostenlos. So lernen Sie unser Team in Ihrem eigenen Objekt kennen.',
+      cta: 'Erstreinigung anfragen',
+      big: '<strong>0&nbsp;€</strong><span>für Ihre Erstreinigung bis {ERSTREINIGUNG_STUNDEN} Stunden</span>',
+      box: '<b>Ihr Angebot:</b> Kostenlose Erstreinigung bis {ERSTREINIGUNG_STUNDEN} Stunden bei Abschluss eines Dienstleistungsvertrags. Nur für Neukunden, gültig bis {GUELTIG_BIS}.',
+      inhalt: 'Sie erhalten eine kostenlose Erstreinigung im Umfang von bis zu {ERSTREINIGUNG_STUNDEN} Stunden, wenn Sie einen Dienstleistungsvertrag mit uns abschließen. Das Angebot gilt nur für Neukunden und bis zum {GUELTIG_BIS}.',
+      msg: 'Ich möchte die kostenlose Erstreinigung anfragen. Objekt: '
+    }
+  };
+  function fill(s){ return s.replace(/\{(\w+)\}/g, function(_, k){ return '<span data-ph="'+k+'">'+ANGEBOT[k]+'</span>'; }); }
+
+  var t = T[v], h1 = $('#h1');
+  h1.innerHTML = h1.getAttribute('data-v-' + v);
+  $('#hero-lead').innerHTML = fill(t.lead);
+  $('#hero-big').innerHTML = fill(t.big);
+  $('#offerbox').innerHTML = fill(t.box);
+  $('#faq-inhalt').innerHTML = fill(t.inhalt);
+  $('#hero-cta').innerHTML = t.cta + ' &rarr;';
+  $('#f-btn').innerHTML = t.cta + ' &rarr;';
+  $$('.js-cta').forEach(function(a){ a.textContent = t.cta; });
+  $('#f-var').value = v;
+  $('#f-subj').value = FORMULAR.BETREFF[v];
+  if(t.msg) $('#f-msg').value = t.msg;
+  $$('[data-ph]').forEach(function(el){ el.textContent = ANGEBOT[el.getAttribute('data-ph')]; });
+
+  /* ── Navigation ─────────────────────── */
+  var nav = $('#nav');
+  window.addEventListener('scroll', function(){ nav.classList.toggle('s', window.scrollY > 30); }, {passive:true});
+  var ham = $('#ham'), mm = $('#mm');
+  function menu(open){
+    mm.classList.toggle('o', open);
+    ham.setAttribute('aria-expanded', open);
+    ham.setAttribute('aria-label', open ? 'Menü schließen' : 'Menü öffnen');
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  ham.addEventListener('click', function(){ menu(!mm.classList.contains('o')); });
+  $$('#mm a').forEach(function(a){ a.addEventListener('click', function(){ menu(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && mm.classList.contains('o')){ menu(false); ham.focus(); } });
+
+  /* ── Aufklappen: Karten und FAQ ─────── */
+  $$('.card-btn, .fq-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var box = btn.closest('.card, .fq'), open = !box.classList.contains('open');
+      box.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', open);
+    });
+  });
+
+  /* ── Zahlen zählen hoch ─────────────── */
+  function countUp(el){
+    var to = parseFloat(el.getAttribute('data-to'));
+    if(isNaN(to) || reduce){ return; }
+    var start = null, dur = 1200;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1), e = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(to * e);
+      if(p < 1) requestAnimationFrame(step);
+    }
+    el.textContent = '0';
+    requestAnimationFrame(step);
+  }
+
+  /* ── Einblenden beim Scrollen ───────── */
+  if(!('IntersectionObserver' in window) || reduce){
+    $$('.rv').forEach(function(el){ el.classList.add('in'); });
+    $$('.tstep').forEach(function(el){ el.classList.add('on'); });
+    $('#tl-fill').style.height = 'calc(100% - 16px)';
+    return;
+  }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      e.target.classList.add('in');
+      e.target.querySelectorAll('.count').forEach(countUp);
+      io.unobserve(e.target);
+    });
+  }, {threshold:.12});
+  $$('.rv').forEach(function(el){ io.observe(el); });
+
+  /* ── Timeline: Schritte färben sich nacheinander ── */
+  var tl = $('#tl'), fill = $('#tl-fill'), steps = $$('.tstep');
+  function onScroll(){
+    var r = tl.getBoundingClientRect(), mark = window.innerHeight * 0.62;
+    var h = Math.max(0, Math.min(r.height - 16, mark - r.top));
+    fill.style.height = h + 'px';
+    steps.forEach(function(s){
+      var top = s.getBoundingClientRect().top;
+      s.classList.toggle('on', top < mark);
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  window.addEventListener('resize', onScroll);
+  onScroll();
+})();
+
+/* ── Formular: Prüfung und Versand ─────── */
+(function(){
+  var form = document.getElementById('form'), btn = document.getElementById('f-btn'), box = document.getElementById('f-msg-box');
+  var rules = [
+    {id:'f-name', err:'e-name', test:function(v){ return v.length >= 2; }, msg:'Bitte geben Sie Ihren Namen an.'},
+    {id:'f-tel', err:'e-tel', test:function(v){ return /^[+()\d\s\/.-]{6,}$/.test(v) && v.replace(/\D/g,'').length >= 6; }, msg:'Bitte geben Sie eine gültige Telefonnummer an.'},
+    {id:'f-mail', err:'e-mail', test:function(v){ return v === '' || /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }, msg:'Bitte prüfen Sie Ihre E-Mail-Adresse.'}
+  ];
+  function check(r){
+    var el = document.getElementById(r.id), ok = r.test(el.value.trim());
+    el.setAttribute('aria-invalid', ok ? 'false' : 'true');
+    document.getElementById(r.err).textContent = ok ? '' : r.msg;
+    return ok;
+  }
+  rules.forEach(function(r){
+    var el = document.getElementById(r.id);
+    el.addEventListener('blur', function(){ if(el.value.trim() !== '' || el.getAttribute('aria-invalid') === 'true') check(r); });
+    el.addEventListener('input', function(){ if(el.getAttribute('aria-invalid') === 'true') check(r); });
+  });
+  function show(kind, html){ box.className = 'fmsg ' + kind; box.innerHTML = html; box.hidden = false; box.focus(); }
+
+  form.addEventListener('submit', async function(e){
+    e.preventDefault();
+    box.hidden = true;
+    var firstBad = null;
+    rules.forEach(function(r){ if(!check(r) && !firstBad) firstBad = document.getElementById(r.id); });
+    if(firstBad){ firstBad.focus(); return; }
+
+    var label = btn.innerHTML;
+    btn.disabled = true; btn.textContent = 'Wird gesendet ...';
+    try{
+      var fd = new FormData(form);
+      fd.append('access_key', FORMULAR.ACCESS_KEY);
+      var res = await fetch(FORMULAR.ENDPUNKT, {method:'POST', body:fd, headers:{'Accept':'application/json'}});
+      var data = await res.json();
+      if(!data.success) throw new Error(data.message || 'Fehler');
+      form.querySelectorAll('input:not([type=hidden]):not([type=checkbox]), textarea, select').forEach(function(el){ el.value = ''; el.removeAttribute('aria-invalid'); });
+      show('ok', '<strong>Vielen Dank, Ihre Anfrage ist bei uns eingegangen.</strong><br>Wir melden uns innerhalb von 24 Stunden bei Ihnen.');
+    }catch(err){
+      show('bad', 'Das Senden hat leider nicht geklappt. Bitte rufen Sie uns an unter <a href="tel:+4915792492755" style="color:var(--teal)">+49 1579 2492755</a> oder schreiben Sie an <a href="mailto:jm@cleanconnect.de" style="color:var(--teal)">jm@cleanconnect.de</a>.');
+    }finally{
+      btn.disabled = false; btn.innerHTML = label;
+    }
+  });
+})();
+</script>
+</body>
+</html>
