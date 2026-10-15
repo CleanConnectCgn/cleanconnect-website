@@ -171,7 +171,11 @@ def seite(lk, ort, basis_css):
     li_index = LEISTUNG_REIHENFOLGE.index(lk)
     oi_index = ORT_REIHENFOLGE.index(ort)
     titel = f"{l['name']} {o['name']} | Clean Connect Gebäudereinigung"
+    if len(titel) > 60:
+        titel = f"{l['name']} {o['name']} | Clean Connect"
     meta = l["meta"].format(**{"in": o["in"]})
+    if len(meta) > 158:  # Google kuerzt laengere Beschreibungen
+        meta = meta[:157].rsplit(" ", 1)[0].rstrip(",:") + "…"
     lead = l["lead"].format(**{"in": o["in"]})
     canonical = f"{BASE}/standorte/{lk}-{ort}.html"
     bild = l["bild"][oi_index % len(l["bild"])]

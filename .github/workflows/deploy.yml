@@ -65,9 +65,6 @@ jobs:
             put -O $SFTP_DIR apple-touch-icon.png;
             put -O $SFTP_DIR logo.png;
             put -O $SFTP_DIR og-image.jpg;
-            put -O $SFTP_DIR video_harley.mp4;
-            put -O $SFTP_DIR video_hochhaus.mp4;
-            put -O $SFTP_DIR video_rettig.mp4;
             mirror -R --parallel=5 fonts $SFTP_DIR/fonts;
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;

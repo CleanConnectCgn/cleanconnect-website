@@ -39,7 +39,9 @@
     Array.prototype.forEach.call(frames, function (frame) {
       var wrap = frame.closest('.cc-map');
 
-      if (sessionStorage.getItem('cc-maps-ok') === '1') {
+      var ok = false;
+      try { ok = sessionStorage.getItem('cc-maps-ok') === '1'; } catch (e) {}
+      if (ok) {
         load(frame, null);
         return;
       }
