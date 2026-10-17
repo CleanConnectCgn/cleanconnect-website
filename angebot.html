@@ -18,7 +18,6 @@
    ===================================================================== */
 var ANGEBOT = {
   GUELTIG_BIS: '[DATUM]',               // z. B. '31.12.2026'
-  ERSTREINIGUNG_STUNDEN: '[X]',         // z. B. '3'
   GLAS_RABATT_PROZENT: 50,
   STANDARD_VARIANTE: 'glas'             // gilt, wenn ?v= fehlt oder unbekannt ist
 };
@@ -464,11 +463,11 @@ footer{background:var(--bg);border-top:1px solid var(--br);padding:28px var(--gu
       msg: ''
     },
     erstreinigung: {
-      lead: 'Wenn Sie einen Dienstleistungsvertrag mit uns abschließen, reinigen wir Ihr Objekt bis zu {ERSTREINIGUNG_STUNDEN} Stunden kostenlos. So lernen Sie unser Team in Ihrem eigenen Objekt kennen.',
+      lead: 'Wenn Sie einen Dienstleistungsvertrag mit uns abschließen, reinigen wir Ihr Objekt beim ersten Mal kostenlos. Den Umfang in Stunden legen wir nach Größe und Zustand Ihres Objekts fest. So lernen Sie unser Team in Ihrem eigenen Objekt kennen.',
       cta: 'Erstreinigung anfragen',
-      big: '<strong>0&nbsp;€</strong><span>für Ihre Erstreinigung bis {ERSTREINIGUNG_STUNDEN} Stunden</span>',
-      box: '<b>Ihr Angebot:</b> Kostenlose Erstreinigung bis {ERSTREINIGUNG_STUNDEN} Stunden bei Abschluss eines Dienstleistungsvertrags. Nur für Neukunden, gültig bis {GUELTIG_BIS}.',
-      inhalt: 'Sie erhalten eine kostenlose Erstreinigung im Umfang von bis zu {ERSTREINIGUNG_STUNDEN} Stunden, wenn Sie einen Dienstleistungsvertrag mit uns abschließen. Das Angebot gilt nur für Neukunden und bis zum {GUELTIG_BIS}.',
+      big: '<strong>0&nbsp;€</strong><span>für Ihre Erstreinigung, Umfang je nach Objekt</span>',
+      box: '<b>Ihr Angebot:</b> Kostenlose Erstreinigung, Stundenumfang je nach Objekt, bei Abschluss eines Dienstleistungsvertrags. Nur für Neukunden, gültig bis {GUELTIG_BIS}.',
+      inhalt: 'Sie erhalten eine kostenlose Erstreinigung, wenn Sie einen Dienstleistungsvertrag mit uns abschließen. Der Umfang in Stunden richtet sich nach Größe und Zustand Ihres Objekts und wird vorab mit Ihnen abgestimmt. Das Angebot gilt nur für Neukunden und bis zum {GUELTIG_BIS}.',
       msg: 'Ich möchte die kostenlose Erstreinigung anfragen. Objekt: '
     }
   };
