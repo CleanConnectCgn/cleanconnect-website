@@ -1,19 +1,4 @@
 <!--
-  ARTIKEL-VORLAGE — nicht bearbeiten, sondern kopieren.
-  So legst du einen neuen Artikel an:
-  1. Diese Datei in content/blog-drafts/ kopieren, Dateiname = URL-Slug (z. B. buerofrueling-2027.html).
-  2. Das FRONTMATTER unten ausfüllen, vor allem publish_date (Format YYYY-MM-DD).
-  3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
-     Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
-     datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie Grundreinigung: Wann sie fällig ist und was dazugehört drinstehen, wird nicht veröffentlicht.
-  4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
-     (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
-     sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
-  Dieser Hinweis-Kommentar wird beim Veröffentlichen automatisch entfernt.
-  Dateien, deren Name mit "_" beginnt, werden vom Workflow ignoriert (wie diese hier).
--->
-<!--
 FRONTMATTER
 publish_date: 2026-10-30
 title: Grundreinigung: Wann sie fällig ist und was dazugehört
@@ -29,9 +14,9 @@ image: ../og-image.jpg
 <title>Grundreinigung: Wann sie fällig ist und was dazugehört | Clean Connect Blog</title>
 <meta name="description" content="Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
+<link rel="canonical" href="https://cleanconnect.de/blog/grundreinigung-wann-faellig.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
+<meta property="og:url" content="https://cleanconnect.de/blog/grundreinigung-wann-faellig.html">
 <meta property="og:title" content="Grundreinigung: Wann sie fällig ist und was dazugehört | Clean Connect Blog">
 <meta property="og:description" content="Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.">
 <meta property="og:locale" content="de_DE">
@@ -50,15 +35,15 @@ image: ../og-image.jpg
   "headline": "Grundreinigung: Wann sie fällig ist und was dazugehört",
   "description": "Wann ist eine Grundreinigung im Gewerbe fällig, was gehört dazu und was kostet sie? Ein Überblick für Büros, Praxen und Läden.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
+  "datePublished": "2026-10-30",
+  "dateModified": "2026-10-30",
   "author": {"@type": "Organization", "name": "Clean Connect"},
   "publisher": {
     "@type": "Organization",
     "name": "Clean Connect Gebäudereinigung UG",
     "logo": {"@type": "ImageObject", "url": "https://cleanconnect.de/logo.png"}
   },
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/[artikel-slug].html"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/grundreinigung-wann-faellig.html"}
 }
 </script>
 
@@ -112,7 +97,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 <div class="wrap hero">
   <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Grundreinigung</div>
   <h1>Grundreinigung: Wann sie fällig ist und was dazugehört</h1>
-  <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Clean Connect</span></div>
+  <div class="meta"><span><time datetime="2026-10-30">30. Oktober 2026</time></span><span>&middot;</span><span>Clean Connect</span></div>
   <p class="lead">Irgendwann reicht die regelmäßige Reinigung nicht mehr aus: Böden wirken stumpf, in Ecken sammeln sich Ablagerungen, Teppiche sehen trotz Staubsauger müde aus. Dann ist es Zeit für eine Grundreinigung.</p>
 </div>
 
