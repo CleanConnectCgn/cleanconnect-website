@@ -1,4 +1,4 @@
-# Keine Inhaltsaushandlung: /preise darf nicht still preise.html ausliefern
+# Keine Inhaltsaushandlung: /preise soll per 301 auf preise.html, nicht still ausgeliefert werden
 Options -MultiViews
 ErrorDocument 404 /404.html
 
@@ -18,15 +18,13 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /cleanconnect/ [L,R=301]
 
-# Verzeichnis ohne Index auf die Uebersicht
-RewriteCond %{REQUEST_URI} ^/standorte/?$
-RewriteRule ^ /standorte.html [L,R=301]
-
-# Adressen ohne Endung auf die .html-Seite
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^ %{REQUEST_URI}.html [L,R=301]
+# Adressen ohne Endung auf die .html-Seite. Bewusst RedirectMatch statt RewriteRule:
+# Im Web-Verzeichnis liegt eine eigene .htaccess mit RewriteEngine, die die Rewrite-Regeln
+# dieser Datei verdraengt. Redirect-Regeln werden dagegen zusammengefuehrt (live geprueft 04.11.2026).
+RedirectMatch 301 ^/(preise|rechner|standorte|impressum|datenschutz|agb|widerruf|angebot|broschuere|bueroreinigung-koeln)/?$ /$1.html
+RedirectMatch 301 ^/(standorte|blog)/([a-z0-9-]+)$ /$1/$2.html
+# Versteckte Dateien (.env, .htaccess ...) nicht ueber die Rechtschreibkorrektur auflisten
+RedirectMatch 404 ^/\.(?!well-known/)
 
 # Gzip-Kompression fuer schnellere Uebertragung
 <IfModule mod_deflate.c>
