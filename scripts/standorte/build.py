@@ -360,7 +360,7 @@ def seite(lk, ort, basis_css):
         a("  </div>\n</section>")
     a(f'<section>\n  <div class="cta-box">\n    <h2>Angebot für {e(l["name"])} {e(o["in"])} anfordern</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="../#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
-    a('<footer>\n  <a href="../">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
+    a('<footer>\n  <a href="../">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Forststraße 33, 51107 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 8–18 Uhr, Sa 8–16 Uhr</div>\n</footer>')
     a('<script src="../maps-consent.js" defer></script>\n<script src="rechner.js" defer></script>\n</body>\n</html>\n')
     return "\n".join(teile)
 
@@ -448,7 +448,7 @@ def rechner_seite(basis_css, geaendert):
     a('<noscript><p class="rechner-fuss">Die Rechner brauchen JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>')
     a('<section>\n  <div class="cta-box">\n    <h2>Lieber ein genaues Angebot?</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="./#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
-    a('<footer>\n  <a href="./">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="impressum.html">Impressum</a> &middot;\n  <a href="datenschutz.html">Datenschutz</a> &middot;\n  <a href="agb.html">AGB</a> &middot;\n  <a href="widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
+    a('<footer>\n  <a href="./">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="impressum.html">Impressum</a> &middot;\n  <a href="datenschutz.html">Datenschutz</a> &middot;\n  <a href="agb.html">AGB</a> &middot;\n  <a href="widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Forststraße 33, 51107 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 8–18 Uhr, Sa 8–16 Uhr</div>\n</footer>')
     a('<script src="standorte/rechner.js" defer></script>\n</body>\n</html>\n')
     schreibe(os.path.join(ROOT, "rechner.html"), "\n".join(teile), geaendert)
 
