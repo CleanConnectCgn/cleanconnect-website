@@ -1,19 +1,36 @@
-# Force HTTPS
+# Keine Inhaltsaushandlung: /preise darf nicht still preise.html ausliefern
+Options -MultiViews
+ErrorDocument 404 /404.html
+
 RewriteEngine On
+
+# www und http in einem Schritt auf https://cleanconnect.de
+RewriteCond %{HTTP_HOST} ^www\.cleanconnect\.de [NC]
+RewriteRule ^ https://cleanconnect.de%{REQUEST_URI} [L,R=301]
+
+# Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
 # Root redirect to /cleanconnect/
+# Greift nur, wenn diese Datei im Web-Verzeichnis selbst liegt. deploy.yml legt sie eine Ebene
+# darueber ab (put -O /), dort feuert die Regel fuer cleanconnect.de nicht. Nicht ins Web-Verzeichnis kopieren.
 RewriteCond %{REQUEST_URI} ^/$
 RewriteRule ^$ /cleanconnect/ [L,R=301]
 
-# www to non-www
-RewriteCond %{HTTP_HOST} ^www\.cleanconnect\.de [NC]
-RewriteRule ^(.*)$ https://cleanconnect.de/$1 [L,R=301]
+# Verzeichnis ohne Index auf die Uebersicht
+RewriteCond %{REQUEST_URI} ^/standorte/?$
+RewriteRule ^ /standorte.html [L,R=301]
+
+# Adressen ohne Endung auf die .html-Seite
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^ %{REQUEST_URI}.html [L,R=301]
 
 # Gzip-Kompression fuer schnellere Uebertragung
 <IfModule mod_deflate.c>
-  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript application/json image/svg+xml
+  AddOutputFilterByType DEFLATE text/html text/css text/plain text/xml application/xml application/javascript text/javascript application/json image/svg+xml
 </IfModule>
 
 # Cache-Control for static assets
@@ -24,18 +41,23 @@ RewriteRule ^(.*)$ https://cleanconnect.de/$1 [L,R=301]
   ExpiresByType image/jpeg              "access plus 30 days"
   ExpiresByType video/mp4               "access plus 30 days"
   ExpiresByType font/woff2              "access plus 30 days"
-  ExpiresByType text/css                "access plus 30 days"
-  ExpiresByType application/javascript  "access plus 30 days"
+  ExpiresByType text/css                "access plus 1 day"
+  ExpiresByType application/javascript  "access plus 1 day"
+  ExpiresByType text/javascript         "access plus 1 day"
   ExpiresByType text/html               "access plus 1 hour"
 </IfModule>
 <IfModule mod_headers.c>
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
   <FilesMatch "\.(?:webp|png|jpe?g|mp4|woff2)$">
     Header set Cache-Control "public, max-age=2592000, immutable"
   </FilesMatch>
+  # CSS und JS tragen keinen Hash im Namen, deshalb nur einen Tag und ohne immutable
   <FilesMatch "\.(?:css|js)$">
-    Header set Cache-Control "public, max-age=2592000, immutable"
+    Header set Cache-Control "public, max-age=86400"
   </FilesMatch>
-  <FilesMatch "\.html$">
+  <FilesMatch "\.(?:html|ico)$">
     Header set Cache-Control "public, max-age=3600, must-revalidate"
   </FilesMatch>
 </IfModule>
