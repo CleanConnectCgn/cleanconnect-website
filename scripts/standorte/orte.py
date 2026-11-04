@@ -3,7 +3,8 @@
 # Regel: nur Fakten, die oeffentlich nachpruefbar sind (Kreis, Stadtteile,
 # Lage, bekannte Wirtschaftsstandorte). Keine erfundenen Kunden, keine
 # erfundenen Referenzen, keine Uhrzeiten aus Satzungen, die nicht geprueft
-# sind (geprueft: Koeln, Stadt Koeln "Winterdienst ist eine gemeinsame Sache").
+# sind (geprueft: Koeln, Stadt Koeln "Winterdienst ist eine gemeinsame Sache";
+# die anderen zehn Orte am 04.11.2026 im Wortlaut der Satzung, Link in winter_quelle).
 #
 # facetten: kurze, ortsspezifische Aussagen je Thema. Die Leistungsseiten
 # ziehen sich die passenden Themen; so steht auf jeder Seite anderer Text.
@@ -45,7 +46,8 @@ ORTE = {
         "stadtteile": ["Wiesdorf", "Opladen", "Schlebusch", "Manfort", "Rheindorf", "Hitdorf", "Küppersteg", "Bürrig", "Quettingen", "Lützenkirchen", "Steinbüchel", "Bergisch Neukirchen"],
         "anfahrt": "Leverkusen grenzt im Norden an Köln. Von Rath/Heumar aus erreichen wir Schlebusch und Steinbüchel über die A3, Wiesdorf und Opladen über die A3 und A1.",
         "sperrmuell": "In Leverkusen übernimmt die AVEA die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "Wer in Leverkusen Gehwege räumen und streuen muss und bis wann, regelt die Straßenreinigungssatzung der Stadt Leverkusen. Wir richten den Einsatzplan nach dieser Satzung aus.",
+        "winter_satzung": "Nach der Straßenreinigungssatzung der Technischen Betriebe Leverkusen (TBL) räumen Anlieger den Gehweg in der für Fußgänger nötigen Breite, mindestens 1 Meter. Schnee und Glätte zwischen 7 und 20 Uhr sind sofort nach dem Schneefall zu beseitigen, was nach 20 Uhr fällt, werktags bis 7 Uhr und sonn- und feiertags bis 9 Uhr am nächsten Morgen. Gestreut wird mit abstumpfendem Material, Salz ist grundsätzlich untersagt und nur bei Eisregen, an Treppen, Rampen und auf Flächen mit mehr als 5 % Gefälle erlaubt. Die Satzung erlaubt ausdrücklich, die Pflicht mit Zustimmung der TBL an einen Dienstleister mit ausreichender Haftpflichtversicherung abzugeben.",
+        "winter_quelle": "https://www.leverkusen.de/service/veroeffentlichungen/satzungen-verordnungen/dez-3/5661-Strassenreinigungssatzung.pdf",
         "facetten": {
             "buero": "Neben dem Chempark prägen Verwaltungs- und Bürogebäude in Wiesdorf und Opladen die Stadt, dazu viele Dienstleister, die für die Industrie arbeiten.",
             "wohnen": "In Schlebusch, Lützenkirchen und Steinbüchel stehen viele Mehrfamilienhäuser aus den 60er- und 70er-Jahren, die oft von Hausverwaltungen betreut werden.",
@@ -64,7 +66,8 @@ ORTE = {
         "stadtteile": ["Stadtmitte", "Bensberg", "Refrath", "Paffrath", "Schildgen", "Hand", "Herkenrath", "Moitzfeld", "Frankenforst", "Gronau", "Heidkamp", "Hebborn"],
         "anfahrt": "Bergisch Gladbach liegt gleich hinter dem Königsforst, an dessen Rand unser Büro in Rath/Heumar steht. Refrath und Bensberg sind nur wenige Minuten entfernt, die Stadtmitte und Paffrath über die A4 ebenfalls schnell erreichbar.",
         "sperrmuell": "In Bergisch Gladbach organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "In Bergisch Gladbach legt die Straßenreinigungs- und Gebührensatzung fest, welche Gehwege die Grundstückseigentümer im Winter räumen und streuen müssen. Nach dieser Satzung planen wir den Einsatz.",
+        "winter_satzung": "Die Straßenreinigungssatzung von Bergisch Gladbach verlangt einen geräumten Streifen von 1,50 Metern auf dem Gehweg. Schnee, der zwischen 7 und 20 Uhr fällt (sonn- und feiertags ab 9 Uhr), muss sofort nach dem Ende des Schneefalls weg, späterer Schnee bis 7 Uhr am nächsten Werktag beziehungsweise bis 9 Uhr an Sonn- und Feiertagen. Salz und andere auftauende Mittel sind grundsätzlich verboten, erlaubt nur bei Eisregen und an gefährlichen Stellen wie Treppen und Rampen.",
+        "winter_quelle": "https://www.bergischgladbach.de/70.3-strassenreinigung-und-strassenreinigungsgebuehren-2026.pdfx",
         "facetten": {
             "buero": "In Bergisch Gladbach sitzen viele kleinere Büros, Kanzleien und Praxen in der Stadtmitte und in Bensberg, oft in umgebauten Wohnhäusern mit mehreren Etagen.",
             "wohnen": "Refrath, Frankenforst und Moitzfeld sind ruhige Wohnlagen mit vielen Eigentümergemeinschaften, bei denen Treppenhaus, Keller und Außenanlagen regelmäßig gepflegt werden müssen.",
@@ -83,7 +86,8 @@ ORTE = {
         "stadtteile": ["Elberfeld", "Barmen", "Vohwinkel", "Oberbarmen", "Ronsdorf", "Cronenberg", "Langerfeld", "Heckinghausen", "Uellendahl", "Katernberg", "Beyenburg", "Sonnborn"],
         "anfahrt": "Wuppertal erreichen wir aus Köln über die A1. Für regelmäßige Einsätze bündeln wir die Termine, damit die Anfahrt den Preis nicht treibt.",
         "sperrmuell": "In Wuppertal holt die AWG Abfallwirtschaftsgesellschaft Sperrmüll aus Haushalten ab.",
-        "winter_satzung": "In Wuppertal sind die Grundstückseigentümer nach der Straßenreinigungssatzung für den Winterdienst auf den Gehwegen zuständig, je nach Reinigungsklasse der Straße; die Fahrbahnen übernimmt die Stadt. Wir richten uns nach der Klasse Ihrer Straße.",
+        "winter_satzung": "In Wuppertal räumen die Anlieger die Gehwege in der Breite, die Fußgänger brauchen, in Fußgängerstraßen und verkehrsberuhigten Bereichen mindestens 1 Meter; ausgenommen sind Straßen der Reinigungsklassen D1 bis D3. Was zwischen 7 und 20 Uhr fällt, ist unverzüglich zu räumen, Schnee nach 20 Uhr bis 7 Uhr am nächsten Werktag, sonn- und feiertags bis 9 Uhr. Gestreut wird in der Regel nur mit abstumpfenden Stoffen, Salz nur, wo es zwingend nötig ist, etwa bei Eisregen oder an Treppen, Brücken und steilen Stellen, von denen es in Wuppertal viele gibt.",
+        "winter_quelle": "https://www.wuppertal.de/rathaus-buergerservice/verwaltung/politik/stadtrecht-dokumente/7-20.pdf",
         "facetten": {
             "buero": "Die Bürolagen konzentrieren sich in Elberfeld und Barmen, oft in historischen Geschäftshäusern entlang der Talachse, in denen Büros über mehrere Etagen verteilt sind.",
             "wohnen": "Wuppertal hat einen der größten Bestände an Gründerzeithäusern in Deutschland, etwa im Ölberg-Viertel und im Briller Viertel. Hohe, verwinkelte Treppenhäuser mit alten Holzstufen sind hier eher die Regel als die Ausnahme.",
@@ -102,7 +106,8 @@ ORTE = {
         "stadtteile": ["Troisdorf-Mitte", "Sieglar", "Spich", "Oberlar", "Friedrich-Wilhelms-Hütte", "Altenrath", "Bergheim", "Müllekoven", "Eschmar", "Kriegsdorf", "West"],
         "anfahrt": "Troisdorf liegt südöstlich von Köln an der A59. Über die A3 und die A59 sind wir von Rath/Heumar aus ohne Umweg über die Rheinbrücken dort.",
         "sperrmuell": "Im Rhein-Sieg-Kreis und damit in Troisdorf holt die RSAG Sperrmüll aus Haushalten ab.",
-        "winter_satzung": "In Troisdorf regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen und streuen. Wir planen den Einsatz entsprechend.",
+        "winter_satzung": "Laut Straßenreinigungssatzung der Stadt Troisdorf müssen Gehwege auf 1,50 Metern Breite schneefrei sein. Schnee und Glätte zwischen 7 und 20 Uhr beseitigen Anlieger sofort, alles, was nach 20 Uhr dazukommt, bis 7 Uhr werktags und bis 9 Uhr an Sonn- und Feiertagen. Salz ist grundsätzlich verboten, Ausnahmen gelten bei Eisregen und an Treppen, Rampen, Brücken oder starkem Gefälle.",
+        "winter_quelle": "https://www.troisdorf.de/de/rathaus-service/stadtrat-und-ausschuesse/ortsrecht/3-1.pdf",
         "facetten": {
             "buero": "In Troisdorf-Mitte und in den Gewerbegebieten rund um Spich haben sich viele Dienstleister angesiedelt, auch wegen der Nähe zum Flughafen Köln/Bonn.",
             "wohnen": "In Sieglar, Oberlar und Spich gibt es viele Mehrfamilienhäuser und Wohnanlagen, die von Hausverwaltungen betreut werden.",
@@ -121,7 +126,8 @@ ORTE = {
         "stadtteile": ["Wesseling-Mitte", "Berzdorf", "Keldenich", "Urfeld"],
         "anfahrt": "Wesseling liegt südlich von Köln direkt am Rhein, über die A555 schnell erreichbar.",
         "sperrmuell": "In Wesseling organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "Welche Gehwege in Wesseling im Winter von den Anliegern geräumt werden müssen, regelt die Straßenreinigungssatzung der Stadt. Daran richten wir den Einsatz aus.",
+        "winter_satzung": "Die Straßenreinigungssatzung von Wesseling (Fassung vom 08.07.2025) schreibt 1,50 Meter geräumten Gehweg vor; in der Innenstadt übernimmt die Stadt den Winterdienst selbst, sonst die Anlieger laut Straßenverzeichnis. Schnee aus der Zeit von 7 bis 20 Uhr ist sofort zu räumen, Schnee nach 20 Uhr am Folgetag bis 7 Uhr, sonn- und feiertags bis 9 Uhr. Auftauende Mittel wie Salz sind grundsätzlich verboten, außer bei Eisregen und an gefährlichen Stellen.",
+        "winter_quelle": "https://www.stadtwerke-wesseling.de/wp-content/uploads/2025/10/StrassenreinigungGebSatz.pdf",
         "facetten": {
             "buero": "In Wesseling arbeiten viele Menschen in Verwaltung, Technik und Dienstleistung rund um die großen Chemie- und Energieunternehmen; dazu kommen Praxen und kleinere Büros im Zentrum.",
             "wohnen": "In Keldenich, Berzdorf und Wesseling-Mitte prägen Mehrfamilienhäuser und Wohnanlagen das Bild, viele davon aus den 60er- und 70er-Jahren.",
@@ -140,7 +146,8 @@ ORTE = {
         "stadtteile": ["Brühl-Mitte", "Badorf", "Pingsdorf", "Vochem", "Kierberg", "Heide", "Schwadorf", "Brühl-Ost", "Brühl-West"],
         "anfahrt": "Brühl liegt südwestlich von Köln an der A553. Aus Köln sind wir über die A4 und A553 oder über die Bonner Straße schnell dort.",
         "sperrmuell": "In Brühl organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "In Brühl regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen müssen. Nach ihr planen wir den Winterdienst.",
+        "winter_satzung": "In Brühl liegt der Winterdienst auf dem Gehweg nach der Straßenreinigungssatzung bei den Anliegern, auf 1,50 Metern Breite. Zwischen 7 und 20 Uhr (sonn- und feiertags ab 9 Uhr) gefallener Schnee muss unverzüglich weg, späterer bis 7 Uhr werktags oder 9 Uhr an Sonn- und Feiertagen. Salz ist grundsätzlich verboten und nur bei Eisregen oder an Treppen, Rampen und starkem Gefälle zulässig.",
+        "winter_quelle": "https://www.bruehl.de/rathaus-und-politik/ortsrecht/stadtservice-abfall-friedhof-und-strassenreinigung/10.3-Strassenreinigung-AOeR.pdf",
         "facetten": {
             "buero": "In Brühl gibt es neben dem Rathausumfeld viele Kanzleien, Praxen und Verwaltungsstandorte, darunter Bildungseinrichtungen des Bundes.",
             "wohnen": "Pingsdorf, Badorf und Vochem sind gewachsene Wohnviertel mit vielen Mehrfamilienhäusern und kleineren Eigentümergemeinschaften.",
@@ -159,7 +166,8 @@ ORTE = {
         "stadtteile": ["Hermülheim", "Efferen", "Fischenich", "Gleuel", "Kendenich", "Knapsack", "Alstädten-Burbach", "Alt-Hürth", "Kalscheuren", "Stotzheim", "Berrenrath", "Sielsdorf"],
         "anfahrt": "Hürth grenzt im Südwesten an Köln. Über den Kölner Ring und die A4 sind wir von Rath/Heumar aus gut dort; Efferen und Kalscheuren liegen direkt an der Stadtgrenze.",
         "sperrmuell": "In Hürth organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "In Hürth legt die Straßenreinigungssatzung der Stadt fest, wann und wo Anlieger räumen und streuen müssen. Daran orientiert sich unser Einsatzplan.",
+        "winter_satzung": "In Hürth hat die Satzung der Stadtwerke Hürth die Winterwartung der Gehwege ausnahmslos den Eigentümern der angrenzenden Grundstücke übertragen. Geräumt werden 1,50 Meter; Schnee zwischen 7 und 20 Uhr sofort, Schnee nach 20 Uhr bis 7 Uhr am nächsten Werktag und bis 9 Uhr an Sonn- und Feiertagen. Salz und andere auftauende Stoffe sind grundsätzlich verboten, erlaubt nur bei Eisregen und an gefährlichen Stellen.",
+        "winter_quelle": "https://www.stadtwerke-huerth.de/de/Stadtwerke-Huerth/Jahresbericht-Satzungen/2026-Satzung-Strassenreinigung.pdf",
         "facetten": {
             "buero": "In Hürth gibt es viele Büro- und Medienstandorte: In Kalscheuren werden Fernsehsendungen produziert, und rund um den Hürth Park sitzen Dienstleister und Verwaltungen.",
             "wohnen": "Hermülheim, Efferen und Fischenich sind beliebte Wohnorte am Kölner Stadtrand mit vielen Mehrfamilienhäusern und Wohnanlagen.",
@@ -178,7 +186,8 @@ ORTE = {
         "stadtteile": ["Frechen-Mitte", "Königsdorf", "Bachem", "Buschbell", "Habbelrath", "Grefrath", "Hücheln", "Benzelrath"],
         "anfahrt": "Frechen grenzt im Westen an Köln-Lindenthal. Über die A4 ist es von Köln aus schnell erreichbar.",
         "sperrmuell": "In Frechen organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "Für Frechen regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen müssen. Wir planen den Einsatz danach.",
+        "winter_satzung": "Die Straßenreinigungssatzung der Stadt Frechen überträgt den Winterdienst auf Gehwegen den Anliegern: 1,50 Meter Breite, Schnee und Glätte zwischen 7 und 20 Uhr unverzüglich beseitigen, später gefallenen Schnee bis 7 Uhr am nächsten Werktag, sonn- und feiertags bis 9 Uhr. Salz ist auf Gehwegen grundsätzlich verboten, Ausnahmen gibt es nur bei Eisregen und an Treppen, Rampen oder starkem Gefälle.",
+        "winter_quelle": "https://www.stadt-frechen.de/vv/210424-703-Strassenreinigungssatzung.pdf",
         "facetten": {
             "buero": "Frechen hat sich vom Industrie- zum Dienstleistungsstandort entwickelt; in den Gewerbegebieten am Kölner Rand haben viele Firmen ihre Büros und Verwaltungen.",
             "wohnen": "In Königsdorf, Bachem und Frechen-Mitte wohnen viele Pendler, die in Köln arbeiten. Wohnanlagen und Mehrfamilienhäuser werden hier oft von Verwaltungen betreut.",
@@ -197,7 +206,8 @@ ORTE = {
         "stadtteile": ["Pulheim-Mitte", "Brauweiler", "Stommeln", "Sinnersdorf", "Dansweiler", "Geyen", "Sinthern", "Manstedten", "Ingendorf"],
         "anfahrt": "Pulheim liegt nordwestlich von Köln an der A57 und der A1. Für Einsätze in Brauweiler oder Stommeln planen wir die Route über den Kölner Norden.",
         "sperrmuell": "In Pulheim organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "Welche Gehwege in Pulheim die Anlieger im Winter räumen und streuen müssen, regelt die Straßenreinigungssatzung der Stadt. Danach richten wir unseren Einsatz.",
+        "winter_satzung": "Nach der Pulheimer Straßenreinigungssatzung wird Schnee auf Gehwegen auf 1,50 Metern geräumt, auch an den Zugängen zu Fußgängerüberwegen. Schnee zwischen 7 und 20 Uhr, an Sonn- und Feiertagen zwischen 9 und 20 Uhr, ist sofort zu beseitigen, Schnee nach 20 Uhr am Folgetag bis 7 Uhr beziehungsweise 9 Uhr. Salz ist grundsätzlich verboten; Pulheim erlaubt es außer bei Eisregen und an gefährlichen Stellen auch auf stark frequentierten Gehwegen, Plätzen und in Fußgängerzonen.",
+        "winter_quelle": "https://www.pulheim.de/rat-und-verwaltung/ortsrecht/Strassenreinigungs-und-Gebuehrensatzung-gueltig-ab-dem-01.01.2026.pdf",
         "facetten": {
             "buero": "Pulheim ist eher ruhig gelegen; Büros, Praxen und Kanzleien verteilen sich über die Ortsteile, Gewerbe sitzt vor allem am Rand von Pulheim-Mitte und Brauweiler.",
             "wohnen": "Viele Familien wohnen in Pulheim, Brauweiler und Sinnersdorf in Reihen- und Mehrfamilienhäusern, oft in Eigentümergemeinschaften.",
@@ -216,7 +226,8 @@ ORTE = {
         "stadtteile": ["Bergheim-Mitte", "Quadrath-Ichendorf", "Kenten", "Zieverich", "Niederaußem", "Oberaußem", "Glessen", "Fliesteden", "Paffendorf", "Thorr", "Ahe", "Glesch"],
         "anfahrt": "Bergheim liegt westlich von Köln an der Erft, über die A61 und die A4 gut zu erreichen. Für regelmäßige Einsätze legen wir feste Tage fest.",
         "sperrmuell": "In Bergheim organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
-        "winter_satzung": "In Bergheim regelt die Straßenreinigungssatzung der Kreisstadt, welche Gehwege Anlieger im Winter räumen und streuen müssen. Daran richten wir den Einsatz aus.",
+        "winter_satzung": "Die Straßenreinigungssatzung der Kreisstadt Bergheim verlangt 1,50 Meter schneefreien Gehweg. Tagsüber gilt die Pflicht bis 20 Uhr, auch wiederholt, wenn es weiter schneit; was später fällt, muss bis 7 Uhr werktags und 9 Uhr an Sonn- und Feiertagen weg sein. Salz ist grundsätzlich verboten, erste Wahl ist abstumpfendes Streugut, das nach dem Tauwetter wieder aufgekehrt wird.",
+        "winter_quelle": "https://www.bergheim.de/rathaus/ortsrecht/planen-bauen-umwelt/Strassenreinigungssatzung.pdf",
         "facetten": {
             "buero": "Als Kreisstadt hat Bergheim viele Verwaltungsstandorte, dazu Praxen, Kanzleien und Büros im Zentrum und in Quadrath-Ichendorf.",
             "wohnen": "In Kenten, Quadrath-Ichendorf und Zieverich gibt es viele Mehrfamilienhäuser und Wohnanlagen; dazu kommen Siedlungen, die früher für die Beschäftigten im Revier gebaut wurden.",
