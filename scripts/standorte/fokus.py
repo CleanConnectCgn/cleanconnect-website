@@ -9,7 +9,8 @@
 #             Freigabe von Julian/Fynn eintragen, nichts erfinden
 #
 # Preise nur wie auf preise.html: Unterhalt 32 €, Grund 38 €, Glas 45 € netto
-# pro Stunde, Treppenhaus 120-300 € netto pro Monat.
+# pro Stunde, Treppenhaus 120-300 € netto pro Monat. Mindestens 280 € netto
+# im Monat je Unterhalts-Objekt, 150 € netto je Grund- oder Glasauftrag.
 
 FOKUS = {
     ("treppenhausreinigung", "koeln"): {
@@ -105,7 +106,7 @@ FOKUS = {
     },
     ("glasreinigung", "wesseling"): {
         "kurz": "Glasreinigung in Wesseling kostet bei uns 45 € netto pro Stunde. Wir reinigen Fenster, Rahmen und Schaufenster, regelmäßig oder einmalig, auch ohne laufenden Reinigungsvertrag.",
-        "beispiel": "Zwölf Fensterflügel im Obergeschoss, innen und außen, ohne Rahmen brauchen bei uns etwa 1,5 Stunden. Das sind rund 68 € netto.",
+        "beispiel": "Zwölf Fensterflügel im Obergeschoss, innen und außen, ohne Rahmen brauchen bei uns etwa 1,5 Stunden. Weil wir je Glasauftrag mindestens 150 € netto berechnen, kostet das 150 € netto. Lohnender wird es, wenn wir die Fenster gemeinsam mit weiteren Flächen reinigen.",
         "fragen": [],
         "praxis": [],
     },

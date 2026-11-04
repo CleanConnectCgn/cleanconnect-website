@@ -1,7 +1,8 @@
 # Leistungsdaten fuer die Standortseiten (13.10.2026).
 #
 # Preise NUR wie auf preise.html veroeffentlicht (Unterhalt/Buero 32 EUR/h,
-# Grund 38 EUR/h, Glas 45 EUR/h, Treppenhaus 120-300 EUR/Monat netto).
+# Grund 38 EUR/h, Glas 45 EUR/h, Treppenhaus 120-300 EUR/Monat netto;
+# Untergrenzen: Unterhalt/Buero 280 EUR/Monat je Objekt, Grund/Glas 150 EUR je Auftrag).
 # Fuer alle anderen Leistungen gibt es keinen veroeffentlichten Preis -> der
 # Rechner schaetzt dort nur Menge/Aufwand, keine Euro.
 #
@@ -30,7 +31,7 @@ LEISTUNGEN = {
         ],
         "umfang": ["Arbeitsplätze und Oberflächen", "Böden saugen und wischen", "Sanitärräume und Küchen", "Papierkörbe leeren und Müll trennen", "Türen, Griffe und Lichtschalter", "Eingangsbereiche und Treppen"],
         "ablauf": ["Kostenlose Begehung vor Ort", "Leistungsverzeichnis mit Intervallen", "Festes Angebot nach Stundenumfang", "Start mit Einweisung des Teams", "Regelmäßige Qualitätskontrolle"],
-        "preis": "Die Unterhaltsreinigung kostet 32 € netto pro Stunde. Wie viele Stunden Ihr Objekt braucht, legen wir nach der Begehung oder einer Erstreinigung verbindlich fest.",
+        "preis": "Die Unterhaltsreinigung kostet 32 € netto pro Stunde, mindestens 280 € netto im Monat je Objekt. Wie viele Stunden Ihr Objekt braucht, legen wir nach der Begehung oder einer Erstreinigung verbindlich fest.",
         "rechner": "unterhalt",
         "faq": [
             ("Wie oft sollte eine Unterhaltsreinigung stattfinden?", "Das hängt von der Nutzung ab. Büros mit wenigen Mitarbeitenden kommen oft mit ein bis zwei Terminen pro Woche aus, Praxen und Räume mit Publikumsverkehr brauchen meist tägliche Reinigung. Wir legen den Turnus bei der Begehung gemeinsam fest."),
@@ -59,7 +60,7 @@ LEISTUNGEN = {
         ],
         "umfang": ["Schreibtische und Arbeitsflächen", "Teeküche und Kühlschrank außen", "Sanitärräume", "Böden in Büros und Fluren", "Besprechungsräume und Empfang", "Papierkörbe und Mülltrennung"],
         "ablauf": ["Begehung und Bestandsaufnahme", "Reinigungsplan je Raum", "Schlüsselübergabe mit Protokoll", "Regelmäßige Reinigung", "Rückmeldung nach den ersten Wochen"],
-        "preis": "Büroreinigung rechnen wir wie die Unterhaltsreinigung ab: 32 € netto pro Stunde, mit fest vereinbartem Stundenumfang je Einsatz.",
+        "preis": "Büroreinigung rechnen wir wie die Unterhaltsreinigung ab: 32 € netto pro Stunde, mit fest vereinbartem Stundenumfang je Einsatz und mindestens 280 € netto im Monat.",
         "rechner": "unterhalt",
         "faq": [
             ("Reinigen Sie auch während der Arbeitszeit?", "Wenn es nicht anders geht, ja. Meist ist eine Reinigung vor Arbeitsbeginn oder am Abend angenehmer, weil niemand gestört wird."),
@@ -88,7 +89,7 @@ LEISTUNGEN = {
         ],
         "umfang": ["Fensterscheiben innen und außen", "Schaufenster und Glasfronten", "Rahmen und Fensterbänke", "Glastüren und Trennwände", "Wintergärten und Oberlichter", "Hebebühne für hohe Flächen nach Absprache"],
         "ablauf": ["Fotos oder Besichtigung", "Zählung der Fensterflügel", "Angebot nach Stunden", "Termin nach Wetterlage", "Reinigung und Abnahme"],
-        "preis": "Glasreinigung kostet 45 € netto pro Stunde. Wie lange es dauert, hängt von Anzahl, Größe und Erreichbarkeit der Fenster ab.",
+        "preis": "Glasreinigung kostet 45 € netto pro Stunde, mindestens 150 € netto pro Auftrag. Wie lange es dauert, hängt von Anzahl, Größe und Erreichbarkeit der Fenster ab.",
         "rechner": "glas",
         "faq": [
             ("Wie oft sollte man Fenster reinigen lassen?", "Bürofenster reichen meist zwei- bis viermal im Jahr. Schaufenster und Eingänge sehen mit einer monatlichen Reinigung der Außenseite deutlich besser aus."),
@@ -117,7 +118,7 @@ LEISTUNGEN = {
         ],
         "umfang": ["Böden maschinell grundreinigen", "Alte Pflegefilme entfernen", "Sanitärräume entkalken", "Küchen und Geräte außen", "Heizkörper und Fensterbänke", "Neue Einpflege auf Wunsch (gesondert)"],
         "ablauf": ["Besichtigung oder Fotos", "Probe an einer Stelle", "Angebot nach Stunden", "Grundreinigung am Stück", "Abnahme vor Ort"],
-        "preis": "Grundreinigung kostet 38 € netto pro Stunde. Wir schätzen den Aufwand vorher ab, damit Sie wissen, womit Sie rechnen können.",
+        "preis": "Grundreinigung kostet 38 € netto pro Stunde, mindestens 150 € netto pro Auftrag. Wir schätzen den Aufwand vorher ab, damit Sie wissen, womit Sie rechnen können.",
         "rechner": "grund",
         "faq": [
             ("Was ist der Unterschied zur Unterhaltsreinigung?", "Die Unterhaltsreinigung hält den Zustand. Die Grundreinigung stellt ihn wieder her: Sie löst Schmutz und alte Pflegemittel, die sich über Monate aufgebaut haben."),
