@@ -4,9 +4,13 @@
    das verbindliche Angebot gibt es nach Begehung oder Fotos. */
 (function () {
   var STUNDE = { unterhalt: 32, grund: 38, glas: 45 };
+  // Untergrenzen (04.11.2026): laufende Unterhaltsreinigung je Objekt und Monat,
+  // Grund- und Glasreinigung je Auftrag.
+  var MINDEST = { unterhalt_monat: 280, auftrag: 150 };
   var fmt = function (n, d) { return n.toLocaleString('de-DE', { minimumFractionDigits: d || 0, maximumFractionDigits: d || 0 }); };
   var eur = function (n) { return fmt(Math.round(n), 0) + ' €'; };
   var viertel = function (h) { return Math.max(1, Math.round(h * 4) / 4); };
+  var kosten = function (n) { return n < MINDEST.auftrag ? eur(MINDEST.auftrag) + ' netto (Mindestauftrag)' : 'ca. ' + eur(n) + ' netto'; };
 
   var ARTEN = {
     unterhalt: {
@@ -19,9 +23,12 @@
       rechne: function (v) {
         var h = viertel(v.flaeche / v.nutzung);
         var monat = h * v.einsaetze * 4.33 * STUNDE.unterhalt;
+        if (monat < MINDEST.unterhalt_monat) {
+          return [['Zeit pro Einsatz', 'ca. ' + fmt(h, 2) + ' Std.'], ['Pro Monat', eur(MINDEST.unterhalt_monat) + ' netto (Mindestpreis)']];
+        }
         return [['Zeit pro Einsatz', 'ca. ' + fmt(h, 2) + ' Std.'], ['Pro Einsatz', 'ca. ' + eur(h * STUNDE.unterhalt) + ' netto'], ['Pro Monat', 'ca. ' + eur(monat) + ' netto']];
       },
-      fuss: 'Grundlage: 32 € netto pro Stunde und typische Reinigungsleistung je Nutzung. Den genauen Stundenumfang legen wir nach der Begehung fest.'
+      fuss: 'Grundlage: 32 € netto pro Stunde und typische Reinigungsleistung je Nutzung, mindestens 280 € netto im Monat je Objekt. Den genauen Stundenumfang legen wir nach der Begehung fest.'
     },
     glas: {
       titel: 'Wie lange dauert die Glasreinigung?',
@@ -33,9 +40,9 @@
       ],
       rechne: function (v) {
         var h = viertel(v.fluegel * 3 * v.seiten * v.rahmen * v.hoehe / 60);
-        return [['Zeit', 'ca. ' + fmt(h, 2) + ' Std.'], ['Kosten', 'ca. ' + eur(h * STUNDE.glas) + ' netto']];
+        return [['Zeit', 'ca. ' + fmt(h, 2) + ' Std.'], ['Kosten', kosten(h * STUNDE.glas)]];
       },
-      fuss: 'Grundlage: 45 € netto pro Stunde. Sehr große Scheiben oder eine Hebebühne kalkulieren wir gesondert.'
+      fuss: 'Grundlage: 45 € netto pro Stunde, mindestens 150 € netto pro Auftrag. Sehr große Scheiben oder eine Hebebühne kalkulieren wir gesondert.'
     },
     grund: {
       titel: 'Wie aufwendig ist die Grundreinigung?',
@@ -46,9 +53,9 @@
       ],
       rechne: function (v) {
         var h = viertel(v.flaeche / v.belag * v.zustand);
-        return [['Zeit', 'ca. ' + fmt(h, 2) + ' Std.'], ['Kosten', 'ca. ' + eur(h * STUNDE.grund) + ' netto']];
+        return [['Zeit', 'ca. ' + fmt(h, 2) + ' Std.'], ['Kosten', kosten(h * STUNDE.grund)]];
       },
-      fuss: 'Grundlage: 38 € netto pro Stunde. Eine neue Einpflege mit Schutzfilm ist nicht enthalten.'
+      fuss: 'Grundlage: 38 € netto pro Stunde, mindestens 150 € netto pro Auftrag. Eine neue Einpflege mit Schutzfilm ist nicht enthalten.'
     },
     treppenhaus: {
       titel: 'Wo liegt Ihr Treppenhaus in unserer Preisspanne?',

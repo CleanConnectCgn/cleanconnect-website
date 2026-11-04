@@ -16,7 +16,7 @@
 #   handel     Einzelhandel, Schaufenster, Publikumsverkehr
 #   besonders  was den Ort von den anderen unterscheidet
 
-BUERO = (50.9171, 7.0853)  # Buero und Lager Forststrasse 33, Koeln-Rath/Heumar (Rechnungsanschrift Berliner Strasse 957)
+BUERO = (50.9171, 7.0853)  # Buero und Lager Forststrasse 33, Koeln-Rath/Heumar
 
 ORTE = {
     "koeln": {

@@ -14,7 +14,7 @@ Stand: 26.09.2026 · 50 Artikel · bereits online: „Reinigungsfirma wechseln�
 
 - Zielt auf ein **Long-Tail-Keyword**, nie auf „gebäudereinigung köln“, „reinigungsfirma köln“ oder „büroreinigung köln“ – die gehören Startseite und Landingpages.
 - Verlinkt auf die **Ziel-Seite** aus der Tabelle, außerdem auf Preise und Erstreinigung, wo es passt.
-- Preise nur wie auf der Website: Unterhaltsreinigung 32 €, Grundreinigung 38 €, Glasreinigung 45 € netto/Std., Treppenhaus 120–300 €/Monat.
+- Preise nur wie auf der Website: Unterhaltsreinigung 32 €, Grundreinigung 38 €, Glasreinigung 45 € netto/Std., Treppenhaus 120–300 €/Monat. Mindestens 280 €/Monat je Unterhalts-Objekt, 150 € je Grund- oder Glasauftrag; keine Beispiele darunter.
 - Keine erfundenen Zahlen, Referenzen oder Rechtsaussagen. Rechtliche Themen verweisen auf die Quelle (Satzung, Verordnung) statt eigene Regeln aufzustellen.
 
 ## Artikel
