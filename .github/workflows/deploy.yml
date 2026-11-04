@@ -43,6 +43,7 @@ jobs:
             put -O / .htaccess;
             put -O / robots.txt;
             put -O $SFTP_DIR robots.txt;
+            put -O $SFTP_DIR llms.txt;
             put -O / sitemap.xml;
             put -O $SFTP_DIR sitemap.xml;
             put -O $SFTP_DIR index.html;

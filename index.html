@@ -18,7 +18,7 @@
       "@type": "LocalBusiness",
       "@id": "https://cleanconnect.de/#business",
       "name": "Clean Connect Gebäudereinigung UG",
-      "alternateName": "Clean Connect Reinigungsdienst",
+      "alternateName": ["Clean Connect", "Clean Connect Gebäudereinigung Köln", "Clean Connect Reinigungsdienst", "cleanconnect.de"],
       "legalName": "Clean Connect Gebäudereinigung UG (haftungsbeschränkt)",
       "description": "Professionelle gewerbliche Gebäudereinigung in Köln und Umgebung. Spezialisiert auf Unterhaltsreinigung, Glasreinigung, Treppenhausreinigung und Grundreinigung für Hausverwaltungen, Büros und Gewerbeobjekte. 20+ deutschsprachige Mitarbeiter, persönlicher Ansprechpartner, dokumentierte Qualitätskontrolle.",
       "url": "https://cleanconnect.de/",
@@ -26,10 +26,13 @@
       "email": "service@reinigungsdienst-cleanconnect.de",
       "vatID": "DE369309039",
       "taxID": "218/5706/1994",
-      "leiCode": "HRB 119725",
+      "identifier": {"@type": "PropertyValue", "propertyID": "Handelsregister Amtsgericht Köln", "value": "HRB 119725"},
+      "logo": "https://cleanconnect.de/logo.png",
+      "image": "https://cleanconnect.de/og-image.jpg",
+      "hasMap": "https://www.google.com/maps?cid=6656574569178855580",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Forststraße 33B",
+        "streetAddress": "Forststraße 33",
         "addressLocality": "Köln",
         "postalCode": "51107",
         "addressRegion": "Nordrhein-Westfalen",
@@ -37,8 +40,8 @@
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": 50.9333,
-        "longitude": 7.0333
+        "latitude": 50.9170828,
+        "longitude": 7.0853311
       },
       "areaServed": [
         {"@type": "City", "name": "Köln"},
@@ -89,6 +92,7 @@
         ]
       },
       "sameAs": [
+        "https://www.google.com/maps?cid=6656574569178855580",
         "https://www.instagram.com/cleanconnect_koeln/"
       ],
       "keywords": "Gebäudereinigung Köln, Unterhaltsreinigung Köln, Glasreinigung Köln, Treppenhausreinigung Köln, Reinigungsunternehmen Köln, Büroreinigung Köln, Grundreinigung Köln, Hausverwaltung Reinigung Köln"
@@ -588,6 +592,18 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       .social-einblicke>.vid-scroll{grid-column:2;grid-row:1/4;max-height:none;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
       .social-einblicke>:last-child{grid-column:1;grid-row:3;padding-top:16px}
     }
+.rv-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:28px}
+.rv-card{margin:0;background:var(--s1);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+.rv-stars{color:#f5b301;letter-spacing:2px;font-size:15px}
+.rv-card blockquote{margin:0;font-size:14px;line-height:1.65;color:var(--tx)}
+.rv-card figcaption{font-size:13px;font-weight:600;color:var(--tx);margin-top:auto}
+.rv-card figcaption span{font-weight:400;color:var(--mu2)}
+.rv-link{display:inline-block;margin-top:22px;color:var(--teal);font-size:14px;font-weight:600;text-decoration:none}
+.nap{margin:22px 0 0;display:grid;gap:10px;font-size:13px;line-height:1.5}
+.nap div{display:grid;grid-template-columns:130px 1fr;gap:10px}
+.nap dt{color:var(--mu2)}.nap dd{margin:0;color:var(--tx)}.nap a{color:var(--teal);text-decoration:none;word-break:break-all}
+.fnap{font-size:12px;color:var(--mu2);margin-top:10px;line-height:1.6}
+@media(max-width:480px){.nap div{grid-template-columns:1fr;gap:2px}}
 </style>
 
 <script type="application/ld+json">
@@ -731,9 +747,9 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       </div>
       <a href="#erstreinigung" class="hlink fu d2 in">Erst testen? Erstreinigung zum regulären Stundensatz &#8594;</a>
       <div class="hstats fu d3 in">
-        <div class="hstat"><div class="hstat-n" data-count="20" data-suf="+">0</div><div class="hstat-l">Feste Mitarbeiter</div></div>
-        <div class="hstat"><div class="hstat-n" data-count="24" data-suf="h">0</div><div class="hstat-l">Angebot erhalten</div></div>
-        <div class="hstat"><div class="hstat-n" data-count="100" data-suf="%">0</div><div class="hstat-l">Deutschsprachig</div></div>
+        <div class="hstat"><div class="hstat-n" data-count="20" data-suf="+">20+</div><div class="hstat-l">Feste Mitarbeiter</div></div>
+        <div class="hstat"><div class="hstat-n" data-count="24" data-suf="h">24h</div><div class="hstat-l">Angebot erhalten</div></div>
+        <div class="hstat"><div class="hstat-n" data-count="100" data-suf="%">100%</div><div class="hstat-l">Deutschsprachig</div></div>
       </div>
     </div>
     
@@ -841,9 +857,50 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 </script>
 </section>
 
+<section class="sec" id="bewertungen">
+  <div class="wrap">
+    <div class="snum fu">03 / Bewertungen</div>
+    <div class="lw"><h2 class="sh">Was Kunden über uns sagen</h2></div>
+    <p class="sp fu d1">Bei Google haben uns 26 von 27 Kunden mit 5 Sternen bewertet und einer mit 4 Sternen, im Schnitt 4,96 von 5 (Stand: November 2026). Hier eine Auswahl, wörtlich übernommen:</p>
+    <div class="rv-grid">
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Ich kann Clean Connect wirklich weiterempfehlen. Die Firma macht einen sehr professionellen und zuverlässigen Eindruck. …“</blockquote>
+        <figcaption>Baris K. <span>· Google-Bewertung 2026</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Sehr engagierte und zuverlässige Mitarbeiter. Im Vergleich zu vielen anderen Dienstleistern wird hier besonders viel Wert auf Kommunikation gelegt. …“</blockquote>
+        <figcaption>Slm E. <span>· Google-Bewertung 2025</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Das Unternehmen hat ein sehr kompetentes Team. Sehr freundlich und ihre Arbeit ist sauber und zuverlässig“</blockquote>
+        <figcaption>Romina W. <span>· Google-Bewertung 2026</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Super Team! Pünktlich, gründlich! Top 👍 Jederzeit zu empfehlen!“</blockquote>
+        <figcaption>Malte H. <span>· Google-Bewertung 2026</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Immer zuverlässlich, pünktlich und gründlich. Freundliches Personal und zuvorkommende Dienstleistung kann ich nur weiter empfehlen !!!“</blockquote>
+        <figcaption>Cem K. <span>· Google-Bewertung 2026</span></figcaption>
+      </figure>
+      <figure class="rv-card">
+        <div class="rv-stars" aria-label="5 von 5 Sternen">★★★★★</div>
+        <blockquote>„Top Service super freundliche Mitarbeiter kann ich jeden nur empfehlen der einen guten Service für gutes Geld haben möchte“</blockquote>
+        <figcaption>Darel H. <span>· Google-Bewertung 2026</span></figcaption>
+      </figure>
+    </div>
+    <a class="rv-link" href="https://www.google.com/maps?cid=6656574569178855580" target="_blank" rel="noopener">Alle Bewertungen auf Google ansehen &rarr;</a>
+  </div>
+</section>
+
 <section class="sec" id="prozess">
   <div class="wrap">
-    <div class="snum fu">03 / So einfach geht's</div>
+    <div class="snum fu">04 / So einfach geht's</div>
     <div class="lw"><h2 class="sh">In 3 Schritten zur Zusammenarbeit</h2></div>
     <div class="proc stg">
       <div class="pstep"><div class="pn">1</div><div><h3>Anfrage</h3><p>Kurzes Formular ausfüllen oder direkt anrufen, wir melden uns innerhalb von 24 Stunden bei Ihnen.</p></div></div>
@@ -855,7 +912,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="erstreinigung" style="background:var(--bg)">
   <div class="wrap">
-    <div class="snum fu">04 / Erstreinigung</div>
+    <div class="snum fu">05 / Erstreinigung</div>
     <div class="offer fu">
       <div class="offer-main">
         <div class="offer-label"><span class="hldot"></span>Unverbindlich testen</div>
@@ -875,7 +932,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="leistungen" style="background:var(--bg)">
   <div class="wrap">
-    <div class="snum fu">05 / Leistungen</div>
+    <div class="snum fu">06 / Leistungen</div>
     <div class="lw"><h2 class="sh">Unsere Leistungen</h2></div>
     <p class="sp fu d1">Von der regelmäßigen Unterhaltsreinigung bis zur anspruchsvollen Sonderreinigung: Wir decken das gesamte Spektrum gewerblicher Gebäudereinigung ab.</p>
 
@@ -928,7 +985,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="kontakt">
   <div class="wrap">
-    <div class="snum fu">06 / Kontakt</div>
+    <div class="snum fu">07 / Kontakt</div>
     <div class="lw"><h2 class="sh">Kostenloses Angebot anfordern</h2></div>
     <p class="sp fu d1">Schildern Sie uns Ihr Objekt und wir melden uns innerhalb von 24 Stunden mit einem maßgeschneiderten Angebot. Unverbindlich, transparent und ohne Risiko.</p>
     <div class="kgrid">
@@ -983,7 +1040,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="story">
   <div class="wrap">
-    <div class="snum fu">07 / Über uns</div>
+    <div class="snum fu">08 / Über uns</div>
     <div class="lw"><h2 class="sh">Wie Clean Connect entstand</h2></div>
     <div class="sgrid">
       <div class="simg fl" id="storyImg"><img height="449" width="800" src="images/img_08.webp" style="width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy"></div>
@@ -1044,11 +1101,8 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         </a>
       </div>
       <div style="display:flex;gap:12px;margin-top:24px;flex-wrap:wrap">
-        <a href="https://www.instagram.com/cleanconnect.reinigungsdienst/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(0,197,196,.1);border:1px solid rgba(0,197,196,.25);color:#00C5C4;text-decoration:none;font-size:13px;font-weight:600">
+        <a href="https://www.instagram.com/cleanconnect_koeln/" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(0,197,196,.1);border:1px solid rgba(0,197,196,.25);color:#00C5C4;text-decoration:none;font-size:13px;font-weight:600">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg> Instagram
-        </a>
-        <a href="https://www.tiktok.com/@cleanconnectcgn" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:50px;background:rgba(0,197,196,.1);border:1px solid rgba(0,197,196,.25);color:#00C5C4;text-decoration:none;font-size:13px;font-weight:600">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"/></svg> TikTok
         </a>
       </div>
     </div>
@@ -1057,12 +1111,12 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="gebiet" style="background:var(--bg)">
   <div class="wrap">
-    <div class="snum fu">08 / Einsatzgebiet</div>
+    <div class="snum fu">09 / Einsatzgebiet</div>
     <div class="lw"><h2 class="sh">Köln und Umgebung</h2></div>
     <p class="sp fu d1">Unser Standort in Köln Rath hält uns flexibel. Im gesamten Großraum Köln reinigen wir täglich, zuverlässig und mit kurzen Anfahrtswegen für planbare Termine.</p>
     <div class="geo-grid fu d1">
       <div class="geo-map">
-        <div class="cc-map"><iframe title="Standort Clean Connect, Forststraße 33B, 51107 Köln" data-src="https://maps.google.com/maps?q=Forststra%C3%9Fe+33B,+51107+K%C3%B6ln,+Germany&t=&z=15&ie=UTF8&iwloc=B&output=embed" width="100%" height="380" style="border:0;display:block;min-height:340px;height:380px;border-radius:14px;filter:invert(91%) hue-rotate(180deg) brightness(.95) contrast(.85) saturate(.8)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <div class="cc-map"><iframe title="Büro und Lager Clean Connect, Forststraße 33, 51107 Köln" data-src="https://maps.google.com/maps?q=Forststra%C3%9Fe+33,+51107+K%C3%B6ln,+Germany&t=&z=15&ie=UTF8&iwloc=B&output=embed" width="100%" height="380" style="border:0;display:block;min-height:340px;height:380px;border-radius:14px;filter:invert(91%) hue-rotate(180deg) brightness(.95) contrast(.85) saturate(.8)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
       </div>
       <div class="geo-list">
         <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:700;color:#f0f0f0;margin-bottom:14px">Unsere Reinigungsgebiete</h3>
@@ -1070,6 +1124,13 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="geo-tags">
           <span>Köln Innenstadt</span><span>Flittard</span><span>Mülheim</span><span>Nippes</span><span>Ehrenfeld</span><span>Lindenthal</span><span>Sülz</span><span>Deutz</span><span>Kalk</span><span>Porz</span><span>Rodenkirchen</span><span>Dellbrück</span><span>Leverkusen</span><span>Bergisch Gladbach</span><span>Bergheim</span><span>Pulheim</span><span>Frechen</span><span>Hürth</span><span>Wesseling</span><span>Brühl</span><span>Dormagen</span><span>Monheim</span>
         </div>
+        <dl class="nap">
+          <div><dt>Büro &amp; Lager</dt><dd>Forststraße 33, 51107 Köln (Rath/Heumar)</dd></div>
+          <div><dt>Rechnungsanschrift</dt><dd>Berliner Straße 957, 51069 Köln</dd></div>
+          <div><dt>Telefon</dt><dd><a href="tel:+4922195490625">0221 95490625</a></dd></div>
+          <div><dt>E-Mail</dt><dd><a href="mailto:service@reinigungsdienst-cleanconnect.de">service@reinigungsdienst-cleanconnect.de</a></dd></div>
+          <div><dt>Bürozeiten</dt><dd>Montag bis Freitag, 7 bis 18 Uhr</dd></div>
+        </dl>
       </div>
     </div>
   </div>
@@ -1077,7 +1138,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <section class="sec" id="faq" style="background:var(--bg)">
   <div class="wrap">
-    <div class="snum">09 / FAQ</div>
+    <div class="snum">10 / FAQ</div>
     <div class="lw"><h2 class="sh">Häufige Fragen</h2></div>
     <div class="faq-list stg" style="max-width:760px;margin:0 auto">
 
@@ -1146,6 +1207,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <footer role="contentinfo">
   <div class="flo"><img loading="lazy" height="500" width="500" src="images/img-004.webp" style="height:40px;width:auto;display:block;opacity:.85;" alt="Clean Connect Logo"></div>
   <div class="flinks"><a href="#leistungen">Leistungen</a><a href="#ref">Referenz</a><a href="#story">Über uns</a><a href="#kontakt">Kontakt</a><a href="standorte.html">Standorte</a><a href="bueroreinigung-koeln.html">Büroreinigung Köln</a><a href="preise.html">Preise</a><a href="blog/index.html">Blog</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>
+  <div class="fnap">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625" style="color:inherit">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>
   <div class="fcopy">&copy; 2026 Clean Connect Gebäudereinigung UG</div>
 </footer>
 

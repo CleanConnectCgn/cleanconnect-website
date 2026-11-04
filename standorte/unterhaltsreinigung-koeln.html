@@ -44,10 +44,18 @@
    "mainEntity": [
     {
      "@type": "Question",
+     "name": "Wie hoch sind Ihre Stundensätze, und gibt es Zuschläge für Sonn- und Feiertage?",
+     "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Die Unterhaltsreinigung kostet 32 € netto pro Stunde, die Grundreinigung 38 € und die Glasreinigung 45 €. Für Einsätze nachts oder an Sonn- und Feiertagen gibt es einen Zuschlag. Wie hoch er ist, steht vorher im Angebot, damit Sie nicht überrascht werden."
+     }
+    },
+    {
+     "@type": "Question",
      "name": "Sind Sie für Unterhaltsreinigung auch in Innenstadt, Deutz und Ehrenfeld im Einsatz?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Ja. Unterhaltsreinigung bieten wir im ganzen Stadtgebiet von Köln an, auch in Innenstadt, Deutz, Ehrenfeld und Nippes. Unser Büro liegt in Köln-Dellbrück im Stadtbezirk Mülheim. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal."
+      "text": "Ja. Unterhaltsreinigung bieten wir im ganzen Stadtgebiet von Köln an, auch in Innenstadt, Deutz, Ehrenfeld und Nippes. Unser Büro und Lager liegen in Köln-Rath/Heumar im Stadtbezirk Kalk, nah an der A3 und der A4. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal."
      }
     },
     {
@@ -55,7 +63,7 @@
      "name": "Wie schnell können Sie in Köln anfangen?",
      "acceptedAnswer": {
       "@type": "Answer",
-      "text": "Da wir selbst in Köln-Dellbrück sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."
+      "text": "Da wir selbst in Köln-Rath/Heumar sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."
      }
     },
     {
@@ -209,6 +217,11 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 .preis a{color:var(--teal);font-weight:600}
 .nachbar{margin-top:14px;font-size:13.5px;color:var(--mu2)}
 .nachbar a{color:var(--teal)}
+.kurz{background:var(--td);border:1px solid var(--br2);border-radius:16px;padding:20px 22px}
+.kurz h2{font-size:15px;color:var(--teal);margin-bottom:8px}
+.kurz p{font-size:15.5px;color:var(--tx);line-height:1.65}
+.beispiel{margin-top:14px;font-size:14.5px;color:var(--mu2)}
+.beispiel strong{color:#fff;font-weight:600}
 </style>
 </head>
 <body>
@@ -234,13 +247,19 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
   </div>
 </div>
 <div class="wrap">
+<section>
+  <div class="kurz">
+    <h2>Kurz gesagt</h2>
+    <p>Unterhaltsreinigung in Köln kostet bei uns 32 € netto pro Stunde, die Anfahrt ist inklusive. Wie viele Stunden Ihr Objekt braucht, legen wir nach einer kostenlosen Besichtigung oder einer Erstreinigung fest, danach zahlen Sie jeden Monat denselben Betrag. Wir reinigen Büros, Praxen, Läden und Showrooms in allen Kölner Stadtbezirken.</p>
+  </div>
+</section>
 <section class="lokal">
   <h2>Unterhaltsreinigung in Köln: was vor Ort zählt</h2>
   <p>Köln hat viele dichte Bürolagen: Bürohäuser in der Innenstadt und am Mediapark, Neubauten in Deutz rund um die Messe und Gewerbehöfe in Braunsfeld und Ossendorf. Dort zählt vor allem, dass die Reinigung abends erledigt ist, bevor am Morgen wieder Kunden und Mitarbeitende kommen. <strong>Für die Unterhaltsreinigung legen wir deshalb Zeitfenster fest, die zu Ihren Öffnungszeiten passen, früh morgens, abends oder am Wochenende.</strong></p>
   <p>Ein großer Teil der Kölner Mehrfamilienhäuser sind Altbauten aus der Gründerzeit und der Nachkriegszeit, etwa in Ehrenfeld, Nippes oder der Südstadt. Hohe Treppenhäuser mit Holzstufen, Terrazzo oder Linoleum brauchen jeweils eine andere Pflege. <strong>Auch dort, wo Büros und Praxen in Wohnhäusern liegen, achten wir auf leise Geräte und feste Zeiten, damit die Nachbarn nicht gestört werden.</strong></p>
   <p>Durch Köln fließt der Rhein, und der Verkehr auf den Ringen und Hauptachsen ist dicht. Fenster und Fassaden an großen Straßen setzen schneller einen grauen Film aus Abrieb und Feinstaub an. <strong>Je nach Lage planen wir mehr Zeit für Eingänge und Böden ein, weil Straßenschmutz dort schneller hereingetragen wird.</strong></p>
-  <p>Unser Büro liegt in Köln-Dellbrück im Stadtbezirk Mülheim. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.</p>
-  <div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/><circle cx="60" cy="60" r="30" class="r2"/><circle cx="60" cy="60" r="7" class="pt"/></svg><div><b>Heimatstandort</b><span>Büro in Köln-Dellbrück</span></div></div>
+  <p>Unser Büro und Lager liegen in Köln-Rath/Heumar im Stadtbezirk Kalk, nah an der A3 und der A4. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.</p>
+  <div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/><circle cx="60" cy="60" r="30" class="r2"/><circle cx="60" cy="60" r="7" class="pt"/></svg><div><b>Heimatstandort</b><span>Büro in Köln-Rath/Heumar</span></div></div>
 </section>
 <section class="lokal">
   <h2>Mehr über Köln</h2>
@@ -248,7 +267,7 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
   <p>In Porz, Ossendorf und im Kölner Norden sitzen Logistik, Handwerk und Produktion mit Hallen, Werkstätten und Sozialräumen, die anders verschmutzen als ein Büro.</p>
 </section>
 <section>
-  <div class="media-box"><img src="../images/img_04.webp" alt="Unterhaltsreinigung: Clean Connect bei der Arbeit" loading="lazy" width="880" height="380"><div class="media-cap">Unterhaltsreinigung von Clean Connect, unser Team bei der Arbeit.</div></div>
+  <div class="media-box"><img src="../images/img_04.webp" alt="Mitarbeiterin von Clean Connect reinigt die Verkaufstheke" loading="lazy" width="880" height="380"><div class="media-cap">Mitarbeiterin von Clean Connect reinigt die Verkaufstheke.</div></div>
 </section>
 <section>
   <h2>Darauf können Sie sich in Köln verlassen</h2>
@@ -288,6 +307,7 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 <section>
   <h2>Preise</h2>
   <div class="preis"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 6.5A6.5 6.5 0 1 0 17 17.5"/><path d="M5 10h8M5 14h8"/></svg><p>Die Unterhaltsreinigung kostet 32 € netto pro Stunde. Wie viele Stunden Ihr Objekt braucht, legen wir nach der Begehung oder einer Erstreinigung verbindlich fest. <a href="../preise.html">Alle Preise ansehen</a></p></div>
+  <p class="beispiel"><strong>Rechenbeispiel:</strong> Ein Büro mit 300 m² in der Innenstadt, zweimal pro Woche gereinigt, braucht bei uns etwa 1,75 Stunden je Einsatz. Das sind rund 56 € netto pro Einsatz und rund 485 € netto im Monat.</p>
 </section>
 <section>
   <h2>Einsatzgebiet Köln</h2>
@@ -297,8 +317,9 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 </section>
 <section>
   <h2>Häufige Fragen: Unterhaltsreinigung in Köln</h2>
-  <details><summary>Sind Sie für Unterhaltsreinigung auch in Innenstadt, Deutz und Ehrenfeld im Einsatz?</summary><p>Ja. Unterhaltsreinigung bieten wir im ganzen Stadtgebiet von Köln an, auch in Innenstadt, Deutz, Ehrenfeld und Nippes. Unser Büro liegt in Köln-Dellbrück im Stadtbezirk Mülheim. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.</p></details>
-  <details><summary>Wie schnell können Sie in Köln anfangen?</summary><p>Da wir selbst in Köln-Dellbrück sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig.</p></details>
+  <details><summary>Wie hoch sind Ihre Stundensätze, und gibt es Zuschläge für Sonn- und Feiertage?</summary><p>Die Unterhaltsreinigung kostet 32 € netto pro Stunde, die Grundreinigung 38 € und die Glasreinigung 45 €. Für Einsätze nachts oder an Sonn- und Feiertagen gibt es einen Zuschlag. Wie hoch er ist, steht vorher im Angebot, damit Sie nicht überrascht werden.</p></details>
+  <details><summary>Sind Sie für Unterhaltsreinigung auch in Innenstadt, Deutz und Ehrenfeld im Einsatz?</summary><p>Ja. Unterhaltsreinigung bieten wir im ganzen Stadtgebiet von Köln an, auch in Innenstadt, Deutz, Ehrenfeld und Nippes. Unser Büro und Lager liegen in Köln-Rath/Heumar im Stadtbezirk Kalk, nah an der A3 und der A4. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.</p></details>
+  <details><summary>Wie schnell können Sie in Köln anfangen?</summary><p>Da wir selbst in Köln-Rath/Heumar sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig.</p></details>
   <details><summary>Wie oft sollte eine Unterhaltsreinigung stattfinden?</summary><p>Das hängt von der Nutzung ab. Büros mit wenigen Mitarbeitenden kommen oft mit ein bis zwei Terminen pro Woche aus, Praxen und Räume mit Publikumsverkehr brauchen meist tägliche Reinigung. Wir legen den Turnus bei der Begehung gemeinsam fest.</p></details>
   <details><summary>Bringen Sie Reinigungsmittel und Geräte mit?</summary><p>Ja. Reinigungsmittel, Geräte und die Anfahrt sind im Preis enthalten. Hygienematerial wie Seife und Papierhandtücher stellen Sie, wenn nichts anderes vereinbart ist.</p></details>
   <details><summary>Wie lange läuft der Vertrag?</summary><p>Wir arbeiten mit kurzen Kündigungsfristen. Eine Mindestlaufzeit ist nicht nötig, die Erstreinigung können Sie ohne Vertragsbindung testen.</p></details>
@@ -335,6 +356,7 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
   <a href="../agb.html">AGB</a> &middot;
   <a href="../widerruf.html">Widerruf</a>
   <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>
+  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>
 </footer>
 <script src="../maps-consent.js" defer></script>
 <script src="rechner.js" defer></script>

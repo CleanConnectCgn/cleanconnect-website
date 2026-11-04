@@ -25,6 +25,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from orte import ORTE, ORT_REIHENFOLGE, BUERO  # noqa: E402
 from leistungen import LEISTUNGEN, LEISTUNG_REIHENFOLGE  # noqa: E402
 from extras import FAQ_EXTRA, VORTEILE_EXTRA, ZUSATZ_THEMEN  # noqa: E402
+from fokus import FOKUS  # noqa: E402
+from bilder import BILDER  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "standorte")
@@ -82,7 +84,7 @@ def entfernungs_grafik(ort):
     if ort == "koeln":
         return ('<div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/>'
                 '<circle cx="60" cy="60" r="30" class="r2"/><circle cx="60" cy="60" r="7" class="pt"/></svg>'
-                '<div><b>Heimatstandort</b><span>Büro in Köln-Dellbrück</span></div></div>')
+                '<div><b>Heimatstandort</b><span>Büro in Köln-Rath/Heumar</span></div></div>')
     d = km(BUERO, o["geo"])
     # Richtung als Winkel fuer den Punkt auf dem Ring
     dy, dx = o["geo"][0] - BUERO[0], (o["geo"][1] - BUERO[1]) * math.cos(math.radians(BUERO[0]))
@@ -92,7 +94,7 @@ def entfernungs_grafik(ort):
     return (f'<div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/>'
             f'<circle cx="60" cy="60" r="30" class="r2"/><line x1="60" y1="60" x2="{x:.1f}" y2="{y:.1f}" class="ln"/>'
             f'<circle cx="60" cy="60" r="5" class="hq"/><circle cx="{x:.1f}" cy="{y:.1f}" r="7" class="pt"/></svg>'
-            f'<div><b>rund {round(d)} km</b><span>Luftlinie von unserem Büro in Köln-Dellbrück</span></div></div>')
+            f'<div><b>rund {round(d)} km</b><span>Luftlinie von unserem Büro in Köln-Rath/Heumar</span></div></div>')
 
 
 def lokale_faq(lk, ort, li_index):
@@ -110,11 +112,11 @@ def lokale_faq(lk, ort, li_index):
                     f"Wir trennen nach Holz, Metall, Elektrogeräten, Papier und Restmüll und bringen alles zu zugelassenen Annahmestellen. {o['sperrmuell']} Reicht Ihnen diese Abholung, sagen wir Ihnen das ehrlich."))
     elif ort == "koeln":
         faq.append(("Wie schnell können Sie in Köln anfangen?",
-                    "Da wir selbst in Köln-Dellbrück sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."))
+                    "Da wir selbst in Köln-Rath/Heumar sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."))
     else:
         d = round(km(BUERO, o["geo"]))
         faq.append((f"Wie schnell können Sie {o['in']} anfangen?",
-                    f"{o['name']} liegt rund {d} km Luftlinie von unserem Büro in Köln-Dellbrück entfernt. Eine Besichtigung ist meist innerhalb weniger Tage möglich, die Anfahrt ist im Preis enthalten."))
+                    f"{o['name']} liegt rund {d} km Luftlinie von unserem Büro in Köln-Rath/Heumar entfernt. Eine Besichtigung ist meist innerhalb weniger Tage möglich, die Anfahrt ist im Preis enthalten."))
     return faq
 
 
@@ -157,6 +159,11 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 .preis a{color:var(--teal);font-weight:600}
 .nachbar{margin-top:14px;font-size:13.5px;color:var(--mu2)}
 .nachbar a{color:var(--teal)}
+.kurz{background:var(--td);border:1px solid var(--br2);border-radius:16px;padding:20px 22px}
+.kurz h2{font-size:15px;color:var(--teal);margin-bottom:8px}
+.kurz p{font-size:15.5px;color:var(--tx);line-height:1.65}
+.beispiel{margin-top:14px;font-size:14.5px;color:var(--mu2)}
+.beispiel strong{color:#fff;font-weight:600}
 """
 
 
@@ -179,6 +186,8 @@ def seite(lk, ort, basis_css):
     lead = l["lead"].format(**{"in": o["in"]})
     canonical = f"{BASE}/standorte/{lk}-{ort}.html"
     bild = l["bild"][oi_index % len(l["bild"])]
+    bild_text = BILDER[bild]
+    fk = FOKUS.get((lk, ort), {})
 
     # Lokaler Teil: Ortsfacetten in der Reihenfolge der Leistung, je mit Bezugssatz
     absaetze = []
@@ -193,7 +202,7 @@ def seite(lk, ort, basis_css):
 
     # Aus den Pools je Ort eine andere Auswahl (rotierend), siehe extras.py
     faq_pool = l["faq"] + FAQ_EXTRA.get(lk, [])
-    faq = lokale_faq(lk, ort, li_index) + auswahl(faq_pool, oi_index * 3, 3)
+    faq = fk.get("fragen", []) + lokale_faq(lk, ort, li_index) + auswahl(faq_pool, oi_index * 3, 3)
     vorteile = auswahl(l["vorteile"] + VORTEILE_EXTRA.get(lk, []), oi_index, 4)
     zusatz = [o["facetten"][t] for t in ZUSATZ_THEMEN.get(lk, []) if t in o["facetten"]]
 
@@ -274,6 +283,12 @@ def seite(lk, ort, basis_css):
     a(f'    <div class="fact">{svg("uhr")}<div><b>Rückmeldung in 24 Std.</b><span>Besichtigung kostenlos</span></div></div>')
     a("  </div>\n</div>")
     a('<div class="wrap">')
+    if fk.get("kurz"):
+        a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(fk["kurz"])}</p>\n  </div>\n</section>')
+    if fk.get("praxis"):
+        a(f'<section class="lokal">\n  <h2>Aus unserer Arbeit {e(o["in"])}</h2>')
+        a("  " + "\n  ".join(f"<p>{e(x)}</p>" for x in fk["praxis"]))
+        a("</section>")
     a(f'<section class="lokal">\n  <h2>{e(l["name"])} {e(o["in"])}: was vor Ort zählt</h2>')
     a("  " + "\n  ".join(absaetze))
     a(f"  {entfernungs_grafik(ort)}")
@@ -282,7 +297,7 @@ def seite(lk, ort, basis_css):
         a(f'<section class="lokal">\n  <h2>Mehr über {e(o["name"])}</h2>')
         a("  " + "\n  ".join(f"<p>{e(z)}</p>" for z in zusatz))
         a("</section>")
-    a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(l["name"])}: Clean Connect bei der Arbeit" loading="lazy" width="880" height="380"><div class="media-cap">{e(l["name"])} von Clean Connect, unser Team bei der Arbeit.</div></div>\n</section>')
+    a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(bild_text)}" loading="lazy" width="880" height="380"><div class="media-cap">{e(bild_text)}.</div></div>\n</section>')
     a(f'<section>\n  <h2>Darauf können Sie sich {e(o["in"])} verlassen</h2>\n  <div class="grid2">')
     for t, txt in vorteile:
         a(f'    <div class="card"><h3>{e(t)}</h3><p>{e(txt)}</p></div>')
@@ -296,7 +311,8 @@ def seite(lk, ort, basis_css):
         a(f"    <li>{e(x)}</li>")
     a("  </ol>\n</section>")
     a(f'<section>\n  <h2>Rechner: {e(l["name"])} {e(o["in"])}</h2>\n  <div class="rechner" data-rechner="{l["rechner"]}"></div>\n  <noscript><p class="rechner-fuss">Der Rechner braucht JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>\n</section>')
-    a(f'<section>\n  <h2>Preise</h2>\n  <div class="preis">{svg("euro", 22)}<p>{e(l["preis"])} <a href="../preise.html">Alle Preise ansehen</a></p></div>\n</section>')
+    beispiel = f'\n  <p class="beispiel"><strong>Rechenbeispiel:</strong> {e(fk["beispiel"])}</p>' if fk.get("beispiel") else ""
+    a(f'<section>\n  <h2>Preise</h2>\n  <div class="preis">{svg("euro", 22)}<p>{e(l["preis"])} <a href="../preise.html">Alle Preise ansehen</a></p></div>{beispiel}\n</section>')
     a(f'<section>\n  <h2>Einsatzgebiet {e(o["name"])}</h2>\n  <div class="chips">' + "".join(f"<span>{e(s)}</span>" for s in stadtteile) + "</div>")
     a(f'  <div class="map-wrap"><div class="cc-map"><iframe data-src="https://maps.google.com/maps?q={e(o["name"]).replace(" ", "+")}%2C+Deutschland&z=12&output=embed" title="Kartenausschnitt {e(o["name"])}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>')
     a('  <p class="nachbar">' + e(l["name"]) + " auch in der Nähe: " + ", ".join(
@@ -311,7 +327,7 @@ def seite(lk, ort, basis_css):
     a("  </div>\n</section>")
     a(f'<section>\n  <div class="cta-box">\n    <h2>Angebot für {e(l["name"])} {e(o["in"])} anfordern</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="../index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
-    a('<footer>\n  <a href="../index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n</footer>')
+    a('<footer>\n  <a href="../index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
     a('<script src="../maps-consent.js" defer></script>\n<script src="rechner.js" defer></script>\n</body>\n</html>\n')
     return "\n".join(teile)
 
