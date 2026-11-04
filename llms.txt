@@ -24,6 +24,8 @@ Unternehmen: Clean Connect Gebäudereinigung UG (haftungsbeschränkt), Amtsgeric
 
 - [Preise](https://cleanconnect.de/preise.html): Stundensätze, Treppenhaus-Pauschale und wie aus dem Stundensatz ein fester Monatspreis wird
 - [Rechner](https://cleanconnect.de/rechner.html): Schätzung für alle Leistungen mit denselben Stundensätzen
+- [Preisspiegel](https://cleanconnect.de/preisspiegel.html): Monatspreise aus 113 eigenen Angeboten (März 2025 bis November 2026), Unterhaltsreinigung einmal pro Woche im Median 404 € netto
+- [Häufige Fragen](https://cleanconnect.de/fragen.html): 35 Fragen von Kunden zu Kosten, Ablauf, Vertrag, Winterdienst und Einsatzgebiet, jeweils mit kurzer Antwort
 
 ## Städte außerhalb von Köln
 
@@ -36,6 +38,7 @@ Unternehmen: Clean Connect Gebäudereinigung UG (haftungsbeschränkt), Amtsgeric
 ## Über uns
 
 - [Startseite](https://cleanconnect.de/): Team, Referenz Harley-Davidson Köln-Bonn, Bewertungen und häufige Fragen
+- [Team](https://cleanconnect.de/team.html): Geschäftsführer Fynn Laubkermeier, Kundenbetreuung Julian Mühlhoff, Kunden und Standort
 - [Google-Profil](https://www.google.com/maps?cid=6656574569178855580): Bewertungen und Standort von Büro und Lager
 - [Impressum](https://cleanconnect.de/impressum.html): Firmendaten und Handelsregister
 
