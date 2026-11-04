@@ -252,7 +252,7 @@ def seite(lk, ort, basis_css):
                 "@type": "Service",
                 "serviceType": l["name"],
                 "name": f"{l['name']} {o['name']}",
-                "provider": {"@type": "LocalBusiness", "name": "Clean Connect Gebäudereinigung UG", "@id": f"{BASE}/#business"},
+                "provider": {"@id": f"{BASE}/#business"},
                 "areaServed": {"@type": "City", "name": o["name"]},
                 "description": meta,
                 "url": canonical,
@@ -290,20 +290,20 @@ def seite(lk, ort, basis_css):
     a(f'<meta property="og:title" content="{e(titel)}">')
     a(f'<meta property="og:description" content="{e(meta)}">')
     a('<meta property="og:locale" content="de_DE">\n<meta property="og:site_name" content="Clean Connect Gebäudereinigung">')
-    a(f'<meta property="og:image" content="{BASE}/images/{bild}.jpg">')
+    a(f'<meta property="og:image" content="{BASE}/images/{bild}.jpg">\n<meta name="twitter:card" content="summary_large_image">')
     a(f'<meta name="geo.region" content="DE-NW">\n<meta name="geo.placename" content="{e(o["name"])}">')
     a('<link rel="icon" type="image/x-icon" href="../favicon.ico">\n<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">\n<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">')
     a('<script type="application/ld+json">\n' + json.dumps(schema, ensure_ascii=False, indent=1) + "\n</script>")
-    a('<link rel="stylesheet" href="../fonts.css">')
+    a('<link rel="preload" href="../fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="../fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="../fonts.css">')
     a("<style>\n" + basis_css + CSS_EXTRA + "</style>\n</head>\n<body>")
     a('<a href="#main" class="skip-link">Zum Inhalt springen</a>')
-    a('<nav aria-label="Hauptnavigation">\n  <a href="../index.html"><img src="../images/img-001.webp" alt="Clean Connect Logo" width="120" height="38"></a>\n  <a class="back" href="../standorte.html">&larr; Alle Leistungen &amp; Standorte</a>\n</nav>')
+    a('<nav aria-label="Hauptnavigation">\n  <a href="../"><img src="../images/logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="../standorte.html">&larr; Alle Leistungen &amp; Standorte</a>\n</nav>')
     a('<main id="main">\n<div class="wrap hero">')
     a(f'  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>{e(l["kicker"])}</div>')
     a(f'  <h1>{e(l["name"])} in <em>{e(o["name"])}</em></h1>')
     a(f'  <p class="lead">{e(lead)}</p>')
     a(f"  {eco}")
-    a('  <div class="cta-row">\n    <a href="../index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>\n  </div>')
+    a('  <div class="cta-row">\n    <a href="../#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>\n  </div>')
     a('  <div class="facts">')
     a(f'    <div class="fact">{svg("ort")}<div><b>{e(fact_ort[0])}</b><span>{e(fact_ort[1])}</span></div></div>')
     a(f'    <div class="fact">{svg("euro")}<div><b>{e(preis_kurz)}</b><span>Anfahrt inklusive</span></div></div>')
@@ -337,7 +337,7 @@ def seite(lk, ort, basis_css):
     for x in l["ablauf"]:
         a(f"    <li>{e(x)}</li>")
     a("  </ol>\n</section>")
-    a(f'<section>\n  <h2>Rechner: {e(l["name"])} {e(o["in"])}</h2>\n  <div class="rechner" data-rechner="{l["rechner"]}"></div>\n  <noscript><p class="rechner-fuss">Der Rechner braucht JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>\n</section>')
+    a(f'<section>\n  <h2>Rechner: {e(l["name"])} {e(o["in"])}</h2>\n  <div class="rechner" data-rechner="{l["rechner"]}"></div>\n  <p class="rechner-fuss"><a href="../rechner.html#{l["rechner"]}">Alle Rechner auf einer Seite</a></p>\n  <noscript><p class="rechner-fuss">Der Rechner braucht JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>\n</section>')
     beispiel = f'\n  <p class="beispiel"><strong>Rechenbeispiel:</strong> {e(fk["beispiel"])}</p>' if fk.get("beispiel") else ""
     a(f'<section>\n  <h2>Preise</h2>\n  <div class="preis">{svg("euro", 22)}<p>{e(l["preis"])} <a href="../preise.html">Alle Preise ansehen</a></p></div>{beispiel}\n</section>')
     a(f'<section>\n  <h2>Einsatzgebiet {e(o["name"])}</h2>\n  <div class="chips">' + "".join(f"<span>{e(s)}</span>" for s in stadtteile) + "</div>")
@@ -358,14 +358,18 @@ def seite(lk, ort, basis_css):
         for slug, t in artikel:
             a(f'    <a href="../blog/{slug}.html">{e(t)}</a>')
         a("  </div>\n</section>")
-    a(f'<section>\n  <div class="cta-box">\n    <h2>Angebot für {e(l["name"])} {e(o["in"])} anfordern</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="../index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
+    a(f'<section>\n  <div class="cta-box">\n    <h2>Angebot für {e(l["name"])} {e(o["in"])} anfordern</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="../#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
-    a('<footer>\n  <a href="../index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
+    a('<footer>\n  <a href="../">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
     a('<script src="../maps-consent.js" defer></script>\n<script src="rechner.js" defer></script>\n</body>\n</html>\n')
     return "\n".join(teile)
 
 
-def rechner_seite(basis_css):
+# Bei neuen Stundensaetzen hier und auf preise.html nachziehen.
+PREISSTAND = ("2026-11-04", "November 2026")
+
+
+def rechner_seite(basis_css, geaendert):
     """rechner.html: alle Rechner der Standortseiten auf einer Seite (04.11.2026)."""
     canonical = f"{BASE}/rechner.html"
     titel = "Reinigungskosten-Rechner Köln | Clean Connect"
@@ -392,6 +396,7 @@ def rechner_seite(basis_css):
                 "inLanguage": "de-DE",
                 "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"},
                 "about": {"@id": f"{BASE}/#business"},
+                "dateModified": PREISSTAND[0],
             },
             {
                 "@type": "BreadcrumbList",
@@ -416,20 +421,21 @@ def rechner_seite(basis_css):
     a(f'<meta property="og:title" content="{e(titel)}">')
     a(f'<meta property="og:description" content="{e(meta)}">')
     a('<meta property="og:locale" content="de_DE">\n<meta property="og:site_name" content="Clean Connect Gebäudereinigung">')
-    a(f'<meta property="og:image" content="{BASE}/og-image.jpg">')
+    a(f'<meta property="og:image" content="{BASE}/og-image.jpg">\n<meta name="twitter:card" content="summary_large_image">')
     a('<link rel="icon" type="image/x-icon" href="favicon.ico">\n<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">\n<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">')
     a('<script type="application/ld+json">\n' + json.dumps(schema, ensure_ascii=False, indent=1) + "\n</script>")
-    a('<link rel="stylesheet" href="fonts.css">')
+    a('<link rel="preload" href="fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="fonts.css">')
     a("<style>\n" + basis_css + CSS_EXTRA + "</style>\n</head>\n<body>")
     a('<a href="#main" class="skip-link">Zum Inhalt springen</a>')
-    a('<nav aria-label="Hauptnavigation">\n  <a href="index.html"><img src="images/img-001.webp" alt="Clean Connect Logo" width="120" height="38"></a>\n  <a class="back" href="preise.html">&larr; Alle Preise</a>\n</nav>')
+    a('<nav aria-label="Hauptnavigation">\n  <a href="./"><img src="images/logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="preise.html">&larr; Alle Preise</a>\n</nav>')
     a('<main id="main">\n<div class="wrap hero">')
     a('  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>Preise schätzen in einer Minute</div>')
     a("  <h1>Was kostet die Reinigung? <em>Rechner</em> für alle Leistungen</h1>")
     a('  <p class="lead">Die Rechner nutzen dieselben Stundensätze wie unsere <a href="preise.html">Preisliste</a>: 32 € netto für '
       "Unterhalts- und Büroreinigung, 38 € für Grundreinigung und 45 € für Glasreinigung. Das Ergebnis ist eine Schätzung, "
       "das verbindliche Angebot bekommen Sie nach einer kostenlosen Besichtigung oder anhand von Fotos.</p>")
-    a('  <div class="cta-row">\n    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>\n  </div>')
+    a(f'  <p class="rechner-fuss" style="margin:-14px 0 22px">Preisstand: {PREISSTAND[1]}</p>')
+    a('  <div class="cta-row">\n    <a href="./#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>\n  </div>')
     a("</div>")
     a('<div class="wrap">')
     a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(kurz)}</p>\n  </div>\n</section>')
@@ -440,14 +446,14 @@ def rechner_seite(basis_css):
         ziel = ziel[3:] if ziel.startswith("../") else f"standorte/{ziel}"
         a(f'  <p class="nachbar">Mehr dazu: <a href="{ziel}">{e(LEISTUNGEN[lk]["name"])} in Köln</a></p>\n</section>')
     a('<noscript><p class="rechner-fuss">Die Rechner brauchen JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>')
-    a('<section>\n  <div class="cta-box">\n    <h2>Lieber ein genaues Angebot?</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
+    a('<section>\n  <div class="cta-box">\n    <h2>Lieber ein genaues Angebot?</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="./#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
-    a('<footer>\n  <a href="index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="impressum.html">Impressum</a> &middot;\n  <a href="datenschutz.html">Datenschutz</a> &middot;\n  <a href="agb.html">AGB</a> &middot;\n  <a href="widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
+    a('<footer>\n  <a href="./">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="impressum.html">Impressum</a> &middot;\n  <a href="datenschutz.html">Datenschutz</a> &middot;\n  <a href="agb.html">AGB</a> &middot;\n  <a href="widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
     a('<script src="standorte/rechner.js" defer></script>\n</body>\n</html>\n')
-    open(os.path.join(ROOT, "rechner.html"), "w", encoding="utf-8").write("\n".join(teile))
+    schreibe(os.path.join(ROOT, "rechner.html"), "\n".join(teile), geaendert)
 
 
-def aktualisiere_hub():
+def aktualisiere_hub(geaendert):
     """standorte.html: eine Karte je Leistung mit allen Orten."""
     p = os.path.join(ROOT, "standorte.html")
     s = open(p, encoding="utf-8").read()
@@ -462,25 +468,40 @@ def aktualisiere_hub():
     s, n = re.subn(r'<div class="wrap hub-grid">.*?</div>\s*</div>\s*<footer>', lambda m: neu, s, count=1, flags=re.S)
     assert n == 1, "hub-grid nicht gefunden"
     s = re.sub(r"mit \S+ Leistungen in elf Städten", f"mit {len(LEISTUNG_REIHENFOLGE)} Leistungen in elf Städten", s)
-    open(p, "w", encoding="utf-8").write(s)
+    schreibe(p, s, geaendert)
 
 
-def aktualisiere_sitemap(heute):
-    """Alle /standorte/-Eintraege neu schreiben (lastmod heute), Rest unveraendert lassen."""
+def schreibe(pfad, inhalt, geaendert):
+    """Datei nur bei echter Aenderung schreiben und sie dann fuer lastmod vormerken."""
+    if os.path.exists(pfad) and open(pfad, encoding="utf-8").read() == inhalt:
+        return
+    open(pfad, "w", encoding="utf-8").write(inhalt)
+    geaendert.add(os.path.relpath(pfad, ROOT))
+
+
+def aktualisiere_sitemap(heute, geaendert):
+    """/standorte/-Eintraege neu schreiben. lastmod wird nur fuer geaenderte Seiten
+    auf heute gesetzt, sonst bleibt das alte Datum stehen (04.11.2026)."""
     p = os.path.join(ROOT, "sitemap.xml")
     s = open(p, encoding="utf-8").read()
+    alt = dict(re.findall(r"<loc>([^<]+)</loc>\s*<lastmod>([^<]+)</lastmod>", s))
+
+    def datum(rel):
+        return heute if rel in geaendert else alt.get(f"{BASE}/{rel}", heute)
+
     s = re.sub(r"\s*<url>\s*<loc>https://cleanconnect\.de/standorte/[^<]+</loc>.*?</url>", "", s, flags=re.S)
-    s = re.sub(r"(<loc>https://cleanconnect\.de/standorte\.html</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + heute, s)
+    s = re.sub(r"(<loc>https://cleanconnect\.de/standorte\.html</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + datum("standorte.html"), s)
     eintraege = []
     for lk in LEISTUNG_REIHENFOLGE:
         for o in ORT_REIHENFOLGE:
             if (lk, o) in AUSNAHMEN:
                 continue
-            eintraege.append(f"  <url>\n    <loc>{BASE}/standorte/{lk}-{o}.html</loc>\n    <lastmod>{heute}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>")
+            rel = f"standorte/{lk}-{o}.html"
+            eintraege.append(f"  <url>\n    <loc>{BASE}/{rel}</loc>\n    <lastmod>{datum(rel)}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>")
     s = s.replace("</urlset>", "\n".join(eintraege) + "\n</urlset>")
     rechner = f"{BASE}/rechner.html"
     if rechner in s:
-        s = re.sub(r"(<loc>" + re.escape(rechner) + r"</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + heute, s)
+        s = re.sub(r"(<loc>" + re.escape(rechner) + r"</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + datum("rechner.html"), s)
     else:
         s = s.replace("</urlset>", f"  <url>\n    <loc>{rechner}</loc>\n    <lastmod>{heute}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>")
     open(p, "w", encoding="utf-8").write(s)
@@ -490,18 +511,18 @@ def main():
     import datetime
     heute = datetime.date.today().isoformat()
     basis_css = lade_basis_css()
+    geaendert = set()
     n = 0
     for lk in LEISTUNG_REIHENFOLGE:
         for ort in ORT_REIHENFOLGE:
             if (lk, ort) in AUSNAHMEN:
                 continue
-            with open(os.path.join(OUT, f"{lk}-{ort}.html"), "w", encoding="utf-8") as f:
-                f.write(seite(lk, ort, basis_css))
+            schreibe(os.path.join(OUT, f"{lk}-{ort}.html"), seite(lk, ort, basis_css), geaendert)
             n += 1
-    rechner_seite(basis_css)
-    aktualisiere_hub()
-    aktualisiere_sitemap(heute)
-    print(f"{n} Seiten und rechner.html geschrieben, standorte.html und sitemap.xml aktualisiert")
+    rechner_seite(basis_css, geaendert)
+    aktualisiere_hub(geaendert)
+    aktualisiere_sitemap(heute, geaendert)
+    print(f"{n} Seiten gebaut, davon {len(geaendert)} Dateien geaendert, sitemap.xml aktualisiert")
 
 
 if __name__ == "__main__":

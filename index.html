@@ -140,6 +140,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
+<link rel="preload" href="fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="fonts.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -712,7 +714,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <div id="prog"></div>
 
 <nav id="nav" role="navigation" aria-label="Hauptnavigation">
-  <img fetchpriority="high" height="500" width="500" src="images/img-001.webp" style="height:44px;width:auto;display:block;" alt="Clean Connect Logo">
+  <img src="images/logo-96.webp" style="height:44px;width:auto;display:block;" alt="Clean Connect Logo" width="96" height="96">
   <div class="nls">
     <a href="#leistungen">Leistungen</a>
     <a href="#ref">Referenz</a>
@@ -1013,20 +1015,20 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       </div>
       <form class="kform fr2 d1" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
         <div class="frow">
-          <div class="ffield"><label>Name *</label><input type="text" name="name" placeholder="Max Mustermann"></div>
-          <div class="ffield"><label>Firma</label><input type="text" name="firma" placeholder="Mustermann GmbH"></div>
+          <div class="ffield"><label for="f-name">Name *</label><input id="f-name" type="text" name="name" placeholder="Max Mustermann"></div>
+          <div class="ffield"><label for="f-firma">Firma</label><input id="f-firma" type="text" name="firma" placeholder="Mustermann GmbH"></div>
         </div>
         <div class="frow">
-          <div class="ffield"><label>Telefon *</label><input type="tel" name="telefon" placeholder="+49 221 ..."></div>
-          <div class="ffield"><label>E-Mail</label><input type="email" name="email" placeholder="info@beispiel.de"></div>
+          <div class="ffield"><label for="f-telefon">Telefon *</label><input id="f-telefon" type="tel" name="telefon" placeholder="+49 221 ..."></div>
+          <div class="ffield"><label for="f-email">E-Mail</label><input id="f-email" type="email" name="email" placeholder="info@beispiel.de"></div>
         </div>
-        <div class="ffield"><label>Objektart</label>
-          <select name="objektart"><option value="">Bitte wählen ...</option><option>Büro / Gewerbe</option><option>Hausverwaltung / Wohnanlage</option><option>Einzelhandel / Showroom</option><option>Gesundheitseinrichtung</option><option>Grundreinigung</option>
+        <div class="ffield"><label for="f-objektart">Objektart</label>
+          <select id="f-objektart" name="objektart"><option value="">Bitte wählen ...</option><option>Büro / Gewerbe</option><option>Hausverwaltung / Wohnanlage</option><option>Einzelhandel / Showroom</option><option>Gesundheitseinrichtung</option><option>Grundreinigung</option>
           <option>Winterdienst</option><option>Bauendreinigung</option><option>Sonstiges</option></select>
         </div>
-        <div class="ffield"><label>Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
-        <div class="ffield"><label>Wie sind Sie auf uns aufmerksam geworden?</label>
-          <select name="gefunden_ueber"><option value="">Bitte wählen ...</option><option>Google-Suche</option><option>Google Maps</option><option>ChatGPT oder andere KI</option><option>Empfehlung</option><option>Brief oder Flyer</option><option>Sonstiges</option></select>
+        <div class="ffield"><label for="f-nachricht">Nachricht</label><textarea id="f-nachricht" name="nachricht" placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
+        <div class="ffield"><label for="f-gefunden_ueber">Wie sind Sie auf uns aufmerksam geworden?</label>
+          <select id="f-gefunden_ueber" name="gefunden_ueber"><option value="">Bitte wählen ...</option><option>Google-Suche</option><option>Google Maps</option><option>ChatGPT oder andere KI</option><option>Empfehlung</option><option>Brief oder Flyer</option><option>Sonstiges</option></select>
         </div>
         <input type="hidden" name="quelle" value="">
         <input type="hidden" name="access_key" value="a1baeef9-3b69-4ddf-b187-aab554abb5ea">
@@ -1071,7 +1073,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           </div>
         </div>
 
-        <a href="https://www.rsv-rath-heumar.de/fussball/sponsoren" target="_blank" rel="noopener" class="fu d3" aria-label="Clean Connect ist Sponsor beim RSV Rath/Heumar 1920 e.V. – zur Sponsorenseite" style="margin-top:20px;display:flex;align-items:center;gap:14px;border:1px solid rgba(0,197,196,.15);border-radius:12px;padding:16px 18px;background:var(--bg);text-decoration:none;transition:border-color .2s,background .2s;">
+        <a href="https://rsv-rath-heumar.de/" target="_blank" rel="noopener" class="fu d3" aria-label="Clean Connect ist Sponsor beim RSV Rath/Heumar 1920 e.V. – zur Sponsorenseite" style="margin-top:20px;display:flex;align-items:center;gap:14px;border:1px solid rgba(0,197,196,.15);border-radius:12px;padding:16px 18px;background:var(--bg);text-decoration:none;transition:border-color .2s,background .2s;">
           <div style="width:38px;height:38px;flex-shrink:0;border-radius:50%;background:rgba(0,197,196,.08);border:1px solid rgba(0,197,196,.2);display:flex;align-items:center;justify-content:center;font-size:19px;" aria-hidden="true">⚽</div>
           <div>
             <div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:4px">Lokales Engagement</div>
