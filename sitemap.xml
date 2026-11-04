@@ -109,6 +109,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://cleanconnect.de/fragen.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cleanconnect.de/preisspiegel.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cleanconnect.de/team.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://cleanconnect.de/standorte/unterhaltsreinigung-koeln.html</loc>
     <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
