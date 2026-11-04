@@ -25,6 +25,8 @@ sys.path.insert(0, os.path.dirname(__file__))
 from orte import ORTE, ORT_REIHENFOLGE, BUERO  # noqa: E402
 from leistungen import LEISTUNGEN, LEISTUNG_REIHENFOLGE  # noqa: E402
 from extras import FAQ_EXTRA, VORTEILE_EXTRA, ZUSATZ_THEMEN  # noqa: E402
+from fokus import FOKUS  # noqa: E402
+from bilder import BILDER  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "standorte")
@@ -157,6 +159,11 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 .preis a{color:var(--teal);font-weight:600}
 .nachbar{margin-top:14px;font-size:13.5px;color:var(--mu2)}
 .nachbar a{color:var(--teal)}
+.kurz{background:var(--td);border:1px solid var(--br2);border-radius:16px;padding:20px 22px}
+.kurz h2{font-size:15px;color:var(--teal);margin-bottom:8px}
+.kurz p{font-size:15.5px;color:var(--tx);line-height:1.65}
+.beispiel{margin-top:14px;font-size:14.5px;color:var(--mu2)}
+.beispiel strong{color:#fff;font-weight:600}
 """
 
 
@@ -179,6 +186,8 @@ def seite(lk, ort, basis_css):
     lead = l["lead"].format(**{"in": o["in"]})
     canonical = f"{BASE}/standorte/{lk}-{ort}.html"
     bild = l["bild"][oi_index % len(l["bild"])]
+    bild_text = BILDER[bild]
+    fk = FOKUS.get((lk, ort), {})
 
     # Lokaler Teil: Ortsfacetten in der Reihenfolge der Leistung, je mit Bezugssatz
     absaetze = []
@@ -193,7 +202,7 @@ def seite(lk, ort, basis_css):
 
     # Aus den Pools je Ort eine andere Auswahl (rotierend), siehe extras.py
     faq_pool = l["faq"] + FAQ_EXTRA.get(lk, [])
-    faq = lokale_faq(lk, ort, li_index) + auswahl(faq_pool, oi_index * 3, 3)
+    faq = fk.get("fragen", []) + lokale_faq(lk, ort, li_index) + auswahl(faq_pool, oi_index * 3, 3)
     vorteile = auswahl(l["vorteile"] + VORTEILE_EXTRA.get(lk, []), oi_index, 4)
     zusatz = [o["facetten"][t] for t in ZUSATZ_THEMEN.get(lk, []) if t in o["facetten"]]
 
@@ -274,6 +283,12 @@ def seite(lk, ort, basis_css):
     a(f'    <div class="fact">{svg("uhr")}<div><b>Rückmeldung in 24 Std.</b><span>Besichtigung kostenlos</span></div></div>')
     a("  </div>\n</div>")
     a('<div class="wrap">')
+    if fk.get("kurz"):
+        a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(fk["kurz"])}</p>\n  </div>\n</section>')
+    if fk.get("praxis"):
+        a(f'<section class="lokal">\n  <h2>Aus unserer Arbeit {e(o["in"])}</h2>')
+        a("  " + "\n  ".join(f"<p>{e(x)}</p>" for x in fk["praxis"]))
+        a("</section>")
     a(f'<section class="lokal">\n  <h2>{e(l["name"])} {e(o["in"])}: was vor Ort zählt</h2>')
     a("  " + "\n  ".join(absaetze))
     a(f"  {entfernungs_grafik(ort)}")
@@ -282,7 +297,7 @@ def seite(lk, ort, basis_css):
         a(f'<section class="lokal">\n  <h2>Mehr über {e(o["name"])}</h2>')
         a("  " + "\n  ".join(f"<p>{e(z)}</p>" for z in zusatz))
         a("</section>")
-    a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(l["name"])}: Clean Connect bei der Arbeit" loading="lazy" width="880" height="380"><div class="media-cap">{e(l["name"])} von Clean Connect, unser Team bei der Arbeit.</div></div>\n</section>')
+    a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(bild_text)}" loading="lazy" width="880" height="380"><div class="media-cap">{e(bild_text)}.</div></div>\n</section>')
     a(f'<section>\n  <h2>Darauf können Sie sich {e(o["in"])} verlassen</h2>\n  <div class="grid2">')
     for t, txt in vorteile:
         a(f'    <div class="card"><h3>{e(t)}</h3><p>{e(txt)}</p></div>')
@@ -296,7 +311,8 @@ def seite(lk, ort, basis_css):
         a(f"    <li>{e(x)}</li>")
     a("  </ol>\n</section>")
     a(f'<section>\n  <h2>Rechner: {e(l["name"])} {e(o["in"])}</h2>\n  <div class="rechner" data-rechner="{l["rechner"]}"></div>\n  <noscript><p class="rechner-fuss">Der Rechner braucht JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>\n</section>')
-    a(f'<section>\n  <h2>Preise</h2>\n  <div class="preis">{svg("euro", 22)}<p>{e(l["preis"])} <a href="../preise.html">Alle Preise ansehen</a></p></div>\n</section>')
+    beispiel = f'\n  <p class="beispiel"><strong>Rechenbeispiel:</strong> {e(fk["beispiel"])}</p>' if fk.get("beispiel") else ""
+    a(f'<section>\n  <h2>Preise</h2>\n  <div class="preis">{svg("euro", 22)}<p>{e(l["preis"])} <a href="../preise.html">Alle Preise ansehen</a></p></div>{beispiel}\n</section>')
     a(f'<section>\n  <h2>Einsatzgebiet {e(o["name"])}</h2>\n  <div class="chips">' + "".join(f"<span>{e(s)}</span>" for s in stadtteile) + "</div>")
     a(f'  <div class="map-wrap"><div class="cc-map"><iframe data-src="https://maps.google.com/maps?q={e(o["name"]).replace(" ", "+")}%2C+Deutschland&z=12&output=embed" title="Kartenausschnitt {e(o["name"])}" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>')
     a('  <p class="nachbar">' + e(l["name"]) + " auch in der Nähe: " + ", ".join(
