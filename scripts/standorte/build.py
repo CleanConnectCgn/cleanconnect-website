@@ -27,6 +27,7 @@ from leistungen import LEISTUNGEN, LEISTUNG_REIHENFOLGE  # noqa: E402
 from extras import FAQ_EXTRA, VORTEILE_EXTRA, ZUSATZ_THEMEN  # noqa: E402
 from fokus import FOKUS  # noqa: E402
 from bilder import BILDER  # noqa: E402
+from ratgeber import RATGEBER  # noqa: E402
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 OUT = os.path.join(ROOT, "standorte")
@@ -95,6 +96,30 @@ def entfernungs_grafik(ort):
             f'<circle cx="60" cy="60" r="30" class="r2"/><line x1="60" y1="60" x2="{x:.1f}" y2="{y:.1f}" class="ln"/>'
             f'<circle cx="60" cy="60" r="5" class="hq"/><circle cx="{x:.1f}" cy="{y:.1f}" r="7" class="pt"/></svg>'
             f'<div><b>rund {round(d)} km</b><span>Luftlinie von unserem Büro in Köln-Rath/Heumar</span></div></div>')
+
+
+_BLOG_TITEL = {}
+
+
+def blog_titel(slug):
+    """H1 eines veroeffentlichten Artikels, None solange er nur als Entwurf existiert."""
+    if slug not in _BLOG_TITEL:
+        p = os.path.join(ROOT, "blog", f"{slug}.html")
+        m = re.search(r"<h1[^>]*>(.*?)</h1>", open(p, encoding="utf-8").read(), re.S) if os.path.exists(p) else None
+        _BLOG_TITEL[slug] = html.unescape(re.sub(r"<[^>]+>", "", m.group(1)).strip()) if m else None
+    return _BLOG_TITEL[slug]
+
+
+def ratgeber(lk, ort, n=3):
+    """Bis zu n veroeffentlichte Artikel zur Leistung, je Ort rotierend; Koeln-Artikel nur auf Koelner Seiten."""
+    treffer = []
+    for slug in RATGEBER.get(lk, []):
+        if "-koeln" in slug and ort != "koeln":
+            continue
+        t = blog_titel(slug)
+        if t:
+            treffer.append((slug, t))
+    return auswahl(treffer, ORT_REIHENFOLGE.index(ort), n) if treffer else []
 
 
 def lokale_faq(lk, ort, li_index):
@@ -197,7 +222,9 @@ def seite(lk, ort, basis_css):
             absaetze.append(f"<p>{e(fakt)} <strong>{e(l['bezug'].get(t, ''))}</strong></p>")
     absaetze.append(f"<p>{e(o['anfahrt'])}</p>")
     if lk == "winterdienst":
-        absaetze.append(f"<p>{e(o['winter_satzung'])}</p>")
+        quelle = (f' <a href="{e(o["winter_quelle"])}" rel="noopener" target="_blank">Satzung im Wortlaut (PDF)</a>'
+                  if o.get("winter_quelle") else "")
+        absaetze.append(f"<p>{e(o['winter_satzung'])}{quelle}</p>")
     stadtteile = auswahl(o["stadtteile"], li_index * 2, len(o["stadtteile"]))
 
     # Aus den Pools je Ort eine andere Auswahl (rotierend), siehe extras.py
@@ -325,11 +352,99 @@ def seite(lk, ort, basis_css):
     for x in weitere:
         a(f'    <a href="{url(x, ort)}">{e(LEISTUNGEN[x]["name"])}</a>')
     a("  </div>\n</section>")
+    artikel = ratgeber(lk, ort)
+    if artikel:
+        a(f'<section>\n  <h2>Ratgeber zum Thema {e(l["name"])}</h2>\n  <div class="related">')
+        for slug, t in artikel:
+            a(f'    <a href="../blog/{slug}.html">{e(t)}</a>')
+        a("  </div>\n</section>")
     a(f'<section>\n  <div class="cta-box">\n    <h2>Angebot für {e(l["name"])} {e(o["in"])} anfordern</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="../index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
     a("</div>\n</main>")
     a('<footer>\n  <a href="../index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="../impressum.html">Impressum</a> &middot;\n  <a href="../datenschutz.html">Datenschutz</a> &middot;\n  <a href="../agb.html">AGB</a> &middot;\n  <a href="../widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
     a('<script src="../maps-consent.js" defer></script>\n<script src="rechner.js" defer></script>\n</body>\n</html>\n')
     return "\n".join(teile)
+
+
+def rechner_seite(basis_css):
+    """rechner.html: alle Rechner der Standortseiten auf einer Seite (04.11.2026)."""
+    canonical = f"{BASE}/rechner.html"
+    titel = "Reinigungskosten-Rechner Köln | Clean Connect"
+    meta = ("Was kostet Büro-, Glas-, Grund- oder Treppenhausreinigung in Köln? Unsere Rechner schätzen Zeit und Preis "
+            "mit denselben Stundensätzen wie die Preisliste.")
+    # je Rechnerart eine Leistung; Bueroreinigung teilt sich den Rechner mit der Unterhaltsreinigung
+    arten = []
+    for lk in LEISTUNG_REIHENFOLGE:
+        art = LEISTUNGEN[lk]["rechner"]
+        if art not in [x[1] for x in arten]:
+            arten.append((lk, art))
+    namen = {"unterhaltsreinigung": "Unterhalts- und Büroreinigung"}
+    kurz = ("Eine Büroreinigung von 200 m² zweimal pro Woche kostet bei uns rund 277 € netto im Monat, eine Stunde je Einsatz "
+            "zu 32 € netto. Ein Treppenhaus mit vier Etagen, wöchentlich gereinigt, liegt bei rund 195 € netto im Monat. "
+            "Die Anfahrt ist immer inklusive.")
+    schema = {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebPage",
+                "name": titel,
+                "description": meta,
+                "url": canonical,
+                "inLanguage": "de-DE",
+                "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"},
+                "about": {"@id": f"{BASE}/#business"},
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": "Start", "item": f"{BASE}/"},
+                    {"@type": "ListItem", "position": 2, "name": "Preise", "item": f"{BASE}/preise.html"},
+                    {"@type": "ListItem", "position": 3, "name": "Rechner", "item": canonical},
+                ],
+            },
+        ],
+    }
+    teile = []
+    a = teile.append
+    a('<!DOCTYPE html>\n<html lang="de-DE">\n<head>\n<meta charset="UTF-8">')
+    a('<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">')
+    a(f"<title>{e(titel)}</title>")
+    a(f'<meta name="description" content="{e(meta)}">')
+    a('<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">')
+    a(f'<link rel="canonical" href="{canonical}">')
+    a('<meta property="og:type" content="website">')
+    a(f'<meta property="og:url" content="{canonical}">')
+    a(f'<meta property="og:title" content="{e(titel)}">')
+    a(f'<meta property="og:description" content="{e(meta)}">')
+    a('<meta property="og:locale" content="de_DE">\n<meta property="og:site_name" content="Clean Connect Gebäudereinigung">')
+    a(f'<meta property="og:image" content="{BASE}/og-image.jpg">')
+    a('<link rel="icon" type="image/x-icon" href="favicon.ico">\n<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">\n<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">')
+    a('<script type="application/ld+json">\n' + json.dumps(schema, ensure_ascii=False, indent=1) + "\n</script>")
+    a('<link rel="stylesheet" href="fonts.css">')
+    a("<style>\n" + basis_css + CSS_EXTRA + "</style>\n</head>\n<body>")
+    a('<a href="#main" class="skip-link">Zum Inhalt springen</a>')
+    a('<nav aria-label="Hauptnavigation">\n  <a href="index.html"><img src="images/img-001.webp" alt="Clean Connect Logo" width="120" height="38"></a>\n  <a class="back" href="preise.html">&larr; Alle Preise</a>\n</nav>')
+    a('<main id="main">\n<div class="wrap hero">')
+    a('  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>Preise schätzen in einer Minute</div>')
+    a("  <h1>Was kostet die Reinigung? <em>Rechner</em> für alle Leistungen</h1>")
+    a('  <p class="lead">Die Rechner nutzen dieselben Stundensätze wie unsere <a href="preise.html">Preisliste</a>: 32 € netto für '
+      "Unterhalts- und Büroreinigung, 38 € für Grundreinigung und 45 € für Glasreinigung. Das Ergebnis ist eine Schätzung, "
+      "das verbindliche Angebot bekommen Sie nach einer kostenlosen Besichtigung oder anhand von Fotos.</p>")
+    a('  <div class="cta-row">\n    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n    <a href="tel:022195490625" class="btn btn-g">&#128222; 0221 95490625</a>\n  </div>')
+    a("</div>")
+    a('<div class="wrap">')
+    a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(kurz)}</p>\n  </div>\n</section>')
+    for lk, art in arten:
+        name = namen.get(lk, LEISTUNGEN[lk]["name"])
+        a(f'<section id="{art}">\n  <h2>Rechner: {e(name)}</h2>\n  <div class="rechner" data-rechner="{art}"></div>')
+        ziel = url(lk, "koeln")
+        ziel = ziel[3:] if ziel.startswith("../") else f"standorte/{ziel}"
+        a(f'  <p class="nachbar">Mehr dazu: <a href="{ziel}">{e(LEISTUNGEN[lk]["name"])} in Köln</a></p>\n</section>')
+    a('<noscript><p class="rechner-fuss">Die Rechner brauchen JavaScript. Ein Angebot bekommen Sie auch ohne: einfach anfragen.</p></noscript>')
+    a('<section>\n  <div class="cta-box">\n    <h2>Lieber ein genaues Angebot?</h2>\n    <p>Eine kurze Nachricht mit Objekt und Anliegen genügt, Sie bekommen innerhalb von 24 Stunden eine Rückmeldung.</p>\n    <a href="index.html#kontakt" class="btn btn-p">Kostenloses Angebot &rarr;</a>\n  </div>\n</section>')
+    a("</div>\n</main>")
+    a('<footer>\n  <a href="index.html">Clean Connect Gebäudereinigung UG</a> &middot;\n  <a href="impressum.html">Impressum</a> &middot;\n  <a href="datenschutz.html">Datenschutz</a> &middot;\n  <a href="agb.html">AGB</a> &middot;\n  <a href="widerruf.html">Widerruf</a>\n  <div style="margin-top:8px">&copy; 2026 Clean Connect Gebäudereinigung UG</div>\n  <div style="margin-top:8px">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>\n</footer>')
+    a('<script src="standorte/rechner.js" defer></script>\n</body>\n</html>\n')
+    open(os.path.join(ROOT, "rechner.html"), "w", encoding="utf-8").write("\n".join(teile))
 
 
 def aktualisiere_hub():
@@ -363,6 +478,11 @@ def aktualisiere_sitemap(heute):
                 continue
             eintraege.append(f"  <url>\n    <loc>{BASE}/standorte/{lk}-{o}.html</loc>\n    <lastmod>{heute}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>")
     s = s.replace("</urlset>", "\n".join(eintraege) + "\n</urlset>")
+    rechner = f"{BASE}/rechner.html"
+    if rechner in s:
+        s = re.sub(r"(<loc>" + re.escape(rechner) + r"</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + heute, s)
+    else:
+        s = s.replace("</urlset>", f"  <url>\n    <loc>{rechner}</loc>\n    <lastmod>{heute}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>")
     open(p, "w", encoding="utf-8").write(s)
 
 
@@ -378,9 +498,10 @@ def main():
             with open(os.path.join(OUT, f"{lk}-{ort}.html"), "w", encoding="utf-8") as f:
                 f.write(seite(lk, ort, basis_css))
             n += 1
+    rechner_seite(basis_css)
     aktualisiere_hub()
     aktualisiere_sitemap(heute)
-    print(f"{n} Seiten geschrieben, standorte.html und sitemap.xml aktualisiert")
+    print(f"{n} Seiten und rechner.html geschrieben, standorte.html und sitemap.xml aktualisiert")
 
 
 if __name__ == "__main__":

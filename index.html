@@ -1025,6 +1025,10 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           <option>Winterdienst</option><option>Bauendreinigung</option><option>Sonstiges</option></select>
         </div>
         <div class="ffield"><label>Nachricht</label><textarea name="nachricht" placeholder="Kurze Beschreibung Ihres Objekts ..."></textarea></div>
+        <div class="ffield"><label>Wie sind Sie auf uns aufmerksam geworden?</label>
+          <select name="gefunden_ueber"><option value="">Bitte wählen ...</option><option>Google-Suche</option><option>Google Maps</option><option>ChatGPT oder andere KI</option><option>Empfehlung</option><option>Brief oder Flyer</option><option>Sonstiges</option></select>
+        </div>
+        <input type="hidden" name="quelle" value="">
         <input type="hidden" name="access_key" value="a1baeef9-3b69-4ddf-b187-aab554abb5ea">
         <input type="hidden" name="subject" value="Neue Anfrage über cleanconnect.de">
         <button type="submit" id="fsub" class="btn btn-p" style="width:100%;margin-top:6px;justify-content:center;font-size:15px;padding:14px">Angebot anfordern &#8594;</button>
@@ -1144,7 +1148,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
       <details class="faq-item fu" open>
         <summary>Was kostet Gebäudereinigung in Köln?</summary>
-        <p>Unterhaltsreinigung und Büroreinigung berechnen wir mit 32 € netto pro Stunde. Treppenhausreinigung läuft als monatliche Pauschale, meist zwischen 120 und 300 € netto pro Treppenhaus, je nach Stockwerken, Parteien und Turnus. Für Grundreinigung berechnen wir 38 € und für Glasreinigung 45 € netto pro Stunde, Bauendreinigung kalkulieren wir nach Aufwand. Nach einer kostenlosen Begehung oder einer Erstreinigung erhalten Sie ein individuelles Angebot ohne versteckte Kosten. <a href="preise.html" style="color:var(--teal)">Alle Preise im Überblick &#8594;</a></p>
+        <p>Unterhaltsreinigung und Büroreinigung berechnen wir mit 32 € netto pro Stunde. Treppenhausreinigung läuft als monatliche Pauschale, meist zwischen 120 und 300 € netto pro Treppenhaus, je nach Stockwerken, Parteien und Turnus. Für Grundreinigung berechnen wir 38 € und für Glasreinigung 45 € netto pro Stunde, Bauendreinigung kalkulieren wir nach Aufwand. Nach einer kostenlosen Begehung oder einer Erstreinigung erhalten Sie ein individuelles Angebot ohne versteckte Kosten. <a href="preise.html" style="color:var(--teal)">Alle Preise im Überblick &#8594;</a> <a href="rechner.html" style="color:var(--teal)">Preis selbst berechnen &#8594;</a></p>
       </details>
 
       <details class="faq-item fu">
@@ -1206,7 +1210,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 
 <footer role="contentinfo">
   <div class="flo"><img loading="lazy" height="500" width="500" src="images/img-004.webp" style="height:40px;width:auto;display:block;opacity:.85;" alt="Clean Connect Logo"></div>
-  <div class="flinks"><a href="#leistungen">Leistungen</a><a href="#ref">Referenz</a><a href="#story">Über uns</a><a href="#kontakt">Kontakt</a><a href="standorte.html">Standorte</a><a href="bueroreinigung-koeln.html">Büroreinigung Köln</a><a href="preise.html">Preise</a><a href="blog/index.html">Blog</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>
+  <div class="flinks"><a href="#leistungen">Leistungen</a><a href="#ref">Referenz</a><a href="#story">Über uns</a><a href="#kontakt">Kontakt</a><a href="standorte.html">Standorte</a><a href="bueroreinigung-koeln.html">Büroreinigung Köln</a><a href="preise.html">Preise</a><a href="rechner.html">Rechner</a><a href="blog/index.html">Blog</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>
   <div class="fnap">Büro &amp; Lager: Forststraße 33, 51107 Köln &middot; Rechnungsanschrift: Berliner Straße 957, 51069 Köln &middot; <a href="tel:+4922195490625" style="color:inherit">0221 95490625</a> &middot; Mo–Fr 7–18 Uhr</div>
   <div class="fcopy">&copy; 2026 Clean Connect Gebäudereinigung UG</div>
 </footer>
@@ -1283,6 +1287,9 @@ function prefillAnliegen(a){
 }
 document.querySelectorAll('a[data-anliegen]').forEach(function(a){a.addEventListener('click',function(){prefillAnliegen(a.getAttribute('data-anliegen'));});});
 try{prefillAnliegen(new URLSearchParams(location.search).get('anliegen'));}catch(e){}
+
+/* ── Herkunft: ?quelle=… (z. B. Link im Google-Profil) mitschicken ── */
+try{var q=new URLSearchParams(location.search).get('quelle');if(q)document.querySelector('#contactForm input[name="quelle"]').value=q.slice(0,40);}catch(e){}
 
 /* ── Float CTA ────────────────────── */
 var fct=document.getElementById('fct');
