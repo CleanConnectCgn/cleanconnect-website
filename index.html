@@ -469,10 +469,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 .fcta.hide{opacity:0;transform:translateX(-50%) translateY(12px);pointer-events:none}
 @media(max-width:767px){.fcta{display:flex;align-items:center;gap:6px}}
 
-    }
-
     /* 3D Carousel */
-    .carousel-wrap{position:relative;width:100%;padding:20px 0 50px;overflow:hidden}
     .carousel-stage{display:flex;align-items:center;justify-content:center;height:380px;position:relative}
     .ccard{position:absolute;width:280px;height:340px;border-radius:14px;overflow:hidden;cursor:pointer;transition:all .55s cubic-bezier(.25,.46,.45,.94);box-shadow:0 20px 60px rgba(0,0,0,.5)}
     .ccard img{width:100%;height:100%;object-fit:cover;display:block}
@@ -812,7 +809,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="carousel-stage" id="cStage">
 
       <div class="ccard" data-idx="0" onclick="carouselGoTo(0)">
-        <img src="images/img_03.webp" width="280" height="340" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
+        <img src="images/img_03-560.webp" srcset="images/img_03-560.webp 560w, images/img_03.webp 640w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
         <div class="ccard-label"><span>Showroom Köln</span><strong>Bodenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
@@ -820,7 +817,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="ccard-label"><span>Showroom Köln</span><strong>Oberflächenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_05.webp" width="280" height="340" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
+        <img src="images/img_05-560.webp" srcset="images/img_05-560.webp 560w, images/img_05.webp 800w" sizes="280px" width="280" height="340" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
         <div class="ccard-label"><span>Wohnanlage Köln</span><strong>Treppenhausreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
@@ -828,11 +825,11 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="ccard-label"><span>Harley-Davidson Köln-Bonn</span><strong>Eingespieltes Team</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_07.webp" width="280" height="340" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
+        <img src="images/img_07-560.webp" srcset="images/img_07-560.webp 560w, images/img_07.webp 620w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
         <div class="ccard-label"><span>Unterwegs in Köln</span><strong>Immer im Einsatz</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_01.webp" width="280" height="340" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
+        <img src="images/img_01-560.webp" srcset="images/img_01-560.webp 560w, images/img_01.webp 700w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
         <div class="ccard-label"><span>Harley-Davidson Store</span><strong>Referenzobjekt Köln-Bonn</strong></div>
       </div>
     </div>
@@ -1060,7 +1057,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="snum fu">08 / Über uns</div>
     <div class="lw"><h2 class="sh">Wie Clean Connect entstand</h2></div>
     <div class="sgrid">
-      <div class="simg fl" id="storyImg"><img height="449" width="800" src="images/img_08.webp" style="width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy"></div>
+      <div class="simg fl" id="storyImg"><img height="449" width="800" src="images/img_08.webp" srcset="images/img_08-560.webp 560w, images/img_08.webp 800w" sizes="(min-width: 680px) 50vw, 100vw" style="width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy"></div>
       <div class="scopy fr2 d1">
         <span class="stag">&#128197; Köln, gegründet 2024</span>
         <p>Clean Connect wurde von Fynn Laubkermeier gegründet, aus einer einfachen Erkenntnis heraus: Viele Reinigungsanbieter arbeiten an den eigentlichen Bedürfnissen ihrer Kunden vorbei. Fehlende Kommunikation, wechselndes Personal, keine echte Kontrolle.</p>
@@ -1093,8 +1090,8 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
           </div>
           <div style="margin-left:auto;color:var(--teal);font-size:14px;flex-shrink:0" aria-hidden="true">&#8594;</div>
         </a>
-
-
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1133,7 +1130,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <p class="sp fu d1">Unser Standort in Köln Rath hält uns flexibel. Im gesamten Großraum Köln reinigen wir täglich, zuverlässig und mit kurzen Anfahrtswegen für planbare Termine.</p>
     <div class="geo-grid fu d1">
       <div class="geo-map">
-        <div class="cc-map"><iframe title="Büro und Lager Clean Connect, Forststraße 33, 51107 Köln" data-src="https://maps.google.com/maps?q=Forststra%C3%9Fe+33,+51107+K%C3%B6ln,+Germany&t=&z=15&ie=UTF8&iwloc=B&output=embed" width="100%" height="380" style="border:0;display:block;min-height:340px;height:380px;border-radius:14px;filter:invert(91%) hue-rotate(180deg) brightness(.95) contrast(.85) saturate(.8)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+        <div class="cc-map"><iframe title="Büro und Lager Clean Connect, Forststraße 33, 51107 Köln" data-src="https://maps.google.com/maps?q=Forststra%C3%9Fe+33,+51107+K%C3%B6ln,+Germany&t=&z=15&ie=UTF8&iwloc=B&output=embed" height="380" style="width:100%;border:0;display:block;min-height:340px;height:380px;border-radius:14px;filter:invert(91%) hue-rotate(180deg) brightness(.95) contrast(.85) saturate(.8)" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
       </div>
       <div class="geo-list">
         <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:17px;font-weight:700;color:#f0f0f0;margin-bottom:14px">Unsere Reinigungsgebiete</h3>
