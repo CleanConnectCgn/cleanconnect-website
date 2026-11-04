@@ -82,7 +82,7 @@ def entfernungs_grafik(ort):
     if ort == "koeln":
         return ('<div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/>'
                 '<circle cx="60" cy="60" r="30" class="r2"/><circle cx="60" cy="60" r="7" class="pt"/></svg>'
-                '<div><b>Heimatstandort</b><span>Büro in Köln-Dellbrück</span></div></div>')
+                '<div><b>Heimatstandort</b><span>Büro in Köln-Rath/Heumar</span></div></div>')
     d = km(BUERO, o["geo"])
     # Richtung als Winkel fuer den Punkt auf dem Ring
     dy, dx = o["geo"][0] - BUERO[0], (o["geo"][1] - BUERO[1]) * math.cos(math.radians(BUERO[0]))
@@ -92,7 +92,7 @@ def entfernungs_grafik(ort):
     return (f'<div class="dist"><svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="60" r="52" class="r1"/>'
             f'<circle cx="60" cy="60" r="30" class="r2"/><line x1="60" y1="60" x2="{x:.1f}" y2="{y:.1f}" class="ln"/>'
             f'<circle cx="60" cy="60" r="5" class="hq"/><circle cx="{x:.1f}" cy="{y:.1f}" r="7" class="pt"/></svg>'
-            f'<div><b>rund {round(d)} km</b><span>Luftlinie von unserem Büro in Köln-Dellbrück</span></div></div>')
+            f'<div><b>rund {round(d)} km</b><span>Luftlinie von unserem Büro in Köln-Rath/Heumar</span></div></div>')
 
 
 def lokale_faq(lk, ort, li_index):
@@ -110,11 +110,11 @@ def lokale_faq(lk, ort, li_index):
                     f"Wir trennen nach Holz, Metall, Elektrogeräten, Papier und Restmüll und bringen alles zu zugelassenen Annahmestellen. {o['sperrmuell']} Reicht Ihnen diese Abholung, sagen wir Ihnen das ehrlich."))
     elif ort == "koeln":
         faq.append(("Wie schnell können Sie in Köln anfangen?",
-                    "Da wir selbst in Köln-Dellbrück sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."))
+                    "Da wir selbst in Köln-Rath/Heumar sitzen, ist eine Besichtigung meist innerhalb weniger Tage möglich. Den Start legen wir danach gemeinsam fest, bei Bedarf auch kurzfristig."))
     else:
         d = round(km(BUERO, o["geo"]))
         faq.append((f"Wie schnell können Sie {o['in']} anfangen?",
-                    f"{o['name']} liegt rund {d} km Luftlinie von unserem Büro in Köln-Dellbrück entfernt. Eine Besichtigung ist meist innerhalb weniger Tage möglich, die Anfahrt ist im Preis enthalten."))
+                    f"{o['name']} liegt rund {d} km Luftlinie von unserem Büro in Köln-Rath/Heumar entfernt. Eine Besichtigung ist meist innerhalb weniger Tage möglich, die Anfahrt ist im Preis enthalten."))
     return faq
 
 

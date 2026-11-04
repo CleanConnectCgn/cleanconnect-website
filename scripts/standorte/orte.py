@@ -15,7 +15,7 @@
 #   handel     Einzelhandel, Schaufenster, Publikumsverkehr
 #   besonders  was den Ort von den anderen unterscheidet
 
-BUERO = (50.973, 7.075)  # Berliner Strasse 957, Koeln-Dellbrueck
+BUERO = (50.9171, 7.0853)  # Buero und Lager Forststrasse 33, Koeln-Rath/Heumar (Rechnungsanschrift Berliner Strasse 957)
 
 ORTE = {
     "koeln": {
@@ -24,7 +24,7 @@ ORTE = {
         "kreis": "kreisfreie Stadt",
         "geo": (50.9413, 6.9583),
         "stadtteile": ["Innenstadt", "Deutz", "Ehrenfeld", "Nippes", "Lindenthal", "Rodenkirchen", "Porz", "Kalk", "Mülheim", "Dellbrück", "Chorweiler", "Braunsfeld"],
-        "anfahrt": "Unser Büro liegt in Köln-Dellbrück im Stadtbezirk Mülheim. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.",
+        "anfahrt": "Unser Büro und Lager liegen in Köln-Rath/Heumar im Stadtbezirk Kalk, nah an der A3 und der A4. Rechtsrheinisch sind wir in wenigen Minuten vor Ort, über die Rheinbrücken auch schnell in der Innenstadt, in Ehrenfeld oder Lindenthal.",
         "sperrmuell": "In Köln holen die Abfallwirtschaftsbetriebe Köln (AWB) Sperrmüll aus Haushalten auf Termin ab.",
         "winter_satzung": "Laut Stadt Köln müssen Gehwege in 1,5 Metern Breite nach Schneefall geräumt werden, werktags bis 7 Uhr und an Sonn- und Feiertagen bis 9 Uhr; fällt nach 20 Uhr Schnee, reicht in der Regel der Einsatz am nächsten Morgen. Welche Straßen die Anlieger übernehmen, steht im Straßenreinigungsverzeichnis der Kölner Satzung.",
         "facetten": {
@@ -34,7 +34,7 @@ ORTE = {
             "bau": "In Köln wird ständig gebaut und saniert, von Dachgeschossausbauten im Veedel bis zu Quartieren wie dem Deutzer Hafen. Nach jeder Baustelle bleibt Feinstaub, der sich ohne gründliche Endreinigung wochenlang verteilt.",
             "lage": "Durch Köln fließt der Rhein, und der Verkehr auf den Ringen und Hauptachsen ist dicht. Fenster und Fassaden an großen Straßen setzen schneller einen grauen Film aus Abrieb und Feinstaub an.",
             "handel": "Auf Schildergasse, Hohe Straße, Ehrenstraße und in den Veedel-Einkaufsstraßen entscheidet ein sauberes Schaufenster mit über den ersten Eindruck.",
-            "besonders": "Köln ist unser Heimatstandort: Wir sitzen selbst in Dellbrück und kennen die Wege durch die Stadtbezirke links und rechts des Rheins.",
+            "besonders": "Köln ist unser Heimatstandort: Wir sitzen selbst in Rath/Heumar und kennen die Wege durch die Stadtbezirke links und rechts des Rheins.",
         },
     },
     "leverkusen": {
@@ -43,7 +43,7 @@ ORTE = {
         "kreis": "kreisfreie Stadt",
         "geo": (51.0303, 6.9843),
         "stadtteile": ["Wiesdorf", "Opladen", "Schlebusch", "Manfort", "Rheindorf", "Hitdorf", "Küppersteg", "Bürrig", "Quettingen", "Lützenkirchen", "Steinbüchel", "Bergisch Neukirchen"],
-        "anfahrt": "Leverkusen grenzt im Norden an Köln. Von Dellbrück aus erreichen wir Schlebusch und Steinbüchel über die Landstraße, Wiesdorf und Opladen über die A3 und A1.",
+        "anfahrt": "Leverkusen grenzt im Norden an Köln. Von Rath/Heumar aus erreichen wir Schlebusch und Steinbüchel über die A3, Wiesdorf und Opladen über die A3 und A1.",
         "sperrmuell": "In Leverkusen übernimmt die AVEA die Abholung von Sperrmüll aus Haushalten.",
         "winter_satzung": "Wer in Leverkusen Gehwege räumen und streuen muss und bis wann, regelt die Straßenreinigungssatzung der Stadt Leverkusen. Wir richten den Einsatzplan nach dieser Satzung aus.",
         "facetten": {
@@ -62,7 +62,7 @@ ORTE = {
         "kreis": "Kreisstadt des Rheinisch-Bergischen Kreises",
         "geo": (50.9918, 7.1366),
         "stadtteile": ["Stadtmitte", "Bensberg", "Refrath", "Paffrath", "Schildgen", "Hand", "Herkenrath", "Moitzfeld", "Frankenforst", "Gronau", "Heidkamp", "Hebborn"],
-        "anfahrt": "Bergisch Gladbach beginnt praktisch an unserer Haustür: Dellbrück grenzt an Refrath. Die Stadtmitte, Bensberg und Paffrath sind von unserem Büro nur wenige Minuten entfernt.",
+        "anfahrt": "Bergisch Gladbach liegt gleich hinter dem Königsforst, an dessen Rand unser Büro in Rath/Heumar steht. Refrath und Bensberg sind nur wenige Minuten entfernt, die Stadtmitte und Paffrath über die A4 ebenfalls schnell erreichbar.",
         "sperrmuell": "In Bergisch Gladbach organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
         "winter_satzung": "In Bergisch Gladbach legt die Straßenreinigungs- und Gebührensatzung fest, welche Gehwege die Grundstückseigentümer im Winter räumen und streuen müssen. Nach dieser Satzung planen wir den Einsatz.",
         "facetten": {
@@ -100,7 +100,7 @@ ORTE = {
         "kreis": "größte Stadt im Rhein-Sieg-Kreis",
         "geo": (50.8162, 7.1557),
         "stadtteile": ["Troisdorf-Mitte", "Sieglar", "Spich", "Oberlar", "Friedrich-Wilhelms-Hütte", "Altenrath", "Bergheim", "Müllekoven", "Eschmar", "Kriegsdorf", "West"],
-        "anfahrt": "Troisdorf liegt südöstlich von Köln an der A59. Über die rechtsrheinische Seite sind wir von Dellbrück aus ohne Umweg über die Brücken dort.",
+        "anfahrt": "Troisdorf liegt südöstlich von Köln an der A59. Über die A3 und die A59 sind wir von Rath/Heumar aus ohne Umweg über die Rheinbrücken dort.",
         "sperrmuell": "Im Rhein-Sieg-Kreis und damit in Troisdorf holt die RSAG Sperrmüll aus Haushalten ab.",
         "winter_satzung": "In Troisdorf regelt die Straßenreinigungssatzung der Stadt, welche Gehwege die Anlieger im Winter räumen und streuen. Wir planen den Einsatz entsprechend.",
         "facetten": {
@@ -157,7 +157,7 @@ ORTE = {
         "kreis": "Stadt im Rhein-Erft-Kreis",
         "geo": (50.8781, 6.8763),
         "stadtteile": ["Hermülheim", "Efferen", "Fischenich", "Gleuel", "Kendenich", "Knapsack", "Alstädten-Burbach", "Alt-Hürth", "Kalscheuren", "Stotzheim", "Berrenrath", "Sielsdorf"],
-        "anfahrt": "Hürth grenzt im Südwesten an Köln. Über den Kölner Ring und die A1 sind wir von Dellbrück aus gut dort; Efferen und Kalscheuren liegen direkt an der Stadtgrenze.",
+        "anfahrt": "Hürth grenzt im Südwesten an Köln. Über den Kölner Ring und die A4 sind wir von Rath/Heumar aus gut dort; Efferen und Kalscheuren liegen direkt an der Stadtgrenze.",
         "sperrmuell": "In Hürth organisiert die Stadt die Abholung von Sperrmüll aus Haushalten.",
         "winter_satzung": "In Hürth legt die Straßenreinigungssatzung der Stadt fest, wann und wo Anlieger räumen und streuen müssen. Daran orientiert sich unser Einsatzplan.",
         "facetten": {
