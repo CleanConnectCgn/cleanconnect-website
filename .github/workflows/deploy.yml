@@ -76,4 +76,5 @@ jobs:
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
             mirror -R --parallel=5 blog $SFTP_DIR/blog;
+            rm -f $SFTP_DIR/images/img-002.jpg $SFTP_DIR/images/julian-muehlhoff.jpg;
           "

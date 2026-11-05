@@ -217,6 +217,7 @@ CSS_SEITEN = """
 .person{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:start;padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
 @media(max-width:600px){.person{grid-template-columns:1fr}}
 .person img{width:140px;height:140px;border-radius:14px;object-fit:cover;object-position:top center}
+.person .ico{width:140px;height:140px;border-radius:14px;background:#0a1a2a;display:flex;align-items:center;justify-content:center}
 .person h3{color:#fff;font-size:19px;margin-bottom:2px}
 .person .rolle{color:var(--teal);font-size:13px;font-weight:600;margin-bottom:10px;display:block}
 .person p{font-size:14.5px;color:var(--mu2);line-height:1.65}
@@ -511,8 +512,8 @@ def anker(text):
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60]
 
 
-AUTOR = {"@type": "Person", "@id": f"{BASE}/team.html#julian-muehlhoff", "name": "Julian Mühlhoff",
-         "jobTitle": "Kundenbetreuung", "url": f"{BASE}/team.html#julian-muehlhoff", "worksFor": {"@id": f"{BASE}/#business"}}
+# Autor der Ratgeber und des Preisspiegels: die Firma, keine Einzelperson (05.11.2026)
+AUTOR = {"@type": "Organization", "@id": f"{BASE}/#business", "name": "Clean Connect Gebäudereinigung", "url": f"{BASE}/"}
 
 
 def hero(kicker, h1, lead, stand=None):
@@ -618,7 +619,7 @@ def preisspiegel_seite(basis_css, geaendert):
     teile += hero("Eigene Auswertung", "Was kostet <em>Unterhaltsreinigung</em> in Köln? Unser Preisspiegel",
                   f"Wir haben ausgewertet, welche Monatspreise wir in {d['objekte']} Angeboten genannt haben. Das zeigt, "
                   "was Reinigung in Köln tatsächlich kostet, ohne Rechenbeispiel und ohne Lockpreis.",
-                  f'Stand: {monat_de(d["stand"])} &middot; Auswertung: <a href="team.html#julian-muehlhoff">Julian Mühlhoff</a>')
+                  f'Stand: {monat_de(d["stand"])} &middot; Auswertung: <a href="team.html">Clean Connect</a>')
     a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(kurz)}</p>\n  </div>\n</section>')
     a('<section>\n  <h2>Monatspreise nach Reinigungsrhythmus</h2>\n  <div class="tabelle"><table>\n'
       '    <thead><tr><th>Leistung</th><th>Rhythmus</th><th>Objekte</th><th>Median</th><th>Mittlere Hälfte</th></tr></thead>\n    <tbody>')
@@ -672,12 +673,10 @@ def team_seite(basis_css, geaendert):
             "und wer bei Ihnen reinigt.")
     fynn = {"@type": "Person", "@id": f"{BASE}/team.html#fynn-laubkermeier", "name": "Fynn Laubkermeier",
             "jobTitle": "Gründer und Geschäftsführer", "image": f"{BASE}/images/img-003.webp", "worksFor": {"@id": f"{BASE}/#business"}}
-    julian = dict(AUTOR, image=f"{BASE}/images/img-002.jpg",
-                  knowsAbout=["Angebote und Leistungsverzeichnisse für Gebäudereinigung", "Unterhaltsreinigung", "Treppenhausreinigung"])
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "AboutPage", "name": titel, "url": canonical, "inLanguage": "de-DE", "dateModified": "2026-11-04",
          "mainEntity": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"}},
-        fynn, julian,
+        fynn,
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Start", "item": f"{BASE}/"},
             {"@type": "ListItem", "position": 2, "name": "Team", "item": canonical}]},
@@ -693,11 +692,14 @@ def team_seite(basis_css, geaendert):
       '    <p>Fynn hat Clean Connect 2024 gegründet. Vorher hat das Team als Subunternehmer bei verschiedenen Reinigungsdienstleistern '
       'gearbeitet und gesehen, woran es dort oft hakt: wenig Kommunikation, wechselndes Personal, keine echte Kontrolle. Als '
       'Geschäftsführer steht Fynn persönlich für jeden Auftrag ein.</p></div>\n  </div>')
-    a('  <div class="person" id="julian-muehlhoff">\n    <img src="images/img-002.jpg" width="491" height="500" alt="Julian Mühlhoff" loading="lazy">\n'
-      '    <div><h3>Julian Mühlhoff</h3><span class="rolle">Kundenbetreuung</span>\n'
-      '    <p>Julian ist Ihr Ansprechpartner von der ersten Anfrage bis zum laufenden Vertrag. Er schreibt unsere Angebote und '
-      'Leistungsverzeichnisse und verantwortet die <a href="blog/index.html">Ratgeber</a> und den '
-      '<a href="preisspiegel.html">Preisspiegel</a> auf dieser Website.</p></div>\n  </div>\n</section>')
+    a('  <div class="person" id="kundenbetreuung">\n    <div class="ico"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="#00C5C4" '
+      'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/>'
+      '<path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/>'
+      '<path d="M18 17v1a3 3 0 0 1-3 3h-3"/></svg></div>\n    <div><h3>Kundenbetreuung</h3><span class="rolle">Angebote, Verträge, laufende Objekte</span>\n'
+      '    <p>Von der ersten Anfrage bis zum laufenden Vertrag haben Sie einen festen Ansprechpartner im Büro. Er schreibt '
+      'Ihr Angebot und das Leistungsverzeichnis und ist direkt erreichbar unter <a href="tel:+4915792492755">0157 92492755</a> '
+      'oder <a href="mailto:service@cleanconnect.de">service@cleanconnect.de</a>. Unsere <a href="blog/index.html">Ratgeber</a> '
+      'und den <a href="preisspiegel.html">Preisspiegel</a> schreibt das Büroteam aus der eigenen Praxis.</p></div>\n  </div>\n</section>')
     a('<section class="text">\n  <h2>Das Team</h2>\n  <ul>')
     for punkt in ["Mehr als 20 Mitarbeitende, alle fest und sozialversicherungspflichtig angestellt, keine Subunternehmer.",
                   "Alle deutschsprachig und persönlich eingearbeitet.",

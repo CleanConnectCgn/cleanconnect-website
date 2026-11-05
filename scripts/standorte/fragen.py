@@ -147,8 +147,8 @@ FRAGEN = [
          "Ja. Absprachen vor Ort, Schlüsselübergaben und Rückmeldungen laufen deshalb ohne Missverständnisse.",
          None, "mail"),
         ("Wer steht hinter Clean Connect?",
-         "Clean Connect wurde 2024 von Fynn Laubkermeier in Köln gegründet, er führt das Unternehmen bis heute. Julian "
-         "Mühlhoff betreut die Kunden und schreibt die Angebote. Dazu kommen mehr als 20 feste Mitarbeitende.",
+         "Clean Connect wurde 2024 von Fynn Laubkermeier in Köln gegründet, er führt das Unternehmen bis heute. Ein fester "
+         "Ansprechpartner im Büro betreut die Kunden und schreibt die Angebote. Dazu kommen mehr als 20 feste Mitarbeitende.",
          ("team.html", "Unser Team"), "mail"),
         ("Wie wird Clean Connect bewertet?",
          "Bei Google haben wir 27 Bewertungen, 26 mit fünf Sternen und eine mit vier, im Schnitt 4,96 von 5 "
