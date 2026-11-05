@@ -237,15 +237,37 @@ def lade_basis_css():
     return open(os.path.join(os.path.dirname(__file__), "basis.css"), encoding="utf-8").read().strip()
 
 
+# Kurzer Anreiz im Suchergebnis-Titel (05.11.2026). Preise NUR wie auf preise.html.
+TITEL_ANREIZ = {
+    "unterhaltsreinigung": "32 €/Std. netto",
+    "bueroreinigung": "32 €/Std. netto",
+    "glasreinigung": "45 €/Std. netto",
+    "grundreinigung": "38 €/Std. netto",
+    "treppenhausreinigung": "ab 120 €/Monat",
+    "winterdienst": "Räumen nach Satzung",
+    "bauendreinigung": "Angebot nach Fotos",
+    "entruempelung": "Festpreis nach Besichtigung",
+    "photovoltaikreinigung": "ohne Chemie",
+}
+
+
+def standort_titel(lk, name, ort):
+    """Erster Kandidat bis 60 Zeichen: mit Anreiz und Marke, mit Anreiz, ohne Anreiz."""
+    anreiz = TITEL_ANREIZ.get(lk)
+    kandidaten = ([f"{name} {ort}: {anreiz} | Clean Connect", f"{name} {ort}: {anreiz}"] if anreiz else []) + [
+        f"{name} {ort} | Clean Connect Gebäudereinigung", f"{name} {ort} | Clean Connect"]
+    return next((k for k in kandidaten if len(k) <= 60), kandidaten[-1])
+
+
 def seite(lk, ort, basis_css):
     l, o = LEISTUNGEN[lk], ORTE[ort]
     li_index = LEISTUNG_REIHENFOLGE.index(lk)
     oi_index = ORT_REIHENFOLGE.index(ort)
-    titel = f"{l['name']} {o['name']} | Clean Connect Gebäudereinigung"
-    if len(titel) > 60:
-        titel = f"{l['name']} {o['name']} | Clean Connect"
+    titel = standort_titel(lk, l["name"], o["name"])
     meta = l["meta"].format(**{"in": o["in"]})
-    if len(meta) > 158:  # Google kuerzt laengere Beschreibungen
+    while len(meta) > 158 and meta.count(". ") >= 1:  # Google kuerzt laengere Beschreibungen: lieber ganzen Satz weglassen
+        meta = meta.rsplit(". ", 1)[0] + "."
+    if len(meta) > 158:
         meta = meta[:157].rsplit(" ", 1)[0].rstrip(",:") + "…"
     lead = l["lead"].format(**{"in": o["in"]})
     canonical = f"{BASE}/standorte/{lk}-{ort}.html"
