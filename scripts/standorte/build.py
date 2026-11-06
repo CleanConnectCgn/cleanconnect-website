@@ -148,6 +148,18 @@ def lokale_faq(lk, ort, li_index):
 
 
 CSS_EXTRA = """
+.fall{padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
+.fall h3{color:#fff;font-size:17px;margin-bottom:6px}
+.fall p{font-size:14.5px;color:var(--mu2);line-height:1.65;margin-bottom:8px}
+.fall p strong{color:#fff;font-weight:600}
+.fall .bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.fall figure{margin:0;position:relative}
+.fall img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block}
+.fall.quer img{aspect-ratio:4/3}
+.fall figcaption{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.65);color:#fff;padding:3px 8px;border-radius:6px}
+.fall figure.nachher figcaption{background:var(--teal);color:#06201f}
+.fall-mehr{font-size:14px;margin-top:4px}
+.fall-mehr a{color:var(--teal);font-weight:600}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
 @media(max-width:700px){.facts{grid-template-columns:1fr}}
 .fact{background:var(--s1);border:1px solid var(--br);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center}
@@ -166,7 +178,9 @@ CSS_EXTRA = """
 .lokal p{font-size:15px;color:var(--mu2);margin-bottom:14px}
 .lokal p strong{color:#fff;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.chips span{font-size:12.5px;color:var(--mu2);border:1px solid var(--br2);padding:6px 12px;border-radius:100px;background:var(--s1)}
+.chips span,.chips a{font-size:12.5px;color:var(--mu2);border:1px solid var(--br2);padding:6px 12px;border-radius:100px;background:var(--s1)}
+.chips a{text-decoration:none}
+.chips a:hover{color:var(--teal);border-color:var(--teal)}
 ol.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
 ol.steps li{counter-increment:s;position:relative;padding:12px 16px 12px 52px;background:var(--s1);border:1px solid var(--br);border-radius:12px;font-size:14px;color:var(--tx)}
 ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--tg);color:var(--teal);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
@@ -221,13 +235,6 @@ CSS_SEITEN = """
 .person h3{color:#fff;font-size:19px;margin-bottom:2px}
 .person .rolle{color:var(--teal);font-size:13px;font-weight:600;margin-bottom:10px;display:block}
 .person p{font-size:14.5px;color:var(--mu2);line-height:1.65}
-.fall{padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
-.fall h3{color:#fff;font-size:17px;margin-bottom:6px}
-.fall p{font-size:14.5px;color:var(--mu2);line-height:1.65;margin-bottom:8px}
-.fall .bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.fall figure{margin:0}
-.fall img{width:100%;height:auto;border-radius:12px}
-.fall figcaption{font-size:12px;color:var(--mu);margin-top:4px}
 """
 
 
@@ -386,6 +393,11 @@ def seite(lk, ort, basis_css):
         a("  " + "\n  ".join(f"<p>{e(z)}</p>" for z in zusatz))
         a("</section>")
     a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(bild_text)}" loading="lazy" width="880" height="380"><div class="media-cap">{e(bild_text)}.</div></div>\n</section>')
+    paare = [f for f in PRAXIS if lk in f["leistungen"]][:2]
+    if paare:
+        a(f'<section>\n  <h2>{e(l["name"])}: vorher und nachher</h2>\n  <p class="fall-mehr">Fotos aus unseren eigenen Einsätzen.</p>')
+        a("\n".join(fall_html(f, "../") for f in paare))
+        a('  <p class="fall-mehr"><a href="../vorher-nachher.html">Alle Vorher/Nachher-Fotos ansehen &rarr;</a></p>\n</section>')
     a(f'<section>\n  <h2>Darauf können Sie sich {e(o["in"])} verlassen</h2>\n  <div class="grid2">')
     for t, txt in vorteile:
         a(f'    <div class="card"><h3>{e(t)}</h3><p>{e(txt)}</p></div>')
@@ -428,6 +440,19 @@ def seite(lk, ort, basis_css):
 
 # Bei neuen Stundensaetzen hier und auf preise.html nachziehen.
 PREISSTAND = ("2026-11-04", "November 2026")
+
+
+def fall_html(f, prefix="", h="h3"):
+    """Eine Vorher/Nachher-Karte aus praxis.py; prefix = "../" auf den Standortseiten."""
+    w, hh = (800, 600) if f["format"] == "quer" else (800, 1067)
+    zeile = " &middot; ".join(e(x) for x in (f["objekt"], f["ort"], f["leistung"], f"seit {f['seit']}" if f["seit"] else None) if x)
+    bilder = "".join(
+        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(f[k])}" alt="{e(k.capitalize())}: {e(f["bildtext"])}" '
+        f'loading="lazy" width="{w}" height="{hh}"><figcaption>{e(k.capitalize())}</figcaption></figure>'
+        for k in ("vorher", "nachher"))
+    return (f'  <div class="fall{" quer" if f["format"] == "quer" else ""}">\n    <{h}>{e(f["titel"])}</{h}>\n    <p>{zeile}</p>\n'
+            f'    <p><strong>Vorher:</strong> {e(f["aufgabe"])} <strong>Nachher:</strong> {e(f["ergebnis"])}</p>\n'
+            f'    <div class="bilder">{bilder}</div>\n  </div>')
 
 
 def kopf(titel, meta, canonical, schema, basis_css, zurueck=("preise.html", "Alle Preise"), og_typ="website", extra_css=CSS_SEITEN):
@@ -731,16 +756,8 @@ def team_seite(basis_css, geaendert):
     a("  </ul>\n</section>")
     if PRAXIS:
         a('<section id="praxis">\n  <h2>Aus der Praxis</h2>')
-        for f in PRAXIS:
-            a(f'  <div class="fall">\n    <h3>{e(f["titel"])}</h3>\n    <p>{e(f["objekt"])}, {e(f["ort"])} &middot; {e(f["leistung"])} &middot; seit {e(f["seit"])}</p>')
-            a(f'    <p><strong>Aufgabe:</strong> {e(f["aufgabe"])}</p>\n    <p><strong>Ergebnis:</strong> {e(f["ergebnis"])}</p>')
-            bilder = [(k, f[k]) for k in ("vorher", "nachher") if f.get(k)]
-            if bilder:
-                a('    <div class="bilder">' + "".join(
-                    f'<figure><img src="images/praxis/{e(b)}" alt="{e(k.capitalize())}: {e(f["bildtext"])}" loading="lazy" width="800" height="600">'
-                    f'<figcaption>{e(k.capitalize())}</figcaption></figure>' for k, b in bilder) + "</div>")
-            a("  </div>")
-        a("</section>")
+        a("\n".join(fall_html(f) for f in PRAXIS[:3]))
+        a(f'  <p class="fall-mehr"><a href="vorher-nachher.html">Alle {len(PRAXIS)} Vorher/Nachher-Beispiele ansehen &rarr;</a></p>\n</section>')
     a('<section class="text">\n  <h2>Standort, Kunden und Engagement</h2>')
     a('  <p>Unser Büro und Lager liegen in der <strong>Forststraße 33, 51107 Köln</strong> (Rath/Heumar). Firmensitz laut '
       '<a href="impressum.html">Impressum</a> ist die Berliner Straße 957 in Köln, eingetragen beim Amtsgericht Köln unter HRB 119725.</p>')
@@ -750,6 +767,41 @@ def team_seite(basis_css, geaendert):
     a(cta_box().replace("Ihre Frage war nicht dabei?", "Lernen Sie uns kennen"))
     teile += fuss()
     schreibe(os.path.join(ROOT, "team.html"), "\n".join(teile), geaendert)
+
+
+def vorher_nachher_seite(basis_css, geaendert):
+    """vorher-nachher.html: alle Vorher/Nachher-Paare aus praxis.py, nach Leistung (06.11.2026)."""
+    canonical = f"{BASE}/vorher-nachher.html"
+    titel = "Vorher und nachher: Reinigung in Köln | Clean Connect"
+    meta = (f"{len(PRAXIS)} Vorher/Nachher-Beispiele aus unseren eigenen Einsätzen: Bauendreinigung, Grundreinigung, "
+            "Glasreinigung, Sanitär und Fassade. Echte Fotos, keine Bilddatenbank.")
+    gruppen = {}
+    for f in PRAXIS:
+        gruppen.setdefault(f["leistung"], []).append(f)
+    bilder = [{"@type": "ImageObject", "contentUrl": f"{BASE}/images/praxis/{f[k]}", "name": f"{f['titel']} ({k})",
+               "caption": f"{k.capitalize()}: {f['bildtext']}", "creator": {"@id": f"{BASE}/#business"},
+               "copyrightHolder": {"@id": f"{BASE}/#business"}} for f in PRAXIS for k in ("vorher", "nachher")]
+    schema = {"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage", "name": titel, "description": meta, "url": canonical, "inLanguage": "de-DE",
+         "dateModified": "2026-11-06", "about": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"},
+         "primaryImageOfPage": bilder[1]["contentUrl"], "hasPart": bilder},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Start", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Vorher und nachher", "item": canonical}]},
+    ]}
+    teile = kopf(titel, meta, canonical, schema, basis_css, zurueck=("./", "Startseite"))
+    a = teile.append
+    teile += hero("Aus unserer Arbeit", "Vorher und <em>nachher</em>",
+                  "Diese Fotos haben unsere Teams bei eigenen Einsätzen gemacht. Kundennamen und Adressen zeigen wir nicht, "
+                  "die Fotos sind unbearbeitet und nur verkleinert.")
+    a('<section>\n  <div class="chips">' + "".join(f'<a href="#{anker(g)}">{e(g)}</a>' for g in gruppen) + "</div>\n</section>")
+    for g, faelle in gruppen.items():
+        a(f'<section id="{anker(g)}">\n  <h2>{e(g)}</h2>')
+        a("\n".join(fall_html(f) for f in faelle))
+        a("</section>")
+    a(cta_box().replace("Ihre Frage war nicht dabei?", "Wie sieht es bei Ihnen aus?"))
+    teile += fuss()
+    schreibe(os.path.join(ROOT, "vorher-nachher.html"), "\n".join(teile), geaendert)
 
 
 def aktualisiere_hub(geaendert):
@@ -778,7 +830,7 @@ def schreibe(pfad, inhalt, geaendert):
     geaendert.add(os.path.relpath(pfad, ROOT))
 
 
-EIGENE_SEITEN = ["rechner.html", "fragen.html", "preisspiegel.html", "team.html"]
+EIGENE_SEITEN = ["rechner.html", "fragen.html", "preisspiegel.html", "team.html", "vorher-nachher.html"]
 
 
 def aktualisiere_sitemap(heute, geaendert):
@@ -826,6 +878,7 @@ def main():
     fragen_seite(basis_css, geaendert)
     preisspiegel_seite(basis_css, geaendert)
     team_seite(basis_css, geaendert)
+    vorher_nachher_seite(basis_css, geaendert)
     aktualisiere_hub(geaendert)
     aktualisiere_sitemap(heute, geaendert)
     print(f"{n} Seiten gebaut, davon {len(geaendert)} Dateien geaendert, sitemap.xml aktualisiert")

@@ -56,6 +56,7 @@ jobs:
             put -O $SFTP_DIR standorte.html;
             put -O $SFTP_DIR 7a7c3578bc2fb01274f59ee760f00e2a.txt;
             put -O $SFTP_DIR preise.html;
+            put -O $SFTP_DIR vorher-nachher.html;
             put -O $SFTP_DIR rechner.html;
             put -O $SFTP_DIR fragen.html;
             put -O $SFTP_DIR preisspiegel.html;
