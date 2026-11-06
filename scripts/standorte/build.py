@@ -148,6 +148,21 @@ def lokale_faq(lk, ort, li_index):
 
 
 CSS_EXTRA = """
+.fall{padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
+.fall h3{color:#fff;font-size:17px;margin-bottom:6px}
+.fall p{font-size:14.5px;color:var(--mu2);line-height:1.65;margin-bottom:8px}
+.fall p strong{color:#fff;font-weight:600}
+.fall .bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.fall figure{margin:0;position:relative}
+.fall img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block}
+.fall.quer img{aspect-ratio:4/3}
+.fall .bilder.drei{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){.fall .bilder.drei{grid-template-columns:1fr 1fr}}
+.fall figure.einsatz figcaption{background:#fff;color:#111}
+.fall figcaption{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.65);color:#fff;padding:3px 8px;border-radius:6px}
+.fall figure.nachher figcaption{background:var(--teal);color:#06201f}
+.fall-mehr{font-size:14px;margin-top:4px}
+.fall-mehr a{color:var(--teal);font-weight:600}
 .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
 @media(max-width:700px){.facts{grid-template-columns:1fr}}
 .fact{background:var(--s1);border:1px solid var(--br);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:center}
@@ -166,7 +181,9 @@ CSS_EXTRA = """
 .lokal p{font-size:15px;color:var(--mu2);margin-bottom:14px}
 .lokal p strong{color:#fff;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.chips span{font-size:12.5px;color:var(--mu2);border:1px solid var(--br2);padding:6px 12px;border-radius:100px;background:var(--s1)}
+.chips span,.chips a{font-size:12.5px;color:var(--mu2);border:1px solid var(--br2);padding:6px 12px;border-radius:100px;background:var(--s1)}
+.chips a{text-decoration:none}
+.chips a:hover{color:var(--teal);border-color:var(--teal)}
 ol.steps{list-style:none;counter-reset:s;display:grid;gap:10px}
 ol.steps li{counter-increment:s;position:relative;padding:12px 16px 12px 52px;background:var(--s1);border:1px solid var(--br);border-radius:12px;font-size:14px;color:var(--tx)}
 ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:var(--tg);color:var(--teal);font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center}
@@ -217,16 +234,10 @@ CSS_SEITEN = """
 .person{display:grid;grid-template-columns:140px 1fr;gap:22px;align-items:start;padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
 @media(max-width:600px){.person{grid-template-columns:1fr}}
 .person img{width:140px;height:140px;border-radius:14px;object-fit:cover;object-position:top center}
+.person .ico{width:140px;height:140px;border-radius:14px;background:#0a1a2a;display:flex;align-items:center;justify-content:center}
 .person h3{color:#fff;font-size:19px;margin-bottom:2px}
 .person .rolle{color:var(--teal);font-size:13px;font-weight:600;margin-bottom:10px;display:block}
 .person p{font-size:14.5px;color:var(--mu2);line-height:1.65}
-.fall{padding:22px;background:var(--s1);border:1px solid var(--br);border-radius:16px;margin-bottom:14px}
-.fall h3{color:#fff;font-size:17px;margin-bottom:6px}
-.fall p{font-size:14.5px;color:var(--mu2);line-height:1.65;margin-bottom:8px}
-.fall .bilder{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.fall figure{margin:0}
-.fall img{width:100%;height:auto;border-radius:12px}
-.fall figcaption{font-size:12px;color:var(--mu);margin-top:4px}
 """
 
 
@@ -236,15 +247,37 @@ def lade_basis_css():
     return open(os.path.join(os.path.dirname(__file__), "basis.css"), encoding="utf-8").read().strip()
 
 
+# Kurzer Anreiz im Suchergebnis-Titel (05.11.2026). Preise NUR wie auf preise.html.
+TITEL_ANREIZ = {
+    "unterhaltsreinigung": "32 €/Std. netto",
+    "bueroreinigung": "32 €/Std. netto",
+    "glasreinigung": "45 €/Std. netto",
+    "grundreinigung": "38 €/Std. netto",
+    "treppenhausreinigung": "ab 120 €/Monat",
+    "winterdienst": "Räumen nach Satzung",
+    "bauendreinigung": "Angebot nach Fotos",
+    "entruempelung": "Festpreis nach Besichtigung",
+    "photovoltaikreinigung": "ohne Chemie",
+}
+
+
+def standort_titel(lk, name, ort):
+    """Erster Kandidat bis 60 Zeichen: mit Anreiz und Marke, mit Anreiz, ohne Anreiz."""
+    anreiz = TITEL_ANREIZ.get(lk)
+    kandidaten = ([f"{name} {ort}: {anreiz} | Clean Connect", f"{name} {ort}: {anreiz}"] if anreiz else []) + [
+        f"{name} {ort} | Clean Connect Gebäudereinigung", f"{name} {ort} | Clean Connect"]
+    return next((k for k in kandidaten if len(k) <= 60), kandidaten[-1])
+
+
 def seite(lk, ort, basis_css):
     l, o = LEISTUNGEN[lk], ORTE[ort]
     li_index = LEISTUNG_REIHENFOLGE.index(lk)
     oi_index = ORT_REIHENFOLGE.index(ort)
-    titel = f"{l['name']} {o['name']} | Clean Connect Gebäudereinigung"
-    if len(titel) > 60:
-        titel = f"{l['name']} {o['name']} | Clean Connect"
+    titel = standort_titel(lk, l["name"], o["name"])
     meta = l["meta"].format(**{"in": o["in"]})
-    if len(meta) > 158:  # Google kuerzt laengere Beschreibungen
+    while len(meta) > 158 and meta.count(". ") >= 1:  # Google kuerzt laengere Beschreibungen: lieber ganzen Satz weglassen
+        meta = meta.rsplit(". ", 1)[0] + "."
+    if len(meta) > 158:
         meta = meta[:157].rsplit(" ", 1)[0].rstrip(",:") + "…"
     lead = l["lead"].format(**{"in": o["in"]})
     canonical = f"{BASE}/standorte/{lk}-{ort}.html"
@@ -363,6 +396,11 @@ def seite(lk, ort, basis_css):
         a("  " + "\n  ".join(f"<p>{e(z)}</p>" for z in zusatz))
         a("</section>")
     a(f'<section>\n  <div class="media-box"><img src="../images/{bild}.webp" alt="{e(bild_text)}" loading="lazy" width="880" height="380"><div class="media-cap">{e(bild_text)}.</div></div>\n</section>')
+    paare = [f for f in PRAXIS if lk in f["leistungen"]][:2]
+    if paare:
+        a(f'<section>\n  <h2>{e(l["name"])}: vorher und nachher</h2>\n  <p class="fall-mehr">Fotos aus unseren eigenen Einsätzen.</p>')
+        a("\n".join(fall_html(f, "../") for f in paare))
+        a('  <p class="fall-mehr"><a href="../vorher-nachher.html">Alle Vorher/Nachher-Fotos ansehen &rarr;</a></p>\n</section>')
     a(f'<section>\n  <h2>Darauf können Sie sich {e(o["in"])} verlassen</h2>\n  <div class="grid2">')
     for t, txt in vorteile:
         a(f'    <div class="card"><h3>{e(t)}</h3><p>{e(txt)}</p></div>')
@@ -405,6 +443,29 @@ def seite(lk, ort, basis_css):
 
 # Bei neuen Stundensaetzen hier und auf preise.html nachziehen.
 PREISSTAND = ("2026-11-04", "November 2026")
+
+
+def fall_html(f, prefix="", h="h3"):
+    """Eine Vorher/Nachher-Karte aus praxis.py; prefix = "../" auf den Standortseiten."""
+    w, hh = (800, 600) if f["format"] == "quer" else (800, 1067)
+    zeile = " &middot; ".join(e(x) for x in (f["objekt"], f["ort"], f["leistung"], f"seit {f['seit']}" if f["seit"] else None) if x)
+    bilder = fall_bilder(f)
+    html = "".join(
+        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(datei)}" alt="{e(BILD_ART[k])}: {e(f["bildtext"])}" '
+        f'loading="lazy" width="{w}" height="{hh}"><figcaption>{e(BILD_ART[k])}</figcaption></figure>'
+        for datei, k in bilder)
+    klassen = "fall" + (" quer" if f["format"] == "quer" else "")
+    return (f'  <div class="{klassen}">\n    <{h}>{e(f["titel"])}</{h}>\n    <p>{zeile}</p>\n'
+            f'    <p><strong>Vorher:</strong> {e(f["aufgabe"])} <strong>{e(f.get("ergebnis_label", "Nachher"))}:</strong> {e(f["ergebnis"])}</p>\n'
+            f'    <div class="bilder{" drei" if len(bilder) == 3 else ""}">{html}</div>\n  </div>')
+
+
+BILD_ART = {"vorher": "Vorher", "nachher": "Nachher", "einsatz": "Im Einsatz"}
+
+
+def fall_bilder(f):
+    """[(datei, art)]; "bilder" in praxis.py ersetzt das Standardpaar vorher/nachher."""
+    return f.get("bilder") or [(f["vorher"], "vorher"), (f["nachher"], "nachher")]
 
 
 def kopf(titel, meta, canonical, schema, basis_css, zurueck=("preise.html", "Alle Preise"), og_typ="website", extra_css=CSS_SEITEN):
@@ -511,8 +572,8 @@ def anker(text):
     return re.sub(r"[^a-z0-9]+", "-", t).strip("-")[:60]
 
 
-AUTOR = {"@type": "Person", "@id": f"{BASE}/team.html#julian-muehlhoff", "name": "Julian Mühlhoff",
-         "jobTitle": "Kundenbetreuung", "url": f"{BASE}/team.html#julian-muehlhoff", "worksFor": {"@id": f"{BASE}/#business"}}
+# Autor der Ratgeber und des Preisspiegels: die Firma, keine Einzelperson (05.11.2026)
+AUTOR = {"@type": "Organization", "@id": f"{BASE}/#business", "name": "Clean Connect Gebäudereinigung", "url": f"{BASE}/"}
 
 
 def hero(kicker, h1, lead, stand=None):
@@ -618,7 +679,7 @@ def preisspiegel_seite(basis_css, geaendert):
     teile += hero("Eigene Auswertung", "Was kostet <em>Unterhaltsreinigung</em> in Köln? Unser Preisspiegel",
                   f"Wir haben ausgewertet, welche Monatspreise wir in {d['objekte']} Angeboten genannt haben. Das zeigt, "
                   "was Reinigung in Köln tatsächlich kostet, ohne Rechenbeispiel und ohne Lockpreis.",
-                  f'Stand: {monat_de(d["stand"])} &middot; Auswertung: <a href="team.html#julian-muehlhoff">Julian Mühlhoff</a>')
+                  f'Stand: {monat_de(d["stand"])} &middot; Auswertung: <a href="team.html">Clean Connect</a>')
     a(f'<section>\n  <div class="kurz">\n    <h2>Kurz gesagt</h2>\n    <p>{e(kurz)}</p>\n  </div>\n</section>')
     a('<section>\n  <h2>Monatspreise nach Reinigungsrhythmus</h2>\n  <div class="tabelle"><table>\n'
       '    <thead><tr><th>Leistung</th><th>Rhythmus</th><th>Objekte</th><th>Median</th><th>Mittlere Hälfte</th></tr></thead>\n    <tbody>')
@@ -672,12 +733,10 @@ def team_seite(basis_css, geaendert):
             "und wer bei Ihnen reinigt.")
     fynn = {"@type": "Person", "@id": f"{BASE}/team.html#fynn-laubkermeier", "name": "Fynn Laubkermeier",
             "jobTitle": "Gründer und Geschäftsführer", "image": f"{BASE}/images/img-003.webp", "worksFor": {"@id": f"{BASE}/#business"}}
-    julian = dict(AUTOR, image=f"{BASE}/images/img-002.jpg",
-                  knowsAbout=["Angebote und Leistungsverzeichnisse für Gebäudereinigung", "Unterhaltsreinigung", "Treppenhausreinigung"])
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "AboutPage", "name": titel, "url": canonical, "inLanguage": "de-DE", "dateModified": "2026-11-04",
          "mainEntity": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"}},
-        fynn, julian,
+        fynn,
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "Start", "item": f"{BASE}/"},
             {"@type": "ListItem", "position": 2, "name": "Team", "item": canonical}]},
@@ -693,11 +752,14 @@ def team_seite(basis_css, geaendert):
       '    <p>Fynn hat Clean Connect 2024 gegründet. Vorher hat das Team als Subunternehmer bei verschiedenen Reinigungsdienstleistern '
       'gearbeitet und gesehen, woran es dort oft hakt: wenig Kommunikation, wechselndes Personal, keine echte Kontrolle. Als '
       'Geschäftsführer steht Fynn persönlich für jeden Auftrag ein.</p></div>\n  </div>')
-    a('  <div class="person" id="julian-muehlhoff">\n    <img src="images/img-002.jpg" width="491" height="500" alt="Julian Mühlhoff" loading="lazy">\n'
-      '    <div><h3>Julian Mühlhoff</h3><span class="rolle">Kundenbetreuung</span>\n'
-      '    <p>Julian ist Ihr Ansprechpartner von der ersten Anfrage bis zum laufenden Vertrag. Er schreibt unsere Angebote und '
-      'Leistungsverzeichnisse und verantwortet die <a href="blog/index.html">Ratgeber</a> und den '
-      '<a href="preisspiegel.html">Preisspiegel</a> auf dieser Website.</p></div>\n  </div>\n</section>')
+    a('  <div class="person" id="kundenbetreuung">\n    <div class="ico"><svg viewBox="0 0 24 24" width="52" height="52" fill="none" stroke="#00C5C4" '
+      'stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14v-2a9 9 0 0 1 18 0v2"/>'
+      '<path d="M21 15a2 2 0 0 1-2 2h-1v-6h1a2 2 0 0 1 2 2z"/><path d="M3 15a2 2 0 0 0 2 2h1v-6H5a2 2 0 0 0-2 2z"/>'
+      '<path d="M18 17v1a3 3 0 0 1-3 3h-3"/></svg></div>\n    <div><h3>Kundenbetreuung</h3><span class="rolle">Angebote, Verträge, laufende Objekte</span>\n'
+      '    <p>Von der ersten Anfrage bis zum laufenden Vertrag haben Sie einen festen Ansprechpartner im Büro. Er schreibt '
+      'Ihr Angebot und das Leistungsverzeichnis und ist direkt erreichbar unter <a href="tel:+4915792492755">0157 92492755</a> '
+      'oder <a href="mailto:service@cleanconnect.de">service@cleanconnect.de</a>. Unsere <a href="blog/index.html">Ratgeber</a> '
+      'und den <a href="preisspiegel.html">Preisspiegel</a> schreibt das Büroteam aus der eigenen Praxis.</p></div>\n  </div>\n</section>')
     a('<section class="text">\n  <h2>Das Team</h2>\n  <ul>')
     for punkt in ["Mehr als 20 Mitarbeitende, alle fest und sozialversicherungspflichtig angestellt, keine Subunternehmer.",
                   "Alle deutschsprachig und persönlich eingearbeitet.",
@@ -707,16 +769,8 @@ def team_seite(basis_css, geaendert):
     a("  </ul>\n</section>")
     if PRAXIS:
         a('<section id="praxis">\n  <h2>Aus der Praxis</h2>')
-        for f in PRAXIS:
-            a(f'  <div class="fall">\n    <h3>{e(f["titel"])}</h3>\n    <p>{e(f["objekt"])}, {e(f["ort"])} &middot; {e(f["leistung"])} &middot; seit {e(f["seit"])}</p>')
-            a(f'    <p><strong>Aufgabe:</strong> {e(f["aufgabe"])}</p>\n    <p><strong>Ergebnis:</strong> {e(f["ergebnis"])}</p>')
-            bilder = [(k, f[k]) for k in ("vorher", "nachher") if f.get(k)]
-            if bilder:
-                a('    <div class="bilder">' + "".join(
-                    f'<figure><img src="images/praxis/{e(b)}" alt="{e(k.capitalize())}: {e(f["bildtext"])}" loading="lazy" width="800" height="600">'
-                    f'<figcaption>{e(k.capitalize())}</figcaption></figure>' for k, b in bilder) + "</div>")
-            a("  </div>")
-        a("</section>")
+        a("\n".join(fall_html(f) for f in PRAXIS[:3]))
+        a(f'  <p class="fall-mehr"><a href="vorher-nachher.html">Alle {len(PRAXIS)} Vorher/Nachher-Beispiele ansehen &rarr;</a></p>\n</section>')
     a('<section class="text">\n  <h2>Standort, Kunden und Engagement</h2>')
     a('  <p>Unser Büro und Lager liegen in der <strong>Forststraße 33, 51107 Köln</strong> (Rath/Heumar). Firmensitz laut '
       '<a href="impressum.html">Impressum</a> ist die Berliner Straße 957 in Köln, eingetragen beim Amtsgericht Köln unter HRB 119725.</p>')
@@ -726,6 +780,41 @@ def team_seite(basis_css, geaendert):
     a(cta_box().replace("Ihre Frage war nicht dabei?", "Lernen Sie uns kennen"))
     teile += fuss()
     schreibe(os.path.join(ROOT, "team.html"), "\n".join(teile), geaendert)
+
+
+def vorher_nachher_seite(basis_css, geaendert):
+    """vorher-nachher.html: alle Vorher/Nachher-Paare aus praxis.py, nach Leistung (06.11.2026)."""
+    canonical = f"{BASE}/vorher-nachher.html"
+    titel = "Vorher und nachher: Reinigung in Köln | Clean Connect"
+    meta = (f"{len(PRAXIS)} Vorher/Nachher-Beispiele aus unseren eigenen Einsätzen: Bauendreinigung, Grundreinigung, "
+            "Gastronomie, Glas, Sanitär und Fassade. Echte Fotos, keine Bilddatenbank.")
+    gruppen = {}
+    for f in PRAXIS:
+        gruppen.setdefault(f["leistung"], []).append(f)
+    bilder = [{"@type": "ImageObject", "contentUrl": f"{BASE}/images/praxis/{datei}", "name": f"{f['titel']} ({BILD_ART[k]})",
+               "caption": f"{BILD_ART[k]}: {f['bildtext']}", "creator": {"@id": f"{BASE}/#business"},
+               "copyrightHolder": {"@id": f"{BASE}/#business"}} for f in PRAXIS for datei, k in fall_bilder(f)]
+    schema = {"@context": "https://schema.org", "@graph": [
+        {"@type": "CollectionPage", "name": titel, "description": meta, "url": canonical, "inLanguage": "de-DE",
+         "dateModified": "2026-11-06", "about": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"},
+         "primaryImageOfPage": bilder[1]["contentUrl"], "hasPart": bilder},
+        {"@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Start", "item": f"{BASE}/"},
+            {"@type": "ListItem", "position": 2, "name": "Vorher und nachher", "item": canonical}]},
+    ]}
+    teile = kopf(titel, meta, canonical, schema, basis_css, zurueck=("./", "Startseite"))
+    a = teile.append
+    teile += hero("Aus unserer Arbeit", "Vorher und <em>nachher</em>",
+                  "Diese Fotos haben unsere Teams bei eigenen Einsätzen gemacht. Kundennamen und Adressen zeigen wir nicht, "
+                  "die Fotos sind unbearbeitet und nur verkleinert.")
+    a('<section>\n  <div class="chips">' + "".join(f'<a href="#{anker(g)}">{e(g)}</a>' for g in gruppen) + "</div>\n</section>")
+    for g, faelle in gruppen.items():
+        a(f'<section id="{anker(g)}">\n  <h2>{e(g)}</h2>')
+        a("\n".join(fall_html(f) for f in faelle))
+        a("</section>")
+    a(cta_box().replace("Ihre Frage war nicht dabei?", "Wie sieht es bei Ihnen aus?"))
+    teile += fuss()
+    schreibe(os.path.join(ROOT, "vorher-nachher.html"), "\n".join(teile), geaendert)
 
 
 def aktualisiere_hub(geaendert):
@@ -754,7 +843,7 @@ def schreibe(pfad, inhalt, geaendert):
     geaendert.add(os.path.relpath(pfad, ROOT))
 
 
-EIGENE_SEITEN = ["rechner.html", "fragen.html", "preisspiegel.html", "team.html"]
+EIGENE_SEITEN = ["rechner.html", "fragen.html", "preisspiegel.html", "team.html", "vorher-nachher.html"]
 
 
 def aktualisiere_sitemap(heute, geaendert):
@@ -802,6 +891,7 @@ def main():
     fragen_seite(basis_css, geaendert)
     preisspiegel_seite(basis_css, geaendert)
     team_seite(basis_css, geaendert)
+    vorher_nachher_seite(basis_css, geaendert)
     aktualisiere_hub(geaendert)
     aktualisiere_sitemap(heute, geaendert)
     print(f"{n} Seiten gebaut, davon {len(geaendert)} Dateien geaendert, sitemap.xml aktualisiert")

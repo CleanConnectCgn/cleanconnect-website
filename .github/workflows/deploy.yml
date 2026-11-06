@@ -56,6 +56,7 @@ jobs:
             put -O $SFTP_DIR standorte.html;
             put -O $SFTP_DIR 7a7c3578bc2fb01274f59ee760f00e2a.txt;
             put -O $SFTP_DIR preise.html;
+            put -O $SFTP_DIR vorher-nachher.html;
             put -O $SFTP_DIR rechner.html;
             put -O $SFTP_DIR fragen.html;
             put -O $SFTP_DIR preisspiegel.html;
@@ -76,4 +77,5 @@ jobs:
             mirror -R --parallel=5 images $SFTP_DIR/images;
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
             mirror -R --parallel=5 blog $SFTP_DIR/blog;
+            rm -f $SFTP_DIR/images/img-002.jpg $SFTP_DIR/images/julian-muehlhoff.jpg;
           "
