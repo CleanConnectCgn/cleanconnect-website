@@ -137,6 +137,9 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var
 .fall figure{margin:0;position:relative}
 .fall img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block}
 .fall.quer img{aspect-ratio:4/3}
+.fall .bilder.drei{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){.fall .bilder.drei{grid-template-columns:1fr 1fr}}
+.fall figure.einsatz figcaption{background:#fff;color:#111}
 .fall figcaption{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.65);color:#fff;padding:3px 8px;border-radius:6px}
 .fall figure.nachher figcaption{background:var(--teal);color:#06201f}
 .fall-mehr{font-size:14px;margin-top:4px}
@@ -257,6 +260,12 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
 <section id="praxis">
   <h2>Aus der Praxis</h2>
   <div class="fall">
+    <h3>Grundreinigung im Café</h3>
+    <p>Gastraum eines Cafés mit Boden in Betonoptik &middot; Grundreinigung</p>
+    <p><strong>Vorher:</strong> Flecken, Laufspuren und ein grauer Schmutzfilm auf dem ganzen Boden im Gastraum. <strong>Im Einsatz:</strong> Boden mit der Einscheibenmaschine geschrubbt, Schmutzwasser mit dem Nasssauger aufgenommen. Ein Nachher-Foto gibt es von diesem Einsatz nicht.</p>
+    <div class="bilder drei"><figure class="vorher"><img src="images/praxis/cafe-boden-vorher.webp" alt="Vorher: Café-Boden in Betonoptik, vorher fleckig, dann bei der Grundreinigung mit Einscheibenmaschine und Nasssauger" loading="lazy" width="800" height="1067"><figcaption>Vorher</figcaption></figure><figure class="einsatz"><img src="images/praxis/cafe-boden-maschine.webp" alt="Im Einsatz: Café-Boden in Betonoptik, vorher fleckig, dann bei der Grundreinigung mit Einscheibenmaschine und Nasssauger" loading="lazy" width="800" height="1067"><figcaption>Im Einsatz</figcaption></figure><figure class="einsatz"><img src="images/praxis/cafe-boden-nasssauger.webp" alt="Im Einsatz: Café-Boden in Betonoptik, vorher fleckig, dann bei der Grundreinigung mit Einscheibenmaschine und Nasssauger" loading="lazy" width="800" height="1067"><figcaption>Im Einsatz</figcaption></figure></div>
+  </div>
+  <div class="fall">
     <h3>Bürofläche nach dem Umbau</h3>
     <p>Bürofläche mit Teppichboden &middot; Bauendreinigung</p>
     <p><strong>Vorher:</strong> Nach den Malerarbeiten lagen Abdeckvlies, Bauschutt, Werkzeug und Putzreste auf dem Teppich. <strong>Nachher:</strong> Fläche geräumt, Reste entsorgt, Teppich gründlich gesaugt. Die Räume waren danach bezugsfertig.</p>
@@ -268,13 +277,7 @@ ol.steps li::before{content:counter(s);position:absolute;left:14px;top:50%;trans
     <p><strong>Vorher:</strong> Weiße Putz- und Farbspritzer, Staub und Kabelreste im ganzen Eingangsbereich. <strong>Nachher:</strong> Spritzer entfernt und Teppich gesaugt, die Fläche wirkt wieder einheitlich dunkel.</p>
     <div class="bilder"><figure class="vorher"><img src="images/praxis/bauend-teppich-tuer-vorher.webp" alt="Vorher: Dunkler Teppich an einer Glastür, vorher mit weißen Putzresten, nachher sauber" loading="lazy" width="800" height="600"><figcaption>Vorher</figcaption></figure><figure class="nachher"><img src="images/praxis/bauend-teppich-tuer-nachher.webp" alt="Nachher: Dunkler Teppich an einer Glastür, vorher mit weißen Putzresten, nachher sauber" loading="lazy" width="800" height="600"><figcaption>Nachher</figcaption></figure></div>
   </div>
-  <div class="fall">
-    <h3>Granittreppe nach den Bauarbeiten</h3>
-    <p>Treppenhaus in einem Bürogebäude &middot; Bauendreinigung</p>
-    <p><strong>Vorher:</strong> Baustaub, Bauabfall und Schmutzstreifen auf Stufen und Setzstufen. <strong>Nachher:</strong> Stufen nass gereinigt, Setzstufen abgewischt. Der Granit glänzt wieder.</p>
-    <div class="bilder"><figure class="vorher"><img src="images/praxis/bauend-treppe-vorher.webp" alt="Vorher: Granittreppe mit grauen Setzstufen, vorher staubig mit Abfall, nachher sauber und glänzend" loading="lazy" width="800" height="1067"><figcaption>Vorher</figcaption></figure><figure class="nachher"><img src="images/praxis/bauend-treppe-nachher.webp" alt="Nachher: Granittreppe mit grauen Setzstufen, vorher staubig mit Abfall, nachher sauber und glänzend" loading="lazy" width="800" height="1067"><figcaption>Nachher</figcaption></figure></div>
-  </div>
-  <p class="fall-mehr"><a href="vorher-nachher.html">Alle 10 Vorher/Nachher-Beispiele ansehen &rarr;</a></p>
+  <p class="fall-mehr"><a href="vorher-nachher.html">Alle 11 Vorher/Nachher-Beispiele ansehen &rarr;</a></p>
 </section>
 <section class="text">
   <h2>Standort, Kunden und Engagement</h2>

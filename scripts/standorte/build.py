@@ -156,6 +156,9 @@ CSS_EXTRA = """
 .fall figure{margin:0;position:relative}
 .fall img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:12px;display:block}
 .fall.quer img{aspect-ratio:4/3}
+.fall .bilder.drei{grid-template-columns:repeat(3,1fr)}
+@media(max-width:600px){.fall .bilder.drei{grid-template-columns:1fr 1fr}}
+.fall figure.einsatz figcaption{background:#fff;color:#111}
 .fall figcaption{position:absolute;left:8px;top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(0,0,0,.65);color:#fff;padding:3px 8px;border-radius:6px}
 .fall figure.nachher figcaption{background:var(--teal);color:#06201f}
 .fall-mehr{font-size:14px;margin-top:4px}
@@ -446,13 +449,23 @@ def fall_html(f, prefix="", h="h3"):
     """Eine Vorher/Nachher-Karte aus praxis.py; prefix = "../" auf den Standortseiten."""
     w, hh = (800, 600) if f["format"] == "quer" else (800, 1067)
     zeile = " &middot; ".join(e(x) for x in (f["objekt"], f["ort"], f["leistung"], f"seit {f['seit']}" if f["seit"] else None) if x)
-    bilder = "".join(
-        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(f[k])}" alt="{e(k.capitalize())}: {e(f["bildtext"])}" '
-        f'loading="lazy" width="{w}" height="{hh}"><figcaption>{e(k.capitalize())}</figcaption></figure>'
-        for k in ("vorher", "nachher"))
-    return (f'  <div class="fall{" quer" if f["format"] == "quer" else ""}">\n    <{h}>{e(f["titel"])}</{h}>\n    <p>{zeile}</p>\n'
-            f'    <p><strong>Vorher:</strong> {e(f["aufgabe"])} <strong>Nachher:</strong> {e(f["ergebnis"])}</p>\n'
-            f'    <div class="bilder">{bilder}</div>\n  </div>')
+    bilder = fall_bilder(f)
+    html = "".join(
+        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(datei)}" alt="{e(BILD_ART[k])}: {e(f["bildtext"])}" '
+        f'loading="lazy" width="{w}" height="{hh}"><figcaption>{e(BILD_ART[k])}</figcaption></figure>'
+        for datei, k in bilder)
+    klassen = "fall" + (" quer" if f["format"] == "quer" else "")
+    return (f'  <div class="{klassen}">\n    <{h}>{e(f["titel"])}</{h}>\n    <p>{zeile}</p>\n'
+            f'    <p><strong>Vorher:</strong> {e(f["aufgabe"])} <strong>{e(f.get("ergebnis_label", "Nachher"))}:</strong> {e(f["ergebnis"])}</p>\n'
+            f'    <div class="bilder{" drei" if len(bilder) == 3 else ""}">{html}</div>\n  </div>')
+
+
+BILD_ART = {"vorher": "Vorher", "nachher": "Nachher", "einsatz": "Im Einsatz"}
+
+
+def fall_bilder(f):
+    """[(datei, art)]; "bilder" in praxis.py ersetzt das Standardpaar vorher/nachher."""
+    return f.get("bilder") or [(f["vorher"], "vorher"), (f["nachher"], "nachher")]
 
 
 def kopf(titel, meta, canonical, schema, basis_css, zurueck=("preise.html", "Alle Preise"), og_typ="website", extra_css=CSS_SEITEN):
@@ -774,13 +787,13 @@ def vorher_nachher_seite(basis_css, geaendert):
     canonical = f"{BASE}/vorher-nachher.html"
     titel = "Vorher und nachher: Reinigung in Köln | Clean Connect"
     meta = (f"{len(PRAXIS)} Vorher/Nachher-Beispiele aus unseren eigenen Einsätzen: Bauendreinigung, Grundreinigung, "
-            "Glasreinigung, Sanitär und Fassade. Echte Fotos, keine Bilddatenbank.")
+            "Gastronomie, Glas, Sanitär und Fassade. Echte Fotos, keine Bilddatenbank.")
     gruppen = {}
     for f in PRAXIS:
         gruppen.setdefault(f["leistung"], []).append(f)
-    bilder = [{"@type": "ImageObject", "contentUrl": f"{BASE}/images/praxis/{f[k]}", "name": f"{f['titel']} ({k})",
-               "caption": f"{k.capitalize()}: {f['bildtext']}", "creator": {"@id": f"{BASE}/#business"},
-               "copyrightHolder": {"@id": f"{BASE}/#business"}} for f in PRAXIS for k in ("vorher", "nachher")]
+    bilder = [{"@type": "ImageObject", "contentUrl": f"{BASE}/images/praxis/{datei}", "name": f"{f['titel']} ({BILD_ART[k]})",
+               "caption": f"{BILD_ART[k]}: {f['bildtext']}", "creator": {"@id": f"{BASE}/#business"},
+               "copyrightHolder": {"@id": f"{BASE}/#business"}} for f in PRAXIS for datei, k in fall_bilder(f)]
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "CollectionPage", "name": titel, "description": meta, "url": canonical, "inLanguage": "de-DE",
          "dateModified": "2026-11-06", "about": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"},

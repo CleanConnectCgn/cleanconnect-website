@@ -15,11 +15,22 @@ Felder je Fall:
   aufgabe     1-2 Sätze: Was war vorher?
   ergebnis    1-2 Sätze: Was ist nachher anders?
   vorher, nachher  Dateiname in images/praxis/
+  bilder      optional statt vorher/nachher: [(datei, "vorher"|"nachher"|"einsatz"), ...], bis zu drei
+  ergebnis_label  optional, Standard "Nachher" (z. B. "Im Einsatz", wenn kein Nachher-Foto da ist)
   format      "hoch" oder "quer" (Seitenverhältnis der Fotos)
   bildtext    ehrliche Beschreibung, was auf den Fotos zu sehen ist
 """
 
 PRAXIS = [
+    # Mitarbeitende auf den Fotos haben eingewilligt (laut Julian 06.11.2026, AV und Datenschutzerklärung unterschrieben)
+    {"titel": "Grundreinigung im Café", "objekt": "Gastraum eines Cafés mit Boden in Betonoptik", "leistung": "Grundreinigung",
+     "leistungen": ["grundreinigung"], "ort": None, "seit": None,
+     "aufgabe": "Flecken, Laufspuren und ein grauer Schmutzfilm auf dem ganzen Boden im Gastraum.",
+     "ergebnis_label": "Im Einsatz",
+     "ergebnis": "Boden mit der Einscheibenmaschine geschrubbt, Schmutzwasser mit dem Nasssauger aufgenommen. Ein Nachher-Foto gibt es von diesem Einsatz nicht.",
+     "bilder": [("cafe-boden-vorher.webp", "vorher"), ("cafe-boden-maschine.webp", "einsatz"), ("cafe-boden-nasssauger.webp", "einsatz")],
+     "format": "hoch",
+     "bildtext": "Café-Boden in Betonoptik, vorher fleckig, dann bei der Grundreinigung mit Einscheibenmaschine und Nasssauger"},
     {"titel": "Bürofläche nach dem Umbau", "objekt": "Bürofläche mit Teppichboden", "leistung": "Bauendreinigung",
      "leistungen": ["bauendreinigung"], "ort": None, "seit": None,
      "aufgabe": "Nach den Malerarbeiten lagen Abdeckvlies, Bauschutt, Werkzeug und Putzreste auf dem Teppich.",
