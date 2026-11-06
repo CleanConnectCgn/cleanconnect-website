@@ -1,19 +1,4 @@
 <!--
-  ARTIKEL-VORLAGE — nicht bearbeiten, sondern kopieren.
-  So legst du einen neuen Artikel an:
-  1. Diese Datei in content/blog-drafts/ kopieren, Dateiname = URL-Slug (z. B. buerofrueling-2027.html).
-  2. Das FRONTMATTER unten ausfüllen, vor allem publish_date (Format YYYY-MM-DD).
-  3. Alle [PLATZHALTER] im Body und im JSON-LD-Schema durch echte Inhalte ersetzen.
-     Automatisch gesetzt werden beim Veröffentlichen: [artikel-slug] (= Dateiname),
-     datePublished/dateModified und das sichtbare Datum (aus publish_date).
-     Solange noch Platzhalter wie Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an drinstehen, wird nicht veröffentlicht.
-  4. Datei in content/blog-drafts/ liegen lassen. Der tägliche GitHub-Actions-Workflow
-     (.github/workflows/publish-blog.yml) verschiebt den Artikel automatisch nach blog/,
-     sobald publish_date erreicht ist, aktualisiert Blog-Übersicht + sitemap.xml und deployt.
-  Dieser Hinweis-Kommentar wird beim Veröffentlichen automatisch entfernt.
-  Dateien, deren Name mit "_" beginnt, werden vom Workflow ignoriert (wie diese hier).
--->
-<!--
 FRONTMATTER
 publish_date: 2026-11-06
 title: Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an
@@ -29,9 +14,9 @@ image: ../og-image.jpg
 <title>Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an</title>
 <meta name="description" content="Angebote von Reinigungsfirmen richtig vergleichen: Warum der Endpreis allein wenig aussagt und welche Punkte wirklich zählen.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<link rel="canonical" href="https://cleanconnect.de/blog/[artikel-slug].html">
+<link rel="canonical" href="https://cleanconnect.de/blog/angebote-reinigungsfirma-vergleichen.html">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://cleanconnect.de/blog/[artikel-slug].html">
+<meta property="og:url" content="https://cleanconnect.de/blog/angebote-reinigungsfirma-vergleichen.html">
 <meta property="og:title" content="Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an | Clean Connect Blog">
 <meta property="og:description" content="Angebote von Reinigungsfirmen richtig vergleichen: Warum der Endpreis allein wenig aussagt und welche Punkte wirklich zählen.">
 <meta property="og:locale" content="de_DE">
@@ -51,15 +36,15 @@ image: ../og-image.jpg
   "headline": "Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an",
   "description": "Angebote von Reinigungsfirmen richtig vergleichen: Warum der Endpreis allein wenig aussagt und welche Punkte wirklich zählen.",
   "image": {"@type": "ImageObject", "url": "https://cleanconnect.de/og-image.jpg", "width": 1400, "height": 787},
-  "datePublished": "YYYY-MM-DD",
-  "dateModified": "YYYY-MM-DD",
+  "datePublished": "2026-11-06",
+  "dateModified": "2026-11-06",
   "author": {"@type": "Person", "@id": "https://cleanconnect.de/team.html#julian-muehlhoff", "name": "Julian Mühlhoff", "jobTitle": "Kundenbetreuung", "url": "https://cleanconnect.de/team.html#julian-muehlhoff", "worksFor": {"@id": "https://cleanconnect.de/#business"}},
   "publisher": {
     "@type": "Organization",
     "name": "Clean Connect Gebäudereinigung UG",
     "logo": {"@type": "ImageObject", "url": "https://cleanconnect.de/logo.png"}
   },
-  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/[artikel-slug].html"}
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://cleanconnect.de/blog/angebote-reinigungsfirma-vergleichen.html"}
 }
 </script>
 
@@ -115,7 +100,7 @@ a:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid #00
 <div class="wrap hero">
   <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:#00C5C4;display:inline-block"></span>Ratgeber</div>
   <h1>Angebote von Reinigungsfirmen vergleichen: Darauf kommt es an</h1>
-  <div class="meta"><span><time datetime="YYYY-MM-DD">[Veröffentlichungsdatum]</time></span><span>&middot;</span><span>Von <a href="../team.html#julian-muehlhoff" style="color:inherit;border-bottom:1px solid #383838">Julian Mühlhoff</a></span></div>
+  <div class="meta"><span><time datetime="2026-11-06">6. November 2026</time></span><span>&middot;</span><span>Von <a href="../team.html#julian-muehlhoff" style="color:inherit;border-bottom:1px solid #383838">Julian Mühlhoff</a></span></div>
   <p class="lead">Drei Angebote liegen auf dem Tisch, die Preise unterscheiden sich deutlich. Das günstigste nehmen? Nicht so schnell. Reinigungsangebote lassen sich nur vergleichen, wenn sie dieselbe Leistung beschreiben.</p>
 </div>
 
