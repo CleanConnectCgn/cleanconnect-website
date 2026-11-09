@@ -13,7 +13,7 @@ LEISTUNGEN = {
     "unterhaltsreinigung": {
         "name": "Unterhaltsreinigung",
         "kicker": "Laufende Reinigung",
-        "bild": ["img_04", "img_03", "img_06"],
+        "bild": ["oberflaechenreinigung-verkaufstheke-koeln", "regalreinigung-verkaufsraum-koeln", "unterhaltsreinigung-harley-davidson-store-koeln"],
         "meta": "Unterhaltsreinigung {in} für Büros, Praxen und Gewerbe: feste Zeiten, feste Ansprechpartner, 32 € netto pro Stunde. Kostenlose Begehung von Clean Connect.",
         "lead": "Saubere Arbeitsplätze, gepflegte Sanitärräume und ein Empfang, der morgens wieder einladend aussieht: Die Unterhaltsreinigung {in} übernehmen wir zu festen Zeiten und mit einem festen Team.",
         "themen": ["buero", "wohnen", "lage"],
@@ -42,7 +42,7 @@ LEISTUNGEN = {
     "bueroreinigung": {
         "name": "Büroreinigung",
         "kicker": "Büro & Verwaltung",
-        "bild": ["img_04", "img_03", "img_06"],
+        "bild": ["oberflaechenreinigung-verkaufstheke-koeln", "regalreinigung-verkaufsraum-koeln", "unterhaltsreinigung-harley-davidson-store-koeln"],
         "meta": "Büroreinigung {in}: Arbeitsplätze, Küchen und Sanitär regelmäßig gereinigt, auch abends oder am Wochenende. 32 € netto pro Stunde, Begehung kostenlos.",
         "lead": "Ein aufgeräumtes, sauberes Büro merkt man vor allem dann, wenn es fehlt. Wir übernehmen die Büroreinigung {in} so, dass Ihr Team morgens an saubere Schreibtische kommt und nichts davon mitbekommt.",
         "themen": ["buero", "handel", "besonders"],
@@ -71,7 +71,7 @@ LEISTUNGEN = {
     "glasreinigung": {
         "name": "Glasreinigung",
         "kicker": "Fenster & Glasflächen",
-        "bild": ["img_14"],
+        "bild": ["glasreinigung-schaufenster-koeln"],
         "meta": "Glasreinigung {in}: Fenster, Schaufenster und Glasfronten innen und außen, streifenfrei. 45 € netto pro Stunde, einmalig oder im Turnus.",
         "lead": "Streifenfreie Fenster und klare Glasfronten lassen Räume heller und Geschäfte einladender wirken. Wir übernehmen die Glasreinigung {in} innen und außen, einmalig oder im festen Turnus.",
         "themen": ["handel", "lage", "besonders"],
@@ -100,7 +100,7 @@ LEISTUNGEN = {
     "grundreinigung": {
         "name": "Grundreinigung",
         "kicker": "Tiefenreinigung",
-        "bild": ["img_03", "img_12", "img_01"],
+        "bild": ["regalreinigung-verkaufsraum-koeln", "teppichreinigung-verkaufsraum-koeln", "showroom-reinigung-harley-davidson-koeln"],
         "meta": "Grundreinigung {in}: Böden, Sanitär und Küchen gründlich gereinigt, maschinell und von Hand. 38 € netto pro Stunde, Angebot nach Besichtigung.",
         "lead": "Wenn die tägliche Reinigung nicht mehr reicht, hilft eine Grundreinigung: Wir entfernen alte Pflegefilme, Kalk und eingetretenen Schmutz und bringen Böden und Räume {in} wieder auf einen sauberen Stand.",
         "themen": ["gewerbe", "wohnen", "bau"],
@@ -129,7 +129,7 @@ LEISTUNGEN = {
     "treppenhausreinigung": {
         "name": "Treppenhausreinigung",
         "kicker": "Wohnanlagen & WEG",
-        "bild": ["img_05"],
+        "bild": ["treppenhausreinigung-wohnanlage-koeln"],
         "meta": "Treppenhausreinigung {in} für Hausverwaltungen und Eigentümergemeinschaften: feste Pauschale 120–300 € netto pro Monat, Nachweis jedes Einsatzes.",
         "lead": "Ein sauberes Treppenhaus ist das Erste, was Bewohner und Besucher sehen. Wir reinigen Treppenhäuser {in} für Hausverwaltungen und Eigentümergemeinschaften, zu einer festen monatlichen Pauschale.",
         "themen": ["wohnen", "bau", "besonders"],
@@ -158,7 +158,7 @@ LEISTUNGEN = {
     "bauendreinigung": {
         "name": "Bauendreinigung",
         "kicker": "Nach Bau & Sanierung",
-        "bild": ["img_10", "img_07", "img_13"],
+        "bild": ["clean-connect-firmenwagen-gewerbeobjekt-koeln", "clean-connect-mitarbeiterin-firmenfahrzeug-koeln", "kundenobjekt-harley-davidson-koeln-bonn"],
         "meta": "Bauendreinigung {in}: Baustaub, Farbreste und Folien weg, Fenster, Böden und Sanitär bezugsfertig. Angebot nach Besichtigung von Clean Connect.",
         "lead": "Nach Bau, Umbau oder Sanierung bleibt Staub in jeder Ritze. Wir machen Räume {in} bezugsfertig: Böden, Fenster, Sanitär und Einbauten, bis nichts mehr an die Baustelle erinnert.",
         "themen": ["bau", "gewerbe", "lage"],
@@ -187,7 +187,7 @@ LEISTUNGEN = {
     "winterdienst": {
         "name": "Winterdienst",
         "kicker": "Räumen & Streuen",
-        "bild": ["img_07", "img_10"],
+        "bild": ["clean-connect-mitarbeiterin-firmenfahrzeug-koeln", "clean-connect-firmenwagen-gewerbeobjekt-koeln"],
         "meta": "Winterdienst {in}: Gehwege und Zugänge räumen und streuen nach Satzung, mit Übernahme der Verkehrssicherungspflicht und Einsatznachweis.",
         "lead": "Bei Schnee und Glätte haften Eigentümer, wenn jemand vor ihrem Haus stürzt. Wir übernehmen den Winterdienst {in}: räumen, streuen und jeden Einsatz dokumentieren.",
         "themen": ["lage", "wohnen", "gewerbe"],
@@ -216,7 +216,7 @@ LEISTUNGEN = {
     "photovoltaikreinigung": {
         "name": "Photovoltaikreinigung",
         "kicker": "Solaranlagen",
-        "bild": ["img_07", "img_10"],
+        "bild": ["clean-connect-mitarbeiterin-firmenfahrzeug-koeln", "clean-connect-firmenwagen-gewerbeobjekt-koeln"],
         "meta": "Photovoltaikreinigung {in}: Solarmodule schonend mit Reinwasser gereinigt, ohne Chemie. Für Gewerbedächer, Wohnhäuser und Hallen, Angebot nach Fotos.",
         "lead": "Staub, Pollen und Vogelkot legen sich auf Solarmodule und schlucken Ertrag. Wir reinigen Photovoltaikanlagen {in} mit entmineralisiertem Wasser und weichen Bürsten, ohne Chemie und ohne die Module anzugreifen.",
         "themen": ["lage", "gewerbe", "bau"],
@@ -245,7 +245,7 @@ LEISTUNGEN = {
     "entruempelung": {
         "name": "Entrümpelung",
         "kicker": "Räumen & Entsorgen",
-        "bild": ["img_07", "img_10"],
+        "bild": ["clean-connect-mitarbeiterin-firmenfahrzeug-koeln", "clean-connect-firmenwagen-gewerbeobjekt-koeln"],
         "meta": "Entrümpelung {in}: Keller, Wohnungen, Büros und Lagerflächen räumen, fachgerecht entsorgen und besenrein übergeben. Angebot nach Besichtigung.",
         "lead": "Volle Keller, eine Wohnung nach dem Auszug oder Büroräume, die geräumt werden müssen: Wir übernehmen die Entrümpelung {in} vom Räumen über die Entsorgung bis zur besenreinen Übergabe.",
         "themen": ["wohnen", "gewerbe", "besonders"],
@@ -274,7 +274,7 @@ LEISTUNGEN = {
     "fassadenreinigung": {
         "name": "Fassadenreinigung",
         "kicker": "Fassade & Außenflächen",
-        "bild": ["img_13", "img_10"],
+        "bild": ["kundenobjekt-harley-davidson-koeln-bonn", "clean-connect-firmenwagen-gewerbeobjekt-koeln"],
         "meta": "Fassadenreinigung {in}: Algen, Grünbelag und Schmutz von Putz, Klinker, Glas und Metall entfernen, materialgerecht und mit Hebebühne nach Bedarf.",
         "lead": "Grünbelag, graue Schlieren und Verschmutzungen lassen auch gepflegte Gebäude alt wirken. Wir reinigen Fassaden {in} materialgerecht, von Putz und Klinker bis zu Glas- und Metallfassaden.",
         "themen": ["lage", "buero", "handel"],
@@ -303,7 +303,7 @@ LEISTUNGEN = {
     "teppichreinigung": {
         "name": "Teppichreinigung",
         "kicker": "Teppichböden",
-        "bild": ["img_12"],
+        "bild": ["teppichreinigung-verkaufsraum-koeln"],
         "meta": "Teppichreinigung {in}: Teppichböden in Büros, Praxen und Hotels per Sprühextraktion tiefengereinigt, Flecken behandelt. Angebot nach Fläche.",
         "lead": "Teppichböden halten Staub und Gerüche fest, auch wenn regelmäßig gesaugt wird. Wir reinigen Teppichböden {in} mit Sprühextraktion und behandeln Flecken gezielt.",
         "themen": ["buero", "wohnen", "handel"],
@@ -332,7 +332,7 @@ LEISTUNGEN = {
     "polsterreinigung": {
         "name": "Polsterreinigung",
         "kicker": "Polstermöbel",
-        "bild": ["img_06", "img_07"],
+        "bild": ["unterhaltsreinigung-harley-davidson-store-koeln", "clean-connect-mitarbeiterin-firmenfahrzeug-koeln"],
         "meta": "Polsterreinigung {in}: Bürostühle, Sofas und Wartezimmerstühle vor Ort gereinigt, Flecken und Gerüche entfernt. Angebot nach Stückzahl.",
         "lead": "Bürostühle, Sofas im Empfang oder Stühle im Wartezimmer werden täglich benutzt, und irgendwann sieht man es ihnen an. Wir reinigen Polstermöbel {in} direkt vor Ort, ohne dass etwas abgeholt werden muss.",
         "themen": ["buero", "handel", "wohnen"],

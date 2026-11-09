@@ -258,7 +258,7 @@ nav.s{background:rgba(17,17,17,.93);backdrop-filter:blur(20px);-webkit-backdrop-
 
 /* ══ HERO ═══════════════════════════ */
 .hero{position:relative;z-index:1;min-height:100svh;display:flex;align-items:center;padding-top:56px;overflow:hidden}
-.hero-in{max-width:1080px;margin:0 auto;padding:36px 20px 52px;display:grid;gap:36px;width:100%;align-items:center}
+.hero-in{max-width:1200px;margin:0 auto;padding:36px 20px 52px;display:grid;gap:36px;width:100%;align-items:center}
 .hlabel{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--br2);color:var(--mu2);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:16px}
 .hldot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pulse 2s ease infinite;flex-shrink:0}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(1.6)}}
@@ -285,7 +285,14 @@ nav.s{background:rgba(17,17,17,.93);backdrop-filter:blur(20px);-webkit-backdrop-
 .hphoto img{width:100%;display:block;height:260px;object-fit:cover;object-position:center 40%;transition:transform .8s cubic-bezier(.16,1,.3,1)}
 .hphoto:hover img{transform:scale(1.02)}
 .hptag{position:absolute;bottom:12px;left:12px;z-index:2;background:rgba(17,17,17,.82);backdrop-filter:blur(8px);border:1px solid var(--br2);border-radius:100px;padding:5px 11px;font-size:11px;font-weight:600;color:var(--mu2)}
-@media(min-width:768px){.hero-in{grid-template-columns:1fr 1fr;padding:56px 40px 72px}.hphoto img{height:500px;object-position:center 22%}}
+@media(min-width:768px){.hero-in{grid-template-columns:1.05fr 1fr;gap:56px;padding:56px 40px 72px}.hphoto img{height:500px;object-position:center 22%}}
+
+/* Sponsorbild rechts im Startbereich (09.11.2026) */
+.hsponsor{margin:0;position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--br2);background:var(--s1);box-shadow:0 24px 60px rgba(0,0,0,.45),0 0 0 6px rgba(0,197,196,.06)}
+.hsponsor img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+.hsponsor figcaption{padding:14px 16px 16px;color:var(--mu2);font-size:13px;line-height:1.55;border-top:1px solid var(--br)}
+.hsp-k{display:inline-block;margin:0 8px 6px 0;background:rgba(0,197,196,.12);border:1px solid rgba(0,197,196,.4);color:var(--teal);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:100px;vertical-align:1px}
+@media(max-width:767px){.hsponsor figcaption{font-size:12.5px;padding:12px 14px 14px}}
 
 /* ══ TRUST ══════════════════════════ */
 .trust{position:relative;z-index:1;border-top:1px solid var(--br);border-bottom:1px solid var(--br);background:var(--s1);padding:14px 20px;display:flex;align-items:center;gap:14px;overflow-x:auto;white-space:nowrap}
@@ -586,7 +593,15 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
   .proc{gap:18px}
   .fynn-card{margin-top:20px !important}
   h2.sh{font-size:clamp(24px,6vw,36px) !important}
-  .hero-in{padding-top:0 !important}
+  .hero-in{padding-top:28px !important;padding-bottom:40px;gap:32px}
+  .hero-text h1{font-size:clamp(28px,7.6vw,34px);line-height:1.2;letter-spacing:-.02em;margin-bottom:18px}
+  .hlabel{margin-bottom:20px}
+  .hero-text p{margin-bottom:8px}
+  .hchecks{gap:12px;margin:20px 0 24px}
+  .hbtns{gap:12px}
+  .hbtns .btn{flex:1 1 100%;justify-content:center;padding:14px 20px}
+  .hlink{display:inline-block;margin-top:16px}
+  .hstats{margin-top:28px}
   /* Pain cards: all flash simultaneously on mobile */
   .stg.in>*:nth-child(1),.stg.in>*:nth-child(2),
   .stg.in>*:nth-child(3),.stg.in>*:nth-child(4),
@@ -720,7 +735,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 <div id="prog"></div>
 
 <nav id="nav" role="navigation" aria-label="Hauptnavigation">
-  <img src="images/logo-96.webp" style="height:44px;width:auto;display:block;" alt="Clean Connect Logo" width="96" height="96">
+  <img src="images/clean-connect-logo-96.webp" style="height:44px;width:auto;display:block;" alt="Clean Connect Logo" width="96" height="96">
   <div class="nls">
     <a href="#leistungen">Leistungen</a>
     <a href="#ref">Referenz</a>
@@ -753,14 +768,17 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <a href="#kontakt" class="btn btn-p">Kostenloses Angebot &#8594;</a>
         <a href="tel:+4915792492755" class="btn btn-g">&#128222; +49 1579 2492755</a>
       </div>
-      <a href="#erstreinigung" class="hlink fu d2 in">Erst testen? Erstreinigung zum regulären Stundensatz &#8594;</a>
+      <a href="#erstreinigung" class="hlink fu d2 in">Erst testen? Erstreinigung zum regulären Stundensatz&nbsp;&#8594;</a>
       <div class="hstats fu d3 in">
         <div class="hstat"><div class="hstat-n" data-count="20" data-suf="+">20+</div><div class="hstat-l">Feste Mitarbeiter</div></div>
         <div class="hstat"><div class="hstat-n" data-count="24" data-suf="h">24h</div><div class="hstat-l">Angebot erhalten</div></div>
         <div class="hstat"><div class="hstat-n" data-count="100" data-suf="%">100%</div><div class="hstat-l">Deutschsprachig</div></div>
       </div>
     </div>
-    
+    <figure class="hsponsor fu d2 in">
+      <img src="images/trikotsponsor-jugendfussball-koeln-rath-heumar.webp" srcset="images/trikotsponsor-jugendfussball-koeln-rath-heumar-560.webp 560w, images/trikotsponsor-jugendfussball-koeln-rath-heumar.webp 800w" sizes="(min-width:768px) 540px, calc(100vw - 40px)" width="800" height="600" alt="Jugendfußballmannschaft aus Köln Rath/Heumar in schwarzen Trikots mit dem Logo von Clean Connect, zusammen mit Trainern vor dem Tor" fetchpriority="high" decoding="async">
+      <figcaption><span class="hsp-k">Trikotsponsor</span>Wir unterstützen den Jugendfußball in Köln Rath/Heumar, direkt bei unserem Büro.</figcaption>
+    </figure>
   </div>
 </section>
 
@@ -807,27 +825,27 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="carousel-stage" id="cStage">
 
       <div class="ccard" data-idx="0" onclick="carouselGoTo(0)">
-        <img src="images/img_03-560.webp" srcset="images/img_03-560.webp 560w, images/img_03.webp 640w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
+        <img src="images/regalreinigung-verkaufsraum-koeln-560.webp" srcset="images/regalreinigung-verkaufsraum-koeln-560.webp 560w, images/regalreinigung-verkaufsraum-koeln.webp 640w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter bei der Bodenreinigung im Harley-Davidson Store Köln" loading="lazy">
         <div class="ccard-label"><span>Showroom Köln</span><strong>Bodenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_04.webp" width="280" height="340" alt="Clean Connect Mitarbeiterin bei der Oberflaechenreinigung im Harley-Davidson Showroom" loading="lazy">
+        <img src="images/oberflaechenreinigung-verkaufstheke-koeln.webp" width="280" height="340" alt="Clean Connect Mitarbeiterin bei der Oberflaechenreinigung im Harley-Davidson Showroom" loading="lazy">
         <div class="ccard-label"><span>Showroom Köln</span><strong>Oberflächenreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_05-560.webp" srcset="images/img_05-560.webp 560w, images/img_05.webp 800w" sizes="280px" width="280" height="340" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
+        <img src="images/treppenhausreinigung-wohnanlage-koeln-560.webp" srcset="images/treppenhausreinigung-wohnanlage-koeln-560.webp 560w, images/treppenhausreinigung-wohnanlage-koeln.webp 800w" sizes="280px" width="280" height="340" alt="Treppenhausreinigung Wohnanlage Köln" loading="lazy">
         <div class="ccard-label"><span>Wohnanlage Köln</span><strong>Treppenhausreinigung</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_06.webp" width="280" height="340" alt="Clean Connect Team mit Geschaeftsfuehrer im Harley-Davidson Store Koeln" loading="lazy">
+        <img src="images/unterhaltsreinigung-harley-davidson-store-koeln.webp" width="280" height="340" alt="Clean Connect Team mit Geschaeftsfuehrer im Harley-Davidson Store Koeln" loading="lazy">
         <div class="ccard-label"><span>Harley-Davidson Köln-Bonn</span><strong>Eingespieltes Team</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_07-560.webp" srcset="images/img_07-560.webp 560w, images/img_07.webp 620w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
+        <img src="images/clean-connect-mitarbeiterin-firmenfahrzeug-koeln-560.webp" srcset="images/clean-connect-mitarbeiterin-firmenfahrzeug-koeln-560.webp 560w, images/clean-connect-mitarbeiterin-firmenfahrzeug-koeln.webp 620w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiterin vor dem Firmenfahrzeug in Köln" loading="lazy">
         <div class="ccard-label"><span>Unterwegs in Köln</span><strong>Immer im Einsatz</strong></div>
       </div>
       <div class="ccard" data-idx="1" onclick="carouselGoTo(1)">
-        <img src="images/img_01-560.webp" srcset="images/img_01-560.webp 560w, images/img_01.webp 700w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
+        <img src="images/showroom-reinigung-harley-davidson-koeln-560.webp" srcset="images/showroom-reinigung-harley-davidson-koeln-560.webp 560w, images/showroom-reinigung-harley-davidson-koeln.webp 700w" sizes="280px" width="280" height="340" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy">
         <div class="ccard-label"><span>Harley-Davidson Store</span><strong>Referenzobjekt Köln-Bonn</strong></div>
       </div>
     </div>
@@ -945,7 +963,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <p class="sp fu d1">Von der regelmäßigen Unterhaltsreinigung bis zur anspruchsvollen Sonderreinigung: Wir decken das gesamte Spektrum gewerblicher Gebäudereinigung ab.</p>
 
     <div class="sonder-grid fu d1">
-      <div class="sonder-img"><img src="images/img_10.webp" width="540" height="380" alt="Clean Connect Teamleiter für Grund- und Sonderreinigung in Köln" title="Gewerbliche Reinigung Köln" loading="lazy"></div>
+      <div class="sonder-img"><img src="images/clean-connect-firmenwagen-gewerbeobjekt-koeln.webp" width="540" height="380" alt="Clean Connect Teamleiter für Grund- und Sonderreinigung in Köln" title="Gewerbliche Reinigung Köln" loading="lazy"></div>
       <div class="sonder-text">
 
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:28px;">
@@ -1054,7 +1072,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
     <div class="snum fu">08 / Über uns</div>
     <div class="lw"><h2 class="sh">Wie Clean Connect entstand</h2></div>
     <div class="sgrid">
-      <div class="simg fl" id="storyImg"><img height="449" width="800" src="images/img_08.webp" srcset="images/img_08-560.webp 560w, images/img_08.webp 800w" sizes="(min-width: 680px) 50vw, 100vw" style="width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy"></div>
+      <div class="simg fl" id="storyImg"><img height="449" width="800" src="images/reinigungskraft-motorrad-showroom-koeln.webp" srcset="images/reinigungskraft-motorrad-showroom-koeln-560.webp 560w, images/reinigungskraft-motorrad-showroom-koeln.webp 800w" sizes="(min-width: 680px) 50vw, 100vw" style="width:100%;height:auto;max-height:380px;object-fit:cover;object-position:center 30%;border-radius:12px;display:block;max-width:100%" alt="Clean Connect Mitarbeiter im Harley-Davidson Store Köln-Bonn" loading="lazy"></div>
       <div class="scopy fr2 d1">
         <span class="stag">&#128197; Köln, gegründet 2024</span>
         <p>Clean Connect wurde von Fynn Laubkermeier gegründet, aus einer einfachen Erkenntnis heraus: Viele Reinigungsanbieter arbeiten an den eigentlichen Bedürfnissen ihrer Kunden vorbei. Fehlende Kommunikation, wechselndes Personal, keine echte Kontrolle.</p>
@@ -1065,7 +1083,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
         <div class="fynn-card fu d2" style="margin-top:28px;display:flex;align-items:stretch;background:var(--bg);border:1px solid rgba(0,197,196,.12);border-radius:16px;overflow:hidden;position:relative;">
 
           <div style="width:130px;min-width:130px;flex-shrink:0;position:relative;overflow:hidden;background:#0a1a2a;">
-            <img loading="lazy" height="500" width="500" src="images/img-003.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" alt="Fynn Laubkermeier">
+            <img loading="lazy" height="500" width="500" src="images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect.webp" style="width:100%;height:100%;object-fit:cover;object-position:top center;display:block;" alt="Fynn Laubkermeier">
 <div class="card-photo-fade-bg"></div>
           </div>
           <div style="flex:1;padding:20px 16px;">
@@ -1098,15 +1116,15 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
       <div style="font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:8px">Einblicke</div>
       <h3 style="font-family:'Plus Jakarta Sans',sans-serif;font-size:20px;font-weight:700;color:#f0f0f0;margin-bottom:20px;line-height:1.3">Echte Objekte, echte Ergebnisse</h3>
       <div class="vid-scroll">
-        <a href="https://www.instagram.com/p/DTe9Pq_iEEz/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/img_12.webp');background-size:cover;background-position:center">
+        <a href="https://www.instagram.com/p/DTe9Pq_iEEz/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/teppichreinigung-verkaufsraum-koeln.webp');background-size:cover;background-position:center">
           <div class="vid-overlay"></div><div class="vid-play"><svg viewBox="0 0 24 24" width="42" height="42" fill="white" opacity=".95"><polygon points="6,4 20,12 6,20"/></svg></div>
           <div class="vid-info"><div class="vid-badge">Referenz</div><div class="vid-title">Harley-Davidson Köln-Bonn</div><div class="vid-sub">Unterhaltsreinigung</div></div>
         </a>
-        <a href="https://www.instagram.com/p/DSJiheFiI90/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/img_13.webp');background-size:cover;background-position:center">
+        <a href="https://www.instagram.com/p/DSJiheFiI90/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/kundenobjekt-harley-davidson-koeln-bonn.webp');background-size:cover;background-position:center">
           <div class="vid-overlay"></div><div class="vid-play"><svg viewBox="0 0 24 24" width="42" height="42" fill="white" opacity=".95"><polygon points="6,4 20,12 6,20"/></svg></div>
           <div class="vid-info"><div class="vid-badge">Referenz</div><div class="vid-title">Harley-Davidson Köln-Bonn</div><div class="vid-sub">Glasreinigung</div></div>
         </a>
-        <a href="https://www.instagram.com/p/DSan3W2AAF9/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/img_14.webp');background-size:cover;background-position:center">
+        <a href="https://www.instagram.com/p/DSan3W2AAF9/" target="_blank" rel="noopener" class="vid-card" style="background-image:url('images/glasreinigung-schaufenster-koeln.webp');background-size:cover;background-position:center">
           <div class="vid-overlay"></div><div class="vid-play"><svg viewBox="0 0 24 24" width="42" height="42" fill="white" opacity=".95"><polygon points="6,4 20,12 6,20"/></svg></div>
           <div class="vid-info"><div class="vid-badge">Projekt</div><div class="vid-title">Grundreinigung inkl. Glas</div><div class="vid-sub">Showroom Köln</div></div>
         </a>
@@ -1216,7 +1234,7 @@ footer{position:relative;z-index:1;background:var(--bg);border-top:1px solid var
 </section>
 
 <footer role="contentinfo">
-  <div class="flo"><img loading="lazy" height="500" width="500" src="images/img-004.webp" style="height:40px;width:auto;display:block;opacity:.85;" alt="Clean Connect Logo"></div>
+  <div class="flo"><img loading="lazy" height="500" width="500" src="images/clean-connect-logo.webp" style="height:40px;width:auto;display:block;opacity:.85;" alt="Clean Connect Logo"></div>
   <div class="flinks"><a href="#leistungen">Leistungen</a><a href="#ref">Referenz</a><a href="#story">Über uns</a><a href="#kontakt">Kontakt</a><a href="standorte.html">Standorte</a><a href="bueroreinigung-koeln.html">Büroreinigung Köln</a><a href="preise.html">Preise</a><a href="rechner.html">Rechner</a><a href="preisspiegel.html">Preisspiegel</a><a href="fragen.html">Häufige Fragen</a><a href="team.html">Team</a><a href="blog/index.html">Blog</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="agb.html">AGB</a><a href="widerruf.html">Widerruf</a></div>
   <div class="fnap">Forststraße 33, 51107 Köln &middot; <a href="tel:+4922195490625" style="color:inherit">0221 95490625</a> &middot; Mo–Fr 8–18 Uhr, Sa 8–16 Uhr</div>
   <div class="fcopy">&copy; 2026 Clean Connect Gebäudereinigung UG</div>

@@ -6,16 +6,16 @@
 # hier eintragen und in leistungen.py unter "bild" zuordnen.
 
 BILDER = {
-    "img_01": "Mitarbeiter von Clean Connect im Showroom von Harley-Davidson Köln-Bonn",
+    "showroom-reinigung-harley-davidson-koeln": "Mitarbeiter von Clean Connect im Showroom von Harley-Davidson Köln-Bonn",
     "img_02": "Mitarbeiter von Clean Connect im Verkaufsraum zwischen den Bekleidungsständern",
-    "img_03": "Reinigung der Regalböden im Verkaufsraum von Harley-Davidson Köln-Bonn",
-    "img_04": "Mitarbeiterin von Clean Connect reinigt die Verkaufstheke",
-    "img_05": "Zwei Mitarbeiterinnen von Clean Connect bei der Treppenhausreinigung in einer Wohnanlage",
-    "img_06": "Clean Connect im Harley-Davidson Store Köln-Bonn, unserem Kunden seit der Gründung",
-    "img_07": "Mitarbeiterin von Clean Connect am Firmenfahrzeug",
-    "img_08": "Mitarbeiter von Clean Connect im Motorrad-Showroom",
-    "img_10": "Clean Connect mit dem Firmenwagen vor einem Gewerbeobjekt",
-    "img_12": "Teppichläufer im Verkaufsraum wird abgesaugt",
-    "img_13": "Außenansicht von Harley-Davidson Köln-Bonn, einem unserer Kundenobjekte",
-    "img_14": "Glasreinigung an einer großen Schaufensterscheibe mit Teleskopstange",
+    "regalreinigung-verkaufsraum-koeln": "Reinigung der Regalböden im Verkaufsraum von Harley-Davidson Köln-Bonn",
+    "oberflaechenreinigung-verkaufstheke-koeln": "Mitarbeiterin von Clean Connect reinigt die Verkaufstheke",
+    "treppenhausreinigung-wohnanlage-koeln": "Zwei Mitarbeiterinnen von Clean Connect bei der Treppenhausreinigung in einer Wohnanlage",
+    "unterhaltsreinigung-harley-davidson-store-koeln": "Clean Connect im Harley-Davidson Store Köln-Bonn, unserem Kunden seit der Gründung",
+    "clean-connect-mitarbeiterin-firmenfahrzeug-koeln": "Mitarbeiterin von Clean Connect am Firmenfahrzeug",
+    "reinigungskraft-motorrad-showroom-koeln": "Mitarbeiter von Clean Connect im Motorrad-Showroom",
+    "clean-connect-firmenwagen-gewerbeobjekt-koeln": "Clean Connect mit dem Firmenwagen vor einem Gewerbeobjekt",
+    "teppichreinigung-verkaufsraum-koeln": "Teppichläufer im Verkaufsraum wird abgesaugt",
+    "kundenobjekt-harley-davidson-koeln-bonn": "Außenansicht von Harley-Davidson Köln-Bonn, einem unserer Kundenobjekte",
+    "glasreinigung-schaufenster-koeln": "Glasreinigung an einer großen Schaufensterscheibe mit Teleskopstange",
 }
