@@ -758,7 +758,7 @@ def team_seite(basis_css, geaendert):
       '<path d="M18 17v1a3 3 0 0 1-3 3h-3"/></svg></div>\n    <div><h3>Kundenbetreuung</h3><span class="rolle">Angebote, Verträge, laufende Objekte</span>\n'
       '    <p>Von der ersten Anfrage bis zum laufenden Vertrag haben Sie einen festen Ansprechpartner im Büro. Er schreibt '
       'Ihr Angebot und das Leistungsverzeichnis und ist direkt erreichbar unter <a href="tel:+4915792492755">0157 92492755</a> '
-      'oder <a href="mailto:service@cleanconnect.de">service@cleanconnect.de</a>. Unsere <a href="blog/index.html">Ratgeber</a> '
+      'oder <a href="mailto:jm@cleanconnect.de">jm@cleanconnect.de</a>. Unsere <a href="blog/index.html">Ratgeber</a> '
       'und den <a href="preisspiegel.html">Preisspiegel</a> schreibt das Büroteam aus der eigenen Praxis.</p></div>\n  </div>\n</section>')
     a('<section class="text">\n  <h2>Das Team</h2>\n  <ul>')
     for punkt in ["Mehr als 20 Mitarbeitende, alle fest und sozialversicherungspflichtig angestellt, keine Subunternehmer.",
