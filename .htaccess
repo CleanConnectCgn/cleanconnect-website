@@ -23,6 +23,46 @@ RewriteRule ^$ /cleanconnect/ [L,R=301]
 # dieser Datei verdraengt. Redirect-Regeln werden dagegen zusammengefuehrt (live geprueft 04.11.2026).
 RedirectMatch 301 ^/(preise|rechner|standorte|impressum|datenschutz|agb|widerruf|angebot|broschuere|bueroreinigung-koeln)/?$ /$1.html
 RedirectMatch 301 ^/(standorte|blog)/([a-z0-9-]+)$ /$1/$2.html
+# Alte Bildnamen auf sprechende Namen (09.11.2026), damit Google-Bilder und alte Links weiter funktionieren
+RedirectMatch 301 ^/images/img_01(-560)?\.(webp|jpg)$ /images/showroom-reinigung-harley-davidson-koeln$1.$2
+RedirectMatch 301 ^/images/img_03(-560)?\.(webp|jpg)$ /images/reinigung-verkaufsraum-harley-davidson-koeln$1.$2
+RedirectMatch 301 ^/images/img_04(-560)?\.(webp|jpg)$ /images/oberflaechenreinigung-verkaufstheke-koeln$1.$2
+RedirectMatch 301 ^/images/img_05(-560)?\.(webp|jpg)$ /images/treppenhausreinigung-wohnanlage-koeln$1.$2
+RedirectMatch 301 ^/images/img_06(-560)?\.(webp|jpg)$ /images/unterhaltsreinigung-harley-davidson-store-koeln$1.$2
+RedirectMatch 301 ^/images/img_07(-560)?\.(webp|jpg)$ /images/clean-connect-mitarbeiterin-firmenfahrzeug-koeln$1.$2
+RedirectMatch 301 ^/images/img_08(-560)?\.(webp|jpg)$ /images/reinigungskraft-motorrad-showroom-koeln$1.$2
+RedirectMatch 301 ^/images/img_10(-560)?\.(webp|jpg)$ /images/clean-connect-firmenwagen-gewerbeobjekt-koeln$1.$2
+RedirectMatch 301 ^/images/img_12(-560)?\.(webp|jpg)$ /images/teppichreinigung-verkaufsraum-koeln$1.$2
+RedirectMatch 301 ^/images/img_13(-560)?\.(webp|jpg)$ /images/kundenobjekt-harley-davidson-koeln-bonn$1.$2
+RedirectMatch 301 ^/images/img_14(-560)?\.(webp|jpg)$ /images/glasreinigung-schaufenster-koeln$1.$2
+RedirectMatch 301 ^/images/img\-003(-560)?\.(webp|jpg)$ /images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect$1.$2
+RedirectMatch 301 ^/images/img\-004(-560)?\.(webp|jpg)$ /images/clean-connect-logo$1.$2
+RedirectMatch 301 ^/images/logo\-96(-560)?\.(webp|jpg)$ /images/clean-connect-logo-96$1.$2
+# Vorher/Nachher-Bilder mit sprechenden Namen (10.11.2026)
+RedirectMatch 301 ^/images/praxis/bauend\-atrium\-vorher\.webp$ /images/praxis/bauendreinigung-atrium-buerogebaeude-vorher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-atrium\-nachher\.webp$ /images/praxis/bauendreinigung-atrium-buerogebaeude-nachher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-bueroflaeche\-vorher\.webp$ /images/praxis/bauendreinigung-bueroflur-vorher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-bueroflaeche\-nachher\.webp$ /images/praxis/bauendreinigung-bueroflur-nachher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-teppich\-tuer\-vorher\.webp$ /images/praxis/bauendreinigung-teppichboden-buero-vorher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-teppich\-tuer\-nachher\.webp$ /images/praxis/bauendreinigung-teppichboden-buero-nachher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-treppe\-vorher\.webp$ /images/praxis/bauendreinigung-granittreppe-vorher.webp
+RedirectMatch 301 ^/images/praxis/bauend\-treppe\-nachher\.webp$ /images/praxis/bauendreinigung-granittreppe-nachher.webp
+RedirectMatch 301 ^/images/praxis/cafe\-boden\-vorher\.webp$ /images/praxis/grundreinigung-cafe-boden-vorher.webp
+RedirectMatch 301 ^/images/praxis/cafe\-boden\-maschine\.webp$ /images/praxis/grundreinigung-cafe-boden-einscheibenmaschine.webp
+RedirectMatch 301 ^/images/praxis/cafe\-boden\-nasssauger\.webp$ /images/praxis/grundreinigung-cafe-boden-nasssauger.webp
+RedirectMatch 301 ^/images/praxis/fassade\-klinker\-vorher\.webp$ /images/praxis/fassadenreinigung-klinkerfassade-vorher.webp
+RedirectMatch 301 ^/images/praxis/fassade\-klinker\-nachher\.webp$ /images/praxis/fassadenreinigung-klinkerfassade-nachher.webp
+RedirectMatch 301 ^/images/praxis/fenster\-vorher\.webp$ /images/praxis/fensterreinigung-buerofenster-vorher.webp
+RedirectMatch 301 ^/images/praxis/fenster\-nachher\.webp$ /images/praxis/fensterreinigung-buerofenster-nachher.webp
+RedirectMatch 301 ^/images/praxis/glasdach\-vorher\.webp$ /images/praxis/glasdachreinigung-eingang-vorher.webp
+RedirectMatch 301 ^/images/praxis/glasdach\-nachher\.webp$ /images/praxis/glasdachreinigung-eingang-nachher.webp
+RedirectMatch 301 ^/images/praxis/kueche\-fliesenboden\-vorher\.webp$ /images/praxis/grundreinigung-gewerbekueche-fliesenboden-vorher.webp
+RedirectMatch 301 ^/images/praxis/kueche\-fliesenboden\-nachher\.webp$ /images/praxis/grundreinigung-gewerbekueche-fliesenboden-nachher.webp
+RedirectMatch 301 ^/images/praxis/sanitaer\-wc\-vorher\.webp$ /images/praxis/sanitaerreinigung-wc-buero-vorher.webp
+RedirectMatch 301 ^/images/praxis/sanitaer\-wc\-nachher\.webp$ /images/praxis/sanitaerreinigung-wc-buero-nachher.webp
+RedirectMatch 301 ^/images/praxis/teekueche\-spuele\-vorher\.webp$ /images/praxis/bueroreinigung-teekueche-spuele-vorher.webp
+RedirectMatch 301 ^/images/praxis/teekueche\-spuele\-nachher\.webp$ /images/praxis/bueroreinigung-teekueche-spuele-nachher.webp
+
 # Versteckte Dateien (.env, .htaccess ...) nicht ueber die Rechtschreibkorrektur auflisten
 RedirectMatch 404 ^/\.(?!well-known/)
 
