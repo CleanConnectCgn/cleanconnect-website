@@ -78,4 +78,5 @@ jobs:
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
             mirror -R --parallel=5 blog $SFTP_DIR/blog;
             rm -f $SFTP_DIR/images/img-002.jpg $SFTP_DIR/images/img-002.webp $SFTP_DIR/images/julian-muehlhoff.jpg;
+            rm -f $SFTP_DIR/images/img_00.png $SFTP_DIR/images/img_02.jpg $SFTP_DIR/images/img_02.webp $SFTP_DIR/images/img_09.jpg $SFTP_DIR/images/img_09.webp $SFTP_DIR/images/img_11.jpg $SFTP_DIR/images/img_11.webp $SFTP_DIR/images/img_15.png $SFTP_DIR/images/img-001.webp;
           "

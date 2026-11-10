@@ -8,7 +8,6 @@ HTML_FILE = "index.html"
 
 # Known dimensions for images missing width/height
 DIMS = {
-    "images/img-001.webp": (500, 500),
     "images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect.webp": (667, 651),
     "images/clean-connect-logo.webp": (500, 500),
     "images/reinigungskraft-motorrad-showroom-koeln.webp":  (800, 449),

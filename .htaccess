@@ -21,7 +21,8 @@ RewriteRule ^$ /cleanconnect/ [L,R=301]
 # Adressen ohne Endung auf die .html-Seite. Bewusst RedirectMatch statt RewriteRule:
 # Im Web-Verzeichnis liegt eine eigene .htaccess mit RewriteEngine, die die Rewrite-Regeln
 # dieser Datei verdraengt. Redirect-Regeln werden dagegen zusammengefuehrt (live geprueft 04.11.2026).
-RedirectMatch 301 ^/(preise|rechner|standorte|impressum|datenschutz|agb|widerruf|angebot|broschuere|bueroreinigung-koeln)/?$ /$1.html
+# Neue Seiten hier ergaenzen, sonst liefert IONOS (mod_speling) "300 Multiple Choices".
+RedirectMatch 301 ^/(preise|rechner|standorte|impressum|datenschutz|agb|widerruf|angebot|broschuere|bueroreinigung-koeln|fragen|preisspiegel|team|vorher-nachher)/?$ /$1.html
 RedirectMatch 301 ^/(standorte|blog)/([a-z0-9-]+)$ /$1/$2.html
 # Alte Bildnamen auf sprechende Namen (09.11.2026), damit Google-Bilder und alte Links weiter funktionieren
 RedirectMatch 301 ^/images/img_01(-560)?\.(webp|jpg)$ /images/showroom-reinigung-harley-davidson-koeln$1.$2
@@ -88,6 +89,7 @@ RedirectMatch 404 ^/\.(?!well-known/)
   Header always set Strict-Transport-Security "max-age=31536000"
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
   <FilesMatch "\.(?:webp|png|jpe?g|mp4|woff2)$">
     Header set Cache-Control "public, max-age=2592000, immutable"
   </FilesMatch>
