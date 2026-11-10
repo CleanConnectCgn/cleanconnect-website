@@ -327,6 +327,7 @@ def seite(lk, ort, basis_css):
                 "areaServed": {"@type": "City", "name": o["name"]},
                 "description": meta,
                 "url": canonical,
+                "image": f"{BASE}/images/{bild}.jpg",
             },
             {
                 "@type": "FAQPage",
@@ -368,7 +369,7 @@ def seite(lk, ort, basis_css):
     a('<link rel="preload" href="../fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="../fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="../fonts.css">')
     a("<style>\n" + basis_css + CSS_EXTRA + "</style>\n</head>\n<body>")
     a('<a href="#main" class="skip-link">Zum Inhalt springen</a>')
-    a('<nav aria-label="Hauptnavigation">\n  <a href="../"><img src="../images/logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="../standorte.html">&larr; Alle Leistungen &amp; Standorte</a>\n</nav>')
+    a('<nav aria-label="Hauptnavigation">\n  <a href="../"><img src="../images/clean-connect-logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="../standorte.html">&larr; Alle Leistungen &amp; Standorte</a>\n</nav>')
     a('<main id="main">\n<div class="wrap hero">')
     a(f'  <div class="kicker"><span style="width:6px;height:6px;border-radius:50%;background:var(--teal);display:inline-block"></span>{e(l["kicker"])}</div>')
     a(f'  <h1>{e(l["name"])} in <em>{e(o["name"])}</em></h1>')
@@ -451,7 +452,7 @@ def fall_html(f, prefix="", h="h3"):
     zeile = " &middot; ".join(e(x) for x in (f["objekt"], f["ort"], f["leistung"], f"seit {f['seit']}" if f["seit"] else None) if x)
     bilder = fall_bilder(f)
     html = "".join(
-        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(datei)}" alt="{e(BILD_ART[k])}: {e(f["bildtext"])}" '
+        f'<figure class="{k}"><img src="{prefix}images/praxis/{e(datei)}" alt="{e(f["leistung"])}, {e(BILD_ART[k])}: {e(f["bildtext"])}" '
         f'loading="lazy" width="{w}" height="{hh}"><figcaption>{e(BILD_ART[k])}</figcaption></figure>'
         for datei, k in bilder)
     klassen = "fall" + (" quer" if f["format"] == "quer" else "")
@@ -489,7 +490,7 @@ def kopf(titel, meta, canonical, schema, basis_css, zurueck=("preise.html", "All
     a('<link rel="preload" href="fonts/inter-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="preload" href="fonts/plus-jakarta-sans-400-latin.woff2" as="font" type="font/woff2" crossorigin>\n<link rel="stylesheet" href="fonts.css">')
     a("<style>\n" + basis_css + CSS_EXTRA + extra_css + "</style>\n</head>\n<body>")
     a('<a href="#main" class="skip-link">Zum Inhalt springen</a>')
-    a(f'<nav aria-label="Hauptnavigation">\n  <a href="./"><img src="images/logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="{zurueck[0]}">&larr; {zurueck[1]}</a>\n</nav>')
+    a(f'<nav aria-label="Hauptnavigation">\n  <a href="./"><img src="images/clean-connect-logo-96.webp" alt="Clean Connect Logo" width="96" height="96"></a>\n  <a class="back" href="{zurueck[0]}">&larr; {zurueck[1]}</a>\n</nav>')
     return teile
 
 
@@ -732,7 +733,7 @@ def team_seite(basis_css, geaendert):
     meta = ("Clean Connect wurde 2024 von Fynn Laubkermeier in Köln gegründet. Wer das Unternehmen führt, wer Sie betreut "
             "und wer bei Ihnen reinigt.")
     fynn = {"@type": "Person", "@id": f"{BASE}/team.html#fynn-laubkermeier", "name": "Fynn Laubkermeier",
-            "jobTitle": "Gründer und Geschäftsführer", "image": f"{BASE}/images/img-003.webp", "worksFor": {"@id": f"{BASE}/#business"}}
+            "jobTitle": "Gründer und Geschäftsführer", "image": f"{BASE}/images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect.webp", "worksFor": {"@id": f"{BASE}/#business"}}
     schema = {"@context": "https://schema.org", "@graph": [
         {"@type": "AboutPage", "name": titel, "url": canonical, "inLanguage": "de-DE", "dateModified": "2026-11-04",
          "mainEntity": {"@id": f"{BASE}/#business"}, "isPartOf": {"@type": "WebSite", "url": f"{BASE}/"}},
@@ -747,7 +748,7 @@ def team_seite(basis_css, geaendert):
                   "Clean Connect ist ein inhabergeführter Reinigungsdienst aus Köln. Gegründet 2024 von Fynn Laubkermeier, "
                   "heute mit mehr als 20 fest angestellten, deutschsprachigen Mitarbeitenden und einem Büro mit Lager in Köln-Rath/Heumar.")
     a('<section>\n  <h2>Geschäftsführung und Kundenbetreuung</h2>')
-    a('  <div class="person" id="fynn-laubkermeier">\n    <img src="images/img-003.webp" width="500" height="500" alt="Fynn Laubkermeier" loading="lazy">\n'
+    a('  <div class="person" id="fynn-laubkermeier">\n    <img src="images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect.webp" width="500" height="500" alt="Fynn Laubkermeier" loading="lazy">\n'
       '    <div><h3>Fynn Laubkermeier</h3><span class="rolle">Gründer und Geschäftsführer</span>\n'
       '    <p>Fynn hat Clean Connect 2024 gegründet. Vorher hat das Team als Subunternehmer bei verschiedenen Reinigungsdienstleistern '
       'gearbeitet und gesehen, woran es dort oft hakt: wenig Kommunikation, wechselndes Personal, keine echte Kontrolle. Als '
@@ -846,6 +847,42 @@ def schreibe(pfad, inhalt, geaendert):
 EIGENE_SEITEN = ["rechner.html", "fragen.html", "preisspiegel.html", "team.html", "vorher-nachher.html"]
 
 
+def bilder_in_sitemap(s):
+    """Bild-Sitemap fuer Google Bilder: je Seite die eingebundenen Fotos (ohne Logos),
+    gelesen aus der fertigen HTML-Datei. Wird bei jedem Lauf neu geschrieben (09.11.2026)."""
+    s = re.sub(r"\s*<image:image>.*?</image:image>", "", s, flags=re.S)
+    if "xmlns:image" not in s:
+        s = s.replace('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+                      '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" '
+                      'xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">')
+
+    def fuellen(m):
+        block = m.group(0)
+        loc = re.search(r"<loc>([^<]+)</loc>", block).group(1)
+        rel = loc[len(BASE) + 1:] or "index.html"
+        pfad = os.path.join(ROOT, rel)
+        if not os.path.isfile(pfad):
+            return block
+        html = open(pfad, encoding="utf-8").read()
+        urls = []
+        for src in re.findall(r'<img[^>]+?src="([^"]+)"', html):
+            if src.startswith(("data:", "http")) or "logo" in src:
+                continue
+            ziel = os.path.normpath(os.path.join(os.path.dirname(rel), src))
+            gross = ziel.replace("-560.", ".")
+            if gross != ziel and os.path.isfile(os.path.join(ROOT, gross)):
+                ziel = gross
+            url = f"{BASE}/{ziel}"
+            if url not in urls:
+                urls.append(url)
+        if not urls:
+            return block
+        bilder = "".join(f"\n    <image:image><image:loc>{u}</image:loc></image:image>" for u in urls)
+        return block.replace("\n  </url>", bilder + "\n  </url>")
+
+    return re.sub(r"  <url>.*?\n  </url>", fuellen, s, flags=re.S)
+
+
 def aktualisiere_sitemap(heute, geaendert):
     """/standorte/-Eintraege neu schreiben. lastmod wird nur fuer geaenderte Seiten
     auf heute gesetzt, sonst bleibt das alte Datum stehen (04.11.2026)."""
@@ -872,6 +909,7 @@ def aktualisiere_sitemap(heute, geaendert):
             s = re.sub(r"(<loc>" + re.escape(loc) + r"</loc>\s*<lastmod>)[^<]+", lambda m: m.group(1) + datum(rel), s)
         else:
             s = s.replace("</urlset>", f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{heute}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n</urlset>")
+    s = bilder_in_sitemap(s)
     open(p, "w", encoding="utf-8").write(s)
 
 

@@ -9,9 +9,9 @@ HTML_FILE = "index.html"
 # Known dimensions for images missing width/height
 DIMS = {
     "images/img-001.webp": (500, 500),
-    "images/img-003.webp": (667, 651),
-    "images/img-004.webp": (500, 500),
-    "images/img_08.webp":  (800, 449),
+    "images/fynn-laubkermeier-geschaeftsfuehrer-clean-connect.webp": (667, 651),
+    "images/clean-connect-logo.webp": (500, 500),
+    "images/reinigungskraft-motorrad-showroom-koeln.webp":  (800, 449),
 }
 
 with open(HTML_FILE, "r", encoding="utf-8") as f:
