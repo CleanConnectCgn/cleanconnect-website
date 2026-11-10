@@ -78,5 +78,20 @@ jobs:
             mirror -R --parallel=5 standorte $SFTP_DIR/standorte;
             mirror -R --parallel=5 blog $SFTP_DIR/blog;
             rm -f $SFTP_DIR/images/img-002.jpg $SFTP_DIR/images/img-002.webp $SFTP_DIR/images/julian-muehlhoff.jpg;
+            # Alte Bildnamen (seit 09./10.11. per 301 auf sprechende Namen) physisch entfernen
+            rm -f $SFTP_DIR/images/img_01.webp $SFTP_DIR/images/img_01.jpg $SFTP_DIR/images/img_01-560.webp $SFTP_DIR/images/img_01-560.jpg $SFTP_DIR/images/img_03.webp $SFTP_DIR/images/img_03.jpg;
+            rm -f $SFTP_DIR/images/img_03-560.webp $SFTP_DIR/images/img_03-560.jpg $SFTP_DIR/images/img_04.webp $SFTP_DIR/images/img_04.jpg $SFTP_DIR/images/img_04-560.webp $SFTP_DIR/images/img_04-560.jpg;
+            rm -f $SFTP_DIR/images/img_05.webp $SFTP_DIR/images/img_05.jpg $SFTP_DIR/images/img_05-560.webp $SFTP_DIR/images/img_05-560.jpg $SFTP_DIR/images/img_06.webp $SFTP_DIR/images/img_06.jpg;
+            rm -f $SFTP_DIR/images/img_06-560.webp $SFTP_DIR/images/img_06-560.jpg $SFTP_DIR/images/img_07.webp $SFTP_DIR/images/img_07.jpg $SFTP_DIR/images/img_07-560.webp $SFTP_DIR/images/img_07-560.jpg;
+            rm -f $SFTP_DIR/images/img_08.webp $SFTP_DIR/images/img_08.jpg $SFTP_DIR/images/img_08-560.webp $SFTP_DIR/images/img_08-560.jpg $SFTP_DIR/images/img_10.webp $SFTP_DIR/images/img_10.jpg;
+            rm -f $SFTP_DIR/images/img_10-560.webp $SFTP_DIR/images/img_10-560.jpg $SFTP_DIR/images/img_12.webp $SFTP_DIR/images/img_12.jpg $SFTP_DIR/images/img_12-560.webp $SFTP_DIR/images/img_12-560.jpg;
+            rm -f $SFTP_DIR/images/img_13.webp $SFTP_DIR/images/img_13.jpg $SFTP_DIR/images/img_13-560.webp $SFTP_DIR/images/img_13-560.jpg $SFTP_DIR/images/img_14.webp $SFTP_DIR/images/img_14.jpg;
+            rm -f $SFTP_DIR/images/img_14-560.webp $SFTP_DIR/images/img_14-560.jpg $SFTP_DIR/images/img-003.webp $SFTP_DIR/images/img-003.jpg $SFTP_DIR/images/img-003-560.webp $SFTP_DIR/images/img-003-560.jpg;
+            rm -f $SFTP_DIR/images/img-004.webp $SFTP_DIR/images/img-004.jpg $SFTP_DIR/images/img-004-560.webp $SFTP_DIR/images/img-004-560.jpg $SFTP_DIR/images/logo-96.webp $SFTP_DIR/images/logo-96.jpg;
+            rm -f $SFTP_DIR/images/logo-96-560.webp $SFTP_DIR/images/logo-96-560.jpg $SFTP_DIR/images/praxis/bauend-atrium-vorher.webp $SFTP_DIR/images/praxis/bauend-atrium-nachher.webp $SFTP_DIR/images/praxis/bauend-bueroflaeche-vorher.webp $SFTP_DIR/images/praxis/bauend-bueroflaeche-nachher.webp;
+            rm -f $SFTP_DIR/images/praxis/bauend-teppich-tuer-vorher.webp $SFTP_DIR/images/praxis/bauend-teppich-tuer-nachher.webp $SFTP_DIR/images/praxis/bauend-treppe-vorher.webp $SFTP_DIR/images/praxis/bauend-treppe-nachher.webp $SFTP_DIR/images/praxis/cafe-boden-vorher.webp $SFTP_DIR/images/praxis/cafe-boden-maschine.webp;
+            rm -f $SFTP_DIR/images/praxis/cafe-boden-nasssauger.webp $SFTP_DIR/images/praxis/fassade-klinker-vorher.webp $SFTP_DIR/images/praxis/fassade-klinker-nachher.webp $SFTP_DIR/images/praxis/fenster-vorher.webp $SFTP_DIR/images/praxis/fenster-nachher.webp $SFTP_DIR/images/praxis/glasdach-vorher.webp;
+            rm -f $SFTP_DIR/images/praxis/glasdach-nachher.webp $SFTP_DIR/images/praxis/kueche-fliesenboden-vorher.webp $SFTP_DIR/images/praxis/kueche-fliesenboden-nachher.webp $SFTP_DIR/images/praxis/sanitaer-wc-vorher.webp $SFTP_DIR/images/praxis/sanitaer-wc-nachher.webp $SFTP_DIR/images/praxis/teekueche-spuele-vorher.webp;
+            rm -f $SFTP_DIR/images/praxis/teekueche-spuele-nachher.webp;
             rm -f $SFTP_DIR/images/img_00.png $SFTP_DIR/images/img_02.jpg $SFTP_DIR/images/img_02.webp $SFTP_DIR/images/img_09.jpg $SFTP_DIR/images/img_09.webp $SFTP_DIR/images/img_11.jpg $SFTP_DIR/images/img_11.webp $SFTP_DIR/images/img_15.png $SFTP_DIR/images/img-001.webp;
           "

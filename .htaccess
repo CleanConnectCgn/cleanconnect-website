@@ -1,5 +1,8 @@
 # Keine Inhaltsaushandlung: /preise soll per 301 auf preise.html, nicht still ausgeliefert werden
 Options -MultiViews
+# IONOS hat mod_speling an: fehlende Dateien liefern sonst "300 Multiple Choices" mit aehnlichen
+# Dateinamen statt 404. Abgeschaltet am 10.11.2026.
+CheckSpelling Off
 ErrorDocument 404 /404.html
 
 RewriteEngine On
