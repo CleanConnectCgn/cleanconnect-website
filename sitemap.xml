@@ -37,7 +37,7 @@
   </url>
   <url>
     <loc>https://cleanconnect.de/blog/index.html</loc>
-    <lastmod>2026-11-20</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1389,6 +1389,12 @@
   <url>
     <loc>https://cleanconnect.de/blog/bueroreinigung-uhrzeit.html</loc>
     <lastmod>2026-11-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://cleanconnect.de/blog/reinigungsdienst-hausverwaltung.html</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
