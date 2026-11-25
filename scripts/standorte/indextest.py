@@ -1,4 +1,4 @@
-"""Index-Test Standortseiten (gestartet 26.11.2026).
+"""Index-Test Standortseiten (vorbereitet 25.11.2026, Start = Tag des Deploys).
 
 Frage: Indexiert und zeigt Google die uebrigen Seiten besser, wenn die Standortseiten ohne
 jede Nachfrage nicht mehr in Index und Sitemap stehen?
