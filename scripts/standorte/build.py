@@ -25,6 +25,7 @@ sys.path.insert(0, os.path.dirname(__file__))
 from orte import ORTE, ORT_REIHENFOLGE, BUERO  # noqa: E402
 from leistungen import LEISTUNGEN, LEISTUNG_REIHENFOLGE  # noqa: E402
 from extras import FAQ_EXTRA, VORTEILE_EXTRA, ZUSATZ_THEMEN  # noqa: E402
+from indextest import TESTGRUPPE  # noqa: E402
 from fokus import FOKUS  # noqa: E402
 from bilder import BILDER  # noqa: E402
 from ratgeber import RATGEBER  # noqa: E402
@@ -355,7 +356,8 @@ def seite(lk, ort, basis_css):
     a('<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">')
     a(f"<title>{e(titel)}</title>")
     a(f'<meta name="description" content="{e(meta)}">')
-    a('<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">')
+    robots = "noindex, follow" if (lk, ort) in TESTGRUPPE else "index, follow, max-image-preview:large, max-snippet:-1"
+    a(f'<meta name="robots" content="{robots}">')
     a(f'<link rel="canonical" href="{canonical}">')
     a('<meta property="og:type" content="website">')
     a(f'<meta property="og:url" content="{canonical}">')
@@ -898,7 +900,7 @@ def aktualisiere_sitemap(heute, geaendert):
     eintraege = []
     for lk in LEISTUNG_REIHENFOLGE:
         for o in ORT_REIHENFOLGE:
-            if (lk, o) in AUSNAHMEN:
+            if (lk, o) in AUSNAHMEN or (lk, o) in TESTGRUPPE:
                 continue
             rel = f"standorte/{lk}-{o}.html"
             eintraege.append(f"  <url>\n    <loc>{BASE}/{rel}</loc>\n    <lastmod>{datum(rel)}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>")
